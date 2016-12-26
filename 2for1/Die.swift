@@ -1,0 +1,18 @@
+//
+//  Die.swift
+//  2for1
+//
+//  Created by Douglas Galante on 12/25/16.
+//  Copyright © 2016 Flatiron. All rights reserved.
+//
+
+import Foundation
+
+struct Die {
+    var value: Int = 0
+    
+    mutating func roll() {
+        let randomNum = arc4random_uniform(6) + 1
+        value = Int(randomNum)
+    }
+}
