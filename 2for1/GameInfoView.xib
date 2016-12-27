@@ -12,8 +12,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameInfoView" customModule="_for1" customModuleProvider="target">
             <connections>
+                <outlet property="bottomLabel" destination="C9Y-Xj-O84" id="bs5-ia-rkP"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="Kx5-y0-iCA"/>
-                <outlet property="label" destination="cur-8O-bhb" id="MSs-qp-jwH"/>
+                <outlet property="middleLabel" destination="cur-8O-bhb" id="Kco-BR-ioi"/>
+                <outlet property="topLabel" destination="1tl-Nr-jjm" id="RRJ-lq-zfq"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -21,8 +23,20 @@
             <rect key="frame" x="0.0" y="0.0" width="399" height="169"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cur-8O-bhb">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1tl-Nr-jjm" userLabel="TopLabel">
+                    <rect key="frame" x="10" y="34" width="379" height="16.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cur-8O-bhb" userLabel="MiddleLabel">
                     <rect key="frame" x="10" y="76" width="379" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="C9Y-Xj-O84" userLabel="BottomLabel">
+                    <rect key="frame" x="9.5" y="118.5" width="379" height="16.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -30,9 +44,17 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="C9Y-Xj-O84" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.95" id="0Jg-Zf-osk"/>
+                <constraint firstItem="1tl-Nr-jjm" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.5" id="Eo1-yC-HmX"/>
+                <constraint firstItem="C9Y-Xj-O84" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="FuW-AP-icl"/>
+                <constraint firstItem="C9Y-Xj-O84" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="1.5" id="Txn-1P-bje"/>
+                <constraint firstItem="1tl-Nr-jjm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="XSQ-ca-fwX"/>
                 <constraint firstItem="cur-8O-bhb" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.95" id="Ygf-Ie-hcF"/>
                 <constraint firstItem="cur-8O-bhb" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="k0y-E8-fXX"/>
+                <constraint firstItem="C9Y-Xj-O84" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.1" id="mmj-um-XPT"/>
+                <constraint firstItem="1tl-Nr-jjm" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.1" id="tKA-0U-C6g"/>
                 <constraint firstItem="cur-8O-bhb" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.1" id="tRq-4H-B6l"/>
+                <constraint firstItem="1tl-Nr-jjm" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.95" id="voy-LZ-oYb"/>
                 <constraint firstItem="cur-8O-bhb" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="wKP-8W-CLx"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>

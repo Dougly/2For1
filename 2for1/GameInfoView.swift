@@ -11,7 +11,9 @@ import UIKit
 class GameInfoView: UIView {
     
     @IBOutlet var contentView: UIView!
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var topLabel: UILabel!
+    @IBOutlet weak var middleLabel: UILabel!
+    @IBOutlet weak var bottomLabel: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,6 +29,10 @@ class GameInfoView: UIView {
         Bundle.main.loadNibNamed("GameInfoView", owner: self, options: nil)
         self.addSubview(contentView)
         self.constrainTo(contentView: contentView)
+        contentView.backgroundColor = .gray
+        topLabel.textColor = .white
+        middleLabel.textColor = .white
+        bottomLabel.textColor = .white
     }
     
 }

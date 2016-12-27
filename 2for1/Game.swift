@@ -16,12 +16,14 @@ class Game: ActionProtocol {
     var score: Int = 0
     var drinks: Int = 0
     var action: Action = .roll
+    var turn = 1
     
     func takeAction() {
         switch self.action {
         case .roll:
             score = roll()
             dice.append(Die())
+            action = .passDice
         case .askToAddDie:
             break
         case .addDie:
@@ -29,7 +31,11 @@ class Game: ActionProtocol {
         case .rollAddedDie:
             break
         case .passDice:
-            break
+            let turnPlayerDrinks = passDice()
+            turn = turnPlayerDrinks.turn
+            player = turnPlayerDrinks.player
+            drinks = turnPlayerDrinks.drinks
+            action = .roll
         case .drink:
             break
         }
@@ -41,19 +47,4 @@ class Game: ActionProtocol {
 
 
 
-//didSet {
-//    switch self.action {
-//    case .roll:
-//        roll()
-//    case .askToAddDie:
-//        break
-//    case .addDie:
-//        break
-//    case .rollAddedDie:
-//        break
-//    case .passDice:
-//        break
-//    case .drink:
-//        break
-//    }
-//}
+

@@ -16,6 +16,7 @@ protocol ActionProtocol {
     var score: Int { get set }
     var drinks: Int { get set }
     var action: Action { get set }
+    var turn: Int { get set }
     
 }
 
@@ -30,9 +31,19 @@ extension ActionProtocol {
         }
     }
     
-    func pass(_ action: Action) {
     
+    func passDice() -> (turn: Int, player: Player?, drinks: Int) {
+        var nextPlayer = player
+        
+        if turn < players.count {
+            nextPlayer = players[turn]
+        } else {
+            nextPlayer = players[turn % players.count]
+        }
+        return (turn + 1, nextPlayer, drinks + 1)
     }
+    
+    
     
     func askToAdd(_ action: Action) {
         

@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addPlayers()
         addViewsToVC()
     }
     
@@ -32,13 +33,18 @@ extension ViewController {
         game.takeAction()
         
         
-        //print rolls for testing
-        var rollsString = "rolls:"
+        //print game stats for testing
+        if let player = game.player {
+        let turnPlayerDrinksString = "TURN: \(game.turn)  PLAYER: \(player.tag)   DRINKS: \(game.drinks)"
+            gameStatus.topLabel.text = turnPlayerDrinksString
+        }
+        var rollsString = "ROLLS:"
+        let scoreString = "  SCORE: \(game.score)"
         for die in game.dice {
             rollsString.append(" \(die.value)")
         }
-        gameStatus.label.text = rollsString
-    } 
+        gameStatus.middleLabel.text = rollsString + scoreString
+    }
     
     func addDie(_ sender: UIButton) {
         
@@ -59,7 +65,7 @@ extension ViewController {
 }
 
 
-//MARK: UI Constraints
+//MARK: UI Constraints and Settings
 extension ViewController {
     
     func addViewsToVC() {
@@ -75,14 +81,14 @@ extension ViewController {
         gameStatus.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         gameStatus.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.2).isActive = true
         gameStatus.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-        gameStatus.contentView.backgroundColor = .gray
-        gameStatus.label.textColor = .white
+        
         
         takeActionButton.topAnchor.constraint(equalTo: gameStatus.bottomAnchor).isActive = true
         takeActionButton.centerXAnchor.constraint(equalTo: gameStatus.centerXAnchor).isActive = true
         takeActionButton.heightAnchor.constraint(equalTo: gameStatus.heightAnchor, multiplier: 0.5).isActive = true
         takeActionButton.widthAnchor.constraint(equalTo: gameStatus.widthAnchor).isActive = true
         takeActionButton.backgroundColor = .cyan
+        //Title for button needs to show
         takeActionButton.titleLabel?.text = "Take Action"
         takeActionButton.addTarget(self, action: #selector(takeAction), for: .touchUpInside)
         
