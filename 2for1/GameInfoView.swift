@@ -28,7 +28,7 @@ class GameInfoView: UIView {
     func commonInit() {
         Bundle.main.loadNibNamed("GameInfoView", owner: self, options: nil)
         self.addSubview(contentView)
-        self.constrainTo(contentView: contentView)
+        self.constrain(contentView)
         contentView.backgroundColor = .gray
         topLabel.textColor = .white
         middleLabel.textColor = .white

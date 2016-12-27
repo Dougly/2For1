@@ -40,16 +40,21 @@ class Game {
         case false:
             if playerRoll == score {
                 action = .drink
+                instructions = "\(player!) lost and must drink \(drinks) drinks!"
             } else if playerRoll > score {
                 action = .passDice
+                instructions = "\(player!) rolled high enough. Pass the dice!"
             } else {
                 dieAdded = true
+                instructions = "\(player!) rolled too low and can add a die or drink!"
             }
         case true:
             if playerRoll <= score {
                 action = .drink
+                instructions = "\(player!) lost and must drink \(drinks) drinks!"
             } else {
                 action = .passDice
+                instructions = "\(player!) rolled high enough. Pass the dice!"
             }
             dieAdded = false
         }
@@ -78,6 +83,7 @@ extension Game {
         }
         turn += 1
         drinks += 1
+        score = playerRoll
         action = .roll
     }
     

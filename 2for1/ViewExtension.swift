@@ -10,7 +10,7 @@ import UIKit
 
 extension UIView {
     
-    func constrainTo(contentView: UIView) {
+    func constrain(_ contentView: UIView) {
         contentView.translatesAutoresizingMaskIntoConstraints = false
         contentView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         contentView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true

@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     //UI Elements
     var gameStatus: GameInfoView = GameInfoView()
     let takeActionButton = UIButton()
-    let addDieButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,11 +43,9 @@ extension ViewController {
             rollsString.append(" \(die.value)")
         }
         gameStatus.middleLabel.text = rollsString + scoreString
+        gameStatus.bottomLabel.text = game.instructions
     }
-    
-    func addDie(_ sender: UIButton) {
-        
-    }
+
 }
 
 
@@ -71,11 +68,9 @@ extension ViewController {
     func addViewsToVC() {
         self.view.addSubview(gameStatus)
         self.view.addSubview(takeActionButton)
-        self.view.addSubview(addDieButton)
         
         gameStatus.translatesAutoresizingMaskIntoConstraints = false
         takeActionButton.translatesAutoresizingMaskIntoConstraints = false
-        addDieButton.translatesAutoresizingMaskIntoConstraints = false
         
         gameStatus.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor).isActive = true
         gameStatus.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
@@ -88,7 +83,7 @@ extension ViewController {
         takeActionButton.heightAnchor.constraint(equalTo: gameStatus.heightAnchor, multiplier: 0.5).isActive = true
         takeActionButton.widthAnchor.constraint(equalTo: gameStatus.widthAnchor).isActive = true
         takeActionButton.backgroundColor = .cyan
-        //Title for button needs to show
+        //TODO: Title for button needs to show
         takeActionButton.titleLabel?.text = "Take Action"
         takeActionButton.addTarget(self, action: #selector(takeAction), for: .touchUpInside)
         
