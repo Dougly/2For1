@@ -8,6 +8,6 @@
 
 import Foundation
 
-enum Action {
-    case roll, passDice, askToAddDie, addDie, rollAddedDie, drink
+enum PlayerAction {
+    case roll, passDice, addDie, rollAddedDie, drink
 }

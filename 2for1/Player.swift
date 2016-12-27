@@ -14,6 +14,7 @@ class Player {
     let firstName: String
     let lastName: String
     
+    
     init(tag: String, firstName: String, lastName: String) {
         self.tag = tag
         self.firstName = firstName

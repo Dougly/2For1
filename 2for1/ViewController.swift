@@ -38,7 +38,7 @@ extension ViewController {
         let turnPlayerDrinksString = "TURN: \(game.turn)  PLAYER: \(player.tag)   DRINKS: \(game.drinks)"
             gameStatus.topLabel.text = turnPlayerDrinksString
         }
-        var rollsString = "ROLLS:"
+        var rollsString = "DICE:"
         let scoreString = "  SCORE: \(game.score)"
         for die in game.dice {
             rollsString.append(" \(die.value)")
