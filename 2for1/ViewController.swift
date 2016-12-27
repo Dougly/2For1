@@ -30,7 +30,7 @@ class ViewController: UIViewController {
 extension ViewController {
     
     func takeAction(_ sender: UIButton) {
-        game.takeAction()
+        game.playerAction()
         
         
         //print game stats for testing

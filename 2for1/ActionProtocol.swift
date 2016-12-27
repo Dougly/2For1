@@ -17,11 +17,14 @@ protocol ActionProtocol {
     var drinks: Int { get set }
     var action: Action { get set }
     var turn: Int { get set }
+    var dieAdded: Bool { get set }
     
 }
 
 extension ActionProtocol {
     
+    
+    //player actions
     func roll() -> Int {
         for die in dice {
             die.roll()
@@ -30,7 +33,6 @@ extension ActionProtocol {
             return result + nextDie.value
         }
     }
-    
     
     func passDice() -> (turn: Int, player: Player?, drinks: Int) {
         var nextPlayer = player
@@ -44,13 +46,11 @@ extension ActionProtocol {
     }
     
     
-    
-    func askToAdd(_ action: Action) {
-        
-    }
-    
-    func rollAddedDie(_ action: Action) {
-        
+    func rollAddedDie() -> Int {
+        dice.last?.roll()
+        return dice.reduce(0) { (result, nextDie) -> Int in
+            return result + nextDie.value
+        }
     }
     
     func drink(_ action: Action) {
@@ -60,5 +60,9 @@ extension ActionProtocol {
     func addDie(_ action: Action) {
         
     }
+    
+    //game responses
+    
+    
     
 }
