@@ -20,6 +20,7 @@
 		11DE14E91E1023C10027D9E8 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE14E81E1023C10027D9E8 /* Player.swift */; };
 		11DE14EB1E1024940027D9E8 /* Die.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE14EA1E1024940027D9E8 /* Die.swift */; };
 		11DE14ED1E11ACC00027D9E8 /* ActionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE14EC1E11ACC00027D9E8 /* ActionEnum.swift */; };
+		11DE14F01E11B2DE0027D9E8 /* ActionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE14EF1E11B2DE0027D9E8 /* ActionProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		11DE14E81E1023C10027D9E8 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		11DE14EA1E1024940027D9E8 /* Die.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Die.swift; sourceTree = "<group>"; };
 		11DE14EC1E11ACC00027D9E8 /* ActionEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionEnum.swift; sourceTree = "<group>"; };
+		11DE14EF1E11B2DE0027D9E8 /* ActionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				11DE14D81E0F46810027D9E8 /* Model */,
+				11DE14EE1E11B2B70027D9E8 /* ViewModel */,
 				11DE14D91E0F468A0027D9E8 /* View */,
 				11DE14DA1E0F46930027D9E8 /* Controller */,
 				11DE14DD1E0F47200027D9E8 /* Support */,
@@ -118,6 +121,14 @@
 				11DE14D21E0F462E0027D9E8 /* Info.plist */,
 			);
 			name = Support;
+			sourceTree = "<group>";
+		};
+		11DE14EE1E11B2B70027D9E8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				11DE14EF1E11B2DE0027D9E8 /* ActionProtocol.swift */,
+			);
+			name = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +211,7 @@
 				11DE14E11E0F48C20027D9E8 /* GameInfoView.swift in Sources */,
 				11DE14E91E1023C10027D9E8 /* Player.swift in Sources */,
 				11DE14C41E0F462E0027D9E8 /* AppDelegate.swift in Sources */,
+				11DE14F01E11B2DE0027D9E8 /* ActionProtocol.swift in Sources */,
 				11DE14EB1E1024940027D9E8 /* Die.swift in Sources */,
 				11DE14E31E0F4A1F0027D9E8 /* ViewExtension.swift in Sources */,
 			);
@@ -363,6 +375,7 @@
 				11DE14D71E0F462E0027D9E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

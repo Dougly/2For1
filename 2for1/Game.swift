@@ -8,30 +8,52 @@
 
 import Foundation
 
-class Game {
+class Game: ActionProtocol {
     
     var players: [Player] = []
     var player: Player?
     var dice: [Die] = [Die()]
     var score: Int = 0
     var drinks: Int = 0
+    var action: Action = .roll
     
-    var action: Action = .roll {
-        didSet {
-            switch self.action {
-            case .roll:
-                break
-            case .askToAddDie:
-                break
-            case .addDie:
-                break
-            case .rollAddedDie:
-                break
-            case .passDice:
-                break
-            case .drink:
-                break
-            }
+    func takeAction() {
+        switch self.action {
+        case .roll:
+            score = roll()
+            dice.append(Die())
+        case .askToAddDie:
+            break
+        case .addDie:
+            break
+        case .rollAddedDie:
+            break
+        case .passDice:
+            break
+        case .drink:
+            break
         }
+        
     }
+    
 }
+
+
+
+
+//didSet {
+//    switch self.action {
+//    case .roll:
+//        roll()
+//    case .askToAddDie:
+//        break
+//    case .addDie:
+//        break
+//    case .rollAddedDie:
+//        break
+//    case .passDice:
+//        break
+//    case .drink:
+//        break
+//    }
+//}

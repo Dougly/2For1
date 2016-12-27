@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct Die {
+class Die {
     var value: Int = 0
     
-    mutating func roll() {
+    func roll() {
         let randomNum = arc4random_uniform(6) + 1
         value = Int(randomNum)
     }
