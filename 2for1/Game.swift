@@ -18,78 +18,87 @@ class Game {
     var drinks: Int = 0
     var action: PlayerAction = .roll
     var turn = 1
-    var dieAdded = false
     var instructions = ""
+    var dieAdded = false {
+        didSet {
+            if dieAdded == true {
+                //notify button view to change
+            }
+        }
+    }
     
     func playerAction() {
         switch self.action {
-        case .roll:
-            playerRoll = roll()
-            action = .addDie
-        case .addDie:
-            dice.append(Die())
-            action = .rollAddedDie
-        case .rollAddedDie:
-            score = rollAddedDie()
-            action = .passDice
-        case .passDice:
-            let turnPlayerDrinks = passDice()
-            turn = turnPlayerDrinks.turn
-            player = turnPlayerDrinks.player
-            drinks = turnPlayerDrinks.drinks
-            action = .roll
-        case .drink:
-            dice = drink()
-            score = 0
-            drinks = 0
-            turn = 1
+        case .roll: roll()
+        case .addDie: addDie()
+        case .rollAddedDie: rollAddedDie()
+        case .passDice: passDice()
+        case .drink: drink()
+        }
+   
+        switch dieAdded {
+        case false:
+            if playerRoll == score {
+                action = .drink
+            } else if playerRoll > score {
+                action = .passDice
+            } else {
+                dieAdded = true
+            }
+        case true:
+            if playerRoll <= score {
+                action = .drink
+            } else {
+                action = .passDice
+            }
+            dieAdded = false
         }
     }
-    
-    func gameResponse() {
-        if playerRoll == score {
-            
-        }
-    }
-    
     
 }
 
 //MARK: Player Actions
 extension Game {
     
-    func roll() -> Int {
+    func roll() {
         for die in dice {
             die.roll()
         }
-        return dice.reduce(0) { (result, nextDie) -> Int in
+        playerRoll = dice.reduce(0) { (result, nextDie) -> Int in
             return result + nextDie.value
         }
     }
     
     
-    func passDice() -> (turn: Int, player: Player?, drinks: Int) {
-        var nextPlayer = player
-        
+    func passDice() {
         if turn < players.count {
-            nextPlayer = players[turn]
+            player = players[turn]
         } else {
-            nextPlayer = players[turn % players.count]
+            player = players[turn % players.count]
         }
-        return (turn + 1, nextPlayer, drinks + 1)
+        turn += 1
+        drinks += 1
+        action = .roll
     }
     
     
-    func rollAddedDie() -> Int {
+    func rollAddedDie() {
         dice.last?.roll()
-        return dice.reduce(0) { (result, nextDie) -> Int in
+        playerRoll = dice.reduce(0) { (result, nextDie) -> Int in
             return result + nextDie.value
         }
     }
     
+    func drink() {
+        dice = [Die()]
+        score = 0
+        drinks = 0
+        turn = 1
+    }
     
-    func drink() -> [Die]{
-        return [Die()]
+    func addDie() {
+        dice.append(Die())
+        drinks *= 2
     }
     
 }
