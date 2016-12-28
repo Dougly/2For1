@@ -11,6 +11,8 @@ import UIKit
 class AddDieOrDrinkView: UIView {
     
     @IBOutlet var contentView: UIView!
+    @IBOutlet weak var drinkButton: UIButton!
+    @IBOutlet weak var addDieButton: UIButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)

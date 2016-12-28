@@ -19,45 +19,16 @@ class Game {
     var action: PlayerAction = .roll
     var turn = 1
     var instructions = ""
-    var dieAdded = false {
-        didSet {
-            if dieAdded == true {
-                //notify button view to change
-            }
-        }
-    }
+
     
     func playerAction() {
         switch self.action {
         case .roll: roll()
-        case .addDie: addDie()
         case .rollAddedDie: rollAddedDie()
         case .passDice: passDice()
         case .drink: drink()
         }
-   
-        switch dieAdded {
-        case false:
-            if playerRoll == score {
-                action = .drink
-                instructions = "\(player!) lost and must drink \(drinks) drinks!"
-            } else if playerRoll > score {
-                action = .passDice
-                instructions = "\(player!) rolled high enough. Pass the dice!"
-            } else {
-                dieAdded = true
-                instructions = "\(player!) rolled too low and can add a die or drink!"
-            }
-        case true:
-            if playerRoll <= score {
-                action = .drink
-                instructions = "\(player!) lost and must drink \(drinks) drinks!"
-            } else {
-                action = .passDice
-                instructions = "\(player!) rolled high enough. Pass the dice!"
-            }
-            dieAdded = false
-        }
+        
     }
     
 }
@@ -72,6 +43,15 @@ extension Game {
         playerRoll = dice.reduce(0) { (result, nextDie) -> Int in
             return result + nextDie.value
         }
+        if playerRoll < score {
+            instructions = "rolled too low... tap to add a die or drink"
+        } else if playerRoll == score {
+            instructions = "roll matched score... tap to make \(player!.tag) drink"
+            action = .drink
+        } else {
+            instructions = "roll is higher than score... tap to pass the dice"
+            action = .passDice
+        }
     }
     
     
@@ -85,6 +65,7 @@ extension Game {
         drinks += 1
         score = playerRoll
         action = .roll
+        instructions = "Dice were passed to \(player!.tag)... tap to roll"
     }
     
     
@@ -93,18 +74,28 @@ extension Game {
         playerRoll = dice.reduce(0) { (result, nextDie) -> Int in
             return result + nextDie.value
         }
+        if playerRoll <= score {
+            action = .drink
+            instructions = "rolled too low... tap to make \(player!.tag) drink"
+        } else {
+            instructions = "roll is higher than score... tap to pass the dice"
+            action = .passDice
+        }
     }
     
     func drink() {
         dice = [Die()]
         score = 0
         drinks = 0
-        turn = 1
+        action = .roll
+        instructions = "tap to have \(player!.tag) re-start the game"
     }
     
     func addDie() {
         dice.append(Die())
         drinks *= 2
+        action = .rollAddedDie
+        instructions = "Extra die added... tap to have \(player!.tag) roll added die!"
     }
     
 }

@@ -12,7 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddDieOrDrinkView" customModule="_for1" customModuleProvider="target">
             <connections>
-                <outlet property="contentView" destination="iN0-l3-epB" id="OMN-pt-8lL"/>
+                <outlet property="addDieButton" destination="crS-7B-DXo" id="h2e-ng-Wsd"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="qhl-H1-UaF"/>
+                <outlet property="drinkButton" destination="iBh-R2-QmL" id="Gjj-4e-pJV"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
