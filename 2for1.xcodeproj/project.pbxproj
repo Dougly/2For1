@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		117EE3971E1EAA4600E071E0 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117EE3961E1EAA4600E071E0 /* SetupViewController.swift */; };
 		11DE14C41E0F462E0027D9E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE14C31E0F462E0027D9E8 /* AppDelegate.swift */; };
 		11DE14C61E0F462E0027D9E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE14C51E0F462E0027D9E8 /* ViewController.swift */; };
 		11DE14C91E0F462E0027D9E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11DE14C71E0F462E0027D9E8 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		117EE3961E1EAA4600E071E0 /* SetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		11DE14C01E0F462E0027D9E8 /* 2for1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2for1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11DE14C31E0F462E0027D9E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11DE14C51E0F462E0027D9E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		11DE14D91E0F468A0027D9E8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				11DE14C71E0F462E0027D9E8 /* Main.storyboard */,
 				11DE14DE1E0F48770027D9E8 /* GameInfoView.xib */,
 				11DE14E01E0F48C20027D9E8 /* GameInfoView.swift */,
 				11DE14F11E1324D40027D9E8 /* AddDieOrDrinkView.xib */,
@@ -111,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				11DE14C51E0F462E0027D9E8 /* ViewController.swift */,
+				117EE3961E1EAA4600E071E0 /* SetupViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -119,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				11DE14C31E0F462E0027D9E8 /* AppDelegate.swift */,
-				11DE14C71E0F462E0027D9E8 /* Main.storyboard */,
 				11DE14CD1E0F462E0027D9E8 /* Assets.xcassets */,
 				11DE14CF1E0F462E0027D9E8 /* LaunchScreen.storyboard */,
 				11DE14D21E0F462E0027D9E8 /* Info.plist */,
@@ -214,6 +217,7 @@
 				11DE14CC1E0F462E0027D9E8 /* _for1.xcdatamodeld in Sources */,
 				11DE14E11E0F48C20027D9E8 /* GameInfoView.swift in Sources */,
 				11DE14E91E1023C10027D9E8 /* Player.swift in Sources */,
+				117EE3971E1EAA4600E071E0 /* SetupViewController.swift in Sources */,
 				11DE14F41E1324E10027D9E8 /* AddDieOrDrinkView.swift in Sources */,
 				11DE14C41E0F462E0027D9E8 /* AppDelegate.swift in Sources */,
 				11DE14EB1E1024940027D9E8 /* Die.swift in Sources */,

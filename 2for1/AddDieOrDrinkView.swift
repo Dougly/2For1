@@ -28,7 +28,6 @@ class AddDieOrDrinkView: UIView {
         Bundle.main.loadNibNamed("AddDieOrDrinkView", owner: self, options: nil)
         self.addSubview(contentView)
         self.constrain(contentView)
-        
     }
     
 }

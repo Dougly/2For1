@@ -57,9 +57,7 @@ extension ViewController {
         }
         gameStatus.middleLabel.text = rollsString + scoreString
         gameStatus.bottomLabel.text = game.instructions
-
     }
-
 }
 
 

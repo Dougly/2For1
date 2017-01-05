@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XhT-We-T2q">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="_for1" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -21,6 +26,96 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Setup View Controller-->
+        <scene sceneID="Ox7-2z-QoS">
+            <objects>
+                <viewController id="XhT-We-T2q" customClass="SetupViewController" customModule="_for1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="A1I-6Y-doq"/>
+                        <viewControllerLayoutGuide type="bottom" id="dgu-TI-549"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1tF-jx-fzD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uCU-0j-WqR">
+                                <rect key="frame" x="18" y="200.5" width="338" height="267"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ezh-Pd-Uby">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="playerCell" id="oZZ-rB-QcB">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 - for - 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Koz-j3-B8z">
+                                <rect key="frame" x="94" y="78" width="188" height="45"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n7w-mq-rkz">
+                                <rect key="frame" x="47" y="567" width="281" height="68"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="43"/>
+                                <state key="normal" title="Start Game">
+                                    <color key="titleShadowColor" red="0.085800438596491224" green="0.085800438596491224" blue="0.085800438596491224" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="startGame" id="c9b-EJ-7fw"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="players" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tz8-fF-bOo">
+                                <rect key="frame" x="153" y="172" width="68" height="22.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tb6-dg-jSY">
+                                <rect key="frame" x="288.5" y="467.5" width="67.5" height="68"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="43"/>
+                                <state key="normal" title="+"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="uCU-0j-WqR" firstAttribute="height" secondItem="1tF-jx-fzD" secondAttribute="height" multiplier="0.4" id="4si-n3-kGF"/>
+                            <constraint firstItem="Koz-j3-B8z" firstAttribute="width" secondItem="1tF-jx-fzD" secondAttribute="width" multiplier="0.5" id="AVW-G1-gp6"/>
+                            <constraint firstItem="tb6-dg-jSY" firstAttribute="top" secondItem="uCU-0j-WqR" secondAttribute="bottom" id="Ddw-0b-r6W"/>
+                            <constraint firstItem="tb6-dg-jSY" firstAttribute="width" secondItem="uCU-0j-WqR" secondAttribute="width" multiplier="0.2" id="FJa-XU-Ms8"/>
+                            <constraint firstItem="uCU-0j-WqR" firstAttribute="centerY" secondItem="1tF-jx-fzD" secondAttribute="centerY" id="JQU-7H-XFE"/>
+                            <constraint firstItem="uCU-0j-WqR" firstAttribute="centerX" secondItem="1tF-jx-fzD" secondAttribute="centerX" id="KyA-MT-8X9"/>
+                            <constraint firstItem="n7w-mq-rkz" firstAttribute="width" secondItem="1tF-jx-fzD" secondAttribute="width" multiplier="0.75" id="MiR-xh-Arw"/>
+                            <constraint firstItem="uCU-0j-WqR" firstAttribute="width" secondItem="1tF-jx-fzD" secondAttribute="width" multiplier="0.9" id="Odq-YC-OPr"/>
+                            <constraint firstItem="n7w-mq-rkz" firstAttribute="centerX" secondItem="1tF-jx-fzD" secondAttribute="centerX" id="RAf-ZS-kdx"/>
+                            <constraint firstItem="tz8-fF-bOo" firstAttribute="width" secondItem="uCU-0j-WqR" secondAttribute="width" multiplier="0.2" id="UNt-iF-Ewf"/>
+                            <constraint firstItem="n7w-mq-rkz" firstAttribute="centerY" secondItem="1tF-jx-fzD" secondAttribute="centerY" multiplier="1.8" id="aTN-a2-BFi"/>
+                            <constraint firstItem="Koz-j3-B8z" firstAttribute="centerY" secondItem="1tF-jx-fzD" secondAttribute="centerY" multiplier="0.3" id="kbU-Lz-7YZ"/>
+                            <constraint firstItem="tz8-fF-bOo" firstAttribute="bottom" secondItem="uCU-0j-WqR" secondAttribute="top" constant="-6" id="kqb-qr-3PX"/>
+                            <constraint firstItem="tb6-dg-jSY" firstAttribute="trailing" secondItem="uCU-0j-WqR" secondAttribute="trailing" id="pXs-OK-dGb"/>
+                            <constraint firstItem="Koz-j3-B8z" firstAttribute="centerX" secondItem="1tF-jx-fzD" secondAttribute="centerX" id="ug9-Y0-1Mp"/>
+                            <constraint firstItem="tz8-fF-bOo" firstAttribute="centerX" secondItem="uCU-0j-WqR" secondAttribute="centerX" id="z8Y-fw-qHU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addPlayerButton" destination="tb6-dg-jSY" id="Xj9-4A-ixi"/>
+                        <outlet property="playerCollectionView" destination="uCU-0j-WqR" id="3QR-gM-y57"/>
+                        <outlet property="startGameButton" destination="n7w-mq-rkz" id="gSb-MT-g8Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zbs-en-kg0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-806" y="109"/>
         </scene>
     </scenes>
 </document>

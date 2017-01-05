@@ -28,7 +28,6 @@ class Game {
         case .passDice: passDice()
         case .drink: drink()
         }
-        
     }
     
 }
@@ -83,6 +82,7 @@ extension Game {
         }
     }
     
+    
     func drink() {
         dice = [Die()]
         score = 0
@@ -90,6 +90,7 @@ extension Game {
         action = .roll
         instructions = "tap to have \(player!.tag) re-start the game"
     }
+    
     
     func addDie() {
         dice.append(Die())
