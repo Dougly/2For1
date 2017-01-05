@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,6 +27,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-18" y="108"/>
         </scene>
         <!--Setup View Controller-->
         <scene sceneID="Ox7-2z-QoS">
@@ -58,6 +60,10 @@
                                         </view>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="XhT-We-T2q" id="xAT-Ga-5dY"/>
+                                    <outlet property="delegate" destination="XhT-We-T2q" id="Rpx-7V-dfD"/>
+                                </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 - for - 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Koz-j3-B8z">
                                 <rect key="frame" x="94" y="78" width="188" height="45"/>
@@ -85,6 +91,10 @@
                                 <rect key="frame" x="288.5" y="467.5" width="67.5" height="68"/>
                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="43"/>
                                 <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="createPlayer:" destination="XhT-We-T2q" eventType="touchUpInside" id="aOY-gn-Mnq"/>
+                                    <segue destination="WTu-Me-een" kind="presentation" identifier="createPlayer" id="kWI-8l-gpv"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -108,7 +118,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="addPlayerButton" destination="tb6-dg-jSY" id="Xj9-4A-ixi"/>
                         <outlet property="playerCollectionView" destination="uCU-0j-WqR" id="3QR-gM-y57"/>
                         <outlet property="startGameButton" destination="n7w-mq-rkz" id="gSb-MT-g8Z"/>
                     </connections>
@@ -116,6 +125,79 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zbs-en-kg0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-806" y="109"/>
+        </scene>
+        <!--Create Player View Controller-->
+        <scene sceneID="4G0-l7-xwd">
+            <objects>
+                <viewController id="WTu-Me-een" customClass="CreatePlayerViewController" customModule="_for1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="t9d-CI-lAZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="0Rn-6n-Ooa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sWa-qa-Ax8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RyU-hW-f2k">
+                                <rect key="frame" x="131" y="569.5" width="112.5" height="62"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="38"/>
+                                <state key="normal" title="Save"/>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="4Uh-9I-QuT">
+                                <rect key="frame" x="47" y="100" width="281.5" height="200.5"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CAL-rk-Dc7">
+                                        <rect key="frame" x="0.0" y="0.0" width="281.5" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gl2-nl-ldn">
+                                        <rect key="frame" x="0.0" y="85.5" width="281.5" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Handle" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RUA-1B-pM1">
+                                        <rect key="frame" x="0.0" y="170.5" width="281.5" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mwh-Tp-TMm">
+                                <rect key="frame" x="113.5" y="345.5" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Mwh-Tp-TMm" secondAttribute="height" multiplier="1:1" id="Mro-ej-I3i"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vpg-KL-a28">
+                                <rect key="frame" x="113.5" y="495.5" width="150" height="30"/>
+                                <state key="normal" title="Add Picture"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Mwh-Tp-TMm" firstAttribute="width" secondItem="sWa-qa-Ax8" secondAttribute="width" multiplier="0.4" id="7rK-l0-pvK"/>
+                            <constraint firstItem="vpg-KL-a28" firstAttribute="centerX" secondItem="Mwh-Tp-TMm" secondAttribute="centerX" id="8o7-KB-UWE"/>
+                            <constraint firstItem="4Uh-9I-QuT" firstAttribute="width" secondItem="sWa-qa-Ax8" secondAttribute="width" multiplier="0.75" id="B5Y-RK-0K6"/>
+                            <constraint firstItem="vpg-KL-a28" firstAttribute="top" secondItem="Mwh-Tp-TMm" secondAttribute="bottom" id="F6R-Vl-SvF"/>
+                            <constraint firstItem="Mwh-Tp-TMm" firstAttribute="centerX" secondItem="4Uh-9I-QuT" secondAttribute="centerX" id="HM9-E4-sh6"/>
+                            <constraint firstItem="4Uh-9I-QuT" firstAttribute="centerY" secondItem="sWa-qa-Ax8" secondAttribute="centerY" multiplier="0.6" id="QEN-kt-rxw"/>
+                            <constraint firstItem="vpg-KL-a28" firstAttribute="width" secondItem="Mwh-Tp-TMm" secondAttribute="width" id="ZC2-0A-wOM"/>
+                            <constraint firstItem="RyU-hW-f2k" firstAttribute="width" secondItem="sWa-qa-Ax8" secondAttribute="width" multiplier="0.3" id="a6Z-35-ODL"/>
+                            <constraint firstItem="RyU-hW-f2k" firstAttribute="centerY" secondItem="sWa-qa-Ax8" secondAttribute="centerY" multiplier="1.8" id="ded-1a-3tS"/>
+                            <constraint firstItem="RyU-hW-f2k" firstAttribute="centerX" secondItem="sWa-qa-Ax8" secondAttribute="centerX" id="mlc-NE-Ut8"/>
+                            <constraint firstItem="4Uh-9I-QuT" firstAttribute="centerX" secondItem="sWa-qa-Ax8" secondAttribute="centerX" id="pzL-oD-yE1"/>
+                            <constraint firstItem="Mwh-Tp-TMm" firstAttribute="top" secondItem="4Uh-9I-QuT" secondAttribute="bottom" multiplier="1.15" id="ve8-sn-ezf"/>
+                            <constraint firstItem="4Uh-9I-QuT" firstAttribute="height" secondItem="sWa-qa-Ax8" secondAttribute="height" multiplier="0.3" id="win-Uh-DjO"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vH6-VW-sRh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-807" y="836"/>
         </scene>
     </scenes>
 </document>

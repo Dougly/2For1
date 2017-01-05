@@ -14,8 +14,6 @@ class SetupViewController: UIViewController {
     
     @IBOutlet weak var playerCollectionView: UICollectionView!
     @IBOutlet weak var startGameButton: UIButton!
-    @IBOutlet weak var addPlayerButton: UIButton!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +22,8 @@ class SetupViewController: UIViewController {
     
 }
 
+
+//MARK: Collection View Setup
 extension SetupViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

@@ -6,14 +6,14 @@
 //  Copyright © 2016 Flatiron. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Player {
 
     var tag: String
     let firstName: String
     let lastName: String
-    
+    var pic: UIImage?
     
     init(tag: String, firstName: String, lastName: String) {
         self.tag = tag
