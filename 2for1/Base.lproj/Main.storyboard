@@ -92,7 +92,6 @@
                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="43"/>
                                 <state key="normal" title="+"/>
                                 <connections>
-                                    <action selector="createPlayer:" destination="XhT-We-T2q" eventType="touchUpInside" id="aOY-gn-Mnq"/>
                                     <segue destination="WTu-Me-een" kind="presentation" identifier="createPlayer" id="kWI-8l-gpv"/>
                                 </connections>
                             </button>
@@ -142,6 +141,9 @@
                                 <rect key="frame" x="131" y="569.5" width="112.5" height="62"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="38"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="WTu-Me-een" eventType="touchUpInside" id="Ajz-1R-lvZ"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="4Uh-9I-QuT">
                                 <rect key="frame" x="47" y="100" width="281.5" height="200.5"/>
@@ -175,6 +177,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vpg-KL-a28">
                                 <rect key="frame" x="113.5" y="495.5" width="150" height="30"/>
                                 <state key="normal" title="Add Picture"/>
+                                <connections>
+                                    <action selector="addPictureTapped:" destination="WTu-Me-een" eventType="touchUpInside" id="e8b-IG-Qeg"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -194,6 +199,12 @@
                             <constraint firstItem="4Uh-9I-QuT" firstAttribute="height" secondItem="sWa-qa-Ax8" secondAttribute="height" multiplier="0.3" id="win-Uh-DjO"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="firstNameTextField" destination="CAL-rk-Dc7" id="KIz-D0-3A0"/>
+                        <outlet property="handleTextField" destination="RUA-1B-pM1" id="F9c-dT-Pys"/>
+                        <outlet property="lastNameTextField" destination="Gl2-nl-ldn" id="TUf-1y-iIm"/>
+                        <outlet property="profilePictureImageView" destination="Mwh-Tp-TMm" id="G9O-X8-Axh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vH6-VW-sRh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

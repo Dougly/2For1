@@ -10,30 +10,32 @@ import UIKit
 
 class CreatePlayerViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    @IBOutlet weak var firstNameTextField: UITextField!
+    @IBOutlet weak var lastNameTextField: UITextField!
+    @IBOutlet weak var handleTextField: UITextField!
+    @IBOutlet weak var profilePictureImageView: UIImageView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    
+    @IBAction func addPictureTapped(_ sender: UIButton) {
+        
+        print("add picture tapped")
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .camera
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+        
+    }
+    
+    
+    @IBAction func saveButtonTapped(_ sender: UIButton) {
+        
+    }
 }
-
-
-//
-////MARK: Access Camera
-//extension SetupViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-//    
-//    
-//    
-//    
-//    
-//    //    @IBAction func openCameraButton(sender: AnyObject) {
-//    //            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
-//    //                    var imagePicker = UIImagePickerController()
-//    //                    imagePicker.delegate = self
-//    //                    imagePicker.sourceType = UIImagePickerControllerSourceType.Camera;
-//    //                    imagePicker.allowsEditing = false
-//    //                    self.presentViewController(imagePicker, animated: true, completion: nil)
-//    //                }
-//    //    }
-//}
