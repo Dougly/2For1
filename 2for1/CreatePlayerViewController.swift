@@ -15,15 +15,17 @@ class CreatePlayerViewController: UIViewController, UIImagePickerControllerDeleg
     @IBOutlet weak var handleTextField: UITextField!
     @IBOutlet weak var profilePictureImageView: UIImageView!
     
+    var delegate: CreatePlayerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     
+    
+    
     @IBAction func addPictureTapped(_ sender: UIButton) {
         
-        print("add picture tapped")
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
