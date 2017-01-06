@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class GameViewController: UIViewController {
 
     let game = Game()
     
@@ -19,14 +19,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addPlayers()
         layoutViews()
     }
     
 }
 
 //Mark: Button Actions
-extension ViewController {
+extension GameViewController {
     
     func takeAction(_ sender: UIButton) {
         game.playerAction()
@@ -60,22 +59,8 @@ extension ViewController {
     }
 }
 
-
-//MARK: Create Data
-extension ViewController {
- 
-    func addPlayers() {
-        let player1 = Player(tag: "Dougly", firstName: "Doug", lastName: "Galante")
-        let player2 = Player(tag: "PlayerX", firstName: "Teddy", lastName: "Papes")
-        let player3 = Player(tag: "LiveTown", firstName: "Danny", lastName: "Papes")
-        self.game.players = [player1, player2, player3]
-        self.game.player = game.players[0]
-    }
-}
-
-
 //MARK: UI Constraints and Settings
-extension ViewController {
+extension GameViewController {
     
     func layoutViews() {
         self.view.addSubview(gameStatus)

@@ -12,6 +12,7 @@ class SetupViewController: UIViewController {
     
     
     let store = DataStore.sharedInstance
+    var selectedPlayers: [Player] = []
     
     @IBOutlet weak var playerCollectionView: UICollectionView!
     @IBOutlet weak var startGameButton: UIButton!
@@ -37,6 +38,17 @@ class SetupViewController: UIViewController {
         playerCollectionView.reloadData()
     }
     
+    func deletePlayer() {
+        //store.persistentContainer.viewContext.delete(player)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "startGame" {
+            let destVC = segue.destination as! GameViewController
+            destVC.game.players = selectedPlayers
+        }
+    }
+    
     
 }
 
@@ -58,6 +70,19 @@ extension SetupViewController: UICollectionViewDataSource, UICollectionViewDeleg
         cell.nameLabel.text = "\(player.firstName) \(player.lastName)"
         cell.pictureImageView.image = player.pic
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! CustomPlayerCell
+        
+        if cell.pictureImageView.image == #imageLiteral(resourceName: "slime") {
+            cell.pictureImageView.image = #imageLiteral(resourceName: "childCare")
+            selectedPlayers.append(store.players[indexPath.item])
+        } else {
+            cell.pictureImageView.image = #imageLiteral(resourceName: "slime")
+        }
+        
+    
     }
     
 }

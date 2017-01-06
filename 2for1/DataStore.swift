@@ -15,16 +15,17 @@ class DataStore {
     private init () {}
     
     var players: [Player] = []
+    var playerDataArray: [PlayerData] = []
     
     func fetchData() {
         let context = persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<PlayerData>(entityName: "PlayerData")
         
         do{
-            let playerData = try context.fetch(fetchRequest)
+            playerDataArray = try context.fetch(fetchRequest)
             
             //creat players from PlayerData
-            for player in playerData {
+            for player in playerDataArray {
                 let convertedPlayer = Player(tag: player.tag!, firstName: player.firstName!, lastName: player.lastName!)
                 players.append(convertedPlayer)
             }
@@ -41,6 +42,10 @@ class DataStore {
         entity.lastName = player.lastName
         entity.tag = player.tag
         saveContext()
+        playerDataArray.append(entity)
+        playerDataArray.sort { (p1, p2) -> Bool in
+            return p1.firstName! > p2.firstName!
+        }
     }
     
     // MARK: - Core Data stack
