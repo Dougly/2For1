@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		117EE3971E1EAA4600E071E0 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117EE3961E1EAA4600E071E0 /* SetupViewController.swift */; };
 		117EE3991E1EEF7300E071E0 /* CreatePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117EE3981E1EEF7300E071E0 /* CreatePlayerViewController.swift */; };
-		117EE5451E20189700E071E0 /* CreatPlayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117EE5441E20189700E071E0 /* CreatPlayerDelegate.swift */; };
 		117EE5471E201ED600E071E0 /* CustomPlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117EE5461E201ED600E071E0 /* CustomPlayerCell.swift */; };
+		117EE5491E20262400E071E0 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117EE5481E20262400E071E0 /* DataStore.swift */; };
 		11DE14C41E0F462E0027D9E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE14C31E0F462E0027D9E8 /* AppDelegate.swift */; };
 		11DE14C61E0F462E0027D9E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE14C51E0F462E0027D9E8 /* ViewController.swift */; };
 		11DE14C91E0F462E0027D9E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11DE14C71E0F462E0027D9E8 /* Main.storyboard */; };
@@ -31,8 +31,8 @@
 /* Begin PBXFileReference section */
 		117EE3961E1EAA4600E071E0 /* SetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		117EE3981E1EEF7300E071E0 /* CreatePlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePlayerViewController.swift; sourceTree = "<group>"; };
-		117EE5441E20189700E071E0 /* CreatPlayerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatPlayerDelegate.swift; sourceTree = "<group>"; };
 		117EE5461E201ED600E071E0 /* CustomPlayerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPlayerCell.swift; sourceTree = "<group>"; };
+		117EE5481E20262400E071E0 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		11DE14C01E0F462E0027D9E8 /* 2for1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2for1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11DE14C31E0F462E0027D9E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11DE14C51E0F462E0027D9E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,9 +96,9 @@
 			children = (
 				11DE14CA1E0F462E0027D9E8 /* _for1.xcdatamodeld */,
 				11DE14E41E1022860027D9E8 /* Game.swift */,
+				117EE5481E20262400E071E0 /* DataStore.swift */,
 				11DE14EC1E11ACC00027D9E8 /* ActionEnum.swift */,
 				11DE14E81E1023C10027D9E8 /* Player.swift */,
-				117EE5441E20189700E071E0 /* CreatPlayerDelegate.swift */,
 				11DE14EA1E1024940027D9E8 /* Die.swift */,
 			);
 			name = Model;
@@ -225,7 +225,6 @@
 				11DE14E51E1022860027D9E8 /* Game.swift in Sources */,
 				11DE14ED1E11ACC00027D9E8 /* ActionEnum.swift in Sources */,
 				11DE14CC1E0F462E0027D9E8 /* _for1.xcdatamodeld in Sources */,
-				117EE5451E20189700E071E0 /* CreatPlayerDelegate.swift in Sources */,
 				11DE14E11E0F48C20027D9E8 /* GameInfoView.swift in Sources */,
 				11DE14E91E1023C10027D9E8 /* Player.swift in Sources */,
 				117EE3971E1EAA4600E071E0 /* SetupViewController.swift in Sources */,
@@ -233,6 +232,7 @@
 				11DE14C41E0F462E0027D9E8 /* AppDelegate.swift in Sources */,
 				11DE14EB1E1024940027D9E8 /* Die.swift in Sources */,
 				117EE3991E1EEF7300E071E0 /* CreatePlayerViewController.swift in Sources */,
+				117EE5491E20262400E071E0 /* DataStore.swift in Sources */,
 				11DE14E31E0F4A1F0027D9E8 /* ViewExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

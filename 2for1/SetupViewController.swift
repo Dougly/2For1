@@ -10,7 +10,8 @@ import UIKit
 
 class SetupViewController: UIViewController {
     
-    var players: [Player] = []
+    
+    let store = DataStore.sharedInstance
     
     @IBOutlet weak var playerCollectionView: UICollectionView!
     @IBOutlet weak var startGameButton: UIButton!
@@ -20,32 +21,24 @@ class SetupViewController: UIViewController {
     var spacing: CGFloat!
     var sectionInsets: UIEdgeInsets!
     var itemSize: CGSize!
-    var numberOfCellsPerRow: CGFloat = 4
+    var numberOfCellsPerRow: CGFloat = 3
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        configureLayout()
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "createPlayer" {
-            let destVC = segue.destination as! CreatePlayerViewController
-            destVC.delegate = self
+        //sort players array
+        store.players.sort { (p1, p2) -> Bool in
+            return p1.firstName < p2.firstName
         }
+        
+        configureLayout()
+        playerCollectionView.reloadData()
     }
-}
-
-extension SetupViewController: CreatePlayerDelegate {
     
-    func createPlayer(tag: String, firstName: String, lastName: String) {
-        let newPlayer = Player(tag: tag, firstName: firstName, lastName: lastName)
-        players.append(newPlayer)
-    }
+    
 }
-
 
 //MARK: Collection View Setup
 extension SetupViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -55,12 +48,15 @@ extension SetupViewController: UICollectionViewDataSource, UICollectionViewDeleg
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return players.count
+        return store.players.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "playerCell", for: indexPath)
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "playerCell", for: indexPath) as! CustomPlayerCell
+        let player = store.players[indexPath.row]
+        cell.tagLabel.text = player.tag
+        cell.nameLabel.text = "\(player.firstName) \(player.lastName)"
+        cell.pictureImageView.image = player.pic
         return cell
     }
     
@@ -71,7 +67,7 @@ extension SetupViewController: UICollectionViewDelegateFlowLayout {
     
     func configureLayout () {
         let desiredSpacing: CGFloat = 2
-        let itemWidth = (playerCollectionView.frame.width / numberOfCellsPerRow) - (desiredSpacing * numberOfCellsPerRow + 1)
+        let itemWidth = (screenWidth / numberOfCellsPerRow) - (desiredSpacing + 1)
         let itemHeight = itemWidth
         spacing = desiredSpacing
         sectionInsets = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)

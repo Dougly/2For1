@@ -13,7 +13,7 @@ class Player {
     var tag: String
     let firstName: String
     let lastName: String
-    var pic: UIImage = #imageLiteral(resourceName: "ghost")
+    var pic: UIImage = #imageLiteral(resourceName: "slime")
     
     init(tag: String, firstName: String, lastName: String) {
         self.tag = tag

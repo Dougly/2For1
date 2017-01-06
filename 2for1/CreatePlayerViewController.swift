@@ -10,19 +10,18 @@ import UIKit
 
 class CreatePlayerViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    let store = DataStore.sharedInstance
+    
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var handleTextField: UITextField!
     @IBOutlet weak var profilePictureImageView: UIImageView!
-    
-    var delegate: CreatePlayerDelegate?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        profilePictureImageView.image = #imageLiteral(resourceName: "ghost")
     }
-    
-    
-    
+
     
     @IBAction func addPictureTapped(_ sender: UIButton) {
         
@@ -38,6 +37,12 @@ class CreatePlayerViewController: UIViewController, UIImagePickerControllerDeleg
     
     
     @IBAction func saveButtonTapped(_ sender: UIButton) {
-        
+        let firstName = firstNameTextField.text!
+        let lastName = lastNameTextField.text!
+        let tag = handleTextField.text!
+        let newPlayer = Player(tag: tag, firstName: firstName, lastName: lastName)
+        store.save(newPlayer)
+        store.players.append(newPlayer)
+        self.dismiss(animated: true, completion: nil)
     }
 }

@@ -42,8 +42,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uCU-0j-WqR">
-                                <rect key="frame" x="18" y="200" width="338" height="267"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="-0.5" y="200" width="375" height="267"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ezh-Pd-Uby">
                                     <size key="itemSize" width="153" height="148"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -64,18 +64,18 @@
                                                         <constraint firstAttribute="width" secondItem="myZ-o4-8bv" secondAttribute="height" multiplier="1:1" id="wxh-I2-H1n"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JHS-RH-7Nk" userLabel="Tag">
-                                                    <rect key="frame" x="7.5" y="100" width="138" height="22.5"/>
-                                                    <color key="backgroundColor" red="0.96244217421391687" green="0.96475202276857741" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tag" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JHS-RH-7Nk" userLabel="Tag">
+                                                    <rect key="frame" x="19" y="100" width="115" height="22.5"/>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMD-FP-zvd">
-                                                    <rect key="frame" x="7.5" y="122.5" width="138" height="14.5"/>
-                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.49541344803370785" colorSpace="calibratedRGB"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMD-FP-zvd">
+                                                    <rect key="frame" x="19" y="122.5" width="115" height="14.5"/>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="11"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -87,7 +87,7 @@
                                             <constraint firstItem="TMD-FP-zvd" firstAttribute="leading" secondItem="JHS-RH-7Nk" secondAttribute="leading" id="EP3-Eu-Wrf"/>
                                             <constraint firstItem="myZ-o4-8bv" firstAttribute="height" secondItem="oZZ-rB-QcB" secondAttribute="height" id="aBm-5p-WGi"/>
                                             <constraint firstItem="myZ-o4-8bv" firstAttribute="centerX" secondItem="oZZ-rB-QcB" secondAttribute="centerX" id="cXF-yz-GR8"/>
-                                            <constraint firstItem="JHS-RH-7Nk" firstAttribute="width" secondItem="oZZ-rB-QcB" secondAttribute="width" multiplier="0.9" id="fhu-fH-QbP"/>
+                                            <constraint firstItem="JHS-RH-7Nk" firstAttribute="width" secondItem="oZZ-rB-QcB" secondAttribute="width" multiplier="0.75" id="fhu-fH-QbP"/>
                                             <constraint firstItem="JHS-RH-7Nk" firstAttribute="centerY" secondItem="oZZ-rB-QcB" secondAttribute="centerY" multiplier="1.5" id="qDF-o2-oVQ"/>
                                             <constraint firstItem="TMD-FP-zvd" firstAttribute="width" secondItem="JHS-RH-7Nk" secondAttribute="width" id="x1u-Zd-QzX"/>
                                         </constraints>
@@ -120,13 +120,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="players" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tz8-fF-bOo">
-                                <rect key="frame" x="153" y="171" width="68" height="23"/>
+                                <rect key="frame" x="149.5" y="171" width="75" height="23"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tb6-dg-jSY">
-                                <rect key="frame" x="289" y="467" width="67" height="68"/>
+                                <rect key="frame" x="300" y="467" width="74.5" height="68"/>
                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="43"/>
                                 <state key="normal" title="+"/>
                                 <connections>
@@ -143,7 +143,7 @@
                             <constraint firstItem="uCU-0j-WqR" firstAttribute="centerY" secondItem="1tF-jx-fzD" secondAttribute="centerY" id="JQU-7H-XFE"/>
                             <constraint firstItem="uCU-0j-WqR" firstAttribute="centerX" secondItem="1tF-jx-fzD" secondAttribute="centerX" id="KyA-MT-8X9"/>
                             <constraint firstItem="n7w-mq-rkz" firstAttribute="width" secondItem="1tF-jx-fzD" secondAttribute="width" multiplier="0.75" id="MiR-xh-Arw"/>
-                            <constraint firstItem="uCU-0j-WqR" firstAttribute="width" secondItem="1tF-jx-fzD" secondAttribute="width" multiplier="0.9" id="Odq-YC-OPr"/>
+                            <constraint firstItem="uCU-0j-WqR" firstAttribute="width" secondItem="1tF-jx-fzD" secondAttribute="width" id="Odq-YC-OPr"/>
                             <constraint firstItem="n7w-mq-rkz" firstAttribute="centerX" secondItem="1tF-jx-fzD" secondAttribute="centerX" id="RAf-ZS-kdx"/>
                             <constraint firstItem="tz8-fF-bOo" firstAttribute="width" secondItem="uCU-0j-WqR" secondAttribute="width" multiplier="0.2" id="UNt-iF-Ewf"/>
                             <constraint firstItem="n7w-mq-rkz" firstAttribute="centerY" secondItem="1tF-jx-fzD" secondAttribute="centerY" multiplier="1.8" id="aTN-a2-BFi"/>
