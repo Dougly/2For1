@@ -14,6 +14,7 @@ class Player {
     let firstName: String
     let lastName: String
     var pic: UIImage = #imageLiteral(resourceName: "slime")
+    var selected = false
     
     init(tag: String, firstName: String, lastName: String) {
         self.tag = tag

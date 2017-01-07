@@ -10,9 +10,7 @@ import UIKit
 
 class SetupViewController: UIViewController {
     
-    
     let store = DataStore.sharedInstance
-    var selectedPlayers: [Player] = []
     
     @IBOutlet weak var playerCollectionView: UICollectionView!
     @IBOutlet weak var startGameButton: UIButton!
@@ -38,18 +36,32 @@ class SetupViewController: UIViewController {
         playerCollectionView.reloadData()
     }
     
-    func deletePlayer() {
-        //store.persistentContainer.viewContext.delete(player)
+    
+    @IBAction func deletePlayer(_ sender: UIButton) {
+        for (index, player) in store.players.enumerated() {
+            if player.selected == true {
+                store.players.remove(at: index)
+                let playerData = store.playerDataArray[index]
+                store.playerDataArray.remove(at: index)
+                store.persistentContainer.viewContext.delete(playerData)
+            }
+        }
+        playerCollectionView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "startGame" {
             let destVC = segue.destination as! GameViewController
+            var selectedPlayers: [Player] = []
+            for player in store.players {
+                if player.selected {
+                    selectedPlayers.append(player)
+                    player.selected = false
+                }
+            }
             destVC.game.players = selectedPlayers
         }
     }
-    
-    
 }
 
 //MARK: Collection View Setup
@@ -77,12 +89,11 @@ extension SetupViewController: UICollectionViewDataSource, UICollectionViewDeleg
         
         if cell.pictureImageView.image == #imageLiteral(resourceName: "slime") {
             cell.pictureImageView.image = #imageLiteral(resourceName: "childCare")
-            selectedPlayers.append(store.players[indexPath.item])
+            store.players[indexPath.item].selected = true
         } else {
             cell.pictureImageView.image = #imageLiteral(resourceName: "slime")
+            store.players[indexPath.item].selected = false
         }
-        
-    
     }
     
 }
@@ -99,21 +110,17 @@ extension SetupViewController: UICollectionViewDelegateFlowLayout {
         itemSize = CGSize(width: itemWidth, height: itemHeight)
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return itemSize
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return spacing
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return spacing
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return sectionInsets

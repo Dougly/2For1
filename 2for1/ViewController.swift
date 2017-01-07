@@ -16,6 +16,7 @@ class GameViewController: UIViewController {
     var gameStatus: GameInfoView = GameInfoView()
     var addDieOrDrinkView: AddDieOrDrinkView = AddDieOrDrinkView()
     let takeActionButton = UIButton()
+    let backButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +43,9 @@ extension GameViewController {
         updateGameStatus()
     }
     
+    func backButtonTapped(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     //print game stats for testing
     func updateGameStatus() {
@@ -66,10 +70,12 @@ extension GameViewController {
         self.view.addSubview(gameStatus)
         self.view.addSubview(takeActionButton)
         self.view.addSubview(addDieOrDrinkView)
+        self.view.addSubview(backButton)
         
         gameStatus.translatesAutoresizingMaskIntoConstraints = false
         takeActionButton.translatesAutoresizingMaskIntoConstraints = false
         addDieOrDrinkView.translatesAutoresizingMaskIntoConstraints = false
+        backButton.translatesAutoresizingMaskIntoConstraints = false
         
         gameStatus.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor).isActive = true
         gameStatus.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
@@ -91,6 +97,11 @@ extension GameViewController {
         addDieOrDrinkView.heightAnchor.constraint(equalTo: gameStatus.heightAnchor).isActive = true
         addDieOrDrinkView.addDieButton.addTarget(self, action: #selector(addDie), for: .touchUpInside)
         addDieOrDrinkView.drinkButton.addTarget(self, action: #selector(drink), for: .touchUpInside)
+        
+        backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        backButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        backButton.setTitle("Back To Main Menu", for: UIControlState.normal)
+        backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
         
     }
 }

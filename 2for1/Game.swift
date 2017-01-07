@@ -19,7 +19,7 @@ class Game {
     var action: PlayerAction = .roll
     var turn = 1
     var instructions = ""
-
+    
     
     func playerAction() {
         switch self.action {
