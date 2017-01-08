@@ -11,6 +11,9 @@ import UIKit
 class SetupViewController: UIViewController {
     
     let store = DataStore.sharedInstance
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
     
     @IBOutlet weak var playerCollectionView: UICollectionView!
     @IBOutlet weak var startGameButton: UIButton!

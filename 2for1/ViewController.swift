@@ -11,6 +11,9 @@ import UIKit
 class GameViewController: UIViewController {
 
     let game = Game()
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
     
     //UI Elements
     var gameStatus: GameInfoView = GameInfoView()
