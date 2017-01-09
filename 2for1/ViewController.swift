@@ -15,6 +15,8 @@ class GameViewController: UIViewController {
         return true
     }
     
+    
+    
     //UI Elements
     var gameStatus: GameInfoView = GameInfoView()
     var addDieOrDrinkView: AddDieOrDrinkView = AddDieOrDrinkView()

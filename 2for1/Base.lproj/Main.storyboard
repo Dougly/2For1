@@ -43,7 +43,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uCU-0j-WqR">
                                 <rect key="frame" x="-0.5" y="200" width="375" height="267"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ezh-Pd-Uby">
                                     <size key="itemSize" width="153" height="148"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -125,43 +125,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tb6-dg-jSY">
-                                <rect key="frame" x="300" y="467" width="74.5" height="68"/>
-                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="43"/>
-                                <state key="normal" title="+"/>
-                                <connections>
-                                    <segue destination="WTu-Me-een" kind="presentation" identifier="createPlayer" id="kWI-8l-gpv"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Epy-Ta-fht">
-                                <rect key="frame" x="0.0" y="467" width="74.5" height="68"/>
-                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="43"/>
-                                <state key="normal" title="-"/>
-                                <connections>
-                                    <action selector="deletePlayer:" destination="XhT-We-T2q" eventType="touchUpInside" id="wgW-fl-s0a"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="uCU-0j-WqR" firstAttribute="height" secondItem="1tF-jx-fzD" secondAttribute="height" multiplier="0.4" id="4si-n3-kGF"/>
-                            <constraint firstItem="Epy-Ta-fht" firstAttribute="top" secondItem="uCU-0j-WqR" secondAttribute="bottom" id="9Jf-IY-SsJ"/>
                             <constraint firstItem="Koz-j3-B8z" firstAttribute="width" secondItem="1tF-jx-fzD" secondAttribute="width" multiplier="0.5" id="AVW-G1-gp6"/>
-                            <constraint firstItem="tb6-dg-jSY" firstAttribute="top" secondItem="uCU-0j-WqR" secondAttribute="bottom" id="Ddw-0b-r6W"/>
-                            <constraint firstItem="tb6-dg-jSY" firstAttribute="width" secondItem="uCU-0j-WqR" secondAttribute="width" multiplier="0.2" id="FJa-XU-Ms8"/>
                             <constraint firstItem="uCU-0j-WqR" firstAttribute="centerY" secondItem="1tF-jx-fzD" secondAttribute="centerY" id="JQU-7H-XFE"/>
                             <constraint firstItem="uCU-0j-WqR" firstAttribute="centerX" secondItem="1tF-jx-fzD" secondAttribute="centerX" id="KyA-MT-8X9"/>
                             <constraint firstItem="n7w-mq-rkz" firstAttribute="width" secondItem="1tF-jx-fzD" secondAttribute="width" multiplier="0.75" id="MiR-xh-Arw"/>
                             <constraint firstItem="uCU-0j-WqR" firstAttribute="width" secondItem="1tF-jx-fzD" secondAttribute="width" id="Odq-YC-OPr"/>
                             <constraint firstItem="n7w-mq-rkz" firstAttribute="centerX" secondItem="1tF-jx-fzD" secondAttribute="centerX" id="RAf-ZS-kdx"/>
                             <constraint firstItem="tz8-fF-bOo" firstAttribute="width" secondItem="uCU-0j-WqR" secondAttribute="width" multiplier="0.2" id="UNt-iF-Ewf"/>
-                            <constraint firstItem="Epy-Ta-fht" firstAttribute="leading" secondItem="uCU-0j-WqR" secondAttribute="leading" id="ZB8-T4-iWP"/>
                             <constraint firstItem="n7w-mq-rkz" firstAttribute="centerY" secondItem="1tF-jx-fzD" secondAttribute="centerY" multiplier="1.8" id="aTN-a2-BFi"/>
                             <constraint firstItem="Koz-j3-B8z" firstAttribute="centerY" secondItem="1tF-jx-fzD" secondAttribute="centerY" multiplier="0.3" id="kbU-Lz-7YZ"/>
                             <constraint firstItem="tz8-fF-bOo" firstAttribute="bottom" secondItem="uCU-0j-WqR" secondAttribute="top" constant="-6" id="kqb-qr-3PX"/>
-                            <constraint firstItem="tb6-dg-jSY" firstAttribute="trailing" secondItem="uCU-0j-WqR" secondAttribute="trailing" id="pXs-OK-dGb"/>
                             <constraint firstItem="Koz-j3-B8z" firstAttribute="centerX" secondItem="1tF-jx-fzD" secondAttribute="centerX" id="ug9-Y0-1Mp"/>
-                            <constraint firstItem="Epy-Ta-fht" firstAttribute="width" secondItem="uCU-0j-WqR" secondAttribute="width" multiplier="0.2" id="yiZ-QU-1nY"/>
                             <constraint firstItem="tz8-fF-bOo" firstAttribute="centerX" secondItem="uCU-0j-WqR" secondAttribute="centerX" id="z8Y-fw-qHU"/>
                         </constraints>
                     </view>

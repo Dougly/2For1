@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1176F4331E23F73300B69A5A /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1176F4321E23F73300B69A5A /* UIColorExtension.swift */; };
 		117EE3971E1EAA4600E071E0 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117EE3961E1EAA4600E071E0 /* SetupViewController.swift */; };
 		117EE3991E1EEF7300E071E0 /* CreatePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117EE3981E1EEF7300E071E0 /* CreatePlayerViewController.swift */; };
 		117EE5471E201ED600E071E0 /* CustomPlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117EE5461E201ED600E071E0 /* CustomPlayerCell.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1176F4321E23F73300B69A5A /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		117EE3961E1EAA4600E071E0 /* SetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		117EE3981E1EEF7300E071E0 /* CreatePlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePlayerViewController.swift; sourceTree = "<group>"; };
 		117EE5461E201ED600E071E0 /* CustomPlayerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPlayerCell.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				11DE14EC1E11ACC00027D9E8 /* ActionEnum.swift */,
 				11DE14E81E1023C10027D9E8 /* Player.swift */,
 				11DE14EA1E1024940027D9E8 /* Die.swift */,
+				1176F4321E23F73300B69A5A /* UIColorExtension.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 			files = (
 				11DE14C61E0F462E0027D9E8 /* ViewController.swift in Sources */,
 				117EE5471E201ED600E071E0 /* CustomPlayerCell.swift in Sources */,
+				1176F4331E23F73300B69A5A /* UIColorExtension.swift in Sources */,
 				11DE14E51E1022860027D9E8 /* Game.swift in Sources */,
 				11DE14ED1E11ACC00027D9E8 /* ActionEnum.swift in Sources */,
 				11DE14CC1E0F462E0027D9E8 /* _for1.xcdatamodeld in Sources */,

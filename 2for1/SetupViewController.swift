@@ -30,6 +30,7 @@ class SetupViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         //sort players array
         store.players.sort { (p1, p2) -> Bool in
             return p1.firstName < p2.firstName
