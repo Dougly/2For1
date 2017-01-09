@@ -8,6 +8,7 @@
 
 import UIKit
 
+//Constrain to container view
 extension UIView {
     
     func constrain(_ contentView: UIView) {
@@ -16,5 +17,19 @@ extension UIView {
         contentView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         contentView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
         contentView.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
+    }
+}
+
+
+//Corner Radius
+extension UIView {
+    @IBInspectable var cornerRadius: CGFloat {
+        get {
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
+            layer.masksToBounds = newValue > 0
+        }
     }
 }
