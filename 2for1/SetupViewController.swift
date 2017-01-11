@@ -11,12 +11,14 @@ import UIKit
 class SetupViewController: UIViewController {
     
     let store = DataStore.sharedInstance
+    var numSelectedPlayers = 0
     override var prefersStatusBarHidden: Bool {
         return true
     }
     
     @IBOutlet weak var playerCollectionView: UICollectionView!
     @IBOutlet weak var startGameButton: UIButton!
+    @IBOutlet weak var playerCollectionViewBottomConstraint: NSLayoutConstraint!
     
     //Collection View Variables
     let screenWidth = UIScreen.main.bounds.width
@@ -94,10 +96,25 @@ extension SetupViewController: UICollectionViewDataSource, UICollectionViewDeleg
         if cell.pictureImageView.image == #imageLiteral(resourceName: "slime") {
             cell.pictureImageView.image = #imageLiteral(resourceName: "childCare")
             store.players[indexPath.item].selected = true
+            numSelectedPlayers += 1
         } else {
             cell.pictureImageView.image = #imageLiteral(resourceName: "slime")
             store.players[indexPath.item].selected = false
+            numSelectedPlayers -= 1
         }
+        
+        if numSelectedPlayers >= 2 && playerCollectionViewBottomConstraint.constant == 0 {
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: [], animations: { 
+                self.playerCollectionViewBottomConstraint.constant = self.startGameButton.frame.height * -1
+                self.view.layoutIfNeeded()
+            }, completion: nil)
+        } else if numSelectedPlayers < 2 {
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: [], animations: {
+                self.playerCollectionViewBottomConstraint.constant = 0
+                self.view.layoutIfNeeded()
+            }, completion: nil)
+        }
+        
     }
     
 }
