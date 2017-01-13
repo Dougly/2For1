@@ -20,33 +20,42 @@ class SetupViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
-    
     @IBOutlet weak var playerCollectionView: UICollectionView!
     @IBOutlet weak var startGameButton: UIButton!
     @IBOutlet weak var playerCollectionViewBottomConstraint: NSLayoutConstraint!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {
-        //sort players array
-        store.players.sort { (p1, p2) -> Bool in
-            return p1.tag! < p2.tag!
-        }
+        store.players.sort { $0.tag! < $1.tag! }
         configureLayout()
         playerCollectionView.reloadData()
     }
     
     
+    
+    
+    
+    
+    
+    
     @IBAction func deletePlayer(_ sender: UIButton) {
-        for (index, player) in self.store.players.enumerated() {
-            if player.selected == true {
-                let playerData = self.store.players[index]
-                store.players.remove(at: index)
-                self.store.persistentContainer.viewContext.delete(playerData)
-            }
+        
+        for ip in selectedPlayers {
+            let playerData = self.store.players[ip.row]
+            store.players.remove(at: ip.row)
+            self.store.persistentContainer.viewContext.delete(playerData)
         }
+        self.store.saveContext()
+        
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: [.curveEaseInOut], animations: {
+            self.playerCollectionViewBottomConstraint.constant = 0
+            self.view.layoutIfNeeded()
+        }, completion: nil)
         
         playerCollectionView.performBatchUpdates ({
             for ip in self.selectedPlayers {
@@ -56,6 +65,8 @@ class SetupViewController: UIViewController {
             self.selectedPlayers = []
         })
     }
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "startGame" {
@@ -109,6 +120,7 @@ extension SetupViewController: UICollectionViewDataSource, UICollectionViewDeleg
                 }
             }
         }
+        selectedPlayers.sort { $0.row > $1.row }
         
         if selectedPlayers.count >= 2 && playerCollectionViewBottomConstraint.constant == 0 {
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: [.curveEaseInOut], animations: {
