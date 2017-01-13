@@ -12,6 +12,11 @@ class SetupViewController: UIViewController {
     
     let store = DataStore.sharedInstance
     var numSelectedPlayers = 0
+    let screenWidth = UIScreen.main.bounds.width
+    var spacing: CGFloat!
+    var sectionInsets: UIEdgeInsets!
+    var itemSize: CGSize!
+    var numberOfCellsPerRow: CGFloat = 3
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -20,24 +25,15 @@ class SetupViewController: UIViewController {
     @IBOutlet weak var startGameButton: UIButton!
     @IBOutlet weak var playerCollectionViewBottomConstraint: NSLayoutConstraint!
     
-    //Collection View Variables
-    let screenWidth = UIScreen.main.bounds.width
-    var spacing: CGFloat!
-    var sectionInsets: UIEdgeInsets!
-    var itemSize: CGSize!
-    var numberOfCellsPerRow: CGFloat = 3
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
         //sort players array
         store.players.sort { (p1, p2) -> Bool in
             return p1.firstName < p2.firstName
         }
-        
         configureLayout()
         playerCollectionView.reloadData()
     }
@@ -66,6 +62,8 @@ class SetupViewController: UIViewController {
                 }
             }
             destVC.game.players = selectedPlayers
+            numSelectedPlayers = 0
+            playerCollectionViewBottomConstraint.constant = 0
         }
     }
 }
@@ -85,7 +83,6 @@ extension SetupViewController: UICollectionViewDataSource, UICollectionViewDeleg
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "playerCell", for: indexPath) as! CustomPlayerCell
         let player = store.players[indexPath.row]
         cell.tagLabel.text = player.tag
-        cell.nameLabel.text = "\(player.firstName) \(player.lastName)"
         cell.pictureImageView.image = player.pic
         return cell
     }
@@ -104,17 +101,16 @@ extension SetupViewController: UICollectionViewDataSource, UICollectionViewDeleg
         }
         
         if numSelectedPlayers >= 2 && playerCollectionViewBottomConstraint.constant == 0 {
-            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: [], animations: { 
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: [.curveEaseInOut], animations: {
                 self.playerCollectionViewBottomConstraint.constant = self.startGameButton.frame.height * -1
                 self.view.layoutIfNeeded()
             }, completion: nil)
         } else if numSelectedPlayers < 2 {
-            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: [], animations: {
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: [.curveEaseInOut], animations: {
                 self.playerCollectionViewBottomConstraint.constant = 0
                 self.view.layoutIfNeeded()
             }, completion: nil)
         }
-        
     }
     
 }
@@ -123,9 +119,9 @@ extension SetupViewController: UICollectionViewDataSource, UICollectionViewDeleg
 extension SetupViewController: UICollectionViewDelegateFlowLayout {
     
     func configureLayout () {
-        let desiredSpacing: CGFloat = 2
-        let itemWidth = (screenWidth / numberOfCellsPerRow) - (desiredSpacing + 1)
-        let itemHeight = itemWidth
+        let desiredSpacing: CGFloat = 5
+        let itemWidth = (screenWidth / numberOfCellsPerRow) - (desiredSpacing + 2)
+        let itemHeight = itemWidth * 1.25
         spacing = desiredSpacing
         sectionInsets = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
         itemSize = CGSize(width: itemWidth, height: itemHeight)
@@ -147,3 +143,4 @@ extension SetupViewController: UICollectionViewDelegateFlowLayout {
         return sectionInsets
     }
 }
+

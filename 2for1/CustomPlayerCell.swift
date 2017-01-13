@@ -11,7 +11,6 @@ import UIKit
 class CustomPlayerCell: UICollectionViewCell {
     
     @IBOutlet weak var tagLabel: UILabel!
-    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var pictureImageView: UIImageView!
 
 }
