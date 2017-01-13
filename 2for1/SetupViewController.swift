@@ -32,7 +32,7 @@ class SetupViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         //sort players array
         store.players.sort { (p1, p2) -> Bool in
-            return p1.firstName < p2.firstName
+            return p1.tag! < p2.tag!
         }
         configureLayout()
         playerCollectionView.reloadData()
@@ -40,15 +40,15 @@ class SetupViewController: UIViewController {
     
     
     @IBAction func deletePlayer(_ sender: UIButton) {
-        for (index, player) in store.players.enumerated() {
-            if player.selected == true {
-                store.players.remove(at: index)
-                let playerData = store.playerDataArray[index]
-                store.playerDataArray.remove(at: index)
-                store.persistentContainer.viewContext.delete(playerData)
-            }
-        }
-        playerCollectionView.reloadData()
+//        for (index, player) in store.players.enumerated() {
+//            if player.selected == true {
+//                store.players.remove(at: index)
+//                let playerData = store.playerDataArray[index]
+//                store.playerDataArray.remove(at: index)
+//                store.persistentContainer.viewContext.delete(playerData)
+//            }
+//        }
+//        playerCollectionView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -83,7 +83,7 @@ extension SetupViewController: UICollectionViewDataSource, UICollectionViewDeleg
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "playerCell", for: indexPath) as! CustomPlayerCell
         let player = store.players[indexPath.row]
         cell.tagLabel.text = player.tag
-        cell.pictureImageView.image = player.pic
+        cell.pictureImageView.image = #imageLiteral(resourceName: "slime")
         return cell
     }
     

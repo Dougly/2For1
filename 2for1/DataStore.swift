@@ -15,36 +15,29 @@ class DataStore {
     private init () {}
     
     var players: [Player] = []
-    var playerDataArray: [PlayerData] = []
+    //var playerDataArray: [PlayerData] = []
     
     func fetchData() {
         let context = persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<PlayerData>(entityName: "PlayerData")
+        let fetchRequest = NSFetchRequest<Player>(entityName: "Player")
         
         do{
-            playerDataArray = try context.fetch(fetchRequest)
-            
-            //creat players from PlayerData
-            for player in playerDataArray {
-                let convertedPlayer = Player(tag: player.tag!, firstName: player.firstName!, lastName: player.lastName!)
-                players.append(convertedPlayer)
-            }
-            
+            players = try context.fetch(fetchRequest)
         } catch {
             print("catch players fetch request")
         }
     }
     
-    func save(_ player: Player) {
+    func savePlayer(_ firstName: String, lastName: String, tag: String) {
         let context = persistentContainer.viewContext
-        let entity = PlayerData(context: context)
-        entity.firstName = player.firstName
-        entity.lastName = player.lastName
-        entity.tag = player.tag
+        let entity = Player(context: context)
+        entity.firstName = firstName
+        entity.lastName = lastName
+        entity.tag = tag
         saveContext()
-        playerDataArray.append(entity)
-        playerDataArray.sort { (p1, p2) -> Bool in
-            return p1.firstName! > p2.firstName!
+        players.append(entity)
+        players.sort { (p1, p2) -> Bool in
+            return p1.tag! > p2.tag!
         }
     }
     

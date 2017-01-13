@@ -55,7 +55,7 @@ extension GameViewController {
     //print game stats for testing
     func updateGameStatus() {
         if let player = game.player {
-            let turnPlayerDrinksString = "TURN: \(game.turn)  PLAYER: \(player.tag)   DRINKS: \(game.drinks)"
+            let turnPlayerDrinksString = "TURN: \(game.turn)  PLAYER: \(player.tag!)   DRINKS: \(game.drinks)"
             gameStatus.topLabel.text = turnPlayerDrinksString
         }
         var rollsString = "DICE:"

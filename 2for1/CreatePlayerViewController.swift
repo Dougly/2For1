@@ -40,9 +40,7 @@ class CreatePlayerViewController: UIViewController, UIImagePickerControllerDeleg
         let firstName = firstNameTextField.text!
         let lastName = lastNameTextField.text!
         let tag = handleTextField.text!
-        let newPlayer = Player(tag: tag, firstName: firstName, lastName: lastName)
-        store.save(newPlayer)
-        store.players.append(newPlayer)
+        store.savePlayer(firstName, lastName: lastName, tag: tag)
         self.dismiss(animated: true, completion: nil)
     }
 }
