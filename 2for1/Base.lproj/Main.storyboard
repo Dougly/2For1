@@ -147,10 +147,19 @@
                                             <segue destination="WTu-Me-een" kind="presentation" id="Zzm-gu-eJ5"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DKb-9l-bay">
+                                        <rect key="frame" x="321" y="8" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="deletePlayer:" destination="XhT-We-T2q" eventType="touchUpInside" id="bjD-ZB-qMz"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.10980392160000001" green="0.84705882349999995" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="IMx-3I-EM2" firstAttribute="top" secondItem="PMS-0C-rEf" secondAttribute="top" id="4jH-Vi-EyL"/>
+                                    <constraint firstAttribute="trailing" secondItem="DKb-9l-bay" secondAttribute="trailing" constant="8" id="8tq-ib-0Gg"/>
+                                    <constraint firstItem="DKb-9l-bay" firstAttribute="top" secondItem="PMS-0C-rEf" secondAttribute="top" constant="8" id="CYd-kL-nzI"/>
                                     <constraint firstItem="tz8-fF-bOo" firstAttribute="width" secondItem="PMS-0C-rEf" secondAttribute="width" multiplier="0.5" id="Tun-Vd-kaf"/>
                                     <constraint firstItem="tz8-fF-bOo" firstAttribute="leading" secondItem="PMS-0C-rEf" secondAttribute="leadingMargin" multiplier="2" id="cNh-XH-DKG"/>
                                     <constraint firstAttribute="bottom" secondItem="tz8-fF-bOo" secondAttribute="bottom" multiplier="1.1" id="ee5-DG-eB5"/>

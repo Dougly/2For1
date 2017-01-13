@@ -11,7 +11,7 @@ import UIKit
 class SetupViewController: UIViewController {
     
     let store = DataStore.sharedInstance
-    var numSelectedPlayers = 0
+    var selectedPlayers: [IndexPath] = []
     let screenWidth = UIScreen.main.bounds.width
     var spacing: CGFloat!
     var sectionInsets: UIEdgeInsets!
@@ -40,15 +40,21 @@ class SetupViewController: UIViewController {
     
     
     @IBAction func deletePlayer(_ sender: UIButton) {
-//        for (index, player) in store.players.enumerated() {
-//            if player.selected == true {
-//                store.players.remove(at: index)
-//                let playerData = store.playerDataArray[index]
-//                store.playerDataArray.remove(at: index)
-//                store.persistentContainer.viewContext.delete(playerData)
-//            }
-//        }
-//        playerCollectionView.reloadData()
+        for (index, player) in self.store.players.enumerated() {
+            if player.selected == true {
+                let playerData = self.store.players[index]
+                store.players.remove(at: index)
+                self.store.persistentContainer.viewContext.delete(playerData)
+            }
+        }
+        
+        playerCollectionView.performBatchUpdates ({
+            for ip in self.selectedPlayers {
+                self.playerCollectionView.deleteItems(at: [ip])
+            }
+        }, completion: { (success) in
+            self.selectedPlayers = []
+        })
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -62,7 +68,7 @@ class SetupViewController: UIViewController {
                 }
             }
             destVC.game.players = selectedPlayers
-            numSelectedPlayers = 0
+            selectedPlayers = []
             playerCollectionViewBottomConstraint.constant = 0
         }
     }
@@ -93,19 +99,23 @@ extension SetupViewController: UICollectionViewDataSource, UICollectionViewDeleg
         if cell.pictureImageView.image == #imageLiteral(resourceName: "slime") {
             cell.pictureImageView.image = #imageLiteral(resourceName: "childCare")
             store.players[indexPath.item].selected = true
-            numSelectedPlayers += 1
+            selectedPlayers.append(indexPath)
         } else {
             cell.pictureImageView.image = #imageLiteral(resourceName: "slime")
             store.players[indexPath.item].selected = false
-            numSelectedPlayers -= 1
+            for (index, ip) in selectedPlayers.enumerated() {
+                if indexPath == ip {
+                    selectedPlayers.remove(at: index)
+                }
+            }
         }
         
-        if numSelectedPlayers >= 2 && playerCollectionViewBottomConstraint.constant == 0 {
+        if selectedPlayers.count >= 2 && playerCollectionViewBottomConstraint.constant == 0 {
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: [.curveEaseInOut], animations: {
                 self.playerCollectionViewBottomConstraint.constant = self.startGameButton.frame.height * -1
                 self.view.layoutIfNeeded()
             }, completion: nil)
-        } else if numSelectedPlayers < 2 {
+        } else if selectedPlayers.count < 2 {
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: [.curveEaseInOut], animations: {
                 self.playerCollectionViewBottomConstraint.constant = 0
                 self.view.layoutIfNeeded()
