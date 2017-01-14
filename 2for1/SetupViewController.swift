@@ -27,20 +27,21 @@ class SetupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureLayout()
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         store.players.sort { $0.tag! < $1.tag! }
-        configureLayout()
         playerCollectionView.reloadData()
+        playerCollectionViewBottomConstraint.constant = 0
+        selectedPlayers = []
+        for player in store.players {
+            player.selected = false
+        }
     }
     
-    
-    
-    
-    
-    
+
     
     
     @IBAction func deletePlayer(_ sender: UIButton) {
@@ -100,7 +101,11 @@ extension SetupViewController: UICollectionViewDataSource, UICollectionViewDeleg
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "playerCell", for: indexPath) as! CustomPlayerCell
         let player = store.players[indexPath.row]
         cell.tagLabel.text = player.tag
-        cell.pictureImageView.image = #imageLiteral(resourceName: "slime")
+        if cell.isSelected {
+            cell.pictureImageView.image = #imageLiteral(resourceName: "childCare")
+        } else {
+            cell.pictureImageView.image = #imageLiteral(resourceName: "slime")
+        }
         return cell
     }
     
@@ -134,7 +139,6 @@ extension SetupViewController: UICollectionViewDataSource, UICollectionViewDeleg
             }, completion: nil)
         }
     }
-    
 }
 
 //MARK: Collection view flow Layout
