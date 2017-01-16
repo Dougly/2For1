@@ -11,19 +11,23 @@ import UIKit
 class SetupViewController: UIViewController {
     
     let store = DataStore.sharedInstance
-    var selectedPlayers: [IndexPath] = []
+    var selectedIndexPaths: [IndexPath] = []
     let screenWidth = UIScreen.main.bounds.width
     var spacing: CGFloat!
     var sectionInsets: UIEdgeInsets!
     var itemSize: CGSize!
     var numberOfCellsPerRow: CGFloat = 3
+    
+    @IBOutlet weak var playerCollectionView: UICollectionView!
+    @IBOutlet weak var startGameButton: UIButton!
+    
+    //menu
+    @IBOutlet weak var menuViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var openCloseMenuView: UIView!
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
-    @IBOutlet weak var playerCollectionView: UICollectionView!
-    @IBOutlet weak var startGameButton: UIButton!
-    @IBOutlet weak var playerCollectionViewBottomConstraint: NSLayoutConstraint!
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,41 +36,8 @@ class SetupViewController: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        store.players.sort { $0.tag! < $1.tag! }
-        playerCollectionView.reloadData()
-        playerCollectionViewBottomConstraint.constant = 0
-        selectedPlayers = []
-        for player in store.players {
-            player.selected = false
-        }
+        resetViewConroller()
     }
-    
-
-    
-    
-    @IBAction func deletePlayer(_ sender: UIButton) {
-        
-        for ip in selectedPlayers {
-            let playerData = self.store.players[ip.row]
-            store.players.remove(at: ip.row)
-            self.store.persistentContainer.viewContext.delete(playerData)
-        }
-        self.store.saveContext()
-        
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: [.curveEaseInOut], animations: {
-            self.playerCollectionViewBottomConstraint.constant = 0
-            self.view.layoutIfNeeded()
-        }, completion: nil)
-        
-        playerCollectionView.performBatchUpdates ({
-            for ip in self.selectedPlayers {
-                self.playerCollectionView.deleteItems(at: [ip])
-            }
-        }, completion: { (success) in
-            self.selectedPlayers = []
-        })
-    }
-    
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -81,8 +52,86 @@ class SetupViewController: UIViewController {
             }
             destVC.game.players = selectedPlayers
             selectedPlayers = []
-            playerCollectionViewBottomConstraint.constant = 0
+            menuViewBottomConstraint.constant = 0
         }
+    }
+}
+
+
+//MARK: Helper Methods
+extension SetupViewController  {
+    
+    func resetViewConroller() {
+        store.players.sort { $0.tag! < $1.tag! }
+        playerCollectionView.reloadData()
+        menuViewBottomConstraint.constant = 0
+        selectedIndexPaths = []
+        for player in store.players {
+            player.selected = false
+        }
+    }
+    
+    func deleteSelectedPlayers(_ sender: UIView) {
+        for ip in selectedIndexPaths {
+            let playerData = self.store.players[ip.row]
+            store.players.remove(at: ip.row)
+            self.store.persistentContainer.viewContext.delete(playerData)
+        }
+        self.store.saveContext()
+        hideStartGameButton()
+        playerCollectionView.performBatchUpdates ({
+            for ip in self.selectedIndexPaths {
+                self.playerCollectionView.deleteItems(at: [ip])
+            }
+        }, completion: { (success) in
+            self.selectedIndexPaths = []
+        })
+    }
+
+    
+    func makeViewsCircles() {
+        openCloseMenuView.layer.cornerRadius = openCloseMenuView.frame.height / 2
+    }
+    
+    func addGestureRecognizersToViews() {
+        
+        let gr = UITapGestureRecognizer(target: self, action: #selector(tappedMenuOption))
+        openCloseMenuView.addGestureRecognizer(gr)
+        
+    }
+    
+    func tappedMenuOption(_ sender: UIView) {
+        
+    }
+    
+    
+    
+    
+}
+
+//MARK: Animations
+extension SetupViewController {
+    
+    func hideStartGameButton() {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: [.curveEaseInOut], animations: {
+            self.menuViewBottomConstraint.constant = 0
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
+    
+    func showStartGameButton() {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: [.curveEaseInOut], animations: {
+            self.menuViewBottomConstraint.constant = self.startGameButton.frame.height * -1
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
+    
+    func collapseMenu() {
+        
+    }
+    
+    func expandMenu() {
+        
     }
 }
 
@@ -115,28 +164,22 @@ extension SetupViewController: UICollectionViewDataSource, UICollectionViewDeleg
         if cell.pictureImageView.image == #imageLiteral(resourceName: "slime") {
             cell.pictureImageView.image = #imageLiteral(resourceName: "childCare")
             store.players[indexPath.item].selected = true
-            selectedPlayers.append(indexPath)
+            selectedIndexPaths.append(indexPath)
         } else {
             cell.pictureImageView.image = #imageLiteral(resourceName: "slime")
             store.players[indexPath.item].selected = false
-            for (index, ip) in selectedPlayers.enumerated() {
+            for (index, ip) in selectedIndexPaths.enumerated() {
                 if indexPath == ip {
-                    selectedPlayers.remove(at: index)
+                    selectedIndexPaths.remove(at: index)
                 }
             }
         }
-        selectedPlayers.sort { $0.row > $1.row }
+        selectedIndexPaths.sort { $0.row > $1.row }
         
-        if selectedPlayers.count >= 2 && playerCollectionViewBottomConstraint.constant == 0 {
-            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: [.curveEaseInOut], animations: {
-                self.playerCollectionViewBottomConstraint.constant = self.startGameButton.frame.height * -1
-                self.view.layoutIfNeeded()
-            }, completion: nil)
-        } else if selectedPlayers.count < 2 {
-            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: [.curveEaseInOut], animations: {
-                self.playerCollectionViewBottomConstraint.constant = 0
-                self.view.layoutIfNeeded()
-            }, completion: nil)
+        if selectedIndexPaths.count >= 2 && menuViewBottomConstraint.constant == 0 {
+            showStartGameButton()
+        } else if selectedIndexPaths.count < 2 {
+            hideStartGameButton()
         }
     }
 }

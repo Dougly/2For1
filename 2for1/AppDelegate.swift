@@ -12,6 +12,7 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+
     var window: UIWindow?
     let store = DataStore.sharedInstance
 
