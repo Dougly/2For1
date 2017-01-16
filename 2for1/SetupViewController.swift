@@ -23,7 +23,19 @@ class SetupViewController: UIViewController {
     
     //menu
     @IBOutlet weak var menuViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var gameInfoLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var deletePlayersLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var addPlayerLeadingConstraint: NSLayoutConstraint!
+    
+    
+    
     @IBOutlet weak var openCloseMenuView: UIView!
+    @IBOutlet weak var gameInfoView: UIView!
+    @IBOutlet weak var deletePlayerView: UIView!
+    @IBOutlet weak var addPlayerView: UIView!
+    
+    
+    
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -32,6 +44,7 @@ class SetupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureLayout()
+        addGestureRecognizersToViews()
     }
     
     
@@ -101,7 +114,11 @@ extension SetupViewController  {
     }
     
     func tappedMenuOption(_ sender: UIView) {
-        
+        if gameInfoLeadingConstraint.constant > 0 {
+            collapseMenu()
+        } else {
+            expandMenu()
+        }
     }
     
     
@@ -126,12 +143,23 @@ extension SetupViewController {
         }, completion: nil)
     }
     
-    func collapseMenu() {
-        
+    func expandMenu() {
+        let width = openCloseMenuView.frame.width + (openCloseMenuView.frame.width / 3)
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [.curveEaseInOut], animations: {
+            self.gameInfoLeadingConstraint.constant = width
+            self.deletePlayersLeadingConstraint.constant = width * 2
+            self.addPlayerLeadingConstraint.constant = width * 3
+            self.view.layoutIfNeeded()
+        }, completion: nil)
     }
     
-    func expandMenu() {
-        
+    func collapseMenu() {
+        UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseIn], animations: {
+            self.gameInfoLeadingConstraint.constant = 0
+            self.deletePlayersLeadingConstraint.constant = 0
+            self.addPlayerLeadingConstraint.constant = 0
+            self.view.layoutIfNeeded()
+        }, completion: nil)
     }
 }
 

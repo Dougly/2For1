@@ -157,15 +157,12 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="1RS-n2-Ani" firstAttribute="centerY" secondItem="aCH-DV-upd" secondAttribute="centerY" id="8Fq-Bi-YiJ"/>
-                                    <constraint firstItem="OUh-u6-yab" firstAttribute="width" secondItem="OUh-u6-yab" secondAttribute="height" multiplier="1:1" id="AJb-27-R0q"/>
                                     <constraint firstItem="ZRr-vb-AiV" firstAttribute="width" secondItem="1RS-n2-Ani" secondAttribute="width" id="Gfs-qE-dfP"/>
                                     <constraint firstItem="Y1b-ke-9en" firstAttribute="height" secondItem="1RS-n2-Ani" secondAttribute="height" id="I5q-cF-l9m"/>
                                     <constraint firstItem="ZRr-vb-AiV" firstAttribute="leading" secondItem="1RS-n2-Ani" secondAttribute="leading" id="MDr-yX-zCP"/>
                                     <constraint firstItem="1RS-n2-Ani" firstAttribute="height" secondItem="aCH-DV-upd" secondAttribute="height" multiplier="0.75" id="RB5-Nv-ymw"/>
                                     <constraint firstItem="Y1b-ke-9en" firstAttribute="width" secondItem="1RS-n2-Ani" secondAttribute="width" id="Rbr-Ie-Fii"/>
-                                    <constraint firstItem="ZRr-vb-AiV" firstAttribute="width" secondItem="ZRr-vb-AiV" secondAttribute="height" multiplier="1:1" id="TwB-fP-nO9"/>
                                     <constraint firstItem="1RS-n2-Ani" firstAttribute="leading" secondItem="aCH-DV-upd" secondAttribute="leadingMargin" multiplier="2" id="Vpo-hQ-LLK"/>
-                                    <constraint firstItem="Y1b-ke-9en" firstAttribute="width" secondItem="Y1b-ke-9en" secondAttribute="height" multiplier="1:1" id="VvE-O4-WLG"/>
                                     <constraint firstItem="OUh-u6-yab" firstAttribute="height" secondItem="1RS-n2-Ani" secondAttribute="height" id="WoL-1m-yST"/>
                                     <constraint firstItem="OUh-u6-yab" firstAttribute="leading" secondItem="1RS-n2-Ani" secondAttribute="leading" id="aEi-hr-BHJ"/>
                                     <constraint firstItem="ZRr-vb-AiV" firstAttribute="height" secondItem="1RS-n2-Ani" secondAttribute="height" id="aXv-Kq-Pfi"/>
@@ -220,6 +217,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addPlayerLeadingConstraint" destination="aEi-hr-BHJ" id="MGP-KK-SgA"/>
+                        <outlet property="addPlayerView" destination="OUh-u6-yab" id="G9v-Mz-JfX"/>
+                        <outlet property="deletePlayerView" destination="ZRr-vb-AiV" id="Vid-Ae-5jg"/>
+                        <outlet property="deletePlayersLeadingConstraint" destination="MDr-yX-zCP" id="7Ge-fJ-aZa"/>
+                        <outlet property="gameInfoLeadingConstraint" destination="fP1-gM-4FY" id="9We-hs-FIb"/>
+                        <outlet property="gameInfoView" destination="Y1b-ke-9en" id="jwd-Zt-bHr"/>
                         <outlet property="menuViewBottomConstraint" destination="9lp-KI-7Wu" id="WWt-3J-ZZr"/>
                         <outlet property="openCloseMenuView" destination="1RS-n2-Ani" id="HDc-Om-B41"/>
                         <outlet property="playerCollectionView" destination="uCU-0j-WqR" id="3QR-gM-y57"/>
