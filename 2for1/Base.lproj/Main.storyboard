@@ -125,15 +125,54 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y1b-ke-9en" userLabel="game info">
                                         <rect key="frame" x="16" y="8.5" width="50" height="49.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqs-jA-aoL">
+                                                <rect key="frame" x="-0.5" y="-1" width="50" height="52"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="40"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" red="1" green="0.79607843140000001" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="yqs-jA-aoL" firstAttribute="centerX" secondItem="Y1b-ke-9en" secondAttribute="centerX" id="T4s-M9-Oct"/>
+                                            <constraint firstItem="yqs-jA-aoL" firstAttribute="width" secondItem="Y1b-ke-9en" secondAttribute="width" id="WLy-Lu-Mb2"/>
+                                            <constraint firstItem="yqs-jA-aoL" firstAttribute="centerY" secondItem="Y1b-ke-9en" secondAttribute="centerY" id="ufL-Xo-0X2"/>
+                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZRr-vb-AiV" userLabel="delete players">
                                         <rect key="frame" x="16" y="8.5" width="50" height="49.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6I-cZ-dXC">
+                                                <rect key="frame" x="-0.5" y="-1.5" width="50" height="52"/>
+                                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="40"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" red="1" green="0.79607843140000001" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="T6I-cZ-dXC" firstAttribute="centerX" secondItem="ZRr-vb-AiV" secondAttribute="centerX" id="6Gp-Cz-o9r"/>
+                                            <constraint firstItem="T6I-cZ-dXC" firstAttribute="centerY" secondItem="ZRr-vb-AiV" secondAttribute="centerY" id="HEL-FI-kHf"/>
+                                            <constraint firstItem="T6I-cZ-dXC" firstAttribute="width" secondItem="ZRr-vb-AiV" secondAttribute="width" id="Qba-9N-dYo"/>
+                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OUh-u6-yab" userLabel="add player">
                                         <rect key="frame" x="16" y="8.5" width="50" height="49.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WcQ-mK-Af8">
+                                                <rect key="frame" x="-0.5" y="-1.5" width="50" height="52"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="40"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" red="1" green="0.79607843140000001" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="WcQ-mK-Af8" firstAttribute="centerX" secondItem="OUh-u6-yab" secondAttribute="centerX" id="5W6-HW-ypB"/>
+                                            <constraint firstItem="WcQ-mK-Af8" firstAttribute="centerY" secondItem="OUh-u6-yab" secondAttribute="centerY" id="H5d-ow-IDT"/>
+                                            <constraint firstItem="WcQ-mK-Af8" firstAttribute="width" secondItem="OUh-u6-yab" secondAttribute="width" id="bP3-al-8gV"/>
+                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1RS-n2-Ani" userLabel="Open Close Menu View">
                                         <rect key="frame" x="15.5" y="8.5" width="50" height="49.5"/>
