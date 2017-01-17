@@ -33,6 +33,7 @@ class SetupViewController: UIViewController {
     @IBOutlet weak var deletePlayerView: UIView!
     @IBOutlet weak var addPlayerView: UIView!
     
+    @IBOutlet weak var dotsView: DotsView!
     
     
     
@@ -42,11 +43,7 @@ class SetupViewController: UIViewController {
     }
     
     
-    func expandDots() {
-        UIView.animate(withDuration: 1) {
-            //do something
-        }
-    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +58,7 @@ class SetupViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         makeViewsCircles()
+        expandDots()
     }
     
     
@@ -102,6 +100,7 @@ extension SetupViewController  {
         gameInfoView.layer.cornerRadius = cr
         deletePlayerView.layer.cornerRadius = cr
         addPlayerView.layer.cornerRadius = cr
+        dotsView.makeDotsCircles()
     }
     
     
@@ -180,6 +179,7 @@ extension SetupViewController {
             self.addPlayerLeadingConstraint.constant = width * 3
             self.view.layoutIfNeeded()
         }, completion: nil)
+        collapseDots()
     }
     
     func collapseMenu() {
@@ -190,6 +190,24 @@ extension SetupViewController {
             self.addPlayerLeadingConstraint.constant = 0
             self.view.layoutIfNeeded()
         }, completion: nil)
+        expandDots()
+    }
+    
+    func expandDots() {
+        let distance = (dotsView.frame.width / 2) - (dotsView.middleDotView.frame.width / 2)
+        UIView.animate(withDuration: 0.5, delay: 0.2, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [.curveEaseInOut], animations: {
+            self.dotsView.leftDotLeadingConstraint.constant = distance * -1
+            self.dotsView.rightDotTrailingConstraint.constant = distance
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
+    
+    func collapseDots() {
+        UIView.animate(withDuration: 0.2) {
+            self.dotsView.leftDotLeadingConstraint.constant = 0
+            self.dotsView.rightDotTrailingConstraint.constant = 0
+            self.view.layoutIfNeeded()
+        }
     }
     
     

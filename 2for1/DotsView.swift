@@ -31,10 +31,14 @@ class DotsView: UIView {
         Bundle.main.loadNibNamed("DotsView", owner: self, options: nil)
         self.addSubview(contentView)
         self.constrain(contentView)
+    }
+    
+    func makeDotsCircles() {
         let cornerRadius = middleDotView.frame.height / 2
         middleDotView.layer.cornerRadius = cornerRadius
         leftDotView.layer.cornerRadius = cornerRadius
         rightDotView.layer.cornerRadius = cornerRadius
+
     }
     
 }

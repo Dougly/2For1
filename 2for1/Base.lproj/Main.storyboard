@@ -181,36 +181,18 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1RS-n2-Ani" userLabel="Open Close Menu View">
                                         <rect key="frame" x="185.33333333333337" y="7.3333333333333428" width="43.666666666666657" height="43.999999999999986"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TKO-vp-dcm" userLabel="middle dot">
-                                                <rect key="frame" x="20" y="19.666666666666657" width="4.3333333333333144" height="4.6666666666666714"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="TKO-vp-dcm" secondAttribute="height" multiplier="1:1" id="Q8y-VR-0hE"/>
-                                                </constraints>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mqO-Em-mxx" userLabel="left dot">
-                                                <rect key="frame" x="20" y="19.666666666666657" width="4.3333333333333144" height="4.6666666666666714"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5kP-Qh-MfE" userLabel="right dot">
-                                                <rect key="frame" x="20" y="19" width="4.3333333333333144" height="4.6666666666666714"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yR8-Tw-0Pj" customClass="DotsView" customModule="_for1" customModuleProvider="target">
+                                                <rect key="frame" x="8.6666666666666572" y="19.333333333333329" width="26.333333333333343" height="4.3333333333333428"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.79607843140000001" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="mqO-Em-mxx" firstAttribute="centerX" secondItem="TKO-vp-dcm" secondAttribute="centerX" id="DPi-6V-AZb"/>
-                                            <constraint firstItem="TKO-vp-dcm" firstAttribute="centerY" secondItem="1RS-n2-Ani" secondAttribute="centerY" id="Etg-yu-lkL"/>
-                                            <constraint firstItem="5kP-Qh-MfE" firstAttribute="height" secondItem="TKO-vp-dcm" secondAttribute="height" id="SG3-oR-1kx"/>
-                                            <constraint firstItem="5kP-Qh-MfE" firstAttribute="centerY" secondItem="TKO-vp-dcm" secondAttribute="centerY" id="Uwx-MW-kbd"/>
-                                            <constraint firstItem="TKO-vp-dcm" firstAttribute="height" secondItem="1RS-n2-Ani" secondAttribute="height" multiplier="0.1" id="aPq-wB-8hn"/>
-                                            <constraint firstItem="mqO-Em-mxx" firstAttribute="width" secondItem="TKO-vp-dcm" secondAttribute="width" id="bf4-73-bga"/>
-                                            <constraint firstItem="mqO-Em-mxx" firstAttribute="height" secondItem="TKO-vp-dcm" secondAttribute="height" id="nav-R3-Wiq"/>
-                                            <constraint firstItem="5kP-Qh-MfE" firstAttribute="width" secondItem="TKO-vp-dcm" secondAttribute="width" id="qBA-ax-IcD"/>
-                                            <constraint firstItem="TKO-vp-dcm" firstAttribute="centerX" secondItem="1RS-n2-Ani" secondAttribute="centerX" id="qjB-0j-wtm"/>
-                                            <constraint firstItem="5kP-Qh-MfE" firstAttribute="centerX" secondItem="TKO-vp-dcm" secondAttribute="centerX" id="sNv-Jy-0bE"/>
+                                            <constraint firstItem="yR8-Tw-0Pj" firstAttribute="centerY" secondItem="1RS-n2-Ani" secondAttribute="centerY" id="0sN-pk-XXF"/>
+                                            <constraint firstItem="yR8-Tw-0Pj" firstAttribute="height" secondItem="1RS-n2-Ani" secondAttribute="height" multiplier="0.1" id="2ep-W2-Wsc"/>
+                                            <constraint firstItem="yR8-Tw-0Pj" firstAttribute="width" secondItem="1RS-n2-Ani" secondAttribute="width" multiplier="0.6" id="guM-io-DFs"/>
+                                            <constraint firstItem="yR8-Tw-0Pj" firstAttribute="centerX" secondItem="1RS-n2-Ani" secondAttribute="centerX" id="hiY-kn-7DA"/>
                                             <constraint firstAttribute="width" secondItem="1RS-n2-Ani" secondAttribute="height" multiplier="1:1" id="vwY-iC-A2i"/>
-                                            <constraint firstItem="mqO-Em-mxx" firstAttribute="centerY" secondItem="TKO-vp-dcm" secondAttribute="centerY" id="yzn-64-xgc"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="select players" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tz8-fF-bOo">
@@ -272,6 +254,7 @@
                         <outlet property="addPlayerView" destination="OUh-u6-yab" id="G9v-Mz-JfX"/>
                         <outlet property="deletePlayerView" destination="ZRr-vb-AiV" id="Vid-Ae-5jg"/>
                         <outlet property="deletePlayersLeadingConstraint" destination="MDr-yX-zCP" id="7Ge-fJ-aZa"/>
+                        <outlet property="dotsView" destination="yR8-Tw-0Pj" id="31W-9a-GXJ"/>
                         <outlet property="gameInfoLeadingConstraint" destination="fP1-gM-4FY" id="9We-hs-FIb"/>
                         <outlet property="gameInfoView" destination="Y1b-ke-9en" id="jwd-Zt-bHr"/>
                         <outlet property="openCloseMenuCenterXConstraint" destination="dzW-g1-iQi" id="hXX-dp-7sU"/>
