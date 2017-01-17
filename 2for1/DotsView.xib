@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11542"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DotsView" customModule="_for1" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="fcw-Hw-3Uo"/>
+                <outlet property="leftDotLeadingConstraint" destination="1mb-bK-uqv" id="kvF-rP-ynJ"/>
+                <outlet property="leftDotView" destination="Nb4-tk-Tt0" id="BnE-wn-65N"/>
+                <outlet property="middleDotView" destination="hEQ-RJ-Bx9" id="Fas-9n-8BF"/>
+                <outlet property="rightDotTrailingConstraint" destination="B0I-fe-nXf" id="Stw-aP-23P"/>
+                <outlet property="rightDotView" destination="4Iw-z5-1P0" id="8rL-4Y-ZRr"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="462" height="120"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hEQ-RJ-Bx9" userLabel="middle dot">
+                    <rect key="frame" x="171" y="0.0" width="120" height="120"/>
+                    <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="hEQ-RJ-Bx9" secondAttribute="height" multiplier="1:1" id="1mC-Zw-Sbn"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nb4-tk-Tt0" userLabel="left dot">
+                    <rect key="frame" x="171" y="0.0" width="120" height="120"/>
+                    <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Nb4-tk-Tt0" secondAttribute="height" multiplier="1:1" id="qGS-fl-3mk"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Iw-z5-1P0" userLabel="right dot">
+                    <rect key="frame" x="171" y="0.0" width="120" height="120"/>
+                    <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="4Iw-z5-1P0" secondAttribute="height" multiplier="1:1" id="R66-CD-oAb"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Nb4-tk-Tt0" firstAttribute="leading" secondItem="hEQ-RJ-Bx9" secondAttribute="leading" id="1mb-bK-uqv"/>
+                <constraint firstItem="Nb4-tk-Tt0" firstAttribute="height" secondItem="hEQ-RJ-Bx9" secondAttribute="height" id="4jI-c2-SBP"/>
+                <constraint firstItem="hEQ-RJ-Bx9" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="6hT-HM-eWC"/>
+                <constraint firstItem="4Iw-z5-1P0" firstAttribute="trailing" secondItem="hEQ-RJ-Bx9" secondAttribute="trailing" id="B0I-fe-nXf"/>
+                <constraint firstItem="Nb4-tk-Tt0" firstAttribute="centerY" secondItem="hEQ-RJ-Bx9" secondAttribute="centerY" id="J5o-87-JwK"/>
+                <constraint firstItem="Nb4-tk-Tt0" firstAttribute="width" secondItem="Nb4-tk-Tt0" secondAttribute="height" multiplier="1:1" id="JAn-8A-ClS"/>
+                <constraint firstItem="hEQ-RJ-Bx9" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="MuP-Wo-uou"/>
+                <constraint firstItem="4Iw-z5-1P0" firstAttribute="width" secondItem="4Iw-z5-1P0" secondAttribute="height" multiplier="1:1" id="N9H-6b-mMG"/>
+                <constraint firstItem="4Iw-z5-1P0" firstAttribute="centerY" secondItem="hEQ-RJ-Bx9" secondAttribute="centerY" id="cQL-5l-GCb"/>
+                <constraint firstItem="hEQ-RJ-Bx9" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="ffk-is-OXb"/>
+                <constraint firstItem="4Iw-z5-1P0" firstAttribute="width" secondItem="hEQ-RJ-Bx9" secondAttribute="width" id="mUi-ab-1G0"/>
+                <constraint firstItem="Nb4-tk-Tt0" firstAttribute="width" secondItem="hEQ-RJ-Bx9" secondAttribute="width" id="nsO-Lm-5Kx"/>
+                <constraint firstItem="4Iw-z5-1P0" firstAttribute="height" secondItem="hEQ-RJ-Bx9" secondAttribute="height" id="tiO-8c-bwX"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="77" y="-220"/>
+        </view>
+    </objects>
+</document>

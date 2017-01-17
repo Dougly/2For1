@@ -117,18 +117,18 @@
                                 <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="75"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
-                                <color key="shadowColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
-                                <size key="shadowOffset" width="2" height="3"/>
+                                <color key="shadowColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="1" height="3"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LWc-Ro-h1D" userLabel="HeaderShadow">
                                 <rect key="frame" x="0.0" y="210.66666666666666" width="414" height="5.6666666666666856"/>
-                                <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="0.10099192415730338" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aCH-DV-upd" userLabel="Menu">
                                 <rect key="frame" x="0.0" y="100.33333333333334" width="414" height="110.33333333333334"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y1b-ke-9en" userLabel="game info">
-                                        <rect key="frame" x="185.66666666666666" y="9.3333333333333428" width="43.666666666666686" height="43.999999999999986"/>
+                                        <rect key="frame" x="185.66666666666666" y="7.3333333333333428" width="43.666666666666686" height="43.999999999999986"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqs-jA-aoL">
                                                 <rect key="frame" x="0.0" y="-4" width="43.666666666666686" height="51.999999999999986"/>
@@ -145,7 +145,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZRr-vb-AiV" userLabel="delete players">
-                                        <rect key="frame" x="185.66666666666666" y="9.3333333333333428" width="43.666666666666686" height="43.999999999999986"/>
+                                        <rect key="frame" x="185.66666666666666" y="7.3333333333333428" width="43.666666666666686" height="43.999999999999986"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6I-cZ-dXC">
                                                 <rect key="frame" x="0.0" y="-1.3333333333333428" width="43.666666666666686" height="46.333333333333329"/>
@@ -162,7 +162,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OUh-u6-yab" userLabel="add player">
-                                        <rect key="frame" x="185.66666666666666" y="9.3333333333333428" width="43.666666666666686" height="43.999999999999986"/>
+                                        <rect key="frame" x="185.66666666666666" y="7.3333333333333428" width="43.666666666666686" height="43.999999999999986"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WcQ-mK-Af8">
                                                 <rect key="frame" x="0.0" y="-4.3333333333333428" width="43.666666666666686" height="52.000000000000014"/>
@@ -179,30 +179,47 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1RS-n2-Ani" userLabel="Open Close Menu View">
-                                        <rect key="frame" x="185.33333333333337" y="9.3333333333333428" width="43.666666666666657" height="43.999999999999986"/>
+                                        <rect key="frame" x="185.33333333333337" y="7.3333333333333428" width="43.666666666666657" height="43.999999999999986"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ruo-An-PvD">
-                                                <rect key="frame" x="5.6666666666666572" y="-3.3333333333333428" width="32.666666666666657" height="52.000000000000014"/>
-                                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="40"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TKO-vp-dcm" userLabel="middle dot">
+                                                <rect key="frame" x="20" y="19.666666666666657" width="4.3333333333333144" height="4.6666666666666714"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="TKO-vp-dcm" secondAttribute="height" multiplier="1:1" id="Q8y-VR-0hE"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mqO-Em-mxx" userLabel="left dot">
+                                                <rect key="frame" x="20" y="19.666666666666657" width="4.3333333333333144" height="4.6666666666666714"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5kP-Qh-MfE" userLabel="right dot">
+                                                <rect key="frame" x="20" y="19" width="4.3333333333333144" height="4.6666666666666714"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.79607843140000001" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="ruo-An-PvD" firstAttribute="centerX" secondItem="1RS-n2-Ani" secondAttribute="centerX" id="isu-7g-dQh"/>
+                                            <constraint firstItem="mqO-Em-mxx" firstAttribute="centerX" secondItem="TKO-vp-dcm" secondAttribute="centerX" id="DPi-6V-AZb"/>
+                                            <constraint firstItem="TKO-vp-dcm" firstAttribute="centerY" secondItem="1RS-n2-Ani" secondAttribute="centerY" id="Etg-yu-lkL"/>
+                                            <constraint firstItem="5kP-Qh-MfE" firstAttribute="height" secondItem="TKO-vp-dcm" secondAttribute="height" id="SG3-oR-1kx"/>
+                                            <constraint firstItem="5kP-Qh-MfE" firstAttribute="centerY" secondItem="TKO-vp-dcm" secondAttribute="centerY" id="Uwx-MW-kbd"/>
+                                            <constraint firstItem="TKO-vp-dcm" firstAttribute="height" secondItem="1RS-n2-Ani" secondAttribute="height" multiplier="0.1" id="aPq-wB-8hn"/>
+                                            <constraint firstItem="mqO-Em-mxx" firstAttribute="width" secondItem="TKO-vp-dcm" secondAttribute="width" id="bf4-73-bga"/>
+                                            <constraint firstItem="mqO-Em-mxx" firstAttribute="height" secondItem="TKO-vp-dcm" secondAttribute="height" id="nav-R3-Wiq"/>
+                                            <constraint firstItem="5kP-Qh-MfE" firstAttribute="width" secondItem="TKO-vp-dcm" secondAttribute="width" id="qBA-ax-IcD"/>
+                                            <constraint firstItem="TKO-vp-dcm" firstAttribute="centerX" secondItem="1RS-n2-Ani" secondAttribute="centerX" id="qjB-0j-wtm"/>
+                                            <constraint firstItem="5kP-Qh-MfE" firstAttribute="centerX" secondItem="TKO-vp-dcm" secondAttribute="centerX" id="sNv-Jy-0bE"/>
                                             <constraint firstAttribute="width" secondItem="1RS-n2-Ani" secondAttribute="height" multiplier="1:1" id="vwY-iC-A2i"/>
-                                            <constraint firstItem="ruo-An-PvD" firstAttribute="centerY" secondItem="1RS-n2-Ani" secondAttribute="centerY" id="z5A-NQ-3RW"/>
-                                            <constraint firstItem="ruo-An-PvD" firstAttribute="width" secondItem="1RS-n2-Ani" secondAttribute="width" multiplier="0.75" id="ze9-Jp-Cpp"/>
+                                            <constraint firstItem="mqO-Em-mxx" firstAttribute="centerY" secondItem="TKO-vp-dcm" secondAttribute="centerY" id="yzn-64-xgc"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="select players" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tz8-fF-bOo">
-                                        <rect key="frame" x="103.66666666666669" y="59.333333333333329" width="207" height="40"/>
+                                        <rect key="frame" x="103.66666666666669" y="57.333333333333329" width="207" height="42"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <color key="shadowColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="0.098095154494382025" colorSpace="calibratedRGB"/>
-                                        <size key="shadowOffset" width="2" height="1"/>
+                                        <color key="shadowColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                        <size key="shadowOffset" width="1" height="3"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.10980392160000001" green="0.84705882349999995" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>

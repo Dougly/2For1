@@ -34,8 +34,18 @@ class SetupViewController: UIViewController {
     @IBOutlet weak var addPlayerView: UIView!
     
     
+    
+    
+    
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    
+    func expandDots() {
+        UIView.animate(withDuration: 1) {
+            //do something
+        }
     }
     
     override func viewDidLoad() {
@@ -181,6 +191,8 @@ extension SetupViewController {
             self.view.layoutIfNeeded()
         }, completion: nil)
     }
+    
+    
 }
 
 //MARK: Collection View Setup
@@ -240,7 +252,7 @@ extension SetupViewController: UICollectionViewDelegateFlowLayout {
         let itemWidth = (screenWidth / numberOfCellsPerRow) - (desiredSpacing + 2)
         let itemHeight = itemWidth * 1.25
         spacing = desiredSpacing
-        sectionInsets = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
+        sectionInsets = UIEdgeInsets(top: spacing * 2, left: spacing, bottom: spacing, right: spacing)
         itemSize = CGSize(width: itemWidth, height: itemHeight)
     }
     
