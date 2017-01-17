@@ -9,13 +9,12 @@
 import Foundation
 import CoreData
 
-class DataStore {
+final class DataStore {
     
     static let sharedInstance = DataStore()
     private init () {}
     
     var players: [Player] = []
-    //var playerDataArray: [PlayerData] = []
     
     func fetchData() {
         let context = persistentContainer.viewContext

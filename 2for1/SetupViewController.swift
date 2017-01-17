@@ -22,19 +22,16 @@ class SetupViewController: UIViewController {
     @IBOutlet weak var startGameButton: UIButton!
     
     //menu
-    @IBOutlet weak var menuViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var playerCollectionViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var gameInfoLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var deletePlayersLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var addPlayerLeadingConstraint: NSLayoutConstraint!
-    
-    
+    @IBOutlet weak var openCloseMenuCenterXConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var openCloseMenuView: UIView!
     @IBOutlet weak var gameInfoView: UIView!
     @IBOutlet weak var deletePlayerView: UIView!
     @IBOutlet weak var addPlayerView: UIView!
-    
-    
     
     
     override var prefersStatusBarHidden: Bool {
@@ -52,6 +49,10 @@ class SetupViewController: UIViewController {
         resetViewConroller()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        makeViewsCircles()
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "startGame" {
@@ -65,7 +66,7 @@ class SetupViewController: UIViewController {
             }
             destVC.game.players = selectedPlayers
             selectedPlayers = []
-            menuViewBottomConstraint.constant = 0
+            playerCollectionViewBottomConstraint.constant = 0
         }
     }
 }
@@ -77,11 +78,45 @@ extension SetupViewController  {
     func resetViewConroller() {
         store.players.sort { $0.tag! < $1.tag! }
         playerCollectionView.reloadData()
-        menuViewBottomConstraint.constant = 0
+        playerCollectionViewBottomConstraint.constant = 0
         selectedIndexPaths = []
         for player in store.players {
             player.selected = false
         }
+    }
+
+    
+    func makeViewsCircles() {
+        let cr = openCloseMenuView.bounds.width / 2
+        openCloseMenuView.layer.cornerRadius = cr
+        gameInfoView.layer.cornerRadius = cr
+        deletePlayerView.layer.cornerRadius = cr
+        addPlayerView.layer.cornerRadius = cr
+    }
+    
+    
+    func addGestureRecognizersToViews() {
+        let tapGR1 = UITapGestureRecognizer(target: self, action: #selector(tappedMenuOption))
+        openCloseMenuView.addGestureRecognizer(tapGR1)
+        let tapGR2 = UITapGestureRecognizer(target: self, action: #selector(tappedAddPlayer))
+        addPlayerView.addGestureRecognizer(tapGR2)
+        let tapGR3 = UITapGestureRecognizer(target: self, action: #selector(deleteSelectedPlayers))
+        deletePlayerView.addGestureRecognizer(tapGR3)
+        let tapGR4 = UITapGestureRecognizer(target: self, action: #selector(showInfoView))
+        gameInfoView.addGestureRecognizer(tapGR4)
+    }
+    
+    
+    func tappedMenuOption(_ sender: UIView) {
+        if gameInfoLeadingConstraint.constant > 0 {
+            collapseMenu()
+        } else {
+            expandMenu()
+        }
+    }
+    
+    func tappedAddPlayer(_ sender: UIView) {
+        performSegue(withIdentifier: "addPlayer", sender: self)
     }
     
     func deleteSelectedPlayers(_ sender: UIView) {
@@ -100,27 +135,10 @@ extension SetupViewController  {
             self.selectedIndexPaths = []
         })
     }
-
     
-    func makeViewsCircles() {
-        openCloseMenuView.layer.cornerRadius = openCloseMenuView.frame.height / 2
-    }
-    
-    func addGestureRecognizersToViews() {
-        
-        let gr = UITapGestureRecognizer(target: self, action: #selector(tappedMenuOption))
-        openCloseMenuView.addGestureRecognizer(gr)
+    func showInfoView(_ sender: UIView) {
         
     }
-    
-    func tappedMenuOption(_ sender: UIView) {
-        if gameInfoLeadingConstraint.constant > 0 {
-            collapseMenu()
-        } else {
-            expandMenu()
-        }
-    }
-    
     
     
     
@@ -130,15 +148,15 @@ extension SetupViewController  {
 extension SetupViewController {
     
     func hideStartGameButton() {
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: [.curveEaseInOut], animations: {
-            self.menuViewBottomConstraint.constant = 0
+        UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseInOut], animations: {
+            self.playerCollectionViewBottomConstraint.constant = 0
             self.view.layoutIfNeeded()
         }, completion: nil)
     }
     
     func showStartGameButton() {
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: [.curveEaseInOut], animations: {
-            self.menuViewBottomConstraint.constant = self.startGameButton.frame.height * -1
+            self.playerCollectionViewBottomConstraint.constant = self.startGameButton.frame.height * -1
             self.view.layoutIfNeeded()
         }, completion: nil)
     }
@@ -146,6 +164,7 @@ extension SetupViewController {
     func expandMenu() {
         let width = openCloseMenuView.frame.width + (openCloseMenuView.frame.width / 3)
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [.curveEaseInOut], animations: {
+            self.openCloseMenuCenterXConstraint.constant = width * -1.5
             self.gameInfoLeadingConstraint.constant = width
             self.deletePlayersLeadingConstraint.constant = width * 2
             self.addPlayerLeadingConstraint.constant = width * 3
@@ -155,6 +174,7 @@ extension SetupViewController {
     
     func collapseMenu() {
         UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseIn], animations: {
+            self.openCloseMenuCenterXConstraint.constant = 0
             self.gameInfoLeadingConstraint.constant = 0
             self.deletePlayersLeadingConstraint.constant = 0
             self.addPlayerLeadingConstraint.constant = 0
@@ -204,7 +224,7 @@ extension SetupViewController: UICollectionViewDataSource, UICollectionViewDeleg
         }
         selectedIndexPaths.sort { $0.row > $1.row }
         
-        if selectedIndexPaths.count >= 2 && menuViewBottomConstraint.constant == 0 {
+        if selectedIndexPaths.count >= 2 && playerCollectionViewBottomConstraint.constant == 0 {
             showStartGameButton()
         } else if selectedIndexPaths.count < 2 {
             hideStartGameButton()
