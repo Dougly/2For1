@@ -126,6 +126,7 @@ extension SetupViewController  {
     
     func tappedAddPlayer(_ sender: UIView) {
         performSegue(withIdentifier: "addPlayer", sender: self)
+        collapseMenu()
     }
     
     func deleteSelectedPlayers(_ sender: UIView) {
@@ -143,6 +144,7 @@ extension SetupViewController  {
         }, completion: { (success) in
             self.selectedIndexPaths = []
         })
+        
     }
     
     func showInfoView(_ sender: UIView) {
@@ -209,8 +211,6 @@ extension SetupViewController {
             self.view.layoutIfNeeded()
         }
     }
-    
-    
 }
 
 //MARK: Collection View Setup
