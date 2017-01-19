@@ -8,21 +8,9 @@
 
 import UIKit
 
-//Constrain to container view
 extension UIView {
     
-    func constrain(_ contentView: UIView) {
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        contentView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        contentView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
-        contentView.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
-    }
-}
-
-
-//Corner Radius
-extension UIView {
+   
     @IBInspectable var cornerRadius: CGFloat {
         get {
             return layer.cornerRadius
@@ -31,5 +19,19 @@ extension UIView {
             layer.cornerRadius = newValue
             layer.masksToBounds = newValue > 0
         }
+    }
+    
+    func constrain(_ contentView: UIView) {
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        contentView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        contentView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
+        contentView.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
+    }
+    
+    func commonInit(with nibNamed: String, contentView: UIView) {
+        Bundle.main.loadNibNamed(nibNamed, owner: self, options: nil)
+        self.addSubview(contentView)
+        self.constrain(contentView)
     }
 }

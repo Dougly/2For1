@@ -14,6 +14,8 @@
 		117EE5491E20262400E071E0 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117EE5481E20262400E071E0 /* DataStore.swift */; };
 		118ED3171E2ED5110091E5D5 /* DotsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 118ED3161E2ED5110091E5D5 /* DotsView.xib */; };
 		118ED3191E2ED5280091E5D5 /* DotsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118ED3181E2ED5270091E5D5 /* DotsView.swift */; };
+		119710931E30659200D4CCD4 /* CreatePlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 119710921E30659200D4CCD4 /* CreatePlayerView.xib */; };
+		119710951E3065A500D4CCD4 /* CreatePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119710941E3065A500D4CCD4 /* CreatePlayerView.swift */; };
 		11DE14C41E0F462E0027D9E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE14C31E0F462E0027D9E8 /* AppDelegate.swift */; };
 		11DE14C61E0F462E0027D9E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE14C51E0F462E0027D9E8 /* ViewController.swift */; };
 		11DE14C91E0F462E0027D9E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11DE14C71E0F462E0027D9E8 /* Main.storyboard */; };
@@ -39,6 +41,8 @@
 		117EE5481E20262400E071E0 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		118ED3161E2ED5110091E5D5 /* DotsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DotsView.xib; sourceTree = "<group>"; };
 		118ED3181E2ED5270091E5D5 /* DotsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotsView.swift; sourceTree = "<group>"; };
+		119710921E30659200D4CCD4 /* CreatePlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreatePlayerView.xib; sourceTree = "<group>"; };
+		119710941E3065A500D4CCD4 /* CreatePlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePlayerView.swift; sourceTree = "<group>"; };
 		11DE14C01E0F462E0027D9E8 /* 2for1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2for1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11DE14C31E0F462E0027D9E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11DE14C51E0F462E0027D9E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 				11DE14F31E1324E10027D9E8 /* AddDieOrDrinkView.swift */,
 				118ED3161E2ED5110091E5D5 /* DotsView.xib */,
 				118ED3181E2ED5270091E5D5 /* DotsView.swift */,
+				119710921E30659200D4CCD4 /* CreatePlayerView.xib */,
+				119710941E3065A500D4CCD4 /* CreatePlayerView.swift */,
 				11DE14E21E0F4A1F0027D9E8 /* ViewExtension.swift */,
 				117EE5461E201ED600E071E0 /* CustomPlayerCell.swift */,
 			);
@@ -216,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				118ED3171E2ED5110091E5D5 /* DotsView.xib in Resources */,
+				119710931E30659200D4CCD4 /* CreatePlayerView.xib in Resources */,
 				11DE14D11E0F462E0027D9E8 /* LaunchScreen.storyboard in Resources */,
 				11DE14CE1E0F462E0027D9E8 /* Assets.xcassets in Resources */,
 				11DE14DF1E0F48770027D9E8 /* GameInfoView.xib in Resources */,
@@ -239,6 +246,7 @@
 				11DE14CC1E0F462E0027D9E8 /* _for1.xcdatamodeld in Sources */,
 				11DE14E11E0F48C20027D9E8 /* GameInfoView.swift in Sources */,
 				11DE14E91E1023C10027D9E8 /* Player.swift in Sources */,
+				119710951E3065A500D4CCD4 /* CreatePlayerView.swift in Sources */,
 				117EE3971E1EAA4600E071E0 /* SetupViewController.swift in Sources */,
 				11DE14F41E1324E10027D9E8 /* AddDieOrDrinkView.swift in Sources */,
 				11DE14C41E0F462E0027D9E8 /* AppDelegate.swift in Sources */,

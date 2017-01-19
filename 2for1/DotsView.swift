@@ -19,18 +19,12 @@ class DotsView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        commonInit()
+        commonInit(with: "DotsView", contentView: contentView)
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        commonInit()
-    }
-    
-    func commonInit() {
-        Bundle.main.loadNibNamed("DotsView", owner: self, options: nil)
-        self.addSubview(contentView)
-        self.constrain(contentView)
+        commonInit(with: "DotsView", contentView: contentView)
     }
     
     func makeDotsCircles() {

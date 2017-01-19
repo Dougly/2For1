@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XhT-We-T2q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XhT-We-T2q">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -147,7 +147,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZRr-vb-AiV" userLabel="delete players">
                                         <rect key="frame" x="185.66666666666666" y="7.3333333333333428" width="43.666666666666686" height="43.999999999999986"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6I-cZ-dXC">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6I-cZ-dXC">
                                                 <rect key="frame" x="0.0" y="-3.3333333333333428" width="43.666666666666686" height="52.000000000000014"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="40"/>
                                                 <nil key="textColor"/>
@@ -290,22 +290,22 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="4Uh-9I-QuT">
-                                <rect key="frame" x="51.666666666666657" y="110.33333333333331" width="310.66666666666663" height="221"/>
+                                <rect key="frame" x="51.666666666666657" y="147.33333333333331" width="310.66666666666663" height="146.99999999999994"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CAL-rk-Dc7">
-                                        <rect key="frame" x="0.0" y="0.0" width="310.66666666666663" height="30.000000000000014"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="310.66666666666663" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gl2-nl-ldn">
-                                        <rect key="frame" x="0.0" y="95.666666666666671" width="310.66666666666663" height="30"/>
+                                        <rect key="frame" x="0.0" y="58.666666666666657" width="310.66666666666663" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Handle" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RUA-1B-pM1">
-                                        <rect key="frame" x="0.0" y="191" width="310.66666666666663" height="30"/>
+                                        <rect key="frame" x="0.0" y="116.99999999999997" width="310.66666666666663" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -313,34 +313,24 @@
                                 </subviews>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mwh-Tp-TMm">
-                                <rect key="frame" x="125" y="380.66666666666663" width="165.66666666666669" height="165.66666666666663"/>
+                                <rect key="frame" x="145.66666666666663" y="8" width="124.33333333333337" height="124.33333333333334"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Mwh-Tp-TMm" secondAttribute="height" multiplier="1:1" id="Mro-ej-I3i"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vpg-KL-a28">
-                                <rect key="frame" x="125" y="546.33333333333337" width="165.66666666666669" height="30"/>
-                                <state key="normal" title="Add Picture"/>
-                                <connections>
-                                    <action selector="addPictureTapped:" destination="WTu-Me-een" eventType="touchUpInside" id="e8b-IG-Qeg"/>
-                                </connections>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Mwh-Tp-TMm" firstAttribute="width" secondItem="sWa-qa-Ax8" secondAttribute="width" multiplier="0.4" id="7rK-l0-pvK"/>
-                            <constraint firstItem="vpg-KL-a28" firstAttribute="centerX" secondItem="Mwh-Tp-TMm" secondAttribute="centerX" id="8o7-KB-UWE"/>
+                            <constraint firstItem="Mwh-Tp-TMm" firstAttribute="width" secondItem="sWa-qa-Ax8" secondAttribute="width" multiplier="0.3" id="7rK-l0-pvK"/>
                             <constraint firstItem="4Uh-9I-QuT" firstAttribute="width" secondItem="sWa-qa-Ax8" secondAttribute="width" multiplier="0.75" id="B5Y-RK-0K6"/>
-                            <constraint firstItem="vpg-KL-a28" firstAttribute="top" secondItem="Mwh-Tp-TMm" secondAttribute="bottom" id="F6R-Vl-SvF"/>
                             <constraint firstItem="Mwh-Tp-TMm" firstAttribute="centerX" secondItem="4Uh-9I-QuT" secondAttribute="centerX" id="HM9-E4-sh6"/>
                             <constraint firstItem="4Uh-9I-QuT" firstAttribute="centerY" secondItem="sWa-qa-Ax8" secondAttribute="centerY" multiplier="0.6" id="QEN-kt-rxw"/>
-                            <constraint firstItem="vpg-KL-a28" firstAttribute="width" secondItem="Mwh-Tp-TMm" secondAttribute="width" id="ZC2-0A-wOM"/>
                             <constraint firstItem="RyU-hW-f2k" firstAttribute="width" secondItem="sWa-qa-Ax8" secondAttribute="width" multiplier="0.3" id="a6Z-35-ODL"/>
                             <constraint firstItem="RyU-hW-f2k" firstAttribute="centerY" secondItem="sWa-qa-Ax8" secondAttribute="centerY" multiplier="1.8" id="ded-1a-3tS"/>
                             <constraint firstItem="RyU-hW-f2k" firstAttribute="centerX" secondItem="sWa-qa-Ax8" secondAttribute="centerX" id="mlc-NE-Ut8"/>
                             <constraint firstItem="4Uh-9I-QuT" firstAttribute="centerX" secondItem="sWa-qa-Ax8" secondAttribute="centerX" id="pzL-oD-yE1"/>
-                            <constraint firstItem="Mwh-Tp-TMm" firstAttribute="top" secondItem="4Uh-9I-QuT" secondAttribute="bottom" multiplier="1.15" id="ve8-sn-ezf"/>
-                            <constraint firstItem="4Uh-9I-QuT" firstAttribute="height" secondItem="sWa-qa-Ax8" secondAttribute="height" multiplier="0.3" id="win-Uh-DjO"/>
+                            <constraint firstItem="Mwh-Tp-TMm" firstAttribute="bottom" secondItem="4Uh-9I-QuT" secondAttribute="top" constant="-15" id="ve8-sn-ezf"/>
+                            <constraint firstItem="4Uh-9I-QuT" firstAttribute="height" secondItem="sWa-qa-Ax8" secondAttribute="height" multiplier="0.2" id="win-Uh-DjO"/>
                         </constraints>
                     </view>
                     <connections>
