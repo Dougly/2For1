@@ -19,13 +19,20 @@ class DotsView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        commonInit(with: "DotsView", contentView: contentView)
+        commonInit()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        commonInit(with: "DotsView", contentView: contentView)
+        commonInit()
     }
+    
+    func commonInit() {
+        Bundle.main.loadNibNamed("DotsView", owner: self, options: nil)
+        self.addSubview(contentView)
+        self.constrain(contentView)
+    }
+    
     
     func makeDotsCircles() {
         let cornerRadius = middleDotView.frame.height / 2

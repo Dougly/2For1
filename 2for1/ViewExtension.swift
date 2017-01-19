@@ -29,9 +29,5 @@ extension UIView {
         contentView.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
     }
     
-    func commonInit(with nibNamed: String, contentView: UIView) {
-        Bundle.main.loadNibNamed(nibNamed, owner: self, options: nil)
-        self.addSubview(contentView)
-        self.constrain(contentView)
-    }
+
 }

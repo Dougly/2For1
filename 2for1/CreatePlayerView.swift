@@ -19,13 +19,18 @@ class CreatePlayerView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        commonInit(with: "CreatePlayerView", contentView: contentView)
+        commonInit()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        commonInit(with: "CreatePlayerView", contentView: contentView)
+        commonInit()
     }
     
+    func commonInit() {
+        Bundle.main.loadNibNamed("CreatePlayerView", owner: self, options: nil)
+        self.addSubview(contentView)
+        self.constrain(contentView)
+    }
     
 }

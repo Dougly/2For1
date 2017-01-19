@@ -11,15 +11,18 @@ import UIKit
 class CreatePlayerViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let store = DataStore.sharedInstance
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
     
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var handleTextField: UITextField!
     @IBOutlet weak var profilePictureImageView: UIImageView!
+    @IBOutlet weak var createPlayerView: CreatePlayerView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        profilePictureImageView.image = #imageLiteral(resourceName: "ghost")
     }
 
     
