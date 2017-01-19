@@ -16,6 +16,7 @@ class CreatePlayerView: UIView {
     @IBOutlet weak var handleTextField: UITextField!
     @IBOutlet weak var playerPictureImageView: UIImageView!
     @IBOutlet weak var placeholderView: UIView!
+    @IBOutlet weak var addPlayerView: UIView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)

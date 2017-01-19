@@ -13,6 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreatePlayerView" customModule="_for1" customModuleProvider="target">
             <connections>
+                <outlet property="addPlayerView" destination="Dbo-Sf-SUj" id="zP1-sI-9mc"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="AGa-Dw-96p"/>
                 <outlet property="firstNameTextField" destination="zAl-IQ-brD" id="gca-hj-1gV"/>
                 <outlet property="handleTextField" destination="YA0-Xb-67a" id="PCh-V1-wa7"/>
@@ -40,49 +41,85 @@
                         <constraint firstItem="Nui-tY-ovX" firstAttribute="width" secondItem="dWk-CS-lfX" secondAttribute="width" multiplier="0.5" id="gul-UH-qWO"/>
                         <constraint firstItem="Nui-tY-ovX" firstAttribute="height" secondItem="dWk-CS-lfX" secondAttribute="height" multiplier="0.5" id="ydh-Nm-kZ1"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fCP-bt-bh7">
                     <rect key="frame" x="124.5" y="16" width="127" height="127"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="fCP-bt-bh7" secondAttribute="height" multiplier="1:1" id="Rjr-qa-bEe"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="B3k-te-D5B">
-                    <rect key="frame" x="37.5" y="175" width="301" height="127"/>
+                    <rect key="frame" x="75" y="159" width="226" height="95"/>
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="first name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zAl-IQ-brD">
-                            <rect key="frame" x="0.0" y="0.0" width="301" height="30"/>
+                            <rect key="frame" x="0.0" y="0.0" width="226" height="30"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="last name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i8X-0h-rqi">
-                            <rect key="frame" x="0.0" y="48.5" width="301" height="30"/>
+                            <rect key="frame" x="0.0" y="32.5" width="226" height="30"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="handle" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YA0-Xb-67a">
-                            <rect key="frame" x="0.0" y="97" width="301" height="30"/>
+                            <rect key="frame" x="0.0" y="65" width="226" height="30"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                     </subviews>
                 </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dbo-Sf-SUj">
+                    <rect key="frame" x="94" y="270" width="188" height="32"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add" translatesAutoresizingMaskIntoConstraints="NO" id="r1C-zi-Zke">
+                            <rect key="frame" x="78" y="0.0" width="32" height="32"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="r1C-zi-Zke" secondAttribute="height" multiplier="1:1" id="1Ne-uM-seK"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="r1C-zi-Zke" firstAttribute="centerY" secondItem="Dbo-Sf-SUj" secondAttribute="centerY" id="A0J-we-tP5"/>
+                        <constraint firstItem="r1C-zi-Zke" firstAttribute="centerX" secondItem="Dbo-Sf-SUj" secondAttribute="centerX" id="e1x-ys-1fU"/>
+                        <constraint firstItem="r1C-zi-Zke" firstAttribute="height" secondItem="Dbo-Sf-SUj" secondAttribute="height" id="sQm-YU-fZ3"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="Dbo-Sf-SUj" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.1" id="1ZN-Ge-OVS"/>
+                <constraint firstItem="Dbo-Sf-SUj" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.5" id="3el-ED-Kzs"/>
                 <constraint firstItem="fCP-bt-bh7" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="7eL-w0-Jis"/>
                 <constraint firstItem="dWk-CS-lfX" firstAttribute="height" secondItem="fCP-bt-bh7" secondAttribute="height" id="9iT-BW-U7g"/>
                 <constraint firstItem="fCP-bt-bh7" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.5" id="BEf-Cz-u36"/>
-                <constraint firstItem="B3k-te-D5B" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.4" id="LRe-Pp-Ema"/>
+                <constraint firstItem="B3k-te-D5B" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.3" id="LRe-Pp-Ema"/>
                 <constraint firstItem="dWk-CS-lfX" firstAttribute="centerX" secondItem="fCP-bt-bh7" secondAttribute="centerX" id="PJL-Ar-zDs"/>
                 <constraint firstItem="dWk-CS-lfX" firstAttribute="width" secondItem="fCP-bt-bh7" secondAttribute="width" id="SH2-M6-uiJ"/>
+                <constraint firstItem="Dbo-Sf-SUj" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="1.8" id="SQi-7Q-upa"/>
                 <constraint firstItem="dWk-CS-lfX" firstAttribute="centerY" secondItem="fCP-bt-bh7" secondAttribute="centerY" id="XEd-1m-Lg4"/>
-                <constraint firstItem="B3k-te-D5B" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.8" id="fry-dX-hGm"/>
+                <constraint firstItem="B3k-te-D5B" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.6" id="fry-dX-hGm"/>
                 <constraint firstItem="B3k-te-D5B" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="hM6-GI-tsB"/>
-                <constraint firstItem="B3k-te-D5B" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="1.5" id="hNB-0e-mke"/>
+                <constraint firstItem="B3k-te-D5B" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="1.3" id="hNB-0e-mke"/>
+                <constraint firstItem="Dbo-Sf-SUj" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="sgx-Bt-61s"/>
                 <constraint firstItem="fCP-bt-bh7" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.4" id="xK3-Jg-0I8"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
@@ -91,6 +128,7 @@
         </view>
     </objects>
     <resources>
+        <image name="add" width="48" height="48"/>
         <image name="camera" width="48" height="48"/>
     </resources>
 </document>

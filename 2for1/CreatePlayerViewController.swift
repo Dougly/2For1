@@ -11,23 +11,26 @@ import UIKit
 class CreatePlayerViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let store = DataStore.sharedInstance
+    var delegate: UpdateCollectionViewProtocol?
     override var prefersStatusBarHidden: Bool {
         return true
     }
     
-    @IBOutlet weak var firstNameTextField: UITextField!
-    @IBOutlet weak var lastNameTextField: UITextField!
-    @IBOutlet weak var handleTextField: UITextField!
-    @IBOutlet weak var profilePictureImageView: UIImageView!
     @IBOutlet weak var createPlayerView: CreatePlayerView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-
-    
-    @IBAction func addPictureTapped(_ sender: UIButton) {
         
+        let tapGR = UITapGestureRecognizer(target: self, action: #selector(plusViewTapped))
+        createPlayerView.addPlayerView.addGestureRecognizer(tapGR)
+        createPlayerView.firstNameTextField.becomeFirstResponder()
+    }
+    
+    @IBAction func xButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func addPictureTapped() {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
@@ -35,15 +38,16 @@ class CreatePlayerViewController: UIViewController, UIImagePickerControllerDeleg
             imagePicker.allowsEditing = false
             self.present(imagePicker, animated: true, completion: nil)
         }
-        
     }
     
     
-    @IBAction func saveButtonTapped(_ sender: UIButton) {
-        let firstName = firstNameTextField.text!
-        let lastName = lastNameTextField.text!
-        let tag = handleTextField.text!
+    func plusViewTapped() {
+        let firstName = createPlayerView.firstNameTextField.text!
+        let lastName = createPlayerView.lastNameTextField.text!
+        let tag = createPlayerView.handleTextField.text!
         store.savePlayer(firstName, lastName: lastName, tag: tag)
+        delegate?.customReload()
         self.dismiss(animated: true, completion: nil)
     }
+    
 }

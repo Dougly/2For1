@@ -76,12 +76,17 @@ class SetupViewController: UIViewController {
             selectedPlayers = []
             playerCollectionViewBottomConstraint.constant = 0
         }
+        
+        if segue.identifier == "addPlayer" {
+            let destVC = segue.destination as! CreatePlayerViewController
+            destVC.delegate = self
+        }
     }
 }
 
 
 //MARK: Helper Methods
-extension SetupViewController  {
+extension SetupViewController: UpdateCollectionViewProtocol {
     
     func resetViewConroller() {
         store.players.sort { $0.tag! < $1.tag! }
@@ -91,6 +96,10 @@ extension SetupViewController  {
         for player in store.players {
             player.selected = false
         }
+    }
+    
+    func customReload() {
+        resetViewConroller()
     }
 
     
@@ -212,6 +221,8 @@ extension SetupViewController {
         }
     }
 }
+
+
 
 //MARK: Collection View Setup
 extension SetupViewController: UICollectionViewDataSource, UICollectionViewDelegate {
