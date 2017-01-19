@@ -98,8 +98,19 @@ extension SetupViewController: UpdateCollectionViewProtocol {
         }
     }
     
-    func customReload() {
-        resetViewConroller()
+    func customReload(withPlayer handle: String) {
+        store.players.sort { $0.tag! < $1.tag! }
+        var indexPath = IndexPath()
+        for (index, player) in store.players.enumerated() {
+            if let tag = player.tag {
+                if tag == handle {
+                    indexPath = IndexPath(item: index, section: 0)
+                }
+            }
+        }
+        playerCollectionView.performBatchUpdates({ 
+            self.playerCollectionView.insertItems(at: [indexPath])
+        }, completion: nil)
     }
 
     
@@ -271,6 +282,8 @@ extension SetupViewController: UICollectionViewDataSource, UICollectionViewDeleg
         } else if selectedIndexPaths.count < 2 {
             hideStartGameButton()
         }
+        
+        print(selectedIndexPaths.count)
     }
 }
 

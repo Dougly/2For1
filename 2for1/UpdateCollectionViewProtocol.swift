@@ -9,5 +9,5 @@
 import Foundation
 
 protocol UpdateCollectionViewProtocol {
-    func customReload()
+    func customReload(withPlayer handle: String)
 }
