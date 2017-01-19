@@ -112,7 +112,7 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="------- 2 - for - 1 -------" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Koz-j3-B8z">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="100.66666666666667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="101"/>
                                 <color key="backgroundColor" red="0.10980392160000001" green="0.84705882349999995" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="75"/>
                                 <nil key="textColor"/>
@@ -121,68 +121,62 @@
                                 <size key="shadowOffset" width="1" height="3"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LWc-Ro-h1D" userLabel="HeaderShadow">
-                                <rect key="frame" x="0.0" y="210.66666666666666" width="414" height="5.6666666666666856"/>
+                                <rect key="frame" x="0.0" y="211" width="414" height="6"/>
                                 <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aCH-DV-upd" userLabel="Menu">
-                                <rect key="frame" x="0.0" y="100.33333333333334" width="414" height="110.33333333333334"/>
+                                <rect key="frame" x="0.0" y="101" width="414" height="110"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y1b-ke-9en" userLabel="game info">
-                                        <rect key="frame" x="185.66666666666666" y="7.3333333333333428" width="43.666666666666686" height="43.999999999999986"/>
+                                        <rect key="frame" x="185" y="7" width="44" height="44"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqs-jA-aoL">
-                                                <rect key="frame" x="0.0" y="-3.3333333333333428" width="43.666666666666686" height="52.000000000000014"/>
-                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="40"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info" translatesAutoresizingMaskIntoConstraints="NO" id="mzi-5L-kFW">
+                                                <rect key="frame" x="8.3333333333333428" y="8.3333333333333286" width="26.333333333333314" height="26.333333333333329"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.79607843140000001" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="yqs-jA-aoL" firstAttribute="centerX" secondItem="Y1b-ke-9en" secondAttribute="centerX" id="T4s-M9-Oct"/>
-                                            <constraint firstItem="yqs-jA-aoL" firstAttribute="width" secondItem="Y1b-ke-9en" secondAttribute="width" id="WLy-Lu-Mb2"/>
-                                            <constraint firstItem="yqs-jA-aoL" firstAttribute="centerY" secondItem="Y1b-ke-9en" secondAttribute="centerY" id="ufL-Xo-0X2"/>
+                                            <constraint firstItem="mzi-5L-kFW" firstAttribute="height" secondItem="Y1b-ke-9en" secondAttribute="height" multiplier="0.6" id="IqK-TH-ckH"/>
+                                            <constraint firstItem="mzi-5L-kFW" firstAttribute="centerX" secondItem="Y1b-ke-9en" secondAttribute="centerX" id="hqC-XK-j5Z"/>
+                                            <constraint firstItem="mzi-5L-kFW" firstAttribute="centerY" secondItem="Y1b-ke-9en" secondAttribute="centerY" id="rpt-Ba-myW"/>
+                                            <constraint firstItem="mzi-5L-kFW" firstAttribute="width" secondItem="Y1b-ke-9en" secondAttribute="width" multiplier="0.6" id="vp0-UA-kB4"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZRr-vb-AiV" userLabel="delete players">
-                                        <rect key="frame" x="185.66666666666666" y="7.3333333333333428" width="43.666666666666686" height="43.999999999999986"/>
+                                        <rect key="frame" x="185" y="7" width="44" height="44"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6I-cZ-dXC">
-                                                <rect key="frame" x="0.0" y="-3.3333333333333428" width="43.666666666666686" height="52.000000000000014"/>
-                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="40"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="remove" translatesAutoresizingMaskIntoConstraints="NO" id="dcr-Dn-oIo">
+                                                <rect key="frame" x="5.6666666666666572" y="5" width="33" height="33"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.79607843140000001" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="T6I-cZ-dXC" firstAttribute="centerX" secondItem="ZRr-vb-AiV" secondAttribute="centerX" id="6Gp-Cz-o9r"/>
-                                            <constraint firstItem="T6I-cZ-dXC" firstAttribute="centerY" secondItem="ZRr-vb-AiV" secondAttribute="centerY" id="HEL-FI-kHf"/>
-                                            <constraint firstItem="T6I-cZ-dXC" firstAttribute="width" secondItem="ZRr-vb-AiV" secondAttribute="width" id="Qba-9N-dYo"/>
+                                            <constraint firstItem="dcr-Dn-oIo" firstAttribute="height" secondItem="ZRr-vb-AiV" secondAttribute="height" multiplier="0.75" id="5aO-mp-RDh"/>
+                                            <constraint firstItem="dcr-Dn-oIo" firstAttribute="centerX" secondItem="ZRr-vb-AiV" secondAttribute="centerX" id="B3e-oM-tIj"/>
+                                            <constraint firstItem="dcr-Dn-oIo" firstAttribute="centerY" secondItem="ZRr-vb-AiV" secondAttribute="centerY" id="RAV-8L-8CD"/>
+                                            <constraint firstItem="dcr-Dn-oIo" firstAttribute="width" secondItem="ZRr-vb-AiV" secondAttribute="width" multiplier="0.75" id="l3S-6X-vLc"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OUh-u6-yab" userLabel="add player">
-                                        <rect key="frame" x="185.66666666666666" y="7.3333333333333428" width="43.666666666666686" height="43.999999999999986"/>
+                                        <rect key="frame" x="185" y="7" width="44" height="44"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WcQ-mK-Af8">
-                                                <rect key="frame" x="0.0" y="-3.6666666666666714" width="43.666666666666686" height="52"/>
-                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="40"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add" translatesAutoresizingMaskIntoConstraints="NO" id="0O0-wM-Tn4">
+                                                <rect key="frame" x="5.6666666666666572" y="5" width="33" height="33"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.79607843140000001" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="WcQ-mK-Af8" firstAttribute="centerX" secondItem="OUh-u6-yab" secondAttribute="centerX" id="5W6-HW-ypB"/>
-                                            <constraint firstItem="WcQ-mK-Af8" firstAttribute="centerY" secondItem="OUh-u6-yab" secondAttribute="centerY" id="H5d-ow-IDT"/>
-                                            <constraint firstItem="WcQ-mK-Af8" firstAttribute="width" secondItem="OUh-u6-yab" secondAttribute="width" id="bP3-al-8gV"/>
+                                            <constraint firstItem="0O0-wM-Tn4" firstAttribute="centerY" secondItem="OUh-u6-yab" secondAttribute="centerY" id="4U9-2V-OgD"/>
+                                            <constraint firstItem="0O0-wM-Tn4" firstAttribute="width" secondItem="OUh-u6-yab" secondAttribute="width" multiplier="0.75" id="Ktv-cc-qwm"/>
+                                            <constraint firstItem="0O0-wM-Tn4" firstAttribute="height" secondItem="OUh-u6-yab" secondAttribute="height" multiplier="0.75" id="mfI-3Q-Hdl"/>
+                                            <constraint firstItem="0O0-wM-Tn4" firstAttribute="centerX" secondItem="OUh-u6-yab" secondAttribute="centerX" id="vwm-kd-ML0"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1RS-n2-Ani" userLabel="Open Close Menu View">
-                                        <rect key="frame" x="185.33333333333337" y="7.3333333333333428" width="43.666666666666657" height="43.999999999999986"/>
+                                        <rect key="frame" x="185" y="7" width="44" height="44"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yR8-Tw-0Pj" customClass="DotsView" customModule="_for1" customModuleProvider="target">
-                                                <rect key="frame" x="8.6666666666666572" y="20" width="26.333333333333343" height="4.3333333333333286"/>
+                                                <rect key="frame" x="9" y="20" width="26" height="4"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </view>
                                         </subviews>
@@ -196,7 +190,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="select players" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tz8-fF-bOo">
-                                        <rect key="frame" x="103.66666666666669" y="57.333333333333329" width="207" height="42"/>
+                                        <rect key="frame" x="104" y="57" width="207" height="42"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -283,16 +277,18 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cn0-d5-kOk" userLabel="Background Cover">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.7500219452247191" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.5" green="0.5" blue="0.5" alpha="0.75296260533707871" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iNU-mf-BBb" customClass="CreatePlayerView" customModule="_for1" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="36.666666666666657" width="414" height="368"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Qn-XA-wOu">
-                                <rect key="frame" x="20" y="20" width="62" height="64"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="40"/>
-                                <state key="normal" title="x">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Qn-XA-wOu" userLabel="XButton">
+                                <rect key="frame" x="5" y="10" width="41.333333333333336" height="41.333333333333336"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9Qn-XA-wOu" secondAttribute="height" multiplier="1:1" id="9Um-a9-qrR"/>
+                                </constraints>
+                                <state key="normal" image="delete">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -304,13 +300,13 @@
                         <constraints>
                             <constraint firstItem="iNU-mf-BBb" firstAttribute="centerX" secondItem="sWa-qa-Ax8" secondAttribute="centerX" id="6xX-Ha-OqU"/>
                             <constraint firstItem="Cn0-d5-kOk" firstAttribute="centerY" secondItem="sWa-qa-Ax8" secondAttribute="centerY" id="D4T-vJ-VaL"/>
-                            <constraint firstItem="9Qn-XA-wOu" firstAttribute="leading" secondItem="sWa-qa-Ax8" secondAttribute="leadingMargin" id="KjE-1O-lQ8"/>
-                            <constraint firstItem="9Qn-XA-wOu" firstAttribute="top" secondItem="t9d-CI-lAZ" secondAttribute="bottom" id="YB3-la-5ke"/>
-                            <constraint firstItem="9Qn-XA-wOu" firstAttribute="width" secondItem="sWa-qa-Ax8" secondAttribute="width" multiplier="0.15" id="d1q-We-MPs"/>
+                            <constraint firstItem="9Qn-XA-wOu" firstAttribute="leading" secondItem="sWa-qa-Ax8" secondAttribute="leading" constant="5" id="KjE-1O-lQ8"/>
+                            <constraint firstItem="9Qn-XA-wOu" firstAttribute="width" secondItem="sWa-qa-Ax8" secondAttribute="width" multiplier="0.1" id="d1q-We-MPs"/>
                             <constraint firstItem="Cn0-d5-kOk" firstAttribute="height" secondItem="sWa-qa-Ax8" secondAttribute="height" id="dWY-HA-8be"/>
                             <constraint firstItem="iNU-mf-BBb" firstAttribute="height" secondItem="sWa-qa-Ax8" secondAttribute="height" multiplier="0.5" id="hYB-I2-2QF"/>
                             <constraint firstItem="Cn0-d5-kOk" firstAttribute="width" secondItem="sWa-qa-Ax8" secondAttribute="width" id="iij-oU-0Gl"/>
                             <constraint firstItem="iNU-mf-BBb" firstAttribute="centerY" secondItem="sWa-qa-Ax8" secondAttribute="centerY" multiplier="0.6" id="pz8-N0-Khe"/>
+                            <constraint firstItem="9Qn-XA-wOu" firstAttribute="top" secondItem="sWa-qa-Ax8" secondAttribute="top" constant="10" id="rMp-PD-uwS"/>
                             <constraint firstItem="Cn0-d5-kOk" firstAttribute="centerX" secondItem="sWa-qa-Ax8" secondAttribute="centerX" id="rNS-Ua-LiU"/>
                             <constraint firstItem="iNU-mf-BBb" firstAttribute="width" secondItem="sWa-qa-Ax8" secondAttribute="width" id="v2b-q9-Xtt"/>
                         </constraints>
@@ -324,4 +320,10 @@
             <point key="canvasLocation" x="-807" y="836"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="add" width="48" height="48"/>
+        <image name="delete" width="48" height="48"/>
+        <image name="info" width="258" height="258"/>
+        <image name="remove" width="48" height="48"/>
+    </resources>
 </document>

@@ -30,7 +30,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dWk-CS-lfX">
                     <rect key="frame" x="124" y="16" width="127" height="127"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="Nui-tY-ovX">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Nui-tY-ovX">
                             <rect key="frame" x="31.5" y="31.5" width="63.5" height="63.5"/>
                         </imageView>
                     </subviews>
@@ -129,6 +129,6 @@
     </objects>
     <resources>
         <image name="add" width="48" height="48"/>
-        <image name="camera" width="48" height="48"/>
+        <image name="addPhoto" width="48" height="48"/>
     </resources>
 </document>

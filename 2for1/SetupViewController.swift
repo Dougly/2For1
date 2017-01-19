@@ -127,7 +127,7 @@ extension SetupViewController: UpdateCollectionViewProtocol {
     
     func tappedMenuOption(_ sender: UIView) {
         if gameInfoLeadingConstraint.constant > 0 {
-            collapseMenu()
+            collapseMenu(withDelay: 0)
         } else {
             expandMenu()
         }
@@ -135,7 +135,7 @@ extension SetupViewController: UpdateCollectionViewProtocol {
     
     func tappedAddPlayer(_ sender: UIView) {
         performSegue(withIdentifier: "addPlayer", sender: self)
-        collapseMenu()
+        collapseMenu(withDelay: 0.5)
     }
     
     func deleteSelectedPlayers(_ sender: UIView) {
@@ -193,20 +193,21 @@ extension SetupViewController {
         collapseDots()
     }
     
-    func collapseMenu() {
-        UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseIn], animations: {
+    func collapseMenu(withDelay seconds: TimeInterval) {
+        UIView.animate(withDuration: 0.2, delay: seconds, options: [.curveEaseIn], animations: {
             self.openCloseMenuCenterXConstraint.constant = 0
             self.gameInfoLeadingConstraint.constant = 0
             self.deletePlayersLeadingConstraint.constant = 0
             self.addPlayerLeadingConstraint.constant = 0
             self.view.layoutIfNeeded()
-        }, completion: nil)
-        expandDots()
+        }, completion: {(success) in
+            self.expandDots()
+        })
     }
     
     func expandDots() {
         let distance = (dotsView.frame.width / 2) - (dotsView.middleDotView.frame.width / 2)
-        UIView.animate(withDuration: 0.5, delay: 0.2, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [.curveEaseInOut], animations: {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [.curveEaseInOut], animations: {
             self.dotsView.leftDotLeadingConstraint.constant = distance * -1
             self.dotsView.rightDotTrailingConstraint.constant = distance
             self.view.layoutIfNeeded()
