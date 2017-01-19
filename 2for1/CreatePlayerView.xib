@@ -6,22 +6,91 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreatePlayerView" customModule="_for1" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="AGa-Dw-96p"/>
+                <outlet property="firstNameTextField" destination="zAl-IQ-brD" id="gca-hj-1gV"/>
+                <outlet property="handleTextField" destination="YA0-Xb-67a" id="PCh-V1-wa7"/>
+                <outlet property="lastNameTextField" destination="i8X-0h-rqi" id="pVM-hK-ZVQ"/>
+                <outlet property="placeholderView" destination="dWk-CS-lfX" id="lax-AA-VSG"/>
+                <outlet property="playerPictureImageView" destination="fCP-bt-bh7" id="7jK-nt-TOa"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="418" height="182"/>
+            <rect key="frame" x="0.0" y="0.0" width="376" height="318"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dWk-CS-lfX">
+                    <rect key="frame" x="124" y="16" width="127" height="127"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="Nui-tY-ovX">
+                            <rect key="frame" x="31.5" y="31.5" width="63.5" height="63.5"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Nui-tY-ovX" firstAttribute="centerY" secondItem="dWk-CS-lfX" secondAttribute="centerY" id="99B-uy-PbX"/>
+                        <constraint firstItem="Nui-tY-ovX" firstAttribute="centerX" secondItem="dWk-CS-lfX" secondAttribute="centerX" id="czX-yV-AR0"/>
+                        <constraint firstItem="Nui-tY-ovX" firstAttribute="width" secondItem="dWk-CS-lfX" secondAttribute="width" multiplier="0.5" id="gul-UH-qWO"/>
+                        <constraint firstItem="Nui-tY-ovX" firstAttribute="height" secondItem="dWk-CS-lfX" secondAttribute="height" multiplier="0.5" id="ydh-Nm-kZ1"/>
+                    </constraints>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fCP-bt-bh7">
+                    <rect key="frame" x="124.5" y="16" width="127" height="127"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="fCP-bt-bh7" secondAttribute="height" multiplier="1:1" id="Rjr-qa-bEe"/>
+                    </constraints>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="B3k-te-D5B">
+                    <rect key="frame" x="37.5" y="175" width="301" height="127"/>
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="first name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zAl-IQ-brD">
+                            <rect key="frame" x="0.0" y="0.0" width="301" height="30"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="last name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i8X-0h-rqi">
+                            <rect key="frame" x="0.0" y="48.5" width="301" height="30"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="handle" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YA0-Xb-67a">
+                            <rect key="frame" x="0.0" y="97" width="301" height="30"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="fCP-bt-bh7" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="7eL-w0-Jis"/>
+                <constraint firstItem="dWk-CS-lfX" firstAttribute="height" secondItem="fCP-bt-bh7" secondAttribute="height" id="9iT-BW-U7g"/>
+                <constraint firstItem="fCP-bt-bh7" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.5" id="BEf-Cz-u36"/>
+                <constraint firstItem="B3k-te-D5B" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.4" id="LRe-Pp-Ema"/>
+                <constraint firstItem="dWk-CS-lfX" firstAttribute="centerX" secondItem="fCP-bt-bh7" secondAttribute="centerX" id="PJL-Ar-zDs"/>
+                <constraint firstItem="dWk-CS-lfX" firstAttribute="width" secondItem="fCP-bt-bh7" secondAttribute="width" id="SH2-M6-uiJ"/>
+                <constraint firstItem="dWk-CS-lfX" firstAttribute="centerY" secondItem="fCP-bt-bh7" secondAttribute="centerY" id="XEd-1m-Lg4"/>
+                <constraint firstItem="B3k-te-D5B" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.8" id="fry-dX-hGm"/>
+                <constraint firstItem="B3k-te-D5B" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="hM6-GI-tsB"/>
+                <constraint firstItem="B3k-te-D5B" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="1.5" id="hNB-0e-mke"/>
+                <constraint firstItem="fCP-bt-bh7" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.4" id="xK3-Jg-0I8"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="131" y="-292"/>
+            <point key="canvasLocation" x="110" y="-224"/>
         </view>
     </objects>
+    <resources>
+        <image name="camera" width="48" height="48"/>
+    </resources>
 </document>

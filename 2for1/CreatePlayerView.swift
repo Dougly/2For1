@@ -11,6 +11,11 @@ import UIKit
 class CreatePlayerView: UIView {
     
     @IBOutlet var contentView: UIView!
+    @IBOutlet weak var firstNameTextField: UITextField!
+    @IBOutlet weak var lastNameTextField: UITextField!
+    @IBOutlet weak var handleTextField: UITextField!
+    @IBOutlet weak var playerPictureImageView: UIImageView!
+    @IBOutlet weak var placeholderView: UIView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
