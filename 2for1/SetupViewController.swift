@@ -12,11 +12,6 @@ class SetupViewController: UIViewController {
     
     let store = DataStore.sharedInstance
     var selectedIndexPaths: [IndexPath] = []
-    let screenWidth = UIScreen.main.bounds.width
-    var spacing: CGFloat!
-    var sectionInsets: UIEdgeInsets!
-    var itemSize: CGSize!
-    var numberOfCellsPerRow: CGFloat = 3
     override var prefersStatusBarHidden: Bool { return true }
     
     @IBOutlet weak var playerCollectionView: UICollectionView!
@@ -24,11 +19,24 @@ class SetupViewController: UIViewController {
     @IBOutlet weak var menuView: MenuView!
     @IBOutlet weak var playerCollectionViewBottomConstraint: NSLayoutConstraint!
     
+    //Collection View Flow Layout Variables
+    let screenWidth = UIScreen.main.bounds.width
+    var spacing: CGFloat!
+    var sectionInsets: UIEdgeInsets!
+    var itemSize: CGSize!
+    var numberOfCellsPerRow: CGFloat = 3
+    
+    //var customCollectionView: CustomCollectionView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureLayout()
         applyTapGestures()
+        
+        
+//        playerCollectionView.delegate = customCollectionView
+//        playerCollectionView.dataSource = customCollectionView
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -226,7 +234,7 @@ extension SetupViewController: UICollectionViewDataSource, UICollectionViewDeleg
 //MARK: Collection view flow Layout
 extension SetupViewController: UICollectionViewDelegateFlowLayout {
     
-    func configureLayout () {
+    func configureLayout() {
         let desiredSpacing: CGFloat = 5
         let itemWidth = (screenWidth / numberOfCellsPerRow) - (desiredSpacing + 2)
         let itemHeight = itemWidth * 1.25
