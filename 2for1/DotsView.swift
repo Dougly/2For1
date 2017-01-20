@@ -42,4 +42,22 @@ class DotsView: UIView {
 
     }
     
+    func expandDots() {
+        let distance = (contentView.frame.width / 2) - (middleDotView.frame.width / 2)
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [.curveEaseInOut], animations: {
+            self.leftDotLeadingConstraint.constant = distance * -1
+            self.rightDotTrailingConstraint.constant = distance
+            self.layoutIfNeeded()
+        }, completion: nil)
+    }
+    
+    func collapseDots() {
+        UIView.animate(withDuration: 0.2) {
+            self.leftDotLeadingConstraint.constant = 0
+            self.rightDotTrailingConstraint.constant = 0
+            self.layoutIfNeeded()
+        }
+    }
+
+    
 }

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuView" customModule="_for1" customModuleProvider="target">
+            <connections>
+                <outlet property="addPlayerView" destination="eGp-Qo-FMe" id="r2l-CX-KBm"/>
+                <outlet property="contentView" destination="2il-bw-EFb" id="ZlF-wj-7Ab"/>
+                <outlet property="firstOptionCenterXConstraint" destination="nu2-RD-QNR" id="BE5-2F-Okh"/>
+                <outlet property="firstOptionImageView" destination="7UY-mG-yNT" id="iwC-Yd-9gn"/>
+                <outlet property="firstOptionLeadingConstraint" destination="eev-pu-aWs" id="I99-9u-TGu"/>
+                <outlet property="firstOptionView" destination="7UY-mG-yNT" id="23n-dp-Qr8"/>
+                <outlet property="gameInfoCenterXConstraint" destination="nu2-RD-QNR" id="MhG-qO-OmL"/>
+                <outlet property="gameInfoView" destination="lkc-0s-a7o" id="4kf-EH-eQk"/>
+                <outlet property="openCloseMenuCenterXConstaint" destination="4za-VI-4xZ" id="ZWQ-vM-pem"/>
+                <outlet property="openCloseMenuDotsView" destination="vqN-vh-vM6" id="q30-fl-eq8"/>
+                <outlet property="openCloseMenuView" destination="sHi-Og-o0a" id="Hg5-wn-2cp"/>
+                <outlet property="removePlayerView" destination="w0O-Uj-50a" id="Wcx-uK-Xcv"/>
+                <outlet property="secondOptionImageView" destination="YiU-Kl-rZt" id="wUd-g9-OIJ"/>
+                <outlet property="secondOptionLeadingConstraint" destination="qUo-r5-NPg" id="l7V-2d-41J"/>
+                <outlet property="secondOptionView" destination="w0O-Uj-50a" id="NcK-L9-6nE"/>
+                <outlet property="thirdOptionImageView" destination="Fdh-Bk-ipE" id="QBS-2b-Xx6"/>
+                <outlet property="thirdOptionLeadingConstraint" destination="NBX-QY-shr" id="gEL-LJ-eXu"/>
+                <outlet property="thirdOptionView" destination="eGp-Qo-FMe" id="327-8K-dEG"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="2il-bw-EFb" userLabel="Menu">
+            <rect key="frame" x="0.0" y="0.0" width="643" height="126"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lkc-0s-a7o" userLabel="first option view">
+                    <rect key="frame" x="277.5" y="19" width="88" height="88"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info" translatesAutoresizingMaskIntoConstraints="NO" id="7UY-mG-yNT">
+                            <rect key="frame" x="17.5" y="17.5" width="53" height="53"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="0.79607843140000001" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="7UY-mG-yNT" firstAttribute="centerY" secondItem="lkc-0s-a7o" secondAttribute="centerY" id="Tdw-fQ-feM"/>
+                        <constraint firstItem="7UY-mG-yNT" firstAttribute="height" secondItem="lkc-0s-a7o" secondAttribute="height" multiplier="0.6" id="Zss-hZ-7e1"/>
+                        <constraint firstItem="7UY-mG-yNT" firstAttribute="centerX" secondItem="lkc-0s-a7o" secondAttribute="centerX" id="nu2-RD-QNR"/>
+                        <constraint firstItem="7UY-mG-yNT" firstAttribute="width" secondItem="lkc-0s-a7o" secondAttribute="width" multiplier="0.6" id="oki-LA-PXe"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w0O-Uj-50a" userLabel="second option view">
+                    <rect key="frame" x="277.5" y="19" width="88" height="88"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="remove" translatesAutoresizingMaskIntoConstraints="NO" id="YiU-Kl-rZt">
+                            <rect key="frame" x="11" y="11" width="66" height="66"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="0.79607843140000001" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="YiU-Kl-rZt" firstAttribute="centerX" secondItem="w0O-Uj-50a" secondAttribute="centerX" id="0tB-wi-DDo"/>
+                        <constraint firstItem="YiU-Kl-rZt" firstAttribute="centerY" secondItem="w0O-Uj-50a" secondAttribute="centerY" id="7Jh-8V-Otj"/>
+                        <constraint firstItem="YiU-Kl-rZt" firstAttribute="height" secondItem="w0O-Uj-50a" secondAttribute="height" multiplier="0.75" id="CRv-AX-KkZ"/>
+                        <constraint firstItem="YiU-Kl-rZt" firstAttribute="width" secondItem="w0O-Uj-50a" secondAttribute="width" multiplier="0.75" id="Dor-TB-leN"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eGp-Qo-FMe" userLabel="third option view">
+                    <rect key="frame" x="277.5" y="19" width="88" height="88"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add" translatesAutoresizingMaskIntoConstraints="NO" id="Fdh-Bk-ipE" userLabel="third option image view">
+                            <rect key="frame" x="11" y="11" width="66" height="66"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="0.79607843140000001" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="Fdh-Bk-ipE" firstAttribute="centerY" secondItem="eGp-Qo-FMe" secondAttribute="centerY" id="CQw-gO-kII"/>
+                        <constraint firstItem="Fdh-Bk-ipE" firstAttribute="centerX" secondItem="eGp-Qo-FMe" secondAttribute="centerX" id="THp-a4-mX7"/>
+                        <constraint firstItem="Fdh-Bk-ipE" firstAttribute="width" secondItem="eGp-Qo-FMe" secondAttribute="width" multiplier="0.75" id="kTx-nS-Fhz"/>
+                        <constraint firstItem="Fdh-Bk-ipE" firstAttribute="height" secondItem="eGp-Qo-FMe" secondAttribute="height" multiplier="0.75" id="zqM-Fe-OjO"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sHi-Og-o0a" userLabel="Open Close Menu View">
+                    <rect key="frame" x="277.5" y="19" width="88" height="88"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vqN-vh-vM6" customClass="DotsView" customModule="_for1" customModuleProvider="target">
+                            <rect key="frame" x="17.5" y="39.5" width="53" height="9"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="0.79607843140000001" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="vqN-vh-vM6" firstAttribute="centerX" secondItem="sHi-Og-o0a" secondAttribute="centerX" id="LqV-xW-tO4"/>
+                        <constraint firstItem="vqN-vh-vM6" firstAttribute="width" secondItem="sHi-Og-o0a" secondAttribute="width" multiplier="0.6" id="PFN-nx-PgF"/>
+                        <constraint firstAttribute="width" secondItem="sHi-Og-o0a" secondAttribute="height" multiplier="1:1" id="kP7-BY-5P3"/>
+                        <constraint firstItem="vqN-vh-vM6" firstAttribute="height" secondItem="sHi-Og-o0a" secondAttribute="height" multiplier="0.1" id="vxY-S2-4Fj"/>
+                        <constraint firstItem="vqN-vh-vM6" firstAttribute="centerY" secondItem="sHi-Og-o0a" secondAttribute="centerY" id="w5H-p1-srG"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="sHi-Og-o0a" firstAttribute="centerX" secondItem="2il-bw-EFb" secondAttribute="centerX" id="4za-VI-4xZ"/>
+                <constraint firstItem="w0O-Uj-50a" firstAttribute="bottom" secondItem="sHi-Og-o0a" secondAttribute="bottom" id="8au-dh-EuX"/>
+                <constraint firstItem="eGp-Qo-FMe" firstAttribute="bottom" secondItem="sHi-Og-o0a" secondAttribute="bottom" id="Ag3-DL-KGh"/>
+                <constraint firstItem="w0O-Uj-50a" firstAttribute="height" secondItem="sHi-Og-o0a" secondAttribute="height" id="Gyp-JX-Rtn"/>
+                <constraint firstItem="eGp-Qo-FMe" firstAttribute="leading" secondItem="sHi-Og-o0a" secondAttribute="leading" id="NBX-QY-shr"/>
+                <constraint firstItem="sHi-Og-o0a" firstAttribute="height" secondItem="2il-bw-EFb" secondAttribute="height" multiplier="0.7" id="NWz-bt-laf"/>
+                <constraint firstItem="eGp-Qo-FMe" firstAttribute="width" secondItem="sHi-Og-o0a" secondAttribute="width" id="VAn-Jy-nWJ"/>
+                <constraint firstItem="lkc-0s-a7o" firstAttribute="width" secondItem="sHi-Og-o0a" secondAttribute="width" id="VIs-TL-Qai"/>
+                <constraint firstItem="lkc-0s-a7o" firstAttribute="bottom" secondItem="sHi-Og-o0a" secondAttribute="bottom" id="d7G-UG-eFg"/>
+                <constraint firstItem="lkc-0s-a7o" firstAttribute="leading" secondItem="sHi-Og-o0a" secondAttribute="leading" id="eev-pu-aWs"/>
+                <constraint firstItem="sHi-Og-o0a" firstAttribute="centerY" secondItem="2il-bw-EFb" secondAttribute="centerY" id="iHS-nP-aqJ"/>
+                <constraint firstItem="lkc-0s-a7o" firstAttribute="height" secondItem="sHi-Og-o0a" secondAttribute="height" id="n4c-LZ-MSo"/>
+                <constraint firstItem="w0O-Uj-50a" firstAttribute="leading" secondItem="sHi-Og-o0a" secondAttribute="leading" id="qUo-r5-NPg"/>
+                <constraint firstItem="eGp-Qo-FMe" firstAttribute="height" secondItem="sHi-Og-o0a" secondAttribute="height" id="s1H-kZ-z2h"/>
+                <constraint firstItem="w0O-Uj-50a" firstAttribute="width" secondItem="sHi-Og-o0a" secondAttribute="width" id="v3R-sh-GML"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="274.5" y="58"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="add" width="48" height="48"/>
+        <image name="info" width="258" height="258"/>
+        <image name="remove" width="48" height="48"/>
+    </resources>
+</document>

@@ -27,10 +27,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9O0-LE-CFl" userLabel="Banner">
-                    <rect key="frame" x="38" y="15" width="303" height="69.5"/>
+                    <rect key="frame" x="76" y="15" width="227" height="69.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ez1-IU-Buh" userLabel="2">
-                            <rect key="frame" x="45.5" y="0.0" width="61" height="69.5"/>
+                            <rect key="frame" x="34" y="0.0" width="46" height="69.5"/>
                             <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="40"/>
                             <color key="textColor" red="1" green="0.79607843140000001" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -38,7 +38,7 @@
                             <size key="shadowOffset" width="1" height="2"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zxq-nU-j4Q">
-                            <rect key="frame" x="197" y="0.0" width="61" height="69.5"/>
+                            <rect key="frame" x="147.5" y="0.0" width="46" height="69.5"/>
                             <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="40"/>
                             <color key="textColor" red="1" green="0.79607843140000001" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -46,7 +46,7 @@
                             <size key="shadowOffset" width="1" height="2"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="for" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="o6A-wM-AZ2">
-                            <rect key="frame" x="136" y="0.0" width="31" height="69.5"/>
+                            <rect key="frame" x="102" y="0.0" width="23" height="69.5"/>
                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -92,7 +92,7 @@
             <constraints>
                 <constraint firstItem="niD-g9-b6g" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="1.2" id="Cu2-nM-Ieg"/>
                 <constraint firstItem="niD-g9-b6g" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.7" id="J7G-xp-uKX"/>
-                <constraint firstItem="9O0-LE-CFl" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.8" id="QNo-ee-URF"/>
+                <constraint firstItem="9O0-LE-CFl" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.6" id="QNo-ee-URF"/>
                 <constraint firstItem="niD-g9-b6g" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Qa1-t3-Ukj"/>
                 <constraint firstItem="9O0-LE-CFl" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="cpl-Zo-wYz"/>
                 <constraint firstItem="9O0-LE-CFl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="p6h-YB-FoW"/>
