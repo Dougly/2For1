@@ -13,21 +13,16 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuView" customModule="_for1" customModuleProvider="target">
             <connections>
-                <outlet property="addPlayerView" destination="eGp-Qo-FMe" id="r2l-CX-KBm"/>
                 <outlet property="contentView" destination="2il-bw-EFb" id="ZlF-wj-7Ab"/>
-                <outlet property="firstOptionCenterXConstraint" destination="nu2-RD-QNR" id="BE5-2F-Okh"/>
                 <outlet property="firstOptionImageView" destination="7UY-mG-yNT" id="iwC-Yd-9gn"/>
                 <outlet property="firstOptionLeadingConstraint" destination="eev-pu-aWs" id="I99-9u-TGu"/>
-                <outlet property="firstOptionView" destination="7UY-mG-yNT" id="23n-dp-Qr8"/>
-                <outlet property="gameInfoCenterXConstraint" destination="nu2-RD-QNR" id="MhG-qO-OmL"/>
-                <outlet property="gameInfoView" destination="lkc-0s-a7o" id="4kf-EH-eQk"/>
-                <outlet property="openCloseMenuCenterXConstaint" destination="4za-VI-4xZ" id="ZWQ-vM-pem"/>
+                <outlet property="firstOptionView" destination="lkc-0s-a7o" id="KD2-0P-bWM"/>
+                <outlet property="openCloseMenuCenterXConstraint" destination="4za-VI-4xZ" id="TFk-9x-j1Z"/>
                 <outlet property="openCloseMenuDotsView" destination="vqN-vh-vM6" id="q30-fl-eq8"/>
                 <outlet property="openCloseMenuView" destination="sHi-Og-o0a" id="Hg5-wn-2cp"/>
-                <outlet property="removePlayerView" destination="w0O-Uj-50a" id="Wcx-uK-Xcv"/>
                 <outlet property="secondOptionImageView" destination="YiU-Kl-rZt" id="wUd-g9-OIJ"/>
                 <outlet property="secondOptionLeadingConstraint" destination="qUo-r5-NPg" id="l7V-2d-41J"/>
-                <outlet property="secondOptionView" destination="w0O-Uj-50a" id="NcK-L9-6nE"/>
+                <outlet property="secondOptionView" destination="w0O-Uj-50a" id="394-PE-AZ6"/>
                 <outlet property="thirdOptionImageView" destination="Fdh-Bk-ipE" id="QBS-2b-Xx6"/>
                 <outlet property="thirdOptionLeadingConstraint" destination="NBX-QY-shr" id="gEL-LJ-eXu"/>
                 <outlet property="thirdOptionView" destination="eGp-Qo-FMe" id="327-8K-dEG"/>

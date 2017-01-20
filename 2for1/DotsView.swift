@@ -34,7 +34,7 @@ class DotsView: UIView {
     }
     
     
-    func makeDotsCircles() {
+    func setCornerRadius() {
         let cornerRadius = middleDotView.frame.height / 2
         middleDotView.layer.cornerRadius = cornerRadius
         leftDotView.layer.cornerRadius = cornerRadius

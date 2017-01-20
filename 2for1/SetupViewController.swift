@@ -116,7 +116,7 @@ extension SetupViewController: UpdateCollectionViewProtocol {
         gameInfoView.layer.cornerRadius = cr
         deletePlayerView.layer.cornerRadius = cr
         addPlayerView.layer.cornerRadius = cr
-        dotsView.makeDotsCircles()
+        dotsView.setCornerRadius()
     }
     
     

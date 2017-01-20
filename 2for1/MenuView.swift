@@ -11,11 +11,15 @@ import UIKit
 class MenuView: UIView {
     
     @IBOutlet var contentView: UIView!
+    
+    var views: [UIView] = []
+    var isCollapsed = true
+    
     @IBOutlet weak var openCloseMenuView: UIView!
     @IBOutlet weak var openCloseMenuDotsView: DotsView!
     @IBOutlet weak var openCloseMenuCenterXConstraint: NSLayoutConstraint!
     
-    @IBOutlet weak var firstOptionView: UIImageView!
+    @IBOutlet weak var firstOptionView: UIView!
     @IBOutlet weak var firstOptionImageView: UIImageView!
     @IBOutlet weak var firstOptionLeadingConstraint: NSLayoutConstraint!
 
@@ -42,6 +46,10 @@ class MenuView: UIView {
         Bundle.main.loadNibNamed("MenuView", owner: self, options: nil)
         self.addSubview(contentView)
         self.constrain(contentView)
+        views.append(openCloseMenuView)
+        views.append(firstOptionView)
+        views.append(secondOptionView)
+        views.append(thirdOptionView)
     }
     
     func setCornerRadius() {
@@ -50,6 +58,8 @@ class MenuView: UIView {
         firstOptionView.layer.cornerRadius = cornerRadius
         secondOptionView.layer.cornerRadius = cornerRadius
         thirdOptionView.layer.cornerRadius = cornerRadius
+        openCloseMenuDotsView.setCornerRadius()
+        openCloseMenuDotsView.expandDots()
     }
     
     func set(images first: UIImage, second: UIImage, third: UIImage) {
@@ -66,7 +76,9 @@ class MenuView: UIView {
             self.secondOptionLeadingConstraint.constant = width * 2
             self.thirdOptionLeadingConstraint.constant = width * 3
             self.layoutIfNeeded()
-        }, completion: nil)
+        }, completion: { (success) in
+            self.isCollapsed = false
+        })
         openCloseMenuDotsView.collapseDots()
     }
     
@@ -79,6 +91,7 @@ class MenuView: UIView {
             self.layoutIfNeeded()
         }, completion: {(success) in
             self.openCloseMenuDotsView.expandDots()
+            self.isCollapsed = true
         })
     }
     

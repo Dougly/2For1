@@ -103,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				11DE14D81E0F46810027D9E8 /* Model */,
-				11DE14EE1E11B2B70027D9E8 /* ViewModel */,
 				11DE14D91E0F468A0027D9E8 /* View */,
 				11DE14DA1E0F46930027D9E8 /* Controller */,
 				11DE14DD1E0F47200027D9E8 /* Support */,
@@ -167,13 +166,6 @@
 				11DE14D21E0F462E0027D9E8 /* Info.plist */,
 			);
 			name = Support;
-			sourceTree = "<group>";
-		};
-		11DE14EE1E11B2B70027D9E8 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

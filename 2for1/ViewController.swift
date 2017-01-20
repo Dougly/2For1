@@ -15,6 +15,8 @@ class GameViewController: UIViewController {
         return true
     }
     
+    @IBOutlet weak var menuView: MenuView!
+    
     @IBOutlet weak var gameView: GameView!
     //UI Elements
     var gameStatus: GameInfoView = GameInfoView()
@@ -25,12 +27,33 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         gameView.addCornerRadius()
-        //layoutViews()
-        
+        applyTapGestures()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //menuView.setCornerRadius()
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        gameView.addCornerRadius() 
+        gameView.addCornerRadius()
+        menuView.setCornerRadius()
+    }
+    
+    func applyTapGestures() {
+        for menuItem in menuView.views {
+            let tapGR = UITapGestureRecognizer(target: self, action: #selector(menuItemTapped))
+            menuItem.addGestureRecognizer(tapGR)
+            
+        }
+    }
+    
+    func menuItemTapped() {
+        if menuView.isCollapsed == true {
+            menuView.expandMenu()
+        } else {
+            menuView.collapseMenu(withDelay: 0)
+        }
     }
     
 }
