@@ -34,10 +34,10 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lkc-0s-a7o" userLabel="first option view">
-                    <rect key="frame" x="277.5" y="19" width="88" height="88"/>
+                    <rect key="frame" x="278" y="19" width="88" height="88"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info" translatesAutoresizingMaskIntoConstraints="NO" id="7UY-mG-yNT">
-                            <rect key="frame" x="17.5" y="17.5" width="53" height="53"/>
+                            <rect key="frame" x="17" y="18" width="53" height="53"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" red="1" green="0.79607843140000001" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -49,7 +49,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w0O-Uj-50a" userLabel="second option view">
-                    <rect key="frame" x="277.5" y="19" width="88" height="88"/>
+                    <rect key="frame" x="278" y="19" width="88" height="88"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="remove" translatesAutoresizingMaskIntoConstraints="NO" id="YiU-Kl-rZt">
                             <rect key="frame" x="11" y="11" width="66" height="66"/>
@@ -64,7 +64,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eGp-Qo-FMe" userLabel="third option view">
-                    <rect key="frame" x="277.5" y="19" width="88" height="88"/>
+                    <rect key="frame" x="278" y="19" width="88" height="88"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add" translatesAutoresizingMaskIntoConstraints="NO" id="Fdh-Bk-ipE" userLabel="third option image view">
                             <rect key="frame" x="11" y="11" width="66" height="66"/>
@@ -79,10 +79,10 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sHi-Og-o0a" userLabel="Open Close Menu View">
-                    <rect key="frame" x="277.5" y="19" width="88" height="88"/>
+                    <rect key="frame" x="278" y="19" width="88" height="88"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vqN-vh-vM6" customClass="DotsView" customModule="_for1" customModuleProvider="target">
-                            <rect key="frame" x="17.5" y="39.5" width="53" height="9"/>
+                            <rect key="frame" x="17" y="40" width="53" height="9"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
                     </subviews>

@@ -44,11 +44,12 @@ class GameViewController: UIViewController {
         for menuItem in menuView.views {
             let tapGR = UITapGestureRecognizer(target: self, action: #selector(menuItemTapped))
             menuItem.addGestureRecognizer(tapGR)
+            print(menuItem)
             
         }
     }
     
-    func menuItemTapped() {
+    func menuItemTapped(_ sender: UIGestureRecognizer) {
         if menuView.isCollapsed == true {
             menuView.expandMenu()
         } else {

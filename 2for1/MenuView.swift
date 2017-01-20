@@ -50,6 +50,10 @@ class MenuView: UIView {
         views.append(firstOptionView)
         views.append(secondOptionView)
         views.append(thirdOptionView)
+        
+        for (index, view) in views.enumerated() {
+            view.tag = index
+        }
     }
     
     func setCornerRadius() {

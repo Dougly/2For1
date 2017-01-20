@@ -21,40 +21,23 @@ class SetupViewController: UIViewController {
     
     @IBOutlet weak var playerCollectionView: UICollectionView!
     @IBOutlet weak var startGameButton: UIButton!
-    
-    //Options Menu
+    @IBOutlet weak var menuView: MenuView!
     @IBOutlet weak var playerCollectionViewBottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var gameInfoLeadingConstraint: NSLayoutConstraint!
-    @IBOutlet weak var deletePlayersLeadingConstraint: NSLayoutConstraint!
-    @IBOutlet weak var addPlayerLeadingConstraint: NSLayoutConstraint!
-    @IBOutlet weak var openCloseMenuCenterXConstraint: NSLayoutConstraint!
-    @IBOutlet weak var openCloseMenuView: UIView!
-    @IBOutlet weak var gameInfoView: UIView!
-    @IBOutlet weak var deletePlayerView: UIView!
-    @IBOutlet weak var addPlayerView: UIView!
-    @IBOutlet weak var dotsView: DotsView!
-    
-    
-    
-    
-    
-    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureLayout()
-        addGestureRecognizersToViews()
+        applyTapGestures()
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         resetViewConroller()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        makeViewsCircles()
-        expandDots()
+        menuView.setCornerRadius()
+        menuView.openCloseMenuDotsView.expandDots()
     }
     
     
@@ -96,56 +79,48 @@ extension SetupViewController: UpdateCollectionViewProtocol {
     
     func customReload(withPlayer handle: String) {
         store.players.sort { $0.tag! < $1.tag! }
-        var indexPath = IndexPath()
         for (index, player) in store.players.enumerated() {
             if let tag = player.tag {
                 if tag == handle {
-                    indexPath = IndexPath(item: index, section: 0)
+                    let indexPath = IndexPath(item: index, section: 0)
+                    playerCollectionView.performBatchUpdates({
+                        self.playerCollectionView.insertItems(at: [indexPath])
+                    }, completion: nil)
                 }
             }
         }
-        playerCollectionView.performBatchUpdates({ 
-            self.playerCollectionView.insertItems(at: [indexPath])
-        }, completion: nil)
     }
 
-    
-    func makeViewsCircles() {
-        let cr = openCloseMenuView.bounds.width / 2
-        openCloseMenuView.layer.cornerRadius = cr
-        gameInfoView.layer.cornerRadius = cr
-        deletePlayerView.layer.cornerRadius = cr
-        addPlayerView.layer.cornerRadius = cr
-        dotsView.setCornerRadius()
-    }
-    
-    
-    func addGestureRecognizersToViews() {
-        let tapGR1 = UITapGestureRecognizer(target: self, action: #selector(tappedMenuOption))
-        openCloseMenuView.addGestureRecognizer(tapGR1)
-        let tapGR2 = UITapGestureRecognizer(target: self, action: #selector(tappedAddPlayer))
-        addPlayerView.addGestureRecognizer(tapGR2)
-        let tapGR3 = UITapGestureRecognizer(target: self, action: #selector(deleteSelectedPlayers))
-        deletePlayerView.addGestureRecognizer(tapGR3)
-        let tapGR4 = UITapGestureRecognizer(target: self, action: #selector(showInfoView))
-        gameInfoView.addGestureRecognizer(tapGR4)
-    }
-    
-    
-    func tappedMenuOption(_ sender: UIView) {
-        if gameInfoLeadingConstraint.constant > 0 {
-            collapseMenu(withDelay: 0)
-        } else {
-            expandMenu()
+    func applyTapGestures() {
+        for menuItem in menuView.views {
+            let tapGR = UITapGestureRecognizer(target: self, action: #selector(menuItemTapped))
+            menuItem.addGestureRecognizer(tapGR)
+            
         }
     }
     
-    func tappedAddPlayer(_ sender: UIView) {
-        performSegue(withIdentifier: "addPlayer", sender: self)
-        collapseMenu(withDelay: 0.5)
+    func menuItemTapped(_ sender: UITapGestureRecognizer) {
+        if let selectedView = sender.view {
+            switch selectedView.tag {
+            case 0: tappedMenuOption()
+            case 1: tappedShowGameInfoView()
+            case 2: tappedRemovePlayers()
+            case 3: tappedAddPlayer()
+            default: break
+            }
+        }
     }
     
-    func deleteSelectedPlayers(_ sender: UIView) {
+    func tappedMenuOption() {
+        menuView.isCollapsed ? menuView.expandMenu() : menuView.collapseMenu(withDelay: 0)
+    }
+    
+    func tappedAddPlayer() {
+        performSegue(withIdentifier: "addPlayer", sender: self)
+        menuView.collapseMenu(withDelay: 0.5)
+    }
+    
+    func tappedRemovePlayers() {
         for ip in selectedIndexPaths {
             let playerData = self.store.players[ip.row]
             store.players.remove(at: ip.row)
@@ -163,7 +138,7 @@ extension SetupViewController: UpdateCollectionViewProtocol {
         
     }
     
-    func showInfoView(_ sender: UIView) {
+    func tappedShowGameInfoView() {
         
     }
     
@@ -184,47 +159,6 @@ extension SetupViewController {
             self.playerCollectionViewBottomConstraint.constant = self.startGameButton.frame.height * -1
             self.view.layoutIfNeeded()
         }, completion: nil)
-    }
-    
-    func expandMenu() {
-        let width = openCloseMenuView.frame.width + (openCloseMenuView.frame.width / 3)
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [.curveEaseInOut], animations: {
-            self.openCloseMenuCenterXConstraint.constant = width * -1.5
-            self.gameInfoLeadingConstraint.constant = width
-            self.deletePlayersLeadingConstraint.constant = width * 2
-            self.addPlayerLeadingConstraint.constant = width * 3
-            self.view.layoutIfNeeded()
-        }, completion: nil)
-        collapseDots()
-    }
-    
-    func collapseMenu(withDelay seconds: TimeInterval) {
-        UIView.animate(withDuration: 0.2, delay: seconds, options: [.curveEaseIn], animations: {
-            self.openCloseMenuCenterXConstraint.constant = 0
-            self.gameInfoLeadingConstraint.constant = 0
-            self.deletePlayersLeadingConstraint.constant = 0
-            self.addPlayerLeadingConstraint.constant = 0
-            self.view.layoutIfNeeded()
-        }, completion: {(success) in
-            self.expandDots()
-        })
-    }
-    
-    func expandDots() {
-        let distance = (dotsView.frame.width / 2) - (dotsView.middleDotView.frame.width / 2)
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [.curveEaseInOut], animations: {
-            self.dotsView.leftDotLeadingConstraint.constant = distance * -1
-            self.dotsView.rightDotTrailingConstraint.constant = distance
-            self.view.layoutIfNeeded()
-        }, completion: nil)
-    }
-    
-    func collapseDots() {
-        UIView.animate(withDuration: 0.2) {
-            self.dotsView.leftDotLeadingConstraint.constant = 0
-            self.dotsView.rightDotTrailingConstraint.constant = 0
-            self.view.layoutIfNeeded()
-        }
     }
 }
 

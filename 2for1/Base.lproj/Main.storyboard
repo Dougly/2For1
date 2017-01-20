@@ -150,71 +150,9 @@
                                 <rect key="frame" x="0.0" y="211" width="414" height="6"/>
                                 <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aCH-DV-upd" userLabel="Menu">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aCH-DV-upd" userLabel="MenuBanner">
                                 <rect key="frame" x="0.0" y="101" width="414" height="110"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y1b-ke-9en" userLabel="game info">
-                                        <rect key="frame" x="185" y="7" width="44" height="44"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info" translatesAutoresizingMaskIntoConstraints="NO" id="mzi-5L-kFW">
-                                                <rect key="frame" x="8" y="8" width="27" height="27"/>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" red="1" green="0.79607843140000001" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="mzi-5L-kFW" firstAttribute="height" secondItem="Y1b-ke-9en" secondAttribute="height" multiplier="0.6" id="IqK-TH-ckH"/>
-                                            <constraint firstItem="mzi-5L-kFW" firstAttribute="centerX" secondItem="Y1b-ke-9en" secondAttribute="centerX" id="hqC-XK-j5Z"/>
-                                            <constraint firstItem="mzi-5L-kFW" firstAttribute="centerY" secondItem="Y1b-ke-9en" secondAttribute="centerY" id="rpt-Ba-myW"/>
-                                            <constraint firstItem="mzi-5L-kFW" firstAttribute="width" secondItem="Y1b-ke-9en" secondAttribute="width" multiplier="0.6" id="vp0-UA-kB4"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZRr-vb-AiV" userLabel="delete players">
-                                        <rect key="frame" x="185" y="7" width="44" height="44"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="remove" translatesAutoresizingMaskIntoConstraints="NO" id="dcr-Dn-oIo">
-                                                <rect key="frame" x="6" y="5" width="33" height="33"/>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" red="1" green="0.79607843140000001" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="dcr-Dn-oIo" firstAttribute="height" secondItem="ZRr-vb-AiV" secondAttribute="height" multiplier="0.75" id="5aO-mp-RDh"/>
-                                            <constraint firstItem="dcr-Dn-oIo" firstAttribute="centerX" secondItem="ZRr-vb-AiV" secondAttribute="centerX" id="B3e-oM-tIj"/>
-                                            <constraint firstItem="dcr-Dn-oIo" firstAttribute="centerY" secondItem="ZRr-vb-AiV" secondAttribute="centerY" id="RAV-8L-8CD"/>
-                                            <constraint firstItem="dcr-Dn-oIo" firstAttribute="width" secondItem="ZRr-vb-AiV" secondAttribute="width" multiplier="0.75" id="l3S-6X-vLc"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OUh-u6-yab" userLabel="add player">
-                                        <rect key="frame" x="185" y="7" width="44" height="44"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add" translatesAutoresizingMaskIntoConstraints="NO" id="0O0-wM-Tn4">
-                                                <rect key="frame" x="6" y="5" width="33" height="33"/>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" red="1" green="0.79607843140000001" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="0O0-wM-Tn4" firstAttribute="centerY" secondItem="OUh-u6-yab" secondAttribute="centerY" id="4U9-2V-OgD"/>
-                                            <constraint firstItem="0O0-wM-Tn4" firstAttribute="width" secondItem="OUh-u6-yab" secondAttribute="width" multiplier="0.75" id="Ktv-cc-qwm"/>
-                                            <constraint firstItem="0O0-wM-Tn4" firstAttribute="height" secondItem="OUh-u6-yab" secondAttribute="height" multiplier="0.75" id="mfI-3Q-Hdl"/>
-                                            <constraint firstItem="0O0-wM-Tn4" firstAttribute="centerX" secondItem="OUh-u6-yab" secondAttribute="centerX" id="vwm-kd-ML0"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1RS-n2-Ani" userLabel="Open Close Menu View">
-                                        <rect key="frame" x="185" y="7" width="44" height="44"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yR8-Tw-0Pj" customClass="DotsView" customModule="_for1" customModuleProvider="target">
-                                                <rect key="frame" x="9" y="20" width="26" height="4"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            </view>
-                                        </subviews>
-                                        <color key="backgroundColor" red="1" green="0.79607843140000001" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="yR8-Tw-0Pj" firstAttribute="centerY" secondItem="1RS-n2-Ani" secondAttribute="centerY" id="0sN-pk-XXF"/>
-                                            <constraint firstItem="yR8-Tw-0Pj" firstAttribute="height" secondItem="1RS-n2-Ani" secondAttribute="height" multiplier="0.1" id="2ep-W2-Wsc"/>
-                                            <constraint firstItem="yR8-Tw-0Pj" firstAttribute="width" secondItem="1RS-n2-Ani" secondAttribute="width" multiplier="0.6" id="guM-io-DFs"/>
-                                            <constraint firstItem="yR8-Tw-0Pj" firstAttribute="centerX" secondItem="1RS-n2-Ani" secondAttribute="centerX" id="hiY-kn-7DA"/>
-                                            <constraint firstAttribute="width" secondItem="1RS-n2-Ani" secondAttribute="height" multiplier="1:1" id="vwY-iC-A2i"/>
-                                        </constraints>
-                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="select players" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tz8-fF-bOo">
                                         <rect key="frame" x="104" y="57" width="207" height="42"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
@@ -223,26 +161,19 @@
                                         <color key="shadowColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
                                         <size key="shadowOffset" width="1" height="3"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WaI-je-SpP" userLabel="menuView" customClass="MenuView" customModule="_for1" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="-9" width="414" height="66"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.10980392160000001" green="0.84705882349999995" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="1RS-n2-Ani" firstAttribute="bottom" secondItem="tz8-fF-bOo" secondAttribute="top" multiplier="0.9" id="5Sf-bo-Rfc"/>
-                                    <constraint firstItem="ZRr-vb-AiV" firstAttribute="width" secondItem="1RS-n2-Ani" secondAttribute="width" id="Gfs-qE-dfP"/>
-                                    <constraint firstItem="Y1b-ke-9en" firstAttribute="height" secondItem="1RS-n2-Ani" secondAttribute="height" id="I5q-cF-l9m"/>
-                                    <constraint firstItem="ZRr-vb-AiV" firstAttribute="leading" secondItem="1RS-n2-Ani" secondAttribute="leading" id="MDr-yX-zCP"/>
-                                    <constraint firstItem="1RS-n2-Ani" firstAttribute="height" secondItem="aCH-DV-upd" secondAttribute="height" multiplier="0.4" id="RB5-Nv-ymw"/>
-                                    <constraint firstItem="Y1b-ke-9en" firstAttribute="width" secondItem="1RS-n2-Ani" secondAttribute="width" id="Rbr-Ie-Fii"/>
-                                    <constraint firstItem="OUh-u6-yab" firstAttribute="height" secondItem="1RS-n2-Ani" secondAttribute="height" id="WoL-1m-yST"/>
-                                    <constraint firstItem="OUh-u6-yab" firstAttribute="leading" secondItem="1RS-n2-Ani" secondAttribute="leading" id="aEi-hr-BHJ"/>
-                                    <constraint firstItem="ZRr-vb-AiV" firstAttribute="height" secondItem="1RS-n2-Ani" secondAttribute="height" id="aXv-Kq-Pfi"/>
-                                    <constraint firstItem="1RS-n2-Ani" firstAttribute="centerX" secondItem="tz8-fF-bOo" secondAttribute="centerX" id="dzW-g1-iQi"/>
-                                    <constraint firstItem="Y1b-ke-9en" firstAttribute="leading" secondItem="1RS-n2-Ani" secondAttribute="leading" id="fP1-gM-4FY"/>
-                                    <constraint firstItem="ZRr-vb-AiV" firstAttribute="bottom" secondItem="1RS-n2-Ani" secondAttribute="bottom" id="gWd-KS-vnR"/>
+                                    <constraint firstItem="WaI-je-SpP" firstAttribute="centerX" secondItem="aCH-DV-upd" secondAttribute="centerX" id="WBe-Zs-ZvA"/>
                                     <constraint firstItem="tz8-fF-bOo" firstAttribute="bottom" secondItem="aCH-DV-upd" secondAttribute="bottom" multiplier="0.9" id="jMh-Jl-UpW"/>
-                                    <constraint firstItem="Y1b-ke-9en" firstAttribute="bottom" secondItem="1RS-n2-Ani" secondAttribute="bottom" id="nvE-jI-Mde"/>
+                                    <constraint firstItem="WaI-je-SpP" firstAttribute="bottom" secondItem="tz8-fF-bOo" secondAttribute="top" id="mn1-cF-CcY"/>
                                     <constraint firstItem="tz8-fF-bOo" firstAttribute="width" secondItem="aCH-DV-upd" secondAttribute="width" multiplier="0.5" id="oy7-4u-hDA"/>
-                                    <constraint firstItem="OUh-u6-yab" firstAttribute="bottom" secondItem="1RS-n2-Ani" secondAttribute="bottom" id="tI1-Bb-jA6"/>
-                                    <constraint firstItem="OUh-u6-yab" firstAttribute="width" secondItem="1RS-n2-Ani" secondAttribute="width" id="yKy-A6-NgI"/>
+                                    <constraint firstItem="WaI-je-SpP" firstAttribute="width" secondItem="aCH-DV-upd" secondAttribute="width" id="qwS-cU-whY"/>
+                                    <constraint firstItem="WaI-je-SpP" firstAttribute="height" secondItem="aCH-DV-upd" secondAttribute="height" multiplier="0.6" id="v8T-JQ-bRB"/>
                                     <constraint firstItem="tz8-fF-bOo" firstAttribute="centerX" secondItem="aCH-DV-upd" secondAttribute="centerX" id="z1J-ZI-vbg"/>
                                 </constraints>
                             </view>
@@ -270,17 +201,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="addPlayerLeadingConstraint" destination="aEi-hr-BHJ" id="MGP-KK-SgA"/>
-                        <outlet property="addPlayerView" destination="OUh-u6-yab" id="G9v-Mz-JfX"/>
-                        <outlet property="deletePlayerView" destination="ZRr-vb-AiV" id="Vid-Ae-5jg"/>
-                        <outlet property="deletePlayersLeadingConstraint" destination="MDr-yX-zCP" id="7Ge-fJ-aZa"/>
-                        <outlet property="dotsView" destination="yR8-Tw-0Pj" id="31W-9a-GXJ"/>
-                        <outlet property="gameInfoLeadingConstraint" destination="fP1-gM-4FY" id="9We-hs-FIb"/>
-                        <outlet property="gameInfoView" destination="Y1b-ke-9en" id="jwd-Zt-bHr"/>
-                        <outlet property="openCloseMenuCenterXConstraint" destination="dzW-g1-iQi" id="hXX-dp-7sU"/>
-                        <outlet property="openCloseMenuView" destination="1RS-n2-Ani" id="HDc-Om-B41"/>
+                        <outlet property="menuView" destination="WaI-je-SpP" id="9n8-Ae-YlI"/>
                         <outlet property="playerCollectionView" destination="uCU-0j-WqR" id="3QR-gM-y57"/>
-                        <outlet property="playerCollectionViewBottomConstraint" destination="lnT-iY-hWF" id="RIy-B1-HP5"/>
+                        <outlet property="playerCollectionViewBottomConstraint" destination="lnT-iY-hWF" id="l5W-qc-thx"/>
                         <outlet property="startGameButton" destination="n7w-mq-rkz" id="p2z-zd-Pb2"/>
                         <segue destination="WTu-Me-een" kind="presentation" identifier="addPlayer" id="RHf-cZ-FbC"/>
                     </connections>
@@ -347,9 +270,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="add" width="48" height="48"/>
         <image name="delete" width="48" height="48"/>
-        <image name="info" width="258" height="258"/>
-        <image name="remove" width="48" height="48"/>
     </resources>
 </document>
