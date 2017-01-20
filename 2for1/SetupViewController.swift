@@ -17,30 +17,26 @@ class SetupViewController: UIViewController {
     var sectionInsets: UIEdgeInsets!
     var itemSize: CGSize!
     var numberOfCellsPerRow: CGFloat = 3
+    override var prefersStatusBarHidden: Bool { return true }
     
     @IBOutlet weak var playerCollectionView: UICollectionView!
     @IBOutlet weak var startGameButton: UIButton!
     
-    //menu
+    //Options Menu
     @IBOutlet weak var playerCollectionViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var gameInfoLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var deletePlayersLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var addPlayerLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var openCloseMenuCenterXConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var openCloseMenuView: UIView!
     @IBOutlet weak var gameInfoView: UIView!
     @IBOutlet weak var deletePlayerView: UIView!
     @IBOutlet weak var addPlayerView: UIView!
-    
     @IBOutlet weak var dotsView: DotsView!
     
     
     
     
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
     
     
     
@@ -171,8 +167,6 @@ extension SetupViewController: UpdateCollectionViewProtocol {
         
     }
     
-    
-    
 }
 
 //MARK: Animations
@@ -243,9 +237,13 @@ extension SetupViewController: UICollectionViewDataSource, UICollectionViewDeleg
         return 1
     }
     
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return store.players.count
     }
+    
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "playerCell", for: indexPath) as! CustomPlayerCell
@@ -259,9 +257,11 @@ extension SetupViewController: UICollectionViewDataSource, UICollectionViewDeleg
         return cell
     }
     
+    
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! CustomPlayerCell
-        
+    
         if cell.pictureImageView.image == #imageLiteral(resourceName: "slime") {
             cell.pictureImageView.image = #imageLiteral(resourceName: "childCare")
             store.players[indexPath.item].selected = true
@@ -275,7 +275,6 @@ extension SetupViewController: UICollectionViewDataSource, UICollectionViewDeleg
                 }
             }
         }
-        selectedIndexPaths.sort { $0.row > $1.row }
         
         if selectedIndexPaths.count >= 2 && playerCollectionViewBottomConstraint.constant == 0 {
             showStartGameButton()
@@ -283,9 +282,12 @@ extension SetupViewController: UICollectionViewDataSource, UICollectionViewDeleg
             hideStartGameButton()
         }
         
-        print(selectedIndexPaths.count)
+        selectedIndexPaths.sort { $0.row > $1.row }
+
     }
 }
+
+
 
 //MARK: Collection view flow Layout
 extension SetupViewController: UICollectionViewDelegateFlowLayout {

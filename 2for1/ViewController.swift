@@ -15,6 +15,7 @@ class GameViewController: UIViewController {
         return true
     }
     
+    @IBOutlet weak var gameView: GameView!
     //UI Elements
     var gameStatus: GameInfoView = GameInfoView()
     var addDieOrDrinkView: AddDieOrDrinkView = AddDieOrDrinkView()
@@ -23,7 +24,13 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        layoutViews()
+        gameView.addCornerRadius()
+        //layoutViews()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        gameView.addCornerRadius() 
     }
     
 }

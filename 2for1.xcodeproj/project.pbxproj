@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1126B78D1E319D8800F017D1 /* GameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1126B78C1E319D8800F017D1 /* GameView.xib */; };
+		1126B78F1E319D9D00F017D1 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1126B78E1E319D9D00F017D1 /* GameView.swift */; };
 		1176F4331E23F73300B69A5A /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1176F4321E23F73300B69A5A /* UIColorExtension.swift */; };
 		117EE3971E1EAA4600E071E0 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117EE3961E1EAA4600E071E0 /* SetupViewController.swift */; };
 		117EE3991E1EEF7300E071E0 /* CreatePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117EE3981E1EEF7300E071E0 /* CreatePlayerViewController.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1126B78C1E319D8800F017D1 /* GameView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameView.xib; sourceTree = "<group>"; };
+		1126B78E1E319D9D00F017D1 /* GameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		1176F4321E23F73300B69A5A /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		117EE3961E1EAA4600E071E0 /* SetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		117EE3981E1EEF7300E071E0 /* CreatePlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePlayerViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +134,8 @@
 				118ED3181E2ED5270091E5D5 /* DotsView.swift */,
 				119710921E30659200D4CCD4 /* CreatePlayerView.xib */,
 				119710941E3065A500D4CCD4 /* CreatePlayerView.swift */,
+				1126B78C1E319D8800F017D1 /* GameView.xib */,
+				1126B78E1E319D9D00F017D1 /* GameView.swift */,
 				11DE14E21E0F4A1F0027D9E8 /* ViewExtension.swift */,
 				117EE5461E201ED600E071E0 /* CustomPlayerCell.swift */,
 			);
@@ -226,6 +232,7 @@
 			files = (
 				118ED3171E2ED5110091E5D5 /* DotsView.xib in Resources */,
 				119710931E30659200D4CCD4 /* CreatePlayerView.xib in Resources */,
+				1126B78D1E319D8800F017D1 /* GameView.xib in Resources */,
 				11DE14D11E0F462E0027D9E8 /* LaunchScreen.storyboard in Resources */,
 				11DE14CE1E0F462E0027D9E8 /* Assets.xcassets in Resources */,
 				11DE14DF1E0F48770027D9E8 /* GameInfoView.xib in Resources */,
@@ -254,6 +261,7 @@
 				117EE3971E1EAA4600E071E0 /* SetupViewController.swift in Sources */,
 				11DE14F41E1324E10027D9E8 /* AddDieOrDrinkView.swift in Sources */,
 				11DE14C41E0F462E0027D9E8 /* AppDelegate.swift in Sources */,
+				1126B78F1E319D9D00F017D1 /* GameView.swift in Sources */,
 				11DE14EB1E1024940027D9E8 /* Die.swift in Sources */,
 				117EE3991E1EEF7300E071E0 /* CreatePlayerViewController.swift in Sources */,
 				117EE5491E20262400E071E0 /* DataStore.swift in Sources */,
