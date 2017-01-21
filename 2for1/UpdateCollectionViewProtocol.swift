@@ -8,10 +8,6 @@
 
 import Foundation
 
-protocol UpdateCollectionViewProtocol { }
-
-extension UpdateCollectionViewProtocol {
-    
-    func customReload(withPlayer handle: String){}
-    
+protocol UpdateCollectionViewProtocol {
+     func customReload(withPlayer handle: String)
 }

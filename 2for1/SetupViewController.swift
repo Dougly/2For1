@@ -23,6 +23,8 @@ class SetupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         playerVC.viewCont = self
         playerCollectionView.delegate = playerVC
         playerCollectionView.dataSource = playerVC
