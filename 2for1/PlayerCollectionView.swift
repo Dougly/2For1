@@ -21,6 +21,7 @@ class PlayerCollectionView: NSObject, UICollectionViewDelegateFlowLayout, UIColl
     var numberOfCellsPerRow: CGFloat = 3
     
     func customReload(withPlayer handle: String) {
+        print("called in PlayerCollectionView")
         viewCont?.customReload(withPlayer: handle)
     }
 
