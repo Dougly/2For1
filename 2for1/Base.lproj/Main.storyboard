@@ -80,7 +80,11 @@
                                     <segue destination="BYZ-38-t0r" kind="presentation" identifier="startGame" id="c9b-EJ-7fw"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uCU-0j-WqR">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AMx-vP-tHn" userLabel="collectionViewContainer" customClass="PlayerCollectionView" customModule="_for1" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="211" width="414" height="525"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uCU-0j-WqR" customClass="PlayerCollectionView" customModule="_for1" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="211" width="414" height="525"/>
                                 <color key="backgroundColor" red="0.07677497365076684" green="0.6304310581140351" blue="0.42459828894845292" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ezh-Pd-Uby">
@@ -132,10 +136,6 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="XhT-We-T2q" id="xAT-Ga-5dY"/>
-                                    <outlet property="delegate" destination="XhT-We-T2q" id="Rpx-7V-dfD"/>
-                                </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="------- 2 - for - 1 -------" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Koz-j3-B8z">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="101"/>
@@ -190,19 +190,28 @@
                             <constraint firstItem="LWc-Ro-h1D" firstAttribute="width" secondItem="aCH-DV-upd" secondAttribute="width" id="QXt-m4-G2k"/>
                             <constraint firstItem="n7w-mq-rkz" firstAttribute="centerX" secondItem="1tF-jx-fzD" secondAttribute="centerX" id="RAf-ZS-kdx"/>
                             <constraint firstItem="LWc-Ro-h1D" firstAttribute="centerX" secondItem="aCH-DV-upd" secondAttribute="centerX" id="ZLG-nl-VDb"/>
+                            <constraint firstItem="AMx-vP-tHn" firstAttribute="bottom" secondItem="dgu-TI-549" secondAttribute="top" id="ZVx-4V-Opn"/>
                             <constraint firstItem="aCH-DV-upd" firstAttribute="centerX" secondItem="1tF-jx-fzD" secondAttribute="centerX" id="a0w-KR-2HN"/>
+                            <constraint firstItem="AMx-vP-tHn" firstAttribute="top" secondItem="aCH-DV-upd" secondAttribute="bottom" id="aJx-43-zgZ"/>
                             <constraint firstItem="n7w-mq-rkz" firstAttribute="bottom" secondItem="1tF-jx-fzD" secondAttribute="bottom" id="aTN-a2-BFi"/>
+                            <constraint firstItem="AMx-vP-tHn" firstAttribute="centerX" secondItem="1tF-jx-fzD" secondAttribute="centerX" id="gKa-HO-bgt"/>
                             <constraint firstItem="aCH-DV-upd" firstAttribute="top" secondItem="Koz-j3-B8z" secondAttribute="bottom" id="juQ-Ro-nTL"/>
+                            <constraint firstItem="AMx-vP-tHn" firstAttribute="width" secondItem="1tF-jx-fzD" secondAttribute="width" id="lh9-zp-zoc"/>
                             <constraint firstItem="uCU-0j-WqR" firstAttribute="bottom" secondItem="dgu-TI-549" secondAttribute="top" id="lnT-iY-hWF"/>
                             <constraint firstItem="LWc-Ro-h1D" firstAttribute="height" secondItem="aCH-DV-upd" secondAttribute="height" multiplier="0.05" id="nk7-58-Hbk"/>
                             <constraint firstItem="LWc-Ro-h1D" firstAttribute="top" secondItem="aCH-DV-upd" secondAttribute="bottom" id="o3M-qf-QWX"/>
                             <constraint firstItem="Koz-j3-B8z" firstAttribute="top" secondItem="1tF-jx-fzD" secondAttribute="topMargin" id="r24-et-Kg4"/>
                             <constraint firstItem="Koz-j3-B8z" firstAttribute="centerX" secondItem="1tF-jx-fzD" secondAttribute="centerX" id="ug9-Y0-1Mp"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="uCU-0j-WqR"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
+                        <outlet property="collectionViewContainerView" destination="AMx-vP-tHn" id="hUQ-2Y-isn"/>
                         <outlet property="menuView" destination="WaI-je-SpP" id="9n8-Ae-YlI"/>
-                        <outlet property="playerCollectionView" destination="uCU-0j-WqR" id="3QR-gM-y57"/>
                         <outlet property="playerCollectionViewBottomConstraint" destination="lnT-iY-hWF" id="l5W-qc-thx"/>
                         <outlet property="startGameButton" destination="n7w-mq-rkz" id="p2z-zd-Pb2"/>
                         <segue destination="WTu-Me-een" kind="presentation" identifier="addPlayer" id="RHf-cZ-FbC"/>

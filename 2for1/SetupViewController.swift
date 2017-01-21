@@ -14,29 +14,33 @@ class SetupViewController: UIViewController {
     var selectedIndexPaths: [IndexPath] = []
     override var prefersStatusBarHidden: Bool { return true }
     
-    @IBOutlet weak var playerCollectionView: UICollectionView!
+    @IBOutlet weak var collectionViewContainerView: PlayerCollectionView!
+    var collectionView: UICollectionView!
+    
     @IBOutlet weak var startGameButton: UIButton!
     @IBOutlet weak var menuView: MenuView!
     @IBOutlet weak var playerCollectionViewBottomConstraint: NSLayoutConstraint!
     
     //Collection View Flow Layout Variables
-    let screenWidth = UIScreen.main.bounds.width
-    var spacing: CGFloat!
-    var sectionInsets: UIEdgeInsets!
-    var itemSize: CGSize!
-    var numberOfCellsPerRow: CGFloat = 3
+//    let screenWidth = UIScreen.main.bounds.width
+//    var spacing: CGFloat!
+//    var sectionInsets: UIEdgeInsets!
+//    var itemSize: CGSize!
+//    var numberOfCellsPerRow: CGFloat = 3
     
-    //var customCollectionView: CustomCollectionView!
+    //var playerCollectionView: PlayerCollectionView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureLayout()
+        //configureLayout()
         applyTapGestures()
         
+        collectionView = collectionViewContainerView.collectionView
+        collectionViewContainerView.collectionView.delegate = self
+        collectionViewContainerView.collectionView.dataSource = collectionViewContainerView
         
-//        playerCollectionView.delegate = customCollectionView
-//        playerCollectionView.dataSource = customCollectionView
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,6 +50,8 @@ class SetupViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         menuView.setCornerRadius()
         menuView.openCloseMenuDotsView.expandDots()
+        collectionViewContainerView.configureLayout()
+        collectionView.reloadData()
     }
     
     
@@ -77,7 +83,7 @@ extension SetupViewController: UpdateCollectionViewProtocol {
     
     func resetViewConroller() {
         store.players.sort { $0.tag! < $1.tag! }
-        playerCollectionView.reloadData()
+        collectionView.reloadData()
         playerCollectionViewBottomConstraint.constant = 0
         selectedIndexPaths = []
         for player in store.players {
@@ -91,8 +97,8 @@ extension SetupViewController: UpdateCollectionViewProtocol {
             if let tag = player.tag {
                 if tag == handle {
                     let indexPath = IndexPath(item: index, section: 0)
-                    playerCollectionView.performBatchUpdates({
-                        self.playerCollectionView.insertItems(at: [indexPath])
+                    collectionView.performBatchUpdates({
+                        self.collectionView.insertItems(at: [indexPath])
                     }, completion: nil)
                 }
             }
@@ -136,9 +142,9 @@ extension SetupViewController: UpdateCollectionViewProtocol {
         }
         self.store.saveContext()
         hideStartGameButton()
-        playerCollectionView.performBatchUpdates ({
+        collectionView.performBatchUpdates ({
             for ip in self.selectedIndexPaths {
-                self.playerCollectionView.deleteItems(at: [ip])
+                self.collectionView.deleteItems(at: [ip])
             }
         }, completion: { (success) in
             self.selectedIndexPaths = []
@@ -173,32 +179,7 @@ extension SetupViewController {
 
 
 //MARK: Collection View Setup
-extension SetupViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return store.players.count
-    }
-    
-    
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "playerCell", for: indexPath) as! CustomPlayerCell
-        let player = store.players[indexPath.row]
-        cell.tagLabel.text = player.tag
-        if cell.isSelected {
-            cell.pictureImageView.image = #imageLiteral(resourceName: "childCare")
-        } else {
-            cell.pictureImageView.image = #imageLiteral(resourceName: "slime")
-        }
-        return cell
-    }
-    
+extension SetupViewController: UICollectionViewDelegate {
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -229,34 +210,34 @@ extension SetupViewController: UICollectionViewDataSource, UICollectionViewDeleg
     }
 }
 
-
-
-//MARK: Collection view flow Layout
-extension SetupViewController: UICollectionViewDelegateFlowLayout {
-    
-    func configureLayout() {
-        let desiredSpacing: CGFloat = 5
-        let itemWidth = (screenWidth / numberOfCellsPerRow) - (desiredSpacing + 2)
-        let itemHeight = itemWidth * 1.25
-        spacing = desiredSpacing
-        sectionInsets = UIEdgeInsets(top: spacing * 2, left: spacing, bottom: spacing, right: spacing)
-        itemSize = CGSize(width: itemWidth, height: itemHeight)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return itemSize
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return spacing
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return spacing
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return sectionInsets
-    }
-}
+//
+//
+////MARK: Collection view flow Layout
+//extension SetupViewController: UICollectionViewDelegateFlowLayout {
+//    
+//    func configureLayout() {
+//        let desiredSpacing: CGFloat = 5
+//        let itemWidth = (screenWidth / numberOfCellsPerRow) - (desiredSpacing + 2)
+//        let itemHeight = itemWidth * 1.25
+//        spacing = desiredSpacing
+//        sectionInsets = UIEdgeInsets(top: spacing * 2, left: spacing, bottom: spacing, right: spacing)
+//        itemSize = CGSize(width: itemWidth, height: itemHeight)
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return itemSize
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//        return spacing
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+//        return spacing
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        return sectionInsets
+//    }
+//}
 

@@ -27,7 +27,7 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let height = UIScreen.main.bounds.height * 0.1
+        //let height = UIScreen.main.bounds.height * 0.1
         
         gameView.addCornerRadius()
         applyTapGestures()

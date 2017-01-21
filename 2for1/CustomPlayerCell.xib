@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomPlayerCell" customModule="_for1" customModuleProvider="target">
+            <connections>
+                <outlet property="pictureImageView" destination="MLn-ZM-YJX" id="WFY-tJ-kbl"/>
+                <outlet property="tagLabel" destination="8dA-yh-sdM" id="td6-5F-Hmh"/>
+                <outlet property="view" destination="iN0-l3-epB" id="Uxz-D5-8u7"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="274" height="352"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MLn-ZM-YJX">
+                    <rect key="frame" x="0.0" y="0.0" width="274" height="281.5"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hzd-kG-oTg" userLabel="Name Vew">
+                    <rect key="frame" x="0.0" y="281.5" width="274" height="70.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8dA-yh-sdM">
+                            <rect key="frame" x="27.5" y="0.0" width="219" height="70.5"/>
+                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="8dA-yh-sdM" firstAttribute="centerY" secondItem="hzd-kG-oTg" secondAttribute="centerY" id="2T5-t3-AfI"/>
+                        <constraint firstItem="8dA-yh-sdM" firstAttribute="width" secondItem="hzd-kG-oTg" secondAttribute="width" multiplier="0.8" id="F4d-mw-6EQ"/>
+                        <constraint firstItem="8dA-yh-sdM" firstAttribute="centerX" secondItem="hzd-kG-oTg" secondAttribute="centerX" id="aU2-RX-rGz"/>
+                        <constraint firstItem="8dA-yh-sdM" firstAttribute="height" secondItem="hzd-kG-oTg" secondAttribute="height" id="lHy-0q-d68"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="hzd-kG-oTg" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.2" id="3tg-Cs-LWq"/>
+                <constraint firstItem="MLn-ZM-YJX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ByM-8E-VmB"/>
+                <constraint firstItem="MLn-ZM-YJX" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="Db1-p8-yKw"/>
+                <constraint firstItem="MLn-ZM-YJX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="NDZ-uU-3kt"/>
+                <constraint firstItem="hzd-kG-oTg" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="eir-qO-KrR"/>
+                <constraint firstItem="MLn-ZM-YJX" firstAttribute="bottom" secondItem="hzd-kG-oTg" secondAttribute="top" id="pGl-Jz-s6h"/>
+                <constraint firstAttribute="bottom" secondItem="hzd-kG-oTg" secondAttribute="bottom" id="uye-hB-zMN"/>
+                <constraint firstItem="hzd-kG-oTg" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="yzp-OW-6GA"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="14" y="9"/>
+        </view>
+    </objects>
+</document>

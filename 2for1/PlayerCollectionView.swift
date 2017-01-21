@@ -8,12 +8,13 @@
 
 import UIKit
 
-class CustomCollectionView: UIView {
+class PlayerCollectionView: UIView {
     
     
+    @IBOutlet var collectionView: UICollectionView!
+    let cell = CustomPlayerCell()
     
-    //let conetentView = UIView()
-    let collectionView = UICollectionView()
+    let store = DataStore.sharedInstance
     
     let screenWidth = UIScreen.main.bounds.width
     var spacing: CGFloat!
@@ -32,17 +33,47 @@ class CustomCollectionView: UIView {
     }
     
     func commonInit() {
+        Bundle.main.loadNibNamed("PlayerCollectionView", owner: self, options: nil)
         self.addSubview(collectionView)
         self.constrain(collectionView)
-        //self.invalidateFlowLayoutDelegateMetrics = false
-        //collectionView.dataSource = self
         
-        configureLayout()
+        
+        
+        collectionView.register(CustomPlayerCell.self, forCellWithReuseIdentifier: "playerCell")
+        //collectionView.cell
+        //configureLayout()
         
     }
 }
 
-extension CustomCollectionView: UICollectionViewDelegateFlowLayout {
+extension PlayerCollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return store.players.count
+    }
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "playerCell", for: indexPath) as! CustomPlayerCell
+        let player = store.players[indexPath.row]
+        cell.tagLabel.text = player.tag
+        if cell.isSelected {
+            cell.pictureImageView.image = #imageLiteral(resourceName: "childCare")
+        } else {
+            cell.pictureImageView.image = #imageLiteral(resourceName: "slime")
+        }
+        return cell
+    }
+    
+}
+
+extension PlayerCollectionView: UICollectionViewDelegateFlowLayout {
     
     func configureLayout() {
         let desiredSpacing: CGFloat = 5
