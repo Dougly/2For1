@@ -12,9 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomPlayerCell" customModule="_for1" customModuleProvider="target">
             <connections>
-                <outlet property="pictureImageView" destination="MLn-ZM-YJX" id="WFY-tJ-kbl"/>
-                <outlet property="tagLabel" destination="8dA-yh-sdM" id="td6-5F-Hmh"/>
-                <outlet property="view" destination="iN0-l3-epB" id="Uxz-D5-8u7"/>
+                <outlet property="pictureImageView" destination="MLn-ZM-YJX" id="DyX-fZ-DU6"/>
+                <outlet property="tagLabel" destination="8dA-yh-sdM" id="6rY-y0-pUJ"/>
+                <outlet property="view" destination="iN0-l3-epB" id="tAQ-lI-N7Z"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

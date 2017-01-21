@@ -8,6 +8,64 @@
 
 import UIKit
 
+class PlayerCV: UICollectionViewFlowLayout, UICollectionViewDataSource {
+    
+    let store = DataStore.sharedInstance
+    let screenWidth = UIScreen.main.bounds.width
+    var spacing: CGFloat!
+    var sectionInsets: UIEdgeInsets!
+    var itemsSize: CGSize!
+    var numberOfCellsPerRow: CGFloat = 3
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return store.players.count
+    }
+
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "playerCell", for: indexPath) as! CustomPlayerCell
+        let player = store.players[indexPath.row]
+        cell.tagLabel.text = player.tag
+        if cell.isSelected {
+            cell.pictureImageView.image = #imageLiteral(resourceName: "childCare")
+        } else {
+            cell.pictureImageView.image = #imageLiteral(resourceName: "slime")
+        }
+        return cell
+    }
+    
+    func configureLayout() {
+        let desiredSpacing: CGFloat = 5
+        let itemWidth = (screenWidth / numberOfCellsPerRow) - (desiredSpacing + 2)
+        let itemHeight = itemWidth * 1.25
+        spacing = desiredSpacing
+        sectionInsets = UIEdgeInsets(top: spacing * 2, left: spacing, bottom: spacing, right: spacing)
+        itemSize = CGSize(width: itemWidth, height: itemHeight)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return itemsSize
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return spacing
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return spacing
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return sectionInsets
+    }
+
+}
+
+
 class PlayerCollectionView: UIView {
     
     
@@ -38,7 +96,6 @@ class PlayerCollectionView: UIView {
         self.constrain(collectionView)
         
         
-        
         collectionView.register(CustomPlayerCell.self, forCellWithReuseIdentifier: "playerCell")
         //collectionView.cell
         //configureLayout()
@@ -46,7 +103,7 @@ class PlayerCollectionView: UIView {
     }
 }
 
-extension PlayerCollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
+extension PlayerCollectionView: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }

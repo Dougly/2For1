@@ -15,11 +15,11 @@ class SetupViewController: UIViewController {
     override var prefersStatusBarHidden: Bool { return true }
     
     @IBOutlet weak var collectionViewContainerView: PlayerCollectionView!
-    var collectionView: UICollectionView!
+    var playerCV: PlayerCV!
     
     @IBOutlet weak var startGameButton: UIButton!
     @IBOutlet weak var menuView: MenuView!
-    @IBOutlet weak var playerCollectionViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var collectionViewContainerBottomConstraint: NSLayoutConstraint!
     
     //Collection View Flow Layout Variables
 //    let screenWidth = UIScreen.main.bounds.width
@@ -67,7 +67,7 @@ class SetupViewController: UIViewController {
             }
             destVC.game.players = selectedPlayers
             selectedPlayers = []
-            playerCollectionViewBottomConstraint.constant = 0
+            collectionViewContainerBottomConstraint.constant = 0
         }
         
         if segue.identifier == "addPlayer" {
@@ -84,7 +84,7 @@ extension SetupViewController: UpdateCollectionViewProtocol {
     func resetViewConroller() {
         store.players.sort { $0.tag! < $1.tag! }
         collectionView.reloadData()
-        playerCollectionViewBottomConstraint.constant = 0
+        collectionViewContainerBottomConstraint.constant = 0
         selectedIndexPaths = []
         for player in store.players {
             player.selected = false
@@ -163,14 +163,14 @@ extension SetupViewController {
     
     func hideStartGameButton() {
         UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseInOut], animations: {
-            self.playerCollectionViewBottomConstraint.constant = 0
+            self.collectionViewContainerBottomConstraint.constant = 0
             self.view.layoutIfNeeded()
         }, completion: nil)
     }
     
     func showStartGameButton() {
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: [.curveEaseInOut], animations: {
-            self.playerCollectionViewBottomConstraint.constant = self.startGameButton.frame.height * -1
+            self.collectionViewContainerBottomConstraint.constant = self.startGameButton.frame.height * -1
             self.view.layoutIfNeeded()
         }, completion: nil)
     }
@@ -199,7 +199,7 @@ extension SetupViewController: UICollectionViewDelegate {
             }
         }
         
-        if selectedIndexPaths.count >= 2 && playerCollectionViewBottomConstraint.constant == 0 {
+        if selectedIndexPaths.count >= 2 && collectionViewContainerBottomConstraint.constant == 0 {
             showStartGameButton()
         } else if selectedIndexPaths.count < 2 {
             hideStartGameButton()

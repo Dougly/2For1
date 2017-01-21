@@ -84,59 +84,6 @@
                                 <rect key="frame" x="0.0" y="211" width="414" height="525"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uCU-0j-WqR" customClass="PlayerCollectionView" customModule="_for1" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="211" width="414" height="525"/>
-                                <color key="backgroundColor" red="0.07677497365076684" green="0.6304310581140351" blue="0.42459828894845292" alpha="1" colorSpace="calibratedRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ezh-Pd-Uby">
-                                    <size key="itemSize" width="155" height="195"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="playerCell" id="oZZ-rB-QcB" customClass="CustomPlayerCell" customModule="_for1" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="155" height="195"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="155" height="195"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="myZ-o4-8bv">
-                                                    <rect key="frame" x="0.0" y="0.0" width="155" height="155"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="myZ-o4-8bv" secondAttribute="height" multiplier="1:1" id="wxh-I2-H1n"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tag" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JHS-RH-7Nk" userLabel="Tag">
-                                                    <rect key="frame" x="8" y="155" width="139" height="39"/>
-                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </view>
-                                        <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="JHS-RH-7Nk" firstAttribute="height" secondItem="myZ-o4-8bv" secondAttribute="height" multiplier="0.25" id="3a8-SA-lkF"/>
-                                            <constraint firstItem="JHS-RH-7Nk" firstAttribute="top" secondItem="myZ-o4-8bv" secondAttribute="bottom" id="8Ve-QM-T5n"/>
-                                            <constraint firstItem="myZ-o4-8bv" firstAttribute="top" secondItem="oZZ-rB-QcB" secondAttribute="top" id="95c-5y-7V9"/>
-                                            <constraint firstItem="JHS-RH-7Nk" firstAttribute="width" secondItem="myZ-o4-8bv" secondAttribute="width" multiplier="0.9" id="RYq-RG-doa"/>
-                                            <constraint firstItem="JHS-RH-7Nk" firstAttribute="centerX" secondItem="myZ-o4-8bv" secondAttribute="centerX" id="S3h-Hi-4MG"/>
-                                            <constraint firstItem="myZ-o4-8bv" firstAttribute="centerX" secondItem="oZZ-rB-QcB" secondAttribute="centerX" id="cXF-yz-GR8"/>
-                                            <constraint firstItem="myZ-o4-8bv" firstAttribute="width" secondItem="oZZ-rB-QcB" secondAttribute="width" id="l2E-46-IMI"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <outlet property="pictureImageView" destination="myZ-o4-8bv" id="kSW-4H-A6F"/>
-                                            <outlet property="tagLabel" destination="JHS-RH-7Nk" id="Ooc-Nd-IG4"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="------- 2 - for - 1 -------" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Koz-j3-B8z">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="101"/>
                                 <color key="backgroundColor" red="0.10980392160000001" green="0.84705882349999995" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -180,12 +127,9 @@
                         </subviews>
                         <color key="backgroundColor" red="0.14901960784313725" green="0.8666666666666667" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="uCU-0j-WqR" firstAttribute="top" secondItem="aCH-DV-upd" secondAttribute="bottom" id="AAp-54-LmH"/>
                             <constraint firstItem="Koz-j3-B8z" firstAttribute="width" secondItem="1tF-jx-fzD" secondAttribute="width" id="AVW-G1-gp6"/>
                             <constraint firstItem="aCH-DV-upd" firstAttribute="height" secondItem="1tF-jx-fzD" secondAttribute="height" multiplier="0.15" id="CFm-bS-XOe"/>
-                            <constraint firstItem="uCU-0j-WqR" firstAttribute="centerX" secondItem="1tF-jx-fzD" secondAttribute="centerX" id="KyA-MT-8X9"/>
                             <constraint firstItem="n7w-mq-rkz" firstAttribute="width" secondItem="1tF-jx-fzD" secondAttribute="width" id="MiR-xh-Arw"/>
-                            <constraint firstItem="uCU-0j-WqR" firstAttribute="width" secondItem="1tF-jx-fzD" secondAttribute="width" id="Odq-YC-OPr"/>
                             <constraint firstItem="aCH-DV-upd" firstAttribute="width" secondItem="1tF-jx-fzD" secondAttribute="width" id="Q08-2x-rCh"/>
                             <constraint firstItem="LWc-Ro-h1D" firstAttribute="width" secondItem="aCH-DV-upd" secondAttribute="width" id="QXt-m4-G2k"/>
                             <constraint firstItem="n7w-mq-rkz" firstAttribute="centerX" secondItem="1tF-jx-fzD" secondAttribute="centerX" id="RAf-ZS-kdx"/>
@@ -197,22 +141,16 @@
                             <constraint firstItem="AMx-vP-tHn" firstAttribute="centerX" secondItem="1tF-jx-fzD" secondAttribute="centerX" id="gKa-HO-bgt"/>
                             <constraint firstItem="aCH-DV-upd" firstAttribute="top" secondItem="Koz-j3-B8z" secondAttribute="bottom" id="juQ-Ro-nTL"/>
                             <constraint firstItem="AMx-vP-tHn" firstAttribute="width" secondItem="1tF-jx-fzD" secondAttribute="width" id="lh9-zp-zoc"/>
-                            <constraint firstItem="uCU-0j-WqR" firstAttribute="bottom" secondItem="dgu-TI-549" secondAttribute="top" id="lnT-iY-hWF"/>
                             <constraint firstItem="LWc-Ro-h1D" firstAttribute="height" secondItem="aCH-DV-upd" secondAttribute="height" multiplier="0.05" id="nk7-58-Hbk"/>
                             <constraint firstItem="LWc-Ro-h1D" firstAttribute="top" secondItem="aCH-DV-upd" secondAttribute="bottom" id="o3M-qf-QWX"/>
                             <constraint firstItem="Koz-j3-B8z" firstAttribute="top" secondItem="1tF-jx-fzD" secondAttribute="topMargin" id="r24-et-Kg4"/>
                             <constraint firstItem="Koz-j3-B8z" firstAttribute="centerX" secondItem="1tF-jx-fzD" secondAttribute="centerX" id="ug9-Y0-1Mp"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="uCU-0j-WqR"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
+                        <outlet property="collectionViewContainerBottomConstraint" destination="ZVx-4V-Opn" id="u55-2I-HzO"/>
                         <outlet property="collectionViewContainerView" destination="AMx-vP-tHn" id="hUQ-2Y-isn"/>
                         <outlet property="menuView" destination="WaI-je-SpP" id="9n8-Ae-YlI"/>
-                        <outlet property="playerCollectionViewBottomConstraint" destination="lnT-iY-hWF" id="l5W-qc-thx"/>
                         <outlet property="startGameButton" destination="n7w-mq-rkz" id="p2z-zd-Pb2"/>
                         <segue destination="WTu-Me-een" kind="presentation" identifier="addPlayer" id="RHf-cZ-FbC"/>
                     </connections>
