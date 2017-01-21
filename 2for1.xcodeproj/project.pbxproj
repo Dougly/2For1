@@ -11,6 +11,7 @@
 		1126B78F1E319D9D00F017D1 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1126B78E1E319D9D00F017D1 /* GameView.swift */; };
 		1126B7911E32900C00F017D1 /* MenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1126B7901E32900C00F017D1 /* MenuView.xib */; };
 		1126B7931E32902B00F017D1 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1126B7921E32902B00F017D1 /* MenuView.swift */; };
+		116E0CCA1E33DD2E00F3DE0B /* PlayerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116E0CC91E33DD2E00F3DE0B /* PlayerCollectionView.swift */; };
 		1176F4331E23F73300B69A5A /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1176F4321E23F73300B69A5A /* UIColorExtension.swift */; };
 		117EE3971E1EAA4600E071E0 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117EE3961E1EAA4600E071E0 /* SetupViewController.swift */; };
 		117EE3991E1EEF7300E071E0 /* CreatePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117EE3981E1EEF7300E071E0 /* CreatePlayerViewController.swift */; };
@@ -43,6 +44,7 @@
 		1126B78E1E319D9D00F017D1 /* GameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		1126B7901E32900C00F017D1 /* MenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuView.xib; sourceTree = "<group>"; };
 		1126B7921E32902B00F017D1 /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		116E0CC91E33DD2E00F3DE0B /* PlayerCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerCollectionView.swift; sourceTree = "<group>"; };
 		1176F4321E23F73300B69A5A /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		117EE3961E1EAA4600E071E0 /* SetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		117EE3981E1EEF7300E071E0 /* CreatePlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePlayerViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				1126B7901E32900C00F017D1 /* MenuView.xib */,
 				1126B7921E32902B00F017D1 /* MenuView.swift */,
 				11DE14E21E0F4A1F0027D9E8 /* ViewExtension.swift */,
+				116E0CC91E33DD2E00F3DE0B /* PlayerCollectionView.swift */,
 				117EE5461E201ED600E071E0 /* CustomPlayerCell.swift */,
 			);
 			name = View;
@@ -195,7 +198,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Flatiron;
 				TargetAttributes = {
 					11DE14BF1E0F462E0027D9E8 = {
@@ -251,6 +254,7 @@
 				119710971E307ED200D4CCD4 /* UpdateCollectionViewProtocol.swift in Sources */,
 				117EE5471E201ED600E071E0 /* CustomPlayerCell.swift in Sources */,
 				1176F4331E23F73300B69A5A /* UIColorExtension.swift in Sources */,
+				116E0CCA1E33DD2E00F3DE0B /* PlayerCollectionView.swift in Sources */,
 				11DE14E51E1022860027D9E8 /* Game.swift in Sources */,
 				1126B7931E32902B00F017D1 /* MenuView.swift in Sources */,
 				11DE14ED1E11ACC00027D9E8 /* ActionEnum.swift in Sources */,
@@ -310,6 +314,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -360,6 +365,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
