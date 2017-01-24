@@ -11,13 +11,11 @@ import UIKit
 class GameView: UIView {
     
     @IBOutlet var contentView: UIView!
-    
     @IBOutlet weak var banner: UIView!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var drinkLabel: UILabel!
     @IBOutlet weak var circleView: UIView!
     @IBOutlet weak var instructionsLabel: UILabel!
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -39,6 +37,5 @@ class GameView: UIView {
         banner.layer.cornerRadius = banner.frame.height / 2
         circleView.layer.cornerRadius = circleView.frame.height / 2
     }
-    
 }
 

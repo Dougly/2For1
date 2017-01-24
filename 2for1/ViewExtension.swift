@@ -9,7 +9,6 @@
 import UIKit
 
 extension UIView {
-    
    
     @IBInspectable var cornerRadius: CGFloat {
         get {
@@ -28,6 +27,4 @@ extension UIView {
         contentView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
         contentView.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
     }
-    
-
 }

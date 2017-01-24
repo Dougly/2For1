@@ -98,6 +98,4 @@ class MenuView: UIView {
             self.isCollapsed = true
         })
     }
-    
-    
 }

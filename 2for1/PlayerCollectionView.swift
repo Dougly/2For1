@@ -10,10 +10,8 @@ import UIKit
 
 class PlayerCollectionView: NSObject, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UpdateCollectionViewProtocol {
     
-    
-    var viewCont: SetupViewController?
-    
     let store = DataStore.sharedInstance
+    var delegate: SetupViewController?
     let screenWidth = UIScreen.main.bounds.width
     var spacing: CGFloat!
     var sectionInsets: UIEdgeInsets!
@@ -22,7 +20,7 @@ class PlayerCollectionView: NSObject, UICollectionViewDelegateFlowLayout, UIColl
     
     func customReload(withPlayer handle: String) {
         print("called in PlayerCollectionView")
-        viewCont?.customReload(withPlayer: handle)
+        delegate?.customReload(withPlayer: handle)
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -50,7 +48,7 @@ class PlayerCollectionView: NSObject, UICollectionViewDelegateFlowLayout, UIColl
         //put this in view controller
         let cell = collectionView.cellForItem(at: indexPath) as! CustomPlayerCell
         
-        guard let vc = viewCont else { return }
+        guard let vc = delegate else { return }
         
         if cell.pictureImageView.image == #imageLiteral(resourceName: "slime") {
             cell.pictureImageView.image = #imageLiteral(resourceName: "childCare")

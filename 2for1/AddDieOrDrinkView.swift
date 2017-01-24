@@ -29,5 +29,4 @@ class AddDieOrDrinkView: UIView {
         self.addSubview(contentView)
         self.constrain(contentView)
     }
-    
 }

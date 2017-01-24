@@ -57,7 +57,5 @@ class DotsView: UIView {
             self.rightDotTrailingConstraint.constant = 0
             self.layoutIfNeeded()
         }
-    }
-
-    
+    }    
 }

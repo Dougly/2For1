@@ -88,7 +88,7 @@ extension Game {
         score = 0
         drinks = 0
         action = .roll
-        instructions = "tap to have \(player!.tag) re-start the game"
+        instructions = "tap to have \(player!.tag!) re-start the game"
     }
     
     
