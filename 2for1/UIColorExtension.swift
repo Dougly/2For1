@@ -29,5 +29,4 @@ extension UIColor {
     static var themeDarkGreen: UIColor {
         return UIColor(colorLiteralRed: 28/255, green: 216/255, blue: 143/255, alpha: 1)
     }
-
 }

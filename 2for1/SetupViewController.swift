@@ -23,13 +23,7 @@ class SetupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        playerVC.viewCont = self
-        playerCollectionView.delegate = playerVC
-        playerCollectionView.dataSource = playerVC
-        playerVC.configureLayout()
-        //configureLayout()
+        setupCollectionView()
         applyTapGestures()
     }
     
@@ -48,9 +42,9 @@ class SetupViewController: UIViewController {
             let destVC = segue.destination as! GameViewController
             var selectedPlayers: [Player] = []
             for player in store.players {
-                if player.selected {
+                if player.isSelected {
                     selectedPlayers.append(player)
-                    player.selected = false
+                    player.isSelected = false
                 }
             }
             destVC.game.players = selectedPlayers
@@ -75,19 +69,17 @@ extension SetupViewController: UpdateCollectionViewProtocol {
         playerCollectionViewBottomConstraint.constant = 0
         selectedIndexPaths = []
         for player in store.players {
-            player.selected = false
+            player.isSelected = false
         }
     }
     
-    func customReload(withPlayer handle: String) {
-        print("called function")
+    func reloadCollectionView(withPlayer handle: String) {
         store.players.sort { $0.tag! < $1.tag! }
         for (index, player) in store.players.enumerated() {
             if let tag = player.tag {
                 if tag == handle {
                     let indexPath = IndexPath(item: index, section: 0)
                     playerCollectionView.performBatchUpdates({
-                        print("got to closure")
                         self.playerCollectionView.insertItems(at: [indexPath])
                     }, completion: nil)
                 }
@@ -95,13 +87,7 @@ extension SetupViewController: UpdateCollectionViewProtocol {
         }
     }
 
-    func applyTapGestures() {
-        for menuItem in menuView.views {
-            let tapGR = UITapGestureRecognizer(target: self, action: #selector(menuItemTapped))
-            menuItem.addGestureRecognizer(tapGR)
-            
-        }
-    }
+   
     
     func menuItemTapped(_ sender: UITapGestureRecognizer) {
         if let selectedView = sender.view {
@@ -144,6 +130,21 @@ extension SetupViewController: UpdateCollectionViewProtocol {
     
     func tappedShowGameInfoView() {
         
+    }
+    
+    func setupCollectionView() {
+        playerVC.delegate = self
+        playerCollectionView.delegate = playerVC
+        playerCollectionView.dataSource = playerVC
+        playerVC.configureLayout()
+    }
+    
+    func applyTapGestures() {
+        for menuItem in menuView.views {
+            let tapGR = UITapGestureRecognizer(target: self, action: #selector(menuItemTapped))
+            menuItem.addGestureRecognizer(tapGR)
+            
+        }
     }
     
 }

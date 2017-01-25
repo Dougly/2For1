@@ -42,17 +42,14 @@ class CreatePlayerViewController: UIViewController, UIImagePickerControllerDeleg
     
     
     func plusViewTapped() {
-        print("plus view tapped")
         let firstName = createPlayerView.firstNameTextField.text!
         let lastName = createPlayerView.lastNameTextField.text!
         let tag = createPlayerView.handleTextField.text!
         store.savePlayer(firstName, lastName: lastName, tag: tag)
         self.dismiss(animated: true, completion: {
-            print("dismissed completion started")
             if let delegate = self.delegate {
-                delegate.customReload(withPlayer: tag)
+                delegate.reloadCollectionView(withPlayer: tag)
             }
         })
     }
-    
 }

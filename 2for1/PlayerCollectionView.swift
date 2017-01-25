@@ -18,9 +18,8 @@ class PlayerCollectionView: NSObject, UICollectionViewDelegateFlowLayout, UIColl
     var size: CGSize!
     var numberOfCellsPerRow: CGFloat = 3
     
-    func customReload(withPlayer handle: String) {
-        print("called in PlayerCollectionView")
-        delegate?.customReload(withPlayer: handle)
+    func reloadCollectionView(withPlayer handle: String) {
+        delegate?.reloadCollectionView(withPlayer: handle)
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -41,35 +40,6 @@ class PlayerCollectionView: NSObject, UICollectionViewDelegateFlowLayout, UIColl
             cell.pictureImageView.image = #imageLiteral(resourceName: "slime")
         }
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        //put this in view controller
-        let cell = collectionView.cellForItem(at: indexPath) as! CustomPlayerCell
-        
-        guard let vc = delegate else { return }
-        
-        if cell.pictureImageView.image == #imageLiteral(resourceName: "slime") {
-            cell.pictureImageView.image = #imageLiteral(resourceName: "childCare")
-            store.players[indexPath.item].selected = true
-            vc.selectedIndexPaths.append(indexPath)
-        } else {
-            cell.pictureImageView.image = #imageLiteral(resourceName: "slime")
-            store.players[indexPath.item].selected = false
-            for (index, ip) in vc.selectedIndexPaths.enumerated() {
-                if indexPath == ip {
-                    vc.selectedIndexPaths.remove(at: index)
-                }
-            }
-        }
-        vc.selectedIndexPaths.sort { $0.row > $1.row }
-        
-        if vc.selectedIndexPaths.count >= 2 && vc.playerCollectionViewBottomConstraint.constant == 0 {
-            vc.showStartGameButton()
-        } else if vc.selectedIndexPaths.count < 2 {
-            vc.hideStartGameButton()
-        }
     }
 
     func configureLayout () {
@@ -95,6 +65,35 @@ class PlayerCollectionView: NSObject, UICollectionViewDelegateFlowLayout, UIColl
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return sectionInsets
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        //put this in view controller
+        let cell = collectionView.cellForItem(at: indexPath) as! CustomPlayerCell
+        
+        guard let viewController = delegate else { return }
+        
+        if cell.pictureImageView.image == #imageLiteral(resourceName: "slime") {
+            cell.pictureImageView.image = #imageLiteral(resourceName: "childCare")
+            store.players[indexPath.item].isSelected = true
+            viewController.selectedIndexPaths.append(indexPath)
+        } else {
+            cell.pictureImageView.image = #imageLiteral(resourceName: "slime")
+            store.players[indexPath.item].isSelected = false
+            for (index, ip) in viewController.selectedIndexPaths.enumerated() {
+                if indexPath == ip {
+                    viewController.selectedIndexPaths.remove(at: index)
+                }
+            }
+        }
+        viewController.selectedIndexPaths.sort { $0.row > $1.row }
+        
+        if viewController.selectedIndexPaths.count >= 2 && viewController.playerCollectionViewBottomConstraint.constant == 0 {
+            viewController.showStartGameButton()
+        } else if viewController.selectedIndexPaths.count < 2 {
+            viewController.hideStartGameButton()
+        }
     }
 
 }
