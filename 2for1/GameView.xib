@@ -24,13 +24,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="niD-g9-b6g">
-                    <rect key="frame" x="2.5" y="0.0" width="462" height="462"/>
+                    <rect key="frame" x="25.5" y="23" width="416" height="416"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="xIQ-xh-EbL">
-                            <rect key="frame" x="46" y="185" width="370" height="92"/>
+                            <rect key="frame" x="41.5" y="166.5" width="333" height="83"/>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" red="0.063679665809999994" green="0.5" blue="0.33129972060000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.076774973649999995" green="0.6304310581" blue="0.42459828890000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="niD-g9-b6g" secondAttribute="height" multiplier="1:1" id="433-1m-5Av"/>
                         <constraint firstItem="xIQ-xh-EbL" firstAttribute="centerY" secondItem="niD-g9-b6g" secondAttribute="centerY" id="SGp-sj-g2a"/>
@@ -43,7 +43,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="niD-g9-b6g" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Cu2-nM-Ieg"/>
-                <constraint firstItem="niD-g9-b6g" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="J7G-xp-uKX"/>
+                <constraint firstItem="niD-g9-b6g" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.9" id="J7G-xp-uKX"/>
                 <constraint firstItem="niD-g9-b6g" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Qa1-t3-Ukj"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XhT-We-T2q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XhT-We-T2q">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -25,25 +25,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pne-vQ-3Xw" userLabel="MenuView" customClass="MenuView" customModule="_for1" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="74"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="662" width="414" height="74"/>
+                                <color key="backgroundColor" red="0.076774973649999995" green="0.6304310581" blue="0.42459828890000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4at-gc-P0q" userLabel="InstructionsView">
+                                <rect key="frame" x="0.0" y="551.66666666666652" width="414" height="110.33333333333337"/>
+                                <color key="backgroundColor" red="0.10980392160000001" green="0.84705882349999995" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EvJ-fJ-woD" customClass="GameView" customModule="_for1" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="239" width="414" height="497"/>
-                                <color key="backgroundColor" red="0.076774973649999995" green="0.6304310581" blue="0.42459828890000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="137.66666666666663" width="414" height="414"/>
+                                <color key="backgroundColor" red="0.10980392160000001" green="0.84705882349999995" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="EvJ-fJ-woD" secondAttribute="height" multiplier="1:1.2" id="Vv9-IN-ejL"/>
+                                    <constraint firstAttribute="width" secondItem="EvJ-fJ-woD" secondAttribute="height" multiplier="1:1" id="Vv9-IN-ejL"/>
                                 </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L32-AM-cjm" userLabel="ScoreView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="147.33333333333334"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.10980392160000001" green="0.84705882349999995" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="L32-AM-cjm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="Gfw-Zw-Qpf"/>
+                            <constraint firstItem="L32-AM-cjm" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="OgM-k3-2LA"/>
+                            <constraint firstItem="L32-AM-cjm" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="Pj1-4r-i6G"/>
                             <constraint firstItem="pne-vQ-3Xw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZDk-r2-b6U"/>
+                            <constraint firstItem="EvJ-fJ-woD" firstAttribute="bottom" secondItem="4at-gc-P0q" secondAttribute="top" id="ZMg-pC-QfU"/>
+                            <constraint firstItem="4at-gc-P0q" firstAttribute="bottom" secondItem="pne-vQ-3Xw" secondAttribute="top" id="ZYI-nZ-5Nr"/>
+                            <constraint firstItem="4at-gc-P0q" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.15" id="bto-5T-32F"/>
                             <constraint firstItem="EvJ-fJ-woD" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="cnd-SI-N2v"/>
-                            <constraint firstItem="EvJ-fJ-woD" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="g9z-g4-9wA"/>
+                            <constraint firstItem="4at-gc-P0q" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="d7U-hf-wq3"/>
+                            <constraint firstItem="4at-gc-P0q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ifU-3N-IDM"/>
                             <constraint firstItem="pne-vQ-3Xw" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="kRa-vQ-FWV"/>
-                            <constraint firstItem="pne-vQ-3Xw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="mVe-d1-QI1"/>
+                            <constraint firstItem="pne-vQ-3Xw" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="mVe-d1-QI1"/>
                             <constraint firstItem="EvJ-fJ-woD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="moM-OO-KtN"/>
+                            <constraint firstItem="L32-AM-cjm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="syi-BN-Xsa"/>
                             <constraint firstItem="pne-vQ-3Xw" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.1" id="yju-Em-wwH"/>
                         </constraints>
                     </view>
