@@ -22,11 +22,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Gp-4H-1nZ" userLabel="shadow">
-                    <rect key="frame" x="12.5" y="11.5" width="236.5" height="214.5"/>
+                    <rect key="frame" x="13" y="12" width="236" height="214"/>
                     <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="0.19611993715083798" colorSpace="calibratedRGB"/>
                 </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="21E-dD-Juv">
-                    <rect key="frame" x="0.0" y="0.0" width="236.5" height="214.5"/>
+                    <rect key="frame" x="0.0" y="0.0" width="237" height="215"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
