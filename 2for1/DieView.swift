@@ -8,9 +8,10 @@
 
 import UIKit
 
-class DiceView: UIView {
+class DieView: UIView {
     
     @IBOutlet var contentView: UIView!
+    @IBOutlet var dieImageView: UIImageView!
     var dice: [UIImage] = [#imageLiteral(resourceName: "die_0"), #imageLiteral(resourceName: "die_1"), #imageLiteral(resourceName: "die_2"), #imageLiteral(resourceName: "die_3"), #imageLiteral(resourceName: "die_4"), #imageLiteral(resourceName: "die_5"), #imageLiteral(resourceName: "die_6")]
     
     override init(frame: CGRect) {
@@ -24,12 +25,18 @@ class DiceView: UIView {
     }
     
     func commonInit() {
-        Bundle.main.loadNibNamed("DiceView", owner: self, options: nil)
+        Bundle.main.loadNibNamed("DieView", owner: self, options: nil)
         self.addSubview(contentView)
         self.constrain(contentView)
+        dieImageView.image = #imageLiteral(resourceName: "die_0")
     }
     
     func display(dice number: Int) {
-        
+        if number == 0 {
+            dieImageView.image = dice[0]
+        } else if number > 0 && number <= dice.count {
+            dieImageView.image = dice[number - 1]
+        }
     }
 }
+

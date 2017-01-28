@@ -12,7 +12,6 @@ class GameView: UIView {
     
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var circleView: UIView!
-    @IBOutlet weak var instructionsLabel: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
