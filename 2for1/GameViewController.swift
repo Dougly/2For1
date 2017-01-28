@@ -16,9 +16,13 @@ class GameViewController: UIViewController {
     }
     
     @IBOutlet weak var menuView: MenuView!
-    
     @IBOutlet weak var gameView: GameView!
-    //UI Elements
+    @IBOutlet weak var instructionsView: InstructionsView!
+    @IBOutlet weak var scoreView: ScoreView!
+    
+    
+    
+    //Old UI Elements
     var gameStatus: GameInfoView = GameInfoView()
     var addDieOrDrinkView: AddDieOrDrinkView = AddDieOrDrinkView()
     let takeActionButton = UIButton()

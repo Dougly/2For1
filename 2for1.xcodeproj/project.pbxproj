@@ -41,6 +41,8 @@
 		11FCD40C1E3CF60D0081F1C1 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCD40B1E3CF60D0081F1C1 /* ScoreView.swift */; };
 		11FCD40E1E3CF7620081F1C1 /* DieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCD40D1E3CF7620081F1C1 /* DieView.swift */; };
 		11FCD4101E3CF76F0081F1C1 /* DieView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FCD40F1E3CF76F0081F1C1 /* DieView.xib */; };
+		11FCD4121E3D10450081F1C1 /* InstructionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FCD4111E3D10450081F1C1 /* InstructionsView.xib */; };
+		11FCD4141E3D10540081F1C1 /* InstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCD4131E3D10540081F1C1 /* InstructionsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +82,8 @@
 		11FCD40B1E3CF60D0081F1C1 /* ScoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		11FCD40D1E3CF7620081F1C1 /* DieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DieView.swift; sourceTree = "<group>"; };
 		11FCD40F1E3CF76F0081F1C1 /* DieView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DieView.xib; sourceTree = "<group>"; };
+		11FCD4111E3D10450081F1C1 /* InstructionsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstructionsView.xib; sourceTree = "<group>"; };
+		11FCD4131E3D10540081F1C1 /* InstructionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +160,8 @@
 				119710941E3065A500D4CCD4 /* CreatePlayerView.swift */,
 				11FCD4091E3CF5F00081F1C1 /* ScoreView.xib */,
 				11FCD40B1E3CF60D0081F1C1 /* ScoreView.swift */,
+				11FCD4111E3D10450081F1C1 /* InstructionsView.xib */,
+				11FCD4131E3D10540081F1C1 /* InstructionsView.swift */,
 				1126B78C1E319D8800F017D1 /* GameView.xib */,
 				1126B78E1E319D9D00F017D1 /* GameView.swift */,
 				11FCD40F1E3CF76F0081F1C1 /* DieView.xib */,
@@ -260,6 +266,7 @@
 				11DE14DF1E0F48770027D9E8 /* GameInfoView.xib in Resources */,
 				11FCD4101E3CF76F0081F1C1 /* DieView.xib in Resources */,
 				11DE14F21E1324D40027D9E8 /* AddDieOrDrinkView.xib in Resources */,
+				11FCD4121E3D10450081F1C1 /* InstructionsView.xib in Resources */,
 				11DE14C91E0F462E0027D9E8 /* Main.storyboard in Resources */,
 				11FCD40A1E3CF5F00081F1C1 /* ScoreView.xib in Resources */,
 			);
@@ -273,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11DE14C61E0F462E0027D9E8 /* GameViewController.swift in Sources */,
+				11FCD4141E3D10540081F1C1 /* InstructionsView.swift in Sources */,
 				119710971E307ED200D4CCD4 /* UpdateCollectionViewProtocol.swift in Sources */,
 				117EE5471E201ED600E071E0 /* CustomPlayerCell.swift in Sources */,
 				1176F4331E23F73300B69A5A /* UIColorExtension.swift in Sources */,

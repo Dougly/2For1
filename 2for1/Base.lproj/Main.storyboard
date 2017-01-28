@@ -28,7 +28,7 @@
                                 <rect key="frame" x="0.0" y="662" width="414" height="74"/>
                                 <color key="backgroundColor" red="0.076774973649999995" green="0.6304310581" blue="0.42459828890000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4at-gc-P0q" userLabel="InstructionsView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4at-gc-P0q" userLabel="InstructionsView" customClass="InstructionsView" customModule="_for1" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="551.66666666666652" width="414" height="110.33333333333337"/>
                                 <color key="backgroundColor" red="0.10980392160000001" green="0.84705882349999995" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -39,15 +39,15 @@
                                     <constraint firstAttribute="width" secondItem="EvJ-fJ-woD" secondAttribute="height" multiplier="1:1" id="Vv9-IN-ejL"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L32-AM-cjm" userLabel="ScoreView">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="147.33333333333334"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L32-AM-cjm" userLabel="ScoreView" customClass="ScoreView" customModule="_for1" customModuleProvider="target">
+                                <rect key="frame" x="51.666666666666657" y="0.0" width="310.66666666666663" height="147.33333333333334"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.10980392160000001" green="0.84705882349999995" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="L32-AM-cjm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="Gfw-Zw-Qpf"/>
-                            <constraint firstItem="L32-AM-cjm" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="OgM-k3-2LA"/>
+                            <constraint firstItem="L32-AM-cjm" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.75" id="OgM-k3-2LA"/>
                             <constraint firstItem="L32-AM-cjm" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="Pj1-4r-i6G"/>
                             <constraint firstItem="pne-vQ-3Xw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZDk-r2-b6U"/>
                             <constraint firstItem="EvJ-fJ-woD" firstAttribute="bottom" secondItem="4at-gc-P0q" secondAttribute="top" id="ZMg-pC-QfU"/>
@@ -65,7 +65,9 @@
                     </view>
                     <connections>
                         <outlet property="gameView" destination="EvJ-fJ-woD" id="NA3-Ua-vxK"/>
+                        <outlet property="instructionsView" destination="4at-gc-P0q" id="Vub-O2-HgO"/>
                         <outlet property="menuView" destination="pne-vQ-3Xw" id="wdg-2e-LSu"/>
+                        <outlet property="scoreView" destination="L32-AM-cjm" id="rj8-bW-2MY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

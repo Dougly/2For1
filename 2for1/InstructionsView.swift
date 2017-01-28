@@ -1,5 +1,5 @@
 //
-//  ScoreView.swift
+//  InstructionsView.swift
 //  2for1
 //
 //  Created by Douglas Galante on 1/28/17.
@@ -8,11 +8,10 @@
 
 import UIKit
 
-class ScoreView: UIView {
+class InstructionsView: UIView {
     
     @IBOutlet var contentView: UIView!
-    @IBOutlet weak var scoreLabel: UILabel!
-    @IBOutlet weak var drinksLabel: UILabel!
+    @IBOutlet weak var instructionsLabel: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,13 +24,13 @@ class ScoreView: UIView {
     }
     
     func commonInit() {
-        Bundle.main.loadNibNamed("ScoreView", owner: self, options: nil)
+        Bundle.main.loadNibNamed("InstructionsView", owner: self, options: nil)
         self.addSubview(contentView)
         self.constrain(contentView)
     }
     
-    func updateLabels(score: Int, drinks: Int) {
-        scoreLabel.text = "\(score)"
-        drinksLabel.text = "\(drinks)"
+    func updateInstructions(with string: String) {
+        instructionsLabel.text = string
     }
+
 }

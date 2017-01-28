@@ -41,7 +41,7 @@
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Deo-lE-JKF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="JGB-1D-d4s"/>
                 <constraint firstItem="Deo-lE-JKF" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="KuB-se-e45"/>
