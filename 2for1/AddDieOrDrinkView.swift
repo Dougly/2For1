@@ -11,8 +11,9 @@ import UIKit
 class AddDieOrDrinkView: UIView {
     
     @IBOutlet var contentView: UIView!
-    @IBOutlet weak var drinkButton: UIButton!
-    @IBOutlet weak var addDieButton: UIButton!
+    @IBOutlet weak var drinkView: UIView!
+    @IBOutlet weak var addDieView: UIView!
+
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,5 +29,10 @@ class AddDieOrDrinkView: UIView {
         Bundle.main.loadNibNamed("AddDieOrDrinkView", owner: self, options: nil)
         self.addSubview(contentView)
         self.constrain(contentView)
+    }
+    
+    func addCornerRadius(with height: CGFloat) {
+        drinkView.layer.cornerRadius = height / 2
+        addDieView.layer.cornerRadius = height / 2
     }
 }
