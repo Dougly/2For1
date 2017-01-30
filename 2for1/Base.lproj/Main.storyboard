@@ -39,6 +39,10 @@
                                     <constraint firstAttribute="width" secondItem="EvJ-fJ-woD" secondAttribute="height" multiplier="1:1" id="Vv9-IN-ejL"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I4T-G5-HG4" customClass="AddDieOrDrinkView" customModule="_for1" customModuleProvider="target">
+                                <rect key="frame" x="41" y="427.33333333333337" width="331.33333333333331" height="124.33333333333337"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L32-AM-cjm" userLabel="ScoreView" customClass="ScoreView" customModule="_for1" customModuleProvider="target">
                                 <rect key="frame" x="51.666666666666657" y="0.0" width="310.66666666666663" height="147.33333333333334"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -46,15 +50,19 @@
                         </subviews>
                         <color key="backgroundColor" red="0.10980392160000001" green="0.84705882349999995" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="I4T-G5-HG4" firstAttribute="width" secondItem="EvJ-fJ-woD" secondAttribute="width" multiplier="0.8" id="6mC-T3-XeB"/>
                             <constraint firstItem="L32-AM-cjm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="Gfw-Zw-Qpf"/>
                             <constraint firstItem="L32-AM-cjm" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.75" id="OgM-k3-2LA"/>
                             <constraint firstItem="L32-AM-cjm" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="Pj1-4r-i6G"/>
+                            <constraint firstItem="I4T-G5-HG4" firstAttribute="height" secondItem="EvJ-fJ-woD" secondAttribute="height" multiplier="0.3" id="QmO-7h-Xhs"/>
                             <constraint firstItem="pne-vQ-3Xw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZDk-r2-b6U"/>
                             <constraint firstItem="EvJ-fJ-woD" firstAttribute="bottom" secondItem="4at-gc-P0q" secondAttribute="top" id="ZMg-pC-QfU"/>
                             <constraint firstItem="4at-gc-P0q" firstAttribute="bottom" secondItem="pne-vQ-3Xw" secondAttribute="top" id="ZYI-nZ-5Nr"/>
                             <constraint firstItem="4at-gc-P0q" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.15" id="bto-5T-32F"/>
+                            <constraint firstItem="I4T-G5-HG4" firstAttribute="bottom" secondItem="EvJ-fJ-woD" secondAttribute="bottom" id="cDI-0y-E75"/>
                             <constraint firstItem="EvJ-fJ-woD" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="cnd-SI-N2v"/>
                             <constraint firstItem="4at-gc-P0q" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="d7U-hf-wq3"/>
+                            <constraint firstItem="I4T-G5-HG4" firstAttribute="centerX" secondItem="EvJ-fJ-woD" secondAttribute="centerX" id="gKf-CZ-Mdm"/>
                             <constraint firstItem="4at-gc-P0q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ifU-3N-IDM"/>
                             <constraint firstItem="pne-vQ-3Xw" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="kRa-vQ-FWV"/>
                             <constraint firstItem="pne-vQ-3Xw" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="mVe-d1-QI1"/>
@@ -64,6 +72,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addDieOrDrinkView" destination="I4T-G5-HG4" id="c79-4V-Jai"/>
                         <outlet property="gameView" destination="EvJ-fJ-woD" id="NA3-Ua-vxK"/>
                         <outlet property="instructionsView" destination="4at-gc-P0q" id="Vub-O2-HgO"/>
                         <outlet property="menuView" destination="pne-vQ-3Xw" id="wdg-2e-LSu"/>

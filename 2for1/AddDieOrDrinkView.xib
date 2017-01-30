@@ -14,8 +14,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddDieOrDrinkView" customModule="_for1" customModuleProvider="target">
             <connections>
                 <outlet property="addDieView" destination="u2i-22-9Uw" id="rUB-dk-sxl"/>
+                <outlet property="addDieViewShadow" destination="njC-aI-i1Z" id="7Q2-kG-kX8"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="qhl-H1-UaF"/>
                 <outlet property="drinkView" destination="dTU-Pg-5pF" id="XZt-Ou-NvK"/>
+                <outlet property="drinkViewShadow" destination="f4A-49-HV4" id="IHG-F9-Ur4"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -23,11 +25,15 @@
             <rect key="frame" x="0.0" y="0.0" width="497" height="182"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f4A-49-HV4" userLabel="drinkViewShadow">
+                    <rect key="frame" x="56.5" y="23" width="146" height="146"/>
+                    <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="0.20094273743016761" colorSpace="calibratedRGB"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dTU-Pg-5pF" userLabel="drinkView">
-                    <rect key="frame" x="33.5" y="0.0" width="182" height="182"/>
+                    <rect key="frame" x="51.5" y="18" width="146" height="146"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drink" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1ff-n1-AXh">
-                            <rect key="frame" x="18" y="65.5" width="146" height="52"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drink" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1ff-n1-AXh">
+                            <rect key="frame" x="29" y="47.5" width="88" height="52"/>
                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="40"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -36,16 +42,20 @@
                     <color key="backgroundColor" red="0.14901960780000001" green="0.86666666670000003" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="1ff-n1-AXh" firstAttribute="centerX" secondItem="dTU-Pg-5pF" secondAttribute="centerX" id="3hu-7O-Mf6"/>
-                        <constraint firstItem="1ff-n1-AXh" firstAttribute="width" secondItem="dTU-Pg-5pF" secondAttribute="width" multiplier="0.8" id="6Aa-H2-gsr"/>
+                        <constraint firstItem="1ff-n1-AXh" firstAttribute="width" secondItem="dTU-Pg-5pF" secondAttribute="width" multiplier="0.6" id="6Aa-H2-gsr"/>
                         <constraint firstItem="1ff-n1-AXh" firstAttribute="centerY" secondItem="dTU-Pg-5pF" secondAttribute="centerY" id="EmJ-JA-hqx"/>
                         <constraint firstAttribute="width" secondItem="dTU-Pg-5pF" secondAttribute="height" multiplier="1:1" id="oIt-Ub-EyO"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="njC-aI-i1Z" userLabel="addDIeViewShadow">
+                    <rect key="frame" x="305" y="23" width="146" height="146"/>
+                    <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="0.20308135474860337" colorSpace="calibratedRGB"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u2i-22-9Uw" userLabel="addDieView">
-                    <rect key="frame" x="282" y="0.0" width="182" height="182"/>
+                    <rect key="frame" x="300" y="18" width="146" height="146"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Die" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="x62-qF-oKp">
-                            <rect key="frame" x="18" y="39" width="146" height="104"/>
+                            <rect key="frame" x="29" y="21" width="88" height="104"/>
                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="40"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -55,19 +65,27 @@
                     <constraints>
                         <constraint firstAttribute="width" secondItem="u2i-22-9Uw" secondAttribute="height" multiplier="1:1" id="3wv-ae-0SS"/>
                         <constraint firstItem="x62-qF-oKp" firstAttribute="centerX" secondItem="u2i-22-9Uw" secondAttribute="centerX" id="HtY-XF-aC5"/>
-                        <constraint firstItem="x62-qF-oKp" firstAttribute="width" secondItem="u2i-22-9Uw" secondAttribute="width" multiplier="0.8" id="nLr-py-k1C"/>
+                        <constraint firstItem="x62-qF-oKp" firstAttribute="width" secondItem="u2i-22-9Uw" secondAttribute="width" multiplier="0.6" id="nLr-py-k1C"/>
                         <constraint firstItem="x62-qF-oKp" firstAttribute="centerY" secondItem="u2i-22-9Uw" secondAttribute="centerY" id="plk-xe-lVg"/>
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="dTU-Pg-5pF" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="H6G-iC-SdX"/>
+                <constraint firstItem="njC-aI-i1Z" firstAttribute="width" secondItem="u2i-22-9Uw" secondAttribute="width" id="4OV-aM-q7q"/>
+                <constraint firstItem="njC-aI-i1Z" firstAttribute="bottom" secondItem="u2i-22-9Uw" secondAttribute="bottom" constant="5" id="7RP-ch-ZOG"/>
+                <constraint firstItem="dTU-Pg-5pF" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.8" id="H6G-iC-SdX"/>
+                <constraint firstItem="njC-aI-i1Z" firstAttribute="leading" secondItem="u2i-22-9Uw" secondAttribute="leading" constant="5" id="I4H-Df-v9E"/>
                 <constraint firstItem="u2i-22-9Uw" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" multiplier="1.5" id="LSM-qx-cqb"/>
                 <constraint firstItem="u2i-22-9Uw" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="MQP-9w-m4n"/>
-                <constraint firstItem="u2i-22-9Uw" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="UsW-GH-WHT"/>
+                <constraint firstItem="njC-aI-i1Z" firstAttribute="height" secondItem="u2i-22-9Uw" secondAttribute="height" id="MYQ-Vd-RN0"/>
+                <constraint firstItem="f4A-49-HV4" firstAttribute="height" secondItem="dTU-Pg-5pF" secondAttribute="height" id="UrB-WT-KB0"/>
+                <constraint firstItem="u2i-22-9Uw" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.8" id="UsW-GH-WHT"/>
                 <constraint firstItem="dTU-Pg-5pF" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Xv3-L2-sv9"/>
+                <constraint firstItem="f4A-49-HV4" firstAttribute="bottom" secondItem="dTU-Pg-5pF" secondAttribute="bottom" constant="5" id="d7d-EB-06m"/>
+                <constraint firstItem="f4A-49-HV4" firstAttribute="leading" secondItem="dTU-Pg-5pF" secondAttribute="leading" constant="5" id="hjc-XT-4Pn"/>
                 <constraint firstItem="dTU-Pg-5pF" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" multiplier="0.5" id="pYx-ba-a2E"/>
+                <constraint firstItem="f4A-49-HV4" firstAttribute="width" secondItem="dTU-Pg-5pF" secondAttribute="width" id="phr-fU-Nz7"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

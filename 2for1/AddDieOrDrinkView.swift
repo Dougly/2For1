@@ -13,6 +13,8 @@ class AddDieOrDrinkView: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var drinkView: UIView!
     @IBOutlet weak var addDieView: UIView!
+    @IBOutlet weak var addDieViewShadow: UIView!
+    @IBOutlet weak var drinkViewShadow: UIView!
 
     
     override init(frame: CGRect) {
@@ -33,6 +35,8 @@ class AddDieOrDrinkView: UIView {
     
     func addCornerRadius(with height: CGFloat) {
         drinkView.layer.cornerRadius = height / 2
+        drinkViewShadow.layer.cornerRadius = height / 2
         addDieView.layer.cornerRadius = height / 2
+        addDieViewShadow.layer.cornerRadius = height / 2
     }
 }

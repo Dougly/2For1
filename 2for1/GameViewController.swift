@@ -19,6 +19,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var gameView: GameView!
     @IBOutlet weak var instructionsView: InstructionsView!
     @IBOutlet weak var scoreView: ScoreView!
+    @IBOutlet weak var addDieOrDrinkView: AddDieOrDrinkView!
 
     
     //Old UI Elements
@@ -41,6 +42,7 @@ class GameViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         gameView.addCornerRadius()
         menuView.setCornerRadius()
+        addDieOrDrinkView.addCornerRadius(with: addDieOrDrinkView.frame.height * 0.8)
     }
     
     func applyTapGestures() {
