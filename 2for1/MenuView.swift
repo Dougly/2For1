@@ -18,18 +18,22 @@ class MenuView: UIView {
     @IBOutlet weak var openCloseMenuView: UIView!
     @IBOutlet weak var openCloseMenuDotsView: DotsView!
     @IBOutlet weak var openCloseMenuCenterXConstraint: NSLayoutConstraint!
+    @IBOutlet weak var openCloseMenuShadow: UIView!
     
     @IBOutlet weak var firstOptionView: UIView!
     @IBOutlet weak var firstOptionImageView: UIImageView!
     @IBOutlet weak var firstOptionLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var firstOptionShadow: UIView!
 
     @IBOutlet weak var secondOptionView: UIView!
     @IBOutlet weak var secondOptionImageView: UIImageView!
     @IBOutlet weak var secondOptionLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var secondOptionShadow: UIView!
     
     @IBOutlet weak var thirdOptionView: UIView!
     @IBOutlet weak var thirdOptionImageView: UIImageView!
     @IBOutlet weak var thirdOptionLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var thirdOptionShadow: UIView!
     
     
     override init(frame: CGRect) {
@@ -62,6 +66,10 @@ class MenuView: UIView {
         firstOptionView.layer.cornerRadius = cornerRadius
         secondOptionView.layer.cornerRadius = cornerRadius
         thirdOptionView.layer.cornerRadius = cornerRadius
+        thirdOptionShadow.layer.cornerRadius = cornerRadius
+        secondOptionShadow.layer.cornerRadius = cornerRadius
+        firstOptionShadow.layer.cornerRadius = cornerRadius
+        openCloseMenuShadow.layer.cornerRadius = cornerRadius
         openCloseMenuDotsView.setCornerRadius()
         openCloseMenuDotsView.expandDots()
     }
@@ -70,6 +78,13 @@ class MenuView: UIView {
         firstOptionImageView.image = first
         secondOptionImageView.image = second
         thirdOptionImageView.image = third
+    }
+    
+    func setShadowColor(with color: UIColor) {
+        thirdOptionShadow.backgroundColor = color
+        secondOptionShadow.backgroundColor = color
+        firstOptionShadow.backgroundColor = color
+        openCloseMenuShadow.backgroundColor = color
     }
     
     func expandMenu() {

@@ -25,6 +25,7 @@ class SetupViewController: UIViewController {
         super.viewDidLoad()
         setupCollectionView()
         applyTapGestures()
+        menuView.setShadowColor(with: UIColor.themeMediumGreen)
     }
     
     override func viewWillAppear(_ animated: Bool) {
