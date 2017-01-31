@@ -13,6 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameView" customModule="_for1" customModuleProvider="target">
             <connections>
+                <outlet property="circleShadow" destination="qZj-ro-1Yr" id="U9b-Nx-crr"/>
                 <outlet property="circleView" destination="niD-g9-b6g" id="hY1-pS-ML0"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="X6P-Mw-VrG"/>
                 <outlet property="diceStackView" destination="xIQ-xh-EbL" id="q2r-hX-78F"/>
@@ -23,6 +24,10 @@
             <rect key="frame" x="0.0" y="0.0" width="467" height="462"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qZj-ro-1Yr" userLabel="CircleShadow">
+                    <rect key="frame" x="25.5" y="18" width="416" height="416"/>
+                    <color key="backgroundColor" red="0.063679665809999994" green="0.5" blue="0.33129972060000001" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="niD-g9-b6g">
                     <rect key="frame" x="25.5" y="23" width="416" height="416"/>
                     <subviews>
@@ -42,9 +47,13 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="qZj-ro-1Yr" firstAttribute="centerX" secondItem="niD-g9-b6g" secondAttribute="centerX" id="Bck-Ln-G2L"/>
                 <constraint firstItem="niD-g9-b6g" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Cu2-nM-Ieg"/>
                 <constraint firstItem="niD-g9-b6g" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.9" id="J7G-xp-uKX"/>
+                <constraint firstItem="qZj-ro-1Yr" firstAttribute="width" secondItem="niD-g9-b6g" secondAttribute="width" id="KNk-aV-OvF"/>
                 <constraint firstItem="niD-g9-b6g" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Qa1-t3-Ukj"/>
+                <constraint firstItem="qZj-ro-1Yr" firstAttribute="height" secondItem="niD-g9-b6g" secondAttribute="height" id="hEN-Rd-Gqb"/>
+                <constraint firstItem="qZj-ro-1Yr" firstAttribute="centerY" secondItem="niD-g9-b6g" secondAttribute="centerY" constant="-5" id="ktv-sN-m3u"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

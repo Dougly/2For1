@@ -13,6 +13,7 @@ class GameView: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var circleView: UIView!
     @IBOutlet weak var diceStackView: UIStackView!
+    @IBOutlet weak var circleShadow: UIView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,6 +33,7 @@ class GameView: UIView {
     
     func addCornerRadius() {
         circleView.layer.cornerRadius = circleView.frame.height / 2
+        circleShadow.layer.cornerRadius = circleView.frame.height / 2
     }
     
     func update(die dice: [Die]) {
