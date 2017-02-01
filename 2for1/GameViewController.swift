@@ -47,13 +47,15 @@ class GameViewController: UIViewController {
         addDieOrDrinkView.addCornerRadius(with: addDieOrDrinkView.frame.height * 0.8)
     }
     
-    
-    
     func applyTapGestures() {
-        for menuItem in menuView.views {
-            let tapGR = UITapGestureRecognizer(target: self, action: #selector(menuItemTapped))
-            menuItem.addGestureRecognizer(tapGR)
-            print(menuItem)
+        for (index, menuItem) in menuView.views.enumerated() {
+            if index != menuView.views.count - 1 {
+                let tapGR = UITapGestureRecognizer(target: self, action: #selector(menuItemTapped))
+                menuItem.addGestureRecognizer(tapGR)
+            } else {
+                let tapGR = UITapGestureRecognizer(target: self, action: #selector(dismissVC))
+                menuItem.addGestureRecognizer(tapGR)
+            }
         }
     }
     
@@ -63,6 +65,10 @@ class GameViewController: UIViewController {
         } else {
             menuView.collapseMenu(withDelay: 0)
         }
+    }
+    
+    func dismissVC() {
+        self.dismiss(animated: true, completion: nil)
     }
     
 }
