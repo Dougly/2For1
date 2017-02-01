@@ -9,7 +9,6 @@
 import UIKit
 
 extension UIView {
-    
    
     @IBInspectable var cornerRadius: CGFloat {
         get {
@@ -29,5 +28,12 @@ extension UIView {
         contentView.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
     }
     
-
+    class func applyGradient(to view: UIView, topColor: UIColor, bottomColor: UIColor) {
+        let gradient: CAGradientLayer = CAGradientLayer()
+        gradient.bounds = view.bounds
+        gradient.frame = view.bounds
+        gradient.colors = [bottomColor.cgColor , topColor.cgColor]
+        view.layer.insertSublayer(gradient, at: 0)
+    }
 }
+

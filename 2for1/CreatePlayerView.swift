@@ -33,5 +33,4 @@ class CreatePlayerView: UIView {
         self.addSubview(contentView)
         self.constrain(contentView)
     }
-    
 }

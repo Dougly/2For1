@@ -15,10 +15,4 @@ class Die {
         let randomNum = arc4random_uniform(6) + 1
         value = Int(randomNum)
     }
-    
-    func myFunc(x: Int, y: Int, equation: (Int, Int) -> Int) -> Int {
-        return equation(x, y)
-    }
-    
-    
 }

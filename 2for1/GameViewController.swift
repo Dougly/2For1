@@ -16,11 +16,15 @@ class GameViewController: UIViewController {
     }
     
     @IBOutlet weak var menuView: MenuView!
-    
     @IBOutlet weak var gameView: GameView!
-    //UI Elements
+    @IBOutlet weak var instructionsView: InstructionsView!
+    @IBOutlet weak var scoreView: ScoreView!
+    @IBOutlet weak var addDieOrDrinkView: AddDieOrDrinkView!
+
+    
+    //Old UI Elements
     var gameStatus: GameInfoView = GameInfoView()
-    var addDieOrDrinkView: AddDieOrDrinkView = AddDieOrDrinkView()
+    //var addDieOrDrinkView: AddDieOrDrinkView = AddDieOrDrinkView()
     let takeActionButton = UIButton()
     let backButton = UIButton()
     
@@ -28,6 +32,8 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         gameView.addCornerRadius()
         applyTapGestures()
+        UIView.applyGradient(to: self.view, topColor: .themeGreen, bottomColor: .themeMediumGreen)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,14 +44,18 @@ class GameViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         gameView.addCornerRadius()
         menuView.setCornerRadius()
+        addDieOrDrinkView.addCornerRadius(with: addDieOrDrinkView.frame.height * 0.8)
     }
     
     func applyTapGestures() {
-        for menuItem in menuView.views {
-            let tapGR = UITapGestureRecognizer(target: self, action: #selector(menuItemTapped))
-            menuItem.addGestureRecognizer(tapGR)
-            print(menuItem)
-            
+        for (index, menuItem) in menuView.views.enumerated() {
+            if index != menuView.views.count - 1 {
+                let tapGR = UITapGestureRecognizer(target: self, action: #selector(menuItemTapped))
+                menuItem.addGestureRecognizer(tapGR)
+            } else {
+                let tapGR = UITapGestureRecognizer(target: self, action: #selector(dismissVC))
+                menuItem.addGestureRecognizer(tapGR)
+            }
         }
     }
     
@@ -55,6 +65,10 @@ class GameViewController: UIViewController {
         } else {
             menuView.collapseMenu(withDelay: 0)
         }
+    }
+    
+    func dismissVC() {
+        self.dismiss(animated: true, completion: nil)
     }
     
 }
@@ -103,12 +117,12 @@ extension GameViewController {
     func layoutViews() {
         self.view.addSubview(gameStatus)
         self.view.addSubview(takeActionButton)
-        self.view.addSubview(addDieOrDrinkView)
+        //self.view.addSubview(addDieOrDrinkView)
         self.view.addSubview(backButton)
         
         gameStatus.translatesAutoresizingMaskIntoConstraints = false
         takeActionButton.translatesAutoresizingMaskIntoConstraints = false
-        addDieOrDrinkView.translatesAutoresizingMaskIntoConstraints = false
+        //addDieOrDrinkView.translatesAutoresizingMaskIntoConstraints = false
         backButton.translatesAutoresizingMaskIntoConstraints = false
         
         gameStatus.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor).isActive = true
@@ -125,12 +139,12 @@ extension GameViewController {
         takeActionButton.setTitle("tap", for: .normal)
         takeActionButton.addTarget(self, action: #selector(takeAction), for: .touchUpInside)
         
-        addDieOrDrinkView.topAnchor.constraint(equalTo: takeActionButton.bottomAnchor).isActive = true
-        addDieOrDrinkView.centerXAnchor.constraint(equalTo: takeActionButton.centerXAnchor).isActive = true
-        addDieOrDrinkView.widthAnchor.constraint(equalTo: gameStatus.widthAnchor).isActive = true
-        addDieOrDrinkView.heightAnchor.constraint(equalTo: gameStatus.heightAnchor).isActive = true
-        addDieOrDrinkView.addDieButton.addTarget(self, action: #selector(addDie), for: .touchUpInside)
-        addDieOrDrinkView.drinkButton.addTarget(self, action: #selector(drink), for: .touchUpInside)
+//        addDieOrDrinkView.topAnchor.constraint(equalTo: takeActionButton.bottomAnchor).isActive = true
+//        addDieOrDrinkView.centerXAnchor.constraint(equalTo: takeActionButton.centerXAnchor).isActive = true
+//        addDieOrDrinkView.widthAnchor.constraint(equalTo: gameStatus.widthAnchor).isActive = true
+//        addDieOrDrinkView.heightAnchor.constraint(equalTo: gameStatus.heightAnchor).isActive = true
+//        addDieOrDrinkView.addDieButton.addTarget(self, action: #selector(addDie), for: .touchUpInside)
+//        addDieOrDrinkView.drinkButton.addTarget(self, action: #selector(drink), for: .touchUpInside)
         
         backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         backButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true

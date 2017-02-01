@@ -11,13 +11,9 @@ import UIKit
 class GameView: UIView {
     
     @IBOutlet var contentView: UIView!
-    
-    @IBOutlet weak var banner: UIView!
-    @IBOutlet weak var scoreLabel: UILabel!
-    @IBOutlet weak var drinkLabel: UILabel!
     @IBOutlet weak var circleView: UIView!
-    @IBOutlet weak var instructionsLabel: UILabel!
-    
+    @IBOutlet weak var diceStackView: UIStackView!
+    @IBOutlet weak var circleShadow: UIView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -36,9 +32,16 @@ class GameView: UIView {
     }
     
     func addCornerRadius() {
-        banner.layer.cornerRadius = banner.frame.height / 2
         circleView.layer.cornerRadius = circleView.frame.height / 2
+        circleShadow.layer.cornerRadius = circleView.frame.height / 2
     }
     
+    func update(die dice: [Die]) {
+        for die in dice {
+            let dieView = DieView()
+            dieView.display(dice: die.value)
+            diceStackView.addArrangedSubview(dieView)
+        }
+    }
 }
 

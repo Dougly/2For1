@@ -34,5 +34,4 @@ class GameInfoView: UIView {
         middleLabel.textColor = .white
         bottomLabel.textColor = .white
     }
-    
 }

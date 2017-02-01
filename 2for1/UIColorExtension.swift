@@ -15,7 +15,11 @@ extension UIColor {
     }
     
     static var themeGreen: UIColor {
-        return UIColor(colorLiteralRed: 39/255, green: 85/255, blue: 147/255, alpha: 1)
+        return UIColor(colorLiteralRed: 28/255, green: 216/255, blue: 143/255, alpha: 1)
+    }
+    
+    static var themeMediumGreen: UIColor {
+        return UIColor(colorLiteralRed: 0/255, green: 184/255, blue: 142/255, alpha: 1)
     }
     
     static var themeOrange: UIColor {
@@ -29,9 +33,4 @@ extension UIColor {
     static var themeDarkGreen: UIColor {
         return UIColor(colorLiteralRed: 28/255, green: 216/255, blue: 143/255, alpha: 1)
     }
-
-
-
-
-    
 }

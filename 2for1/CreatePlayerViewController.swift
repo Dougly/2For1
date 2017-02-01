@@ -47,8 +47,9 @@ class CreatePlayerViewController: UIViewController, UIImagePickerControllerDeleg
         let tag = createPlayerView.handleTextField.text!
         store.savePlayer(firstName, lastName: lastName, tag: tag)
         self.dismiss(animated: true, completion: {
-            self.delegate?.customReload(withPlayer: tag)
+            if let delegate = self.delegate {
+                delegate.reloadCollectionView(withPlayer: tag)
+            }
         })
     }
-    
 }

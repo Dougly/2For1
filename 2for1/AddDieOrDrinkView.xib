@@ -1,20 +1,23 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddDieOrDrinkView" customModule="_for1" customModuleProvider="target">
             <connections>
-                <outlet property="addDieButton" destination="crS-7B-DXo" id="h2e-ng-Wsd"/>
+                <outlet property="addDieView" destination="u2i-22-9Uw" id="rUB-dk-sxl"/>
+                <outlet property="addDieViewShadow" destination="njC-aI-i1Z" id="7Q2-kG-kX8"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="qhl-H1-UaF"/>
-                <outlet property="drinkButton" destination="iBh-R2-QmL" id="Gjj-4e-pJV"/>
+                <outlet property="drinkView" destination="dTU-Pg-5pF" id="XZt-Ou-NvK"/>
+                <outlet property="drinkViewShadow" destination="f4A-49-HV4" id="IHG-F9-Ur4"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -22,31 +25,67 @@
             <rect key="frame" x="0.0" y="0.0" width="497" height="182"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crS-7B-DXo">
-                    <rect key="frame" x="273.5" y="9" width="198.5" height="164"/>
-                    <color key="backgroundColor" red="0.39394123375107504" green="0.92629523026315785" blue="0.5400617650521472" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="Add Die">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBh-R2-QmL">
-                    <rect key="frame" x="25" y="9" width="198.5" height="164"/>
-                    <color key="backgroundColor" red="0.77035361842105265" green="0.1786131588651135" blue="0.22653345069061659" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="Drink">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f4A-49-HV4" userLabel="drinkViewShadow">
+                    <rect key="frame" x="56.5" y="23" width="146" height="146"/>
+                    <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="0.20094273743016761" colorSpace="calibratedRGB"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dTU-Pg-5pF" userLabel="drinkView">
+                    <rect key="frame" x="51.5" y="18" width="146" height="146"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drink" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1ff-n1-AXh">
+                            <rect key="frame" x="29" y="57.5" width="88" height="32.5"/>
+                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.14901960780000001" green="0.86666666670000003" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="1ff-n1-AXh" firstAttribute="centerX" secondItem="dTU-Pg-5pF" secondAttribute="centerX" id="3hu-7O-Mf6"/>
+                        <constraint firstItem="1ff-n1-AXh" firstAttribute="width" secondItem="dTU-Pg-5pF" secondAttribute="width" multiplier="0.6" id="6Aa-H2-gsr"/>
+                        <constraint firstItem="1ff-n1-AXh" firstAttribute="centerY" secondItem="dTU-Pg-5pF" secondAttribute="centerY" id="EmJ-JA-hqx"/>
+                        <constraint firstAttribute="width" secondItem="dTU-Pg-5pF" secondAttribute="height" multiplier="1:1" id="oIt-Ub-EyO"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="njC-aI-i1Z" userLabel="addDIeViewShadow">
+                    <rect key="frame" x="305" y="23" width="146" height="146"/>
+                    <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="0.20308135474860337" colorSpace="calibratedRGB"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u2i-22-9Uw" userLabel="addDieView">
+                    <rect key="frame" x="300" y="18" width="146" height="146"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Die" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="x62-qF-oKp">
+                            <rect key="frame" x="29" y="41.5" width="88" height="65"/>
+                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.14901960780000001" green="0.86666666670000003" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="u2i-22-9Uw" secondAttribute="height" multiplier="1:1" id="3wv-ae-0SS"/>
+                        <constraint firstItem="x62-qF-oKp" firstAttribute="centerX" secondItem="u2i-22-9Uw" secondAttribute="centerX" id="HtY-XF-aC5"/>
+                        <constraint firstItem="x62-qF-oKp" firstAttribute="width" secondItem="u2i-22-9Uw" secondAttribute="width" multiplier="0.6" id="nLr-py-k1C"/>
+                        <constraint firstItem="x62-qF-oKp" firstAttribute="centerY" secondItem="u2i-22-9Uw" secondAttribute="centerY" id="plk-xe-lVg"/>
+                    </constraints>
+                </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="iBh-R2-QmL" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="7d5-VE-8PI"/>
-                <constraint firstItem="crS-7B-DXo" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.4" id="DYz-4o-wq2"/>
-                <constraint firstItem="crS-7B-DXo" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="EZs-aX-Dmd"/>
-                <constraint firstItem="iBh-R2-QmL" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.9" id="LRd-Id-mAH"/>
-                <constraint firstItem="crS-7B-DXo" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.9" id="MBB-Id-HSg"/>
-                <constraint firstItem="iBh-R2-QmL" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" multiplier="0.5" id="NM4-vU-xDa"/>
-                <constraint firstItem="crS-7B-DXo" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" multiplier="1.5" id="frk-UN-nAu"/>
-                <constraint firstItem="iBh-R2-QmL" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.4" id="tpS-Tj-kxG"/>
+                <constraint firstItem="njC-aI-i1Z" firstAttribute="width" secondItem="u2i-22-9Uw" secondAttribute="width" id="4OV-aM-q7q"/>
+                <constraint firstItem="njC-aI-i1Z" firstAttribute="bottom" secondItem="u2i-22-9Uw" secondAttribute="bottom" constant="5" id="7RP-ch-ZOG"/>
+                <constraint firstItem="dTU-Pg-5pF" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.8" id="H6G-iC-SdX"/>
+                <constraint firstItem="njC-aI-i1Z" firstAttribute="leading" secondItem="u2i-22-9Uw" secondAttribute="leading" constant="5" id="I4H-Df-v9E"/>
+                <constraint firstItem="u2i-22-9Uw" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" multiplier="1.5" id="LSM-qx-cqb"/>
+                <constraint firstItem="u2i-22-9Uw" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="MQP-9w-m4n"/>
+                <constraint firstItem="njC-aI-i1Z" firstAttribute="height" secondItem="u2i-22-9Uw" secondAttribute="height" id="MYQ-Vd-RN0"/>
+                <constraint firstItem="f4A-49-HV4" firstAttribute="height" secondItem="dTU-Pg-5pF" secondAttribute="height" id="UrB-WT-KB0"/>
+                <constraint firstItem="u2i-22-9Uw" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.8" id="UsW-GH-WHT"/>
+                <constraint firstItem="dTU-Pg-5pF" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Xv3-L2-sv9"/>
+                <constraint firstItem="f4A-49-HV4" firstAttribute="bottom" secondItem="dTU-Pg-5pF" secondAttribute="bottom" constant="5" id="d7d-EB-06m"/>
+                <constraint firstItem="f4A-49-HV4" firstAttribute="leading" secondItem="dTU-Pg-5pF" secondAttribute="leading" constant="5" id="hjc-XT-4Pn"/>
+                <constraint firstItem="dTU-Pg-5pF" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" multiplier="0.5" id="pYx-ba-a2E"/>
+                <constraint firstItem="f4A-49-HV4" firstAttribute="width" secondItem="dTU-Pg-5pF" secondAttribute="width" id="phr-fU-Nz7"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
