@@ -20,12 +20,12 @@ extension UIView {
         }
     }
     
-    func constrain(_ contentView: UIView) {
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        contentView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        contentView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
-        contentView.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
+    func constrain(_ view: UIView) {
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        view.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        view.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
+        view.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
     }
     
     class func applyGradient(to view: UIView, topColor: UIColor, bottomColor: UIColor) {
@@ -35,5 +35,6 @@ extension UIView {
         gradient.colors = [bottomColor.cgColor , topColor.cgColor]
         view.layer.insertSublayer(gradient, at: 0)
     }
+
 }
 
