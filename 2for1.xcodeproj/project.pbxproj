@@ -179,8 +179,8 @@
 		11DE14DA1E0F46930027D9E8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				11DE14C51E0F462E0027D9E8 /* GameViewController.swift */,
 				117EE3961E1EAA4600E071E0 /* SetupViewController.swift */,
+				11DE14C51E0F462E0027D9E8 /* GameViewController.swift */,
 				117EE3981E1EEF7300E071E0 /* CreatePlayerViewController.swift */,
 			);
 			name = Controller;

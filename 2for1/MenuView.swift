@@ -73,7 +73,7 @@ class MenuView: UIView {
         openCloseMenuDotsView.setCornerRadius()
         openCloseMenuDotsView.expandDots()
     }
-    
+        
     func set(images first: UIImage, second: UIImage, third: UIImage) {
         firstOptionImageView.image = first
         secondOptionImageView.image = second

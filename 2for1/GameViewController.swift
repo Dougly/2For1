@@ -32,6 +32,8 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         gameView.addCornerRadius()
         applyTapGestures()
+        UIView.applyGradient(to: self.view, topColor: .themeGreen, bottomColor: .themeMediumGreen)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,6 +46,8 @@ class GameViewController: UIViewController {
         menuView.setCornerRadius()
         addDieOrDrinkView.addCornerRadius(with: addDieOrDrinkView.frame.height * 0.8)
     }
+    
+    
     
     func applyTapGestures() {
         for menuItem in menuView.views {

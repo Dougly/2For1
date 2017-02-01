@@ -19,6 +19,8 @@ class SetupViewController: UIViewController {
     @IBOutlet weak var startGameButton: UIButton!
     @IBOutlet weak var menuView: MenuView!
     @IBOutlet weak var playerCollectionViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var headerGradientView: UIView!
+    @IBOutlet weak var collectionViewGradientView: UIView!
     
     
     override func viewDidLoad() {
@@ -26,6 +28,8 @@ class SetupViewController: UIViewController {
         setupCollectionView()
         applyTapGestures()
         menuView.setShadowColor(with: UIColor.themeMediumGreen)
+        UIView.applyGradient(to: headerGradientView, topColor: .themeGreen, bottomColor: .themeMediumGreen)
+        UIView.applyGradient(to: collectionViewGradientView, topColor: .themeDarkGreen, bottomColor: .themeMediumGreen)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -144,10 +148,8 @@ extension SetupViewController: UpdateCollectionViewProtocol {
         for menuItem in menuView.views {
             let tapGR = UITapGestureRecognizer(target: self, action: #selector(menuItemTapped))
             menuItem.addGestureRecognizer(tapGR)
-            
         }
     }
-    
 }
 
 //MARK: Animations
