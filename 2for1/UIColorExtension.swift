@@ -14,12 +14,16 @@ extension UIColor {
         return UIColor(colorLiteralRed: 186/255, green: 247/255, blue: 255/255, alpha: 1)
     }
     
+    static var themeLightGreen: UIColor {
+        return UIColor(colorLiteralRed: 39/255, green: 255/255, blue: 147/255, alpha: 1)
+    }
+    
     static var themeGreen: UIColor {
         return UIColor(colorLiteralRed: 28/255, green: 216/255, blue: 143/255, alpha: 1)
     }
     
     static var themeMediumGreen: UIColor {
-        return UIColor(colorLiteralRed: 0/255, green: 184/255, blue: 142/255, alpha: 1)
+        return UIColor(colorLiteralRed: 0/255, green: 148/255, blue: 115/255, alpha: 1)
     }
     
     static var themeOrange: UIColor {
@@ -31,6 +35,14 @@ extension UIColor {
     }
 
     static var themeDarkGreen: UIColor {
-        return UIColor(colorLiteralRed: 28/255, green: 216/255, blue: 143/255, alpha: 1)
+        return UIColor(colorLiteralRed: 16/255, green: 128/255, blue: 84/255, alpha: 1)
+    }
+    
+    static var themeDarkestGreen: UIColor {
+        return UIColor(colorLiteralRed: 0/255, green: 101/255, blue: 73/255, alpha: 1)
+    }
+    
+    static var themeShadow: UIColor {
+        return UIColor(colorLiteralRed: 36/255, green: 36/255, blue: 36/255, alpha: 0.2)
     }
 }

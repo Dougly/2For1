@@ -32,7 +32,7 @@ extension UIView {
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.bounds = view.bounds
         gradient.frame = view.bounds
-        gradient.colors = [bottomColor.cgColor , topColor.cgColor]
+        gradient.colors = [topColor.cgColor , bottomColor.cgColor]
         view.layer.insertSublayer(gradient, at: 0)
     }
 

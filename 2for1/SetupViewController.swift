@@ -28,8 +28,8 @@ class SetupViewController: UIViewController {
         setupCollectionView()
         applyTapGestures()
         menuView.setShadowColor(with: UIColor.themeMediumGreen)
-        UIView.applyGradient(to: headerGradientView, topColor: .themeGreen, bottomColor: .themeMediumGreen)
-        UIView.applyGradient(to: collectionViewGradientView, topColor: .themeDarkGreen, bottomColor: .themeMediumGreen)
+        UIView.applyGradient(to: headerGradientView, topColor: .themeMediumGreen, bottomColor: .themeGreen)
+        UIView.applyGradient(to: collectionViewGradientView, topColor: .themeMediumGreen, bottomColor: .themeDarkestGreen)
     }
     
     override func viewWillAppear(_ animated: Bool) {

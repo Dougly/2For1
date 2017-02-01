@@ -32,6 +32,7 @@ class GameViewController: UIViewController {
         gameView.addCornerRadius()
         applyTapGestures()
         addGradients()
+        menuView.setShadowColor(with: .themeDarkestGreen)
         
         
     }
@@ -71,14 +72,10 @@ class GameViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-}
-
-//MARK: Add Gradients
-extension GameViewController {
     
     func addGradients() {
-        UIView.applyGradient(to: self.view, topColor: .themeGreen, bottomColor: .themeMediumGreen)
-        UIView.applyGradient(to: menuView.contentView, topColor: .themeDarkGreen, bottomColor: .themeMediumGreen)
+        UIView.applyGradient(to: self.view, topColor: .themeMediumGreen, bottomColor: .themeGreen)
+        UIView.applyGradient(to: menuView.contentView, topColor: .themeMediumGreen, bottomColor: .themeDarkestGreen)
 
     }
     
@@ -109,11 +106,11 @@ extension GameViewController {
     //print game stats for testing
     func updateGameStatus() {
         if let player = game.player {
-            let turnPlayerDrinksString = "TURN: \(game.turn)  PLAYER: \(player.tag!)   DRINKS: \(game.drinks)"
+            _ = "TURN: \(game.turn)  PLAYER: \(player.tag!)   DRINKS: \(game.drinks)"
             //gameStatus.topLabel.text = turnPlayerDrinksString
         }
         var rollsString = "DICE:"
-        let scoreString = "  SCORE: \(game.score)"
+        _ = "  SCORE: \(game.score)"
         for die in game.dice {
             rollsString.append(" \(die.value)")
         }

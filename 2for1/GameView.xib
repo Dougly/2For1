@@ -26,7 +26,7 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qZj-ro-1Yr" userLabel="CircleShadow">
                     <rect key="frame" x="25.5" y="18" width="416" height="416"/>
-                    <color key="backgroundColor" red="0.0" green="0.62145601614661838" blue="0.45136156249468801" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.0" green="0.39514827159999999" blue="0.28699495479999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="niD-g9-b6g">
                     <rect key="frame" x="25.5" y="23" width="416" height="416"/>
@@ -35,7 +35,7 @@
                             <rect key="frame" x="41.5" y="166.5" width="333" height="83"/>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" red="0.076774973649999995" green="0.6304310581" blue="0.42459828890000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.063679665809999994" green="0.5" blue="0.33129972060000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="niD-g9-b6g" secondAttribute="height" multiplier="1:1" id="433-1m-5Av"/>
                         <constraint firstItem="xIQ-xh-EbL" firstAttribute="centerY" secondItem="niD-g9-b6g" secondAttribute="centerY" id="SGp-sj-g2a"/>
