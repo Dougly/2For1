@@ -18,10 +18,19 @@ class PlayerCollectionView: NSObject, UICollectionViewDelegateFlowLayout, UIColl
     var size: CGSize!
     var numberOfCellsPerRow: CGFloat = 3
     
+    func configureLayout () {
+        let desiredSpacing: CGFloat = 5
+        let itemWidth = (screenWidth / numberOfCellsPerRow) - (desiredSpacing + 2)
+        let itemHeight = itemWidth * 1.25
+        spacing = desiredSpacing
+        sectionInsets = UIEdgeInsets(top: spacing * 2, left: spacing, bottom: spacing, right: spacing)
+        size = CGSize(width: itemWidth, height: itemHeight)
+    }
+    
     func reloadCollectionView(withPlayer handle: String) {
         delegate?.reloadCollectionView(withPlayer: handle)
     }
-
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -40,15 +49,6 @@ class PlayerCollectionView: NSObject, UICollectionViewDelegateFlowLayout, UIColl
             cell.pictureImageView.image = #imageLiteral(resourceName: "slime")
         }
         return cell
-    }
-
-    func configureLayout () {
-        let desiredSpacing: CGFloat = 5
-        let itemWidth = (screenWidth / numberOfCellsPerRow) - (desiredSpacing + 2)
-        let itemHeight = itemWidth * 1.25
-        spacing = desiredSpacing
-        sectionInsets = UIEdgeInsets(top: spacing * 2, left: spacing, bottom: spacing, right: spacing)
-        size = CGSize(width: itemWidth, height: itemHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -69,9 +69,7 @@ class PlayerCollectionView: NSObject, UICollectionViewDelegateFlowLayout, UIColl
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        //put this in view controller
         let cell = collectionView.cellForItem(at: indexPath) as! CustomPlayerCell
-        
         guard let viewController = delegate else { return }
         
         if cell.pictureImageView.image == #imageLiteral(resourceName: "slime") {
@@ -87,6 +85,7 @@ class PlayerCollectionView: NSObject, UICollectionViewDelegateFlowLayout, UIColl
                 }
             }
         }
+        
         viewController.selectedIndexPaths.sort { $0.row > $1.row }
         
         if viewController.selectedIndexPaths.count >= 2 && viewController.playerCollectionViewBottomConstraint.constant == 0 {

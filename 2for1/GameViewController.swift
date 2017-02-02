@@ -23,6 +23,8 @@ class GameViewController: UIViewController {
     @IBOutlet weak var scoreView: ScoreView!
     @IBOutlet weak var addDieOrDrinkView: AddDieOrDrinkView!
     @IBOutlet weak var nextPlayerView: NextPlayerView!
+    @IBOutlet weak var nextPlayerViewLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var addDieOrDrinkLeadingConstraint: NSLayoutConstraint!
     
     //Old UI Elements
     //var gameStatus: GameInfoView = GameInfoView()
@@ -35,10 +37,7 @@ class GameViewController: UIViewController {
         applyTapGestures()
         addGradients()
         menuView.setShadowColor(with: .themeDarkestGreen)
-        
-        
 
-        
         
     }
     
@@ -52,17 +51,32 @@ class GameViewController: UIViewController {
     
     func applyTapGestures() {
         for (index, menuItem) in menuView.views.enumerated() {
-            if index != menuView.views.count - 1 {
-                let tapGR = UITapGestureRecognizer(target: self, action: #selector(menuItemTapped))
+            switch index {
+            case 0:
+                let tapGR = UITapGestureRecognizer(target: self, action: #selector(openCloseMenuTapped))
                 menuItem.addGestureRecognizer(tapGR)
-            } else {
+            case 1:
+                let tapGR = UITapGestureRecognizer(target: self, action: #selector(animateNextPlayerView))
+                menuItem.addGestureRecognizer(tapGR)
+            case 2:
+                let tapGR = UITapGestureRecognizer(target: self, action: #selector(animateAddDieOrDrinkView))
+                menuItem.addGestureRecognizer(tapGR)
+            case 3:
                 let tapGR = UITapGestureRecognizer(target: self, action: #selector(dismissVC))
                 menuItem.addGestureRecognizer(tapGR)
+            default:
+                break
             }
         }
+        
+        let tapGR = UITapGestureRecognizer(target: self, action: #selector(animateNextPlayerView))
+        nextPlayerView.okView.addGestureRecognizer(tapGR)
+        
+        let tapGR2 = UITapGestureRecognizer(target: self, action: #selector(animateAddDieOrDrinkView))
+        addDieOrDrinkView.addDieView.addGestureRecognizer(tapGR2)
     }
     
-    func menuItemTapped(_ sender: UIGestureRecognizer) {
+    func openCloseMenuTapped(_ sender: UIGestureRecognizer) {
         if menuView.isCollapsed == true {
             menuView.expandMenu()
         } else {
@@ -127,4 +141,46 @@ extension GameViewController {
 //        gameStatus.bottomLabel.text = game.instructions
     }
 }
+
+//MARK: Animations
+
+extension GameViewController {
+    
+    func animateAddDieOrDrinkView() {
+        let distance = (screenWidth / 2) + (addDieOrDrinkView.frame.width / 2)
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.1, options: .curveEaseInOut, animations: {
+            self.addDieOrDrinkLeadingConstraint.constant += distance * -1
+            self.view.layoutIfNeeded()
+        }, completion: { success in
+            if self.addDieOrDrinkLeadingConstraint.constant <= distance * -2 {
+                self.addDieOrDrinkLeadingConstraint.constant = 0
+            }
+        })
+    }
+    
+    func animateNextPlayerView() {
+        let distance = (screenWidth / 2) + (nextPlayerView.frame.width / 2)
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.1, options: .curveEaseInOut, animations: {
+            self.nextPlayerViewLeadingConstraint.constant += distance * -1
+            self.view.layoutIfNeeded()
+        }, completion: { success in
+            if self.nextPlayerViewLeadingConstraint.constant <= distance * -2 {
+                self.nextPlayerViewLeadingConstraint.constant = 0
+            }
+        })
+    
+    }
+    
+  
+    
+    
+}
+
+
+
+
+
+
+
+
 
