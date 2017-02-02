@@ -34,12 +34,18 @@ class DotsView: UIView {
     }
     
     
-    func setCornerRadius() {
-        let cornerRadius = middleDotView.frame.height / 2
+    func setCornerRadius(with size: CGFloat) {
+        let cornerRadius = size / 2
         middleDotView.layer.cornerRadius = cornerRadius
         leftDotView.layer.cornerRadius = cornerRadius
         rightDotView.layer.cornerRadius = cornerRadius
 
+    }
+    
+    func setInitialConstraints(widthOfView: CGFloat, widthOfDot: CGFloat) {
+        let distance = (widthOfView / 2) - (widthOfDot / 2)
+        self.leftDotLeadingConstraint.constant = distance * -1
+        self.rightDotTrailingConstraint.constant = distance
     }
     
     func expandDots() {

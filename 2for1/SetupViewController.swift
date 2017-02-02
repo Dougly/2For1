@@ -13,6 +13,7 @@ class SetupViewController: UIViewController {
     let store = DataStore.sharedInstance
     var selectedIndexPaths: [IndexPath] = []
     let playerVC = PlayerCollectionView()
+    let screenHeight = UIScreen.main.bounds.height
     override var prefersStatusBarHidden: Bool { return true }
     
     @IBOutlet weak var playerCollectionView: UICollectionView!
@@ -22,25 +23,17 @@ class SetupViewController: UIViewController {
     @IBOutlet weak var headerGradientView: UIView!
     @IBOutlet weak var collectionViewGradientView: UIView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
         applyTapGestures()
-        menuView.setShadowColor(with: UIColor.themeMediumGreen)
-        UIView.applyGradient(to: headerGradientView, topColor: .themeMediumGreen, bottomColor: .themeGreen)
-        UIView.applyGradient(to: collectionViewGradientView, topColor: .themeMediumGreen, bottomColor: .themeDarkestGreen)
+        applyGradients()
+        setupMenuView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         resetViewConroller()
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        menuView.setCornerRadius()
-        menuView.openCloseMenuDotsView.expandDots()
-    }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "startGame" {
@@ -55,12 +48,20 @@ class SetupViewController: UIViewController {
             destVC.game.players = selectedPlayers
             selectedPlayers = []
             playerCollectionViewBottomConstraint.constant = 0
+            if !menuView.isCollapsed {
+                menuView.collapseMenu(withDelay: 0)
+            }
         }
         
         if segue.identifier == "addPlayer" {
             let destVC = segue.destination as! CreatePlayerViewController
             destVC.delegate = playerVC
         }
+    }
+    
+    func setupMenuView() {
+        menuView.setCornerRadius(with: screenHeight * 0.09) // based on constraints in storyboard
+        menuView.setShadowColor(with: UIColor.themeMediumGreen)
     }
 }
 
@@ -130,7 +131,6 @@ extension SetupViewController: UpdateCollectionViewProtocol {
         }, completion: { (success) in
             self.selectedIndexPaths = []
         })
-        
     }
     
     func tappedShowGameInfoView() {
@@ -149,6 +149,11 @@ extension SetupViewController: UpdateCollectionViewProtocol {
             let tapGR = UITapGestureRecognizer(target: self, action: #selector(menuItemTapped))
             menuItem.addGestureRecognizer(tapGR)
         }
+    }
+    
+    func applyGradients() {
+        UIView.applyGradient(to: headerGradientView, topColor: .themeMediumGreen, bottomColor: .themeGreen)
+        UIView.applyGradient(to: collectionViewGradientView, topColor: .themeMediumGreen, bottomColor: .themeDarkestGreen)
     }
 }
 

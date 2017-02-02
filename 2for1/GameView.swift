@@ -31,9 +31,11 @@ class GameView: UIView {
         self.constrain(contentView)
     }
     
-    func addCornerRadius() {
-        circleView.layer.cornerRadius = circleView.frame.height / 2
-        circleShadow.layer.cornerRadius = circleView.frame.height / 2
+    func setCornerRadius(with size: CGFloat) {
+        let constraintMultiplier: CGFloat = 0.9
+        let cornerRadius = (size * constraintMultiplier) / 2
+        circleView.layer.cornerRadius = cornerRadius
+        circleShadow.layer.cornerRadius = cornerRadius
     }
     
     func update(die dice: [Die]) {

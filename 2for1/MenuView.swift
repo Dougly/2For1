@@ -60,8 +60,9 @@ class MenuView: UIView {
         }
     }
     
-    func setCornerRadius() {
-        let cornerRadius = openCloseMenuView.frame.height / 2
+    func setCornerRadius(with size: CGFloat) {
+        let constraintMultiplier: CGFloat = 0.7
+        let cornerRadius = (size * constraintMultiplier) / 2
         openCloseMenuView.layer.cornerRadius = cornerRadius
         firstOptionView.layer.cornerRadius = cornerRadius
         secondOptionView.layer.cornerRadius = cornerRadius
@@ -70,8 +71,8 @@ class MenuView: UIView {
         secondOptionShadow.layer.cornerRadius = cornerRadius
         firstOptionShadow.layer.cornerRadius = cornerRadius
         openCloseMenuShadow.layer.cornerRadius = cornerRadius
-        openCloseMenuDotsView.setCornerRadius()
-        openCloseMenuDotsView.expandDots()
+        openCloseMenuDotsView.setCornerRadius(with: size * 0.1)
+        openCloseMenuDotsView.setInitialConstraints(widthOfView: (size * constraintMultiplier) * 0.6, widthOfDot: (size * constraintMultiplier) * 0.1) //based on constraint multipliers
     }
         
     func set(images first: UIImage, second: UIImage, third: UIImage) {

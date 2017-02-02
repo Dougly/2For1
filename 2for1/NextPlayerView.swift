@@ -32,11 +32,17 @@ class NextPlayerView: UIView {
         self.constrain(contentView)
     }
     
-    func setCornerRadius() {
-        okView.layer.cornerRadius = okView.frame.height / 2
-        picImageView.layer.cornerRadius = picImageView.frame.height / 2
-        okViewShadow.layer.cornerRadius = okView.frame.height / 2
-        picImageViewShadow.layer.cornerRadius = picImageView.frame.height / 2
+    func setCornerRadius(with size: CGFloat) {
+        
+        let okViewConstraintMultiplier: CGFloat = 0.4
+        let okViewCornerRadius = (size * okViewConstraintMultiplier) / 2
+        okView.layer.cornerRadius = okViewCornerRadius
+        okViewShadow.layer.cornerRadius = okViewCornerRadius
+        
+        let picImageViewConstraintMultiplier: CGFloat = 0.85
+        let picImageViewCornerRadius = (size * picImageViewConstraintMultiplier) / 2
+        picImageView.layer.cornerRadius = picImageViewCornerRadius
+        picImageViewShadow.layer.cornerRadius = picImageViewCornerRadius
     }
     
 }

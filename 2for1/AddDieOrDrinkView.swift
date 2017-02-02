@@ -33,10 +33,12 @@ class AddDieOrDrinkView: UIView {
         self.constrain(contentView)
     }
     
-    func addCornerRadius(with height: CGFloat) {
-        drinkView.layer.cornerRadius = height / 2
-        drinkViewShadow.layer.cornerRadius = height / 2
-        addDieView.layer.cornerRadius = height / 2
-        addDieViewShadow.layer.cornerRadius = height / 2
+    func setCornerRadius(with size: CGFloat) {
+        let constraintMultiplier: CGFloat = 0.8
+        let cornerRadius = (size * constraintMultiplier) / 2
+        drinkView.layer.cornerRadius = cornerRadius
+        drinkViewShadow.layer.cornerRadius = cornerRadius
+        addDieView.layer.cornerRadius = cornerRadius
+        addDieViewShadow.layer.cornerRadius = cornerRadius
     }
 }
