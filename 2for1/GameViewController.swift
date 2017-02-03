@@ -8,6 +8,20 @@
 
 import UIKit
 
+//extension NSObject: GameDelegate {
+//    func updateGameBoard(with game: Game) {
+//        print("testing delegate data binding")
+//        switch game.action {
+//        case .startGame: break
+//        case .roll: break
+//        case .passDice: break
+//        case .rollAddedDie: break
+//        case .drink: break
+//        }
+//    }
+//}
+
+
 class GameViewController: UIViewController {
 
     let game = Game()
@@ -27,10 +41,6 @@ class GameViewController: UIViewController {
     @IBOutlet weak var addDieOrDrinkLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var gameCoverView: UIView!
     
-    //Old UI Elements
-    //var gameStatus: GameInfoView = GameInfoView()
-    //let takeActionButton = UIButton()
-    //let backButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +48,8 @@ class GameViewController: UIViewController {
         applyTapGestures()
         addGradients()
         menuView.setShadowColor(with: .themeDarkestGreen)
-
+        game.delegate = self
+        game.player = game.players[0]
         
     }
     
@@ -48,7 +59,11 @@ class GameViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         gameView.update(die: game.dice)
+        animateNextPlayerView()
+        game.instructions = "\(game.players[0].tag!) starts the game"
+        updateGameStatus()
     }
+    
     
     func applyTapGestures() {
         for (index, menuItem) in menuView.views.enumerated() {
@@ -70,16 +85,29 @@ class GameViewController: UIViewController {
             }
         }
         
-        let tapGR = UITapGestureRecognizer(target: self, action: #selector(animateNextPlayerView))
+        let swipeUpGR = UISwipeGestureRecognizer(target: self, action: #selector(takeAction))
+        let swipeDownGR = UISwipeGestureRecognizer(target: self, action: #selector(takeAction))
+        swipeUpGR.direction = .up
+        swipeDownGR.direction = .down
+        gameView.circleView.addGestureRecognizer(swipeUpGR)
+        gameView.circleView.addGestureRecognizer(swipeDownGR)
+        
+        let tapGR = UITapGestureRecognizer(target: self, action: #selector(nextPlayerConfirmed))
         nextPlayerView.okView.addGestureRecognizer(tapGR)
         
         let tapGR2 = UITapGestureRecognizer(target: self, action: #selector(animateAddDieOrDrinkView))
         addDieOrDrinkView.addDieView.addGestureRecognizer(tapGR2)
         
-        let tapGR3 = UITapGestureRecognizer(target: self, action: #selector(takeAction))
-        gameView.circleView.addGestureRecognizer(tapGR3)
+//        let tapGR3 = UITapGestureRecognizer(target: self, action: #selector(takeAction))
+//        gameView.circleView.addGestureRecognizer(tapGR3)
         
         
+    }
+    
+    func nextPlayerConfirmed() {
+        animateNextPlayerView()
+        game.instructions = "\(game.player!.tag!)'s roll"
+        updateGameStatus()
     }
     
     func openCloseMenuTapped(_ sender: UIGestureRecognizer) {
@@ -111,10 +139,30 @@ class GameViewController: UIViewController {
     
 }
 
+
+extension GameViewController: GameDelegate {
+    
+    func updateGameBoard(with game: Game) {
+        print("testing delegate data binding")
+        switch game.action {
+        case .startGame: break
+        case .roll: break
+        case .passDice: passedDice()
+        case .rollAddedDie: break
+        case .drink: break
+        }
+    }
+    
+    func passedDice() {
+        animateNextPlayerView()
+        game.instructions = "\(game.player!.tag!)'s turn"
+    }
+}
+
 //Mark: Button Actions
 extension GameViewController {
     
-    func takeAction(_ sender: UIButton) {
+    func takeAction() {
         game.playerAction()
         updateGameStatus()
     }

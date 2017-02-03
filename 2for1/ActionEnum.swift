@@ -10,5 +10,5 @@ import Foundation
 
 enum PlayerAction {
     
-    case roll, passDice, rollAddedDie, drink
+    case startGame, roll, passDice, rollAddedDie, drink
 }
