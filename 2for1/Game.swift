@@ -49,16 +49,15 @@ extension Game {
             die.roll()
         }
         
+        playerRoll = dice.reduce(0) { (result, nextDie) -> Int in
+            return result + nextDie.value
+        }
+        
         if isFirstRoll {
             action = .passDice
-            //delegate!.updateGameBoard(with: self)
             isFirstRoll = false
             passDice()
         } else {
-            
-            playerRoll = dice.reduce(0) { (result, nextDie) -> Int in
-                return result + nextDie.value
-            }
             if playerRoll < score {
                 instructions = "rolled too low... tap to add a die or drink"
             } else if playerRoll == score {
