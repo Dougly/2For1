@@ -24,8 +24,6 @@ class DiceGrid: UIView {
     @IBOutlet weak var bottomCenterDieView: DieView!
     @IBOutlet weak var bottomRightDieView: DieView!
     
-    
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()

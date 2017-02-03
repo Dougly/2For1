@@ -25,6 +25,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var nextPlayerView: NextPlayerView!
     @IBOutlet weak var nextPlayerViewLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var addDieOrDrinkLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var gameCoverView: UIView!
     
     //Old UI Elements
     //var gameStatus: GameInfoView = GameInfoView()
@@ -101,6 +102,7 @@ class GameViewController: UIViewController {
     }
     
     func makeViewsCircles() {
+        gameCoverView.layer.cornerRadius = (screenWidth * 0.9) / 2 //based on constraint multipliers
         gameView.setCornerRadius(with: screenWidth)
         menuView.setCornerRadius(with: screenHeight * 0.1) //based on constraint multipliers
         addDieOrDrinkView.setCornerRadius(with: screenWidth * 0.3) //based on constraint multipliers
@@ -155,6 +157,11 @@ extension GameViewController {
         let distance = (screenWidth / 2) + (addDieOrDrinkView.frame.width / 2)
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.1, options: .curveEaseInOut, animations: {
             self.addDieOrDrinkLeadingConstraint.constant += distance * -1
+            if self.addDieOrDrinkLeadingConstraint.constant == distance * -1 {
+                self.gameCoverView.alpha = 0.5
+            } else {
+                self.gameCoverView.alpha = 0.0
+            }
             self.view.layoutIfNeeded()
         }, completion: { success in
             if self.addDieOrDrinkLeadingConstraint.constant <= distance * -2 {
@@ -167,6 +174,11 @@ extension GameViewController {
         let distance = (screenWidth / 2) + (nextPlayerView.frame.width / 2)
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.1, options: .curveEaseInOut, animations: {
             self.nextPlayerViewLeadingConstraint.constant += distance * -1
+            if self.nextPlayerViewLeadingConstraint.constant == distance * -1 {
+                self.gameCoverView.alpha = 0.5
+            } else {
+                self.gameCoverView.alpha = 0.0
+            }
             self.view.layoutIfNeeded()
         }, completion: { success in
             if self.nextPlayerViewLeadingConstraint.constant <= distance * -2 {

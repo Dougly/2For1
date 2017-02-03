@@ -12,8 +12,8 @@ class GameView: UIView {
     
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var circleView: UIView!
-    @IBOutlet weak var diceStackView: UIStackView!
     @IBOutlet weak var circleShadow: UIView!
+    @IBOutlet weak var diceGrid: DiceGrid!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -43,7 +43,7 @@ class GameView: UIView {
             let dieView = DieView()
             dieView.display(dice: die.value)
             //dieView.heightAnchor.constraint(equalTo: <#T##NSLayoutDimension#>, multiplier: <#T##CGFloat#>)
-            diceStackView.addArrangedSubview(dieView)
+            //diceStackView.addArrangedSubview(dieView)
         }
     }
 }

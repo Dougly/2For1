@@ -30,68 +30,68 @@
             <rect key="frame" x="0.0" y="0.0" width="431" height="358"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GOR-he-3pA" userLabel="ImgaeViewContainer">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GOR-he-3pA" userLabel="GridContainer">
                     <rect key="frame" x="36" y="0.0" width="358" height="358"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E4e-88-VlQ" userLabel="Top Left Die View" customClass="DieView" customModule="_for1" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="107" height="107"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="E4e-88-VlQ" secondAttribute="height" multiplier="1:1" id="ACf-vH-t2a"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ReS-XD-pk8" userLabel="Top Center Die View" customClass="DieView" customModule="_for1" customModuleProvider="target">
                             <rect key="frame" x="125" y="0.0" width="107" height="107"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="ReS-XD-pk8" secondAttribute="height" multiplier="1:1" id="VRh-hd-upo"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y0S-6S-oib" userLabel="Top Right Die View" customClass="DieView" customModule="_for1" customModuleProvider="target">
                             <rect key="frame" x="250" y="0.0" width="107" height="107"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="Y0S-6S-oib" secondAttribute="height" multiplier="1:1" id="oVI-R9-IgC"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2lH-sZ-Y8I" userLabel="Center Left Die View" customClass="DieView" customModule="_for1" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="125" width="107" height="107"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="2lH-sZ-Y8I" secondAttribute="height" multiplier="1:1" id="1f8-gj-FuB"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="faD-f9-RaS" userLabel="Center Die View" customClass="DieView" customModule="_for1" customModuleProvider="target">
                             <rect key="frame" x="125" y="125" width="107" height="107"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="faD-f9-RaS" secondAttribute="height" multiplier="1:1" id="HLu-Dk-WSd"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bXW-5A-W5Q" userLabel="Center Right Die View" customClass="DieView" customModule="_for1" customModuleProvider="target">
                             <rect key="frame" x="250" y="125" width="107" height="107"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="bXW-5A-W5Q" secondAttribute="height" multiplier="1:1" id="mAu-Ah-r6Q"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UgA-a6-9Rr" userLabel="Bottom Left Die View" customClass="DieView" customModule="_for1" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="250" width="107" height="107"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="UgA-a6-9Rr" secondAttribute="height" multiplier="1:1" id="ekU-xB-AfI"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Md-Az-EW3" userLabel="Bottom Center Die View" customClass="DieView" customModule="_for1" customModuleProvider="target">
                             <rect key="frame" x="125" y="250" width="107" height="107"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="7Md-Az-EW3" secondAttribute="height" multiplier="1:1" id="ShI-ax-KAA"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eiI-Lm-tUt" userLabel="Bottom Right Die View" customClass="DieView" customModule="_for1" customModuleProvider="target">
                             <rect key="frame" x="250" y="250" width="107" height="107"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="eiI-Lm-tUt" secondAttribute="height" multiplier="1:1" id="Svf-51-tSA"/>
                             </constraints>

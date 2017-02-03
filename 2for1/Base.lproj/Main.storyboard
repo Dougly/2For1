@@ -39,6 +39,13 @@
                                     <constraint firstAttribute="width" secondItem="EvJ-fJ-woD" secondAttribute="height" multiplier="1:1" id="Vv9-IN-ejL"/>
                                 </constraints>
                             </view>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hpa-bD-cf4" userLabel="Game View Cover">
+                                <rect key="frame" x="23.666666666666657" y="161.33333333333331" width="372.66666666666663" height="372.66666666666669"/>
+                                <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hpa-bD-cf4" secondAttribute="height" multiplier="1:1" id="Ljk-3o-Q4f"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I4T-G5-HG4" customClass="AddDieOrDrinkView" customModule="_for1" customModuleProvider="target">
                                 <rect key="frame" x="414.00000000000006" y="427.33333333333337" width="331.33333333333343" height="124.33333333333337"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -63,6 +70,7 @@
                             <constraint firstItem="FL7-gM-5Kg" firstAttribute="height" secondItem="pne-vQ-3Xw" secondAttribute="height" multiplier="0.05" id="Dim-vL-1Zk"/>
                             <constraint firstItem="L32-AM-cjm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="Gfw-Zw-Qpf"/>
                             <constraint firstItem="FL7-gM-5Kg" firstAttribute="top" secondItem="pne-vQ-3Xw" secondAttribute="top" id="H6o-vl-iun"/>
+                            <constraint firstItem="hpa-bD-cf4" firstAttribute="centerY" secondItem="EvJ-fJ-woD" secondAttribute="centerY" constant="3" id="KB3-IH-nno"/>
                             <constraint firstItem="L32-AM-cjm" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.75" id="OgM-k3-2LA"/>
                             <constraint firstItem="L32-AM-cjm" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="Pj1-4r-i6G"/>
                             <constraint firstItem="I4T-G5-HG4" firstAttribute="height" secondItem="EvJ-fJ-woD" secondAttribute="height" multiplier="0.3" id="QmO-7h-Xhs"/>
@@ -73,6 +81,7 @@
                             <constraint firstItem="FL7-gM-5Kg" firstAttribute="width" secondItem="pne-vQ-3Xw" secondAttribute="width" id="abz-2b-mhE"/>
                             <constraint firstItem="Mrb-L4-2rO" firstAttribute="leading" secondItem="EvJ-fJ-woD" secondAttribute="trailing" id="b3d-mS-AhK"/>
                             <constraint firstItem="4at-gc-P0q" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.15" id="bto-5T-32F"/>
+                            <constraint firstItem="hpa-bD-cf4" firstAttribute="centerX" secondItem="EvJ-fJ-woD" secondAttribute="centerX" constant="3" id="c2E-tn-6Gc"/>
                             <constraint firstItem="I4T-G5-HG4" firstAttribute="bottom" secondItem="EvJ-fJ-woD" secondAttribute="bottom" id="cDI-0y-E75"/>
                             <constraint firstItem="EvJ-fJ-woD" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="cnd-SI-N2v"/>
                             <constraint firstItem="4at-gc-P0q" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="d7U-hf-wq3"/>
@@ -83,6 +92,7 @@
                             <constraint firstItem="pne-vQ-3Xw" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="mVe-d1-QI1"/>
                             <constraint firstItem="EvJ-fJ-woD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="moM-OO-KtN"/>
                             <constraint firstItem="L32-AM-cjm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="syi-BN-Xsa"/>
+                            <constraint firstItem="hpa-bD-cf4" firstAttribute="height" secondItem="EvJ-fJ-woD" secondAttribute="height" multiplier="0.9" id="vwg-cJ-ztP"/>
                             <constraint firstItem="Mrb-L4-2rO" firstAttribute="centerY" secondItem="EvJ-fJ-woD" secondAttribute="centerY" id="yfa-Lg-ORh"/>
                             <constraint firstItem="pne-vQ-3Xw" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.1" id="yju-Em-wwH"/>
                         </constraints>
@@ -90,6 +100,7 @@
                     <connections>
                         <outlet property="addDieOrDrinkLeadingConstraint" destination="gKf-CZ-Mdm" id="iAT-Tn-i4o"/>
                         <outlet property="addDieOrDrinkView" destination="I4T-G5-HG4" id="c79-4V-Jai"/>
+                        <outlet property="gameCoverView" destination="hpa-bD-cf4" id="d6F-lX-2lj"/>
                         <outlet property="gameView" destination="EvJ-fJ-woD" id="NA3-Ua-vxK"/>
                         <outlet property="instructionsView" destination="4at-gc-P0q" id="Vub-O2-HgO"/>
                         <outlet property="menuView" destination="pne-vQ-3Xw" id="wdg-2e-LSu"/>
