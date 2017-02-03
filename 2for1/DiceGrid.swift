@@ -9,6 +9,8 @@
 import UIKit
 
 class DiceGrid: UIView {
+
+    var diceArray: [DieView] = []
     
     @IBOutlet var contentView: UIView!
     
@@ -16,8 +18,8 @@ class DiceGrid: UIView {
     @IBOutlet weak var topCenterDieView: DieView!
     @IBOutlet weak var topRightDieView: DieView!
     
-    @IBOutlet weak var centerLeftDIeView: DieView!
-    @IBOutlet weak var centerDIeView: DieView!
+    @IBOutlet weak var centerLeftDieView: DieView!
+    @IBOutlet weak var centerDieView: DieView!
     @IBOutlet weak var centerRightDieView: DieView!
     
     @IBOutlet weak var bottomLeftDieView: DieView!
@@ -38,6 +40,24 @@ class DiceGrid: UIView {
         Bundle.main.loadNibNamed("DiceGrid", owner: self, options: nil)
         self.addSubview(contentView)
         self.constrain(contentView)
+        addDieViewsToDiceArray()
+        for (index, die) in diceArray.enumerated() {
+            if index != 4 {
+                die.isHidden = true
+            }
+        }
+    }
+    
+    func addDieViewsToDiceArray() {
+        diceArray.append(topLeftDieView)
+        diceArray.append(topCenterDieView)
+        diceArray.append(topRightDieView)
+        diceArray.append(centerLeftDieView)
+        diceArray.append(centerDieView)
+        diceArray.append(centerRightDieView)
+        diceArray.append(bottomLeftDieView)
+        diceArray.append(bottomCenterDieView)
+        diceArray.append(bottomRightDieView)
     }
 
 }

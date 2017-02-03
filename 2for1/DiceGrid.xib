@@ -16,8 +16,8 @@
                 <outlet property="bottomCenterDieView" destination="7Md-Az-EW3" id="hp0-1J-UXx"/>
                 <outlet property="bottomLeftDieView" destination="UgA-a6-9Rr" id="WsL-em-dey"/>
                 <outlet property="bottomRightDieView" destination="eiI-Lm-tUt" id="kgn-i4-azA"/>
-                <outlet property="centerDIeView" destination="faD-f9-RaS" id="xWl-Hl-lVe"/>
-                <outlet property="centerLeftDIeView" destination="2lH-sZ-Y8I" id="bFy-as-4Og"/>
+                <outlet property="centerDieView" destination="faD-f9-RaS" id="kXn-KR-QsJ"/>
+                <outlet property="centerLeftDieView" destination="2lH-sZ-Y8I" id="UBY-JE-9i9"/>
                 <outlet property="centerRightDieView" destination="bXW-5A-W5Q" id="iyy-JM-Add"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="1Xb-Om-oD5"/>
                 <outlet property="topCenterDieView" destination="ReS-XD-pk8" id="NCf-gK-xVu"/>
