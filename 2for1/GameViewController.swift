@@ -46,7 +46,7 @@ class GameViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-
+        gameView.update(die: game.dice)
     }
     
     func applyTapGestures() {
@@ -74,6 +74,11 @@ class GameViewController: UIViewController {
         
         let tapGR2 = UITapGestureRecognizer(target: self, action: #selector(animateAddDieOrDrinkView))
         addDieOrDrinkView.addDieView.addGestureRecognizer(tapGR2)
+        
+        let tapGR3 = UITapGestureRecognizer(target: self, action: #selector(takeAction))
+        gameView.circleView.addGestureRecognizer(tapGR3)
+        
+        
     }
     
     func openCloseMenuTapped(_ sender: UIGestureRecognizer) {
@@ -130,7 +135,7 @@ extension GameViewController {
     func updateGameStatus() {
         if let player = game.player {
             _ = "TURN: \(game.turn)  PLAYER: \(player.tag!)   DRINKS: \(game.drinks)"
-            //gameStatus.topLabel.text = turnPlayerDrinksString
+            //instructionsView.instructionsLabel.text = turnPlayerDrinksString
         }
         var rollsString = "DICE:"
         _ = "  SCORE: \(game.score)"
@@ -138,7 +143,7 @@ extension GameViewController {
             rollsString.append(" \(die.value)")
         }
 //        gameStatus.middleLabel.text = rollsString + scoreString
-//        gameStatus.bottomLabel.text = game.instructions
+        instructionsView.instructionsLabel.text = game.instructions
     }
 }
 

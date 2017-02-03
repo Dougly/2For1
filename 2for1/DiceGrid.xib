@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11762"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DiceGrid" customModule="_for1" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomCenterDieView" destination="7Md-Az-EW3" id="hp0-1J-UXx"/>
+                <outlet property="bottomLeftDieView" destination="UgA-a6-9Rr" id="WsL-em-dey"/>
+                <outlet property="bottomRightDieView" destination="eiI-Lm-tUt" id="kgn-i4-azA"/>
+                <outlet property="centerDIeView" destination="faD-f9-RaS" id="xWl-Hl-lVe"/>
+                <outlet property="centerLeftDIeView" destination="2lH-sZ-Y8I" id="bFy-as-4Og"/>
+                <outlet property="centerRightDieView" destination="bXW-5A-W5Q" id="iyy-JM-Add"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="1Xb-Om-oD5"/>
+                <outlet property="topCenterDieView" destination="ReS-XD-pk8" id="NCf-gK-xVu"/>
+                <outlet property="topLeftDieView" destination="E4e-88-VlQ" id="Rbz-ES-kfJ"/>
+                <outlet property="topRightDieView" destination="Y0S-6S-oib" id="tno-ef-hCo"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="431" height="358"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GOR-he-3pA" userLabel="ImgaeViewContainer">
+                    <rect key="frame" x="36" y="0.0" width="358" height="358"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E4e-88-VlQ" userLabel="Top Left Die View" customClass="DieView" customModule="_for1" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="107" height="107"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="E4e-88-VlQ" secondAttribute="height" multiplier="1:1" id="ACf-vH-t2a"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ReS-XD-pk8" userLabel="Top Center Die View" customClass="DieView" customModule="_for1" customModuleProvider="target">
+                            <rect key="frame" x="125" y="0.0" width="107" height="107"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="ReS-XD-pk8" secondAttribute="height" multiplier="1:1" id="VRh-hd-upo"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y0S-6S-oib" userLabel="Top Right Die View" customClass="DieView" customModule="_for1" customModuleProvider="target">
+                            <rect key="frame" x="250" y="0.0" width="107" height="107"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="Y0S-6S-oib" secondAttribute="height" multiplier="1:1" id="oVI-R9-IgC"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2lH-sZ-Y8I" userLabel="Center Left Die View" customClass="DieView" customModule="_for1" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="125" width="107" height="107"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="2lH-sZ-Y8I" secondAttribute="height" multiplier="1:1" id="1f8-gj-FuB"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="faD-f9-RaS" userLabel="Center Die View" customClass="DieView" customModule="_for1" customModuleProvider="target">
+                            <rect key="frame" x="125" y="125" width="107" height="107"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="faD-f9-RaS" secondAttribute="height" multiplier="1:1" id="HLu-Dk-WSd"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bXW-5A-W5Q" userLabel="Center Right Die View" customClass="DieView" customModule="_for1" customModuleProvider="target">
+                            <rect key="frame" x="250" y="125" width="107" height="107"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="bXW-5A-W5Q" secondAttribute="height" multiplier="1:1" id="mAu-Ah-r6Q"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UgA-a6-9Rr" userLabel="Bottom Left Die View" customClass="DieView" customModule="_for1" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="250" width="107" height="107"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="UgA-a6-9Rr" secondAttribute="height" multiplier="1:1" id="ekU-xB-AfI"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Md-Az-EW3" userLabel="Bottom Center Die View" customClass="DieView" customModule="_for1" customModuleProvider="target">
+                            <rect key="frame" x="125" y="250" width="107" height="107"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="7Md-Az-EW3" secondAttribute="height" multiplier="1:1" id="ShI-ax-KAA"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eiI-Lm-tUt" userLabel="Bottom Right Die View" customClass="DieView" customModule="_for1" customModuleProvider="target">
+                            <rect key="frame" x="250" y="250" width="107" height="107"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="eiI-Lm-tUt" secondAttribute="height" multiplier="1:1" id="Svf-51-tSA"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="E4e-88-VlQ" firstAttribute="height" secondItem="faD-f9-RaS" secondAttribute="height" id="1aC-1i-uTa"/>
+                        <constraint firstItem="bXW-5A-W5Q" firstAttribute="height" secondItem="faD-f9-RaS" secondAttribute="height" id="2ZV-jg-wo3"/>
+                        <constraint firstItem="ReS-XD-pk8" firstAttribute="height" secondItem="faD-f9-RaS" secondAttribute="height" id="6Px-ZO-Dla"/>
+                        <constraint firstItem="Y0S-6S-oib" firstAttribute="centerX" secondItem="faD-f9-RaS" secondAttribute="centerX" multiplier="1.7" id="8ez-Vx-Gof"/>
+                        <constraint firstAttribute="width" secondItem="GOR-he-3pA" secondAttribute="height" multiplier="1:1" id="9C2-Nz-11U"/>
+                        <constraint firstItem="E4e-88-VlQ" firstAttribute="centerY" secondItem="faD-f9-RaS" secondAttribute="centerY" multiplier="0.3" id="9bT-sS-V2e"/>
+                        <constraint firstItem="bXW-5A-W5Q" firstAttribute="centerX" secondItem="faD-f9-RaS" secondAttribute="centerX" multiplier="1.7" id="CmW-wa-e9e"/>
+                        <constraint firstItem="7Md-Az-EW3" firstAttribute="centerX" secondItem="faD-f9-RaS" secondAttribute="centerX" id="EL5-vt-ryF"/>
+                        <constraint firstItem="UgA-a6-9Rr" firstAttribute="centerX" secondItem="faD-f9-RaS" secondAttribute="centerX" multiplier="0.3" id="FDs-OF-0ga"/>
+                        <constraint firstItem="Y0S-6S-oib" firstAttribute="centerY" secondItem="faD-f9-RaS" secondAttribute="centerY" multiplier="0.3" id="FHz-Jc-mG5"/>
+                        <constraint firstItem="faD-f9-RaS" firstAttribute="height" secondItem="GOR-he-3pA" secondAttribute="height" multiplier="0.3" id="Fku-2Y-6qu"/>
+                        <constraint firstItem="2lH-sZ-Y8I" firstAttribute="centerY" secondItem="faD-f9-RaS" secondAttribute="centerY" id="Irz-92-3MG"/>
+                        <constraint firstItem="ReS-XD-pk8" firstAttribute="centerY" secondItem="faD-f9-RaS" secondAttribute="centerY" multiplier="0.3" id="L71-s9-UaF"/>
+                        <constraint firstItem="bXW-5A-W5Q" firstAttribute="centerY" secondItem="faD-f9-RaS" secondAttribute="centerY" id="MBK-Hz-TCf"/>
+                        <constraint firstItem="2lH-sZ-Y8I" firstAttribute="centerX" secondItem="faD-f9-RaS" secondAttribute="centerX" multiplier="0.3" id="Nim-bp-2gv"/>
+                        <constraint firstItem="Y0S-6S-oib" firstAttribute="height" secondItem="faD-f9-RaS" secondAttribute="height" id="PgB-md-JyW"/>
+                        <constraint firstItem="ReS-XD-pk8" firstAttribute="centerX" secondItem="faD-f9-RaS" secondAttribute="centerX" id="T6k-eb-a85"/>
+                        <constraint firstItem="UgA-a6-9Rr" firstAttribute="centerY" secondItem="faD-f9-RaS" secondAttribute="centerY" multiplier="1.7" id="W13-iV-Qbq"/>
+                        <constraint firstItem="eiI-Lm-tUt" firstAttribute="centerY" secondItem="faD-f9-RaS" secondAttribute="centerY" multiplier="1.7" id="YKD-cb-9LG"/>
+                        <constraint firstItem="faD-f9-RaS" firstAttribute="centerY" secondItem="GOR-he-3pA" secondAttribute="centerY" id="ajk-xx-lCP"/>
+                        <constraint firstItem="2lH-sZ-Y8I" firstAttribute="height" secondItem="faD-f9-RaS" secondAttribute="height" id="asV-oJ-bdk"/>
+                        <constraint firstItem="eiI-Lm-tUt" firstAttribute="centerX" secondItem="faD-f9-RaS" secondAttribute="centerX" multiplier="1.7" id="atl-N4-rtx"/>
+                        <constraint firstItem="eiI-Lm-tUt" firstAttribute="height" secondItem="faD-f9-RaS" secondAttribute="height" id="baf-hY-U12"/>
+                        <constraint firstItem="E4e-88-VlQ" firstAttribute="centerX" secondItem="faD-f9-RaS" secondAttribute="centerX" multiplier="0.3" id="h0h-3o-xBc"/>
+                        <constraint firstItem="UgA-a6-9Rr" firstAttribute="height" secondItem="faD-f9-RaS" secondAttribute="height" id="rtA-GQ-NeE"/>
+                        <constraint firstItem="faD-f9-RaS" firstAttribute="centerX" secondItem="GOR-he-3pA" secondAttribute="centerX" id="uL6-LP-FmI"/>
+                        <constraint firstItem="7Md-Az-EW3" firstAttribute="height" secondItem="faD-f9-RaS" secondAttribute="height" id="wdh-xr-4aR"/>
+                        <constraint firstItem="7Md-Az-EW3" firstAttribute="centerY" secondItem="faD-f9-RaS" secondAttribute="centerY" multiplier="1.7" id="ztL-ct-PNn"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="GOR-he-3pA" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="3Oj-eI-s8z"/>
+                <constraint firstItem="GOR-he-3pA" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Xif-4b-7c7"/>
+                <constraint firstItem="GOR-he-3pA" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="bt6-gg-wO8"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="100.5" y="-123"/>
+        </view>
+    </objects>
+</document>

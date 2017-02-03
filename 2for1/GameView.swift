@@ -42,6 +42,7 @@ class GameView: UIView {
         for die in dice {
             let dieView = DieView()
             dieView.display(dice: die.value)
+            //dieView.heightAnchor.constraint(equalTo: <#T##NSLayoutDimension#>, multiplier: <#T##CGFloat#>)
             diceStackView.addArrangedSubview(dieView)
         }
     }

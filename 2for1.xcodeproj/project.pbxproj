@@ -24,6 +24,8 @@
 		119710931E30659200D4CCD4 /* CreatePlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 119710921E30659200D4CCD4 /* CreatePlayerView.xib */; };
 		119710951E3065A500D4CCD4 /* CreatePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119710941E3065A500D4CCD4 /* CreatePlayerView.swift */; };
 		119710971E307ED200D4CCD4 /* UpdateCollectionViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119710961E307ED200D4CCD4 /* UpdateCollectionViewProtocol.swift */; };
+		119842D51E4408CD00D7C920 /* DiceGrid.xib in Resources */ = {isa = PBXBuildFile; fileRef = 119842D41E4408CD00D7C920 /* DiceGrid.xib */; };
+		119842D71E4408E300D7C920 /* DiceGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119842D61E4408E300D7C920 /* DiceGrid.swift */; };
 		11DE14C41E0F462E0027D9E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE14C31E0F462E0027D9E8 /* AppDelegate.swift */; };
 		11DE14C61E0F462E0027D9E8 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE14C51E0F462E0027D9E8 /* GameViewController.swift */; };
 		11DE14C91E0F462E0027D9E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11DE14C71E0F462E0027D9E8 /* Main.storyboard */; };
@@ -65,6 +67,8 @@
 		119710921E30659200D4CCD4 /* CreatePlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreatePlayerView.xib; sourceTree = "<group>"; };
 		119710941E3065A500D4CCD4 /* CreatePlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePlayerView.swift; sourceTree = "<group>"; };
 		119710961E307ED200D4CCD4 /* UpdateCollectionViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateCollectionViewProtocol.swift; sourceTree = "<group>"; };
+		119842D41E4408CD00D7C920 /* DiceGrid.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiceGrid.xib; sourceTree = "<group>"; };
+		119842D61E4408E300D7C920 /* DiceGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiceGrid.swift; sourceTree = "<group>"; };
 		11DE14C01E0F462E0027D9E8 /* 2for1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2for1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11DE14C31E0F462E0027D9E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11DE14C51E0F462E0027D9E8 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +120,7 @@
 				11DE14F11E1324D40027D9E8 /* AddDieOrDrinkView.xib */,
 				119710921E30659200D4CCD4 /* CreatePlayerView.xib */,
 				11FCD40F1E3CF76F0081F1C1 /* DieView.xib */,
+				119842D41E4408CD00D7C920 /* DiceGrid.xib */,
 				118ED3161E2ED5110091E5D5 /* DotsView.xib */,
 				1126B78C1E319D8800F017D1 /* GameView.xib */,
 				11FCD4111E3D10450081F1C1 /* InstructionsView.xib */,
@@ -177,6 +182,7 @@
 				119710941E3065A500D4CCD4 /* CreatePlayerView.swift */,
 				117EE5461E201ED600E071E0 /* CustomPlayerCell.swift */,
 				11FCD40D1E3CF7620081F1C1 /* DieView.swift */,
+				119842D61E4408E300D7C920 /* DiceGrid.swift */,
 				118ED3181E2ED5270091E5D5 /* DotsView.swift */,
 				1126B78E1E319D9D00F017D1 /* GameView.swift */,
 				11FCD4131E3D10540081F1C1 /* InstructionsView.swift */,
@@ -277,6 +283,7 @@
 				11DE14D11E0F462E0027D9E8 /* LaunchScreen.storyboard in Resources */,
 				1126B7911E32900C00F017D1 /* MenuView.xib in Resources */,
 				11DE14CE1E0F462E0027D9E8 /* Assets.xcassets in Resources */,
+				119842D51E4408CD00D7C920 /* DiceGrid.xib in Resources */,
 				11DE14DF1E0F48770027D9E8 /* GameInfoView.xib in Resources */,
 				11FCD4101E3CF76F0081F1C1 /* DieView.xib in Resources */,
 				11DE14F21E1324D40027D9E8 /* AddDieOrDrinkView.xib in Resources */,
@@ -314,6 +321,7 @@
 				116DDBC81E42524F0061F1E8 /* NextPlayerView.swift in Sources */,
 				11DE14C41E0F462E0027D9E8 /* AppDelegate.swift in Sources */,
 				1126B78F1E319D9D00F017D1 /* GameView.swift in Sources */,
+				119842D71E4408E300D7C920 /* DiceGrid.swift in Sources */,
 				11DE14EB1E1024940027D9E8 /* Die.swift in Sources */,
 				117EE3991E1EEF7300E071E0 /* CreatePlayerViewController.swift in Sources */,
 				117EE5491E20262400E071E0 /* DataStore.swift in Sources */,
