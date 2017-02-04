@@ -26,11 +26,12 @@ class GameViewController: UIViewController {
     @IBOutlet weak var nextPlayerViewLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var addDieOrDrinkLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var gameCoverView: UIView!
+    @IBOutlet weak var rolledHighEnoughView: UIView!
+    @IBOutlet weak var rolledHighEnoughLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var drinkView: UIView!
+    @IBOutlet weak var drinkViewLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var rollLabel: UILabel!
     
-    //Old UI Elements
-    //var gameStatus: GameInfoView = GameInfoView()
-    //let takeActionButton = UIButton()
-    //let backButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,49 +39,55 @@ class GameViewController: UIViewController {
         applyTapGestures()
         addGradients()
         menuView.setShadowColor(with: .themeDarkestGreen)
-
-        
+        game.player = game.players[0]
+        game.instructions = "\(game.players[0].tag!) starts the game"
+        updateInstructions()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-
-    }
+   
     
     override func viewDidAppear(_ animated: Bool) {
-        gameView.update(die: game.dice)
+        //gameView.update(die: game.dice)
+        animate(view: nextPlayerView, constraint: nextPlayerViewLeadingConstraint, coverGameView: true)
+        
     }
     
+    
     func applyTapGestures() {
-        for (index, menuItem) in menuView.views.enumerated() {
-            switch index {
-            case 0:
-                let tapGR = UITapGestureRecognizer(target: self, action: #selector(openCloseMenuTapped))
-                menuItem.addGestureRecognizer(tapGR)
-            case 1:
-                let tapGR = UITapGestureRecognizer(target: self, action: #selector(animateNextPlayerView))
-                menuItem.addGestureRecognizer(tapGR)
-            case 2:
-                let tapGR = UITapGestureRecognizer(target: self, action: #selector(animateAddDieOrDrinkView))
-                menuItem.addGestureRecognizer(tapGR)
-            case 3:
-                let tapGR = UITapGestureRecognizer(target: self, action: #selector(dismissVC))
-                menuItem.addGestureRecognizer(tapGR)
-            default:
-                break
-            }
-        }
         
-        let tapGR = UITapGestureRecognizer(target: self, action: #selector(animateNextPlayerView))
+        let swipeUpGR = UISwipeGestureRecognizer(target: self, action: #selector(diceSwiped))
+        let swipeDownGR = UISwipeGestureRecognizer(target: self, action: #selector(diceSwiped))
+        swipeUpGR.direction = .up
+        swipeDownGR.direction = .down
+        gameView.circleView.addGestureRecognizer(swipeUpGR)
+        gameView.circleView.addGestureRecognizer(swipeDownGR)
+        
+        let tapGR = UITapGestureRecognizer(target: self, action: #selector(nextPlayerConfirmed))
         nextPlayerView.okView.addGestureRecognizer(tapGR)
         
-        let tapGR2 = UITapGestureRecognizer(target: self, action: #selector(animateAddDieOrDrinkView))
+        let tapGR1 = UITapGestureRecognizer(target: self, action: #selector(drink))
+        addDieOrDrinkView.drinkView.addGestureRecognizer(tapGR1)
+        
+        let tapGR2 = UITapGestureRecognizer(target: self, action: #selector(addDie))
         addDieOrDrinkView.addDieView.addGestureRecognizer(tapGR2)
         
-        let tapGR3 = UITapGestureRecognizer(target: self, action: #selector(takeAction))
-        gameView.circleView.addGestureRecognizer(tapGR3)
+        let tapGR3 = UITapGestureRecognizer(target: self, action: #selector(rolledHighEnoughTapped))
+        rolledHighEnoughView.addGestureRecognizer(tapGR3)
         
+        let tapGR4 = UITapGestureRecognizer(target: self, action: #selector(openCloseMenuTapped))
+        menuView.openCloseMenuView.addGestureRecognizer(tapGR4)
         
+        //let tapGR5 = UITapGestureRecognizer(target: self, action: #selector(animate))
+
+        //let tapGR6 = UITapGestureRecognizer(target: self, action: #selector(animate))
+
+        let tapGR7 = UITapGestureRecognizer(target: self, action: #selector(dismissVC))
+        menuView.thirdOptionView.addGestureRecognizer(tapGR7)
+        
+        let tapGR8 = UITapGestureRecognizer(target: self, action: #selector(resetGame))
+        drinkView.addGestureRecognizer(tapGR8)
     }
+    
+    
     
     func openCloseMenuTapped(_ sender: UIGestureRecognizer) {
         if menuView.isCollapsed == true {
@@ -98,7 +105,6 @@ class GameViewController: UIViewController {
     func addGradients() {
         UIView.applyGradient(to: self.view, topColor: .themeMediumGreen, bottomColor: .themeGreen)
         UIView.applyGradient(to: menuView.contentView, topColor: .themeMediumGreen, bottomColor: .themeDarkestGreen)
-
     }
     
     func makeViewsCircles() {
@@ -111,41 +117,112 @@ class GameViewController: UIViewController {
     
 }
 
-//Mark: Button Actions
+//gesture actions
 extension GameViewController {
+  
+    func diceSwiped() {
+        switch game.action {
+        case .roll: rolled()
+        case .rollAddedDie: rollAddedDie()
+        default: break
+        }
+    }
     
-    func takeAction(_ sender: UIButton) {
-        game.playerAction()
-        updateGameStatus()
+    func rolled() {
+        let results = game.roll()
+        
+        if results.tiedRoll {
+            tiedRoll()
+        } else if results.wonRoll {
+            animate(view: rolledHighEnoughView, constraint: rolledHighEnoughLeadingConstraint, coverGameView: false)
+            game.instructions = "\(game.player!.tag!) rolled a \(game.playerRoll)"
+        } else {
+            animate(view: addDieOrDrinkView, constraint: addDieOrDrinkLeadingConstraint, coverGameView: true)
+        }
+        updateInstructions()
     }
     
     func addDie() {
         game.addDie()
-        updateGameStatus()
+        self.animate(view: addDieOrDrinkView, constraint: addDieOrDrinkLeadingConstraint, coverGameView: true)
+        updateInstructions()
+        updateScoreBoard()
+    }
+    
+    func rollAddedDie() {
+        let result = game.rollAddedDie()
+        if result {
+            animate(view: rolledHighEnoughView, constraint: rolledHighEnoughLeadingConstraint, coverGameView: false)
+            game.instructions = "\(game.player!.tag!) rolled a \(game.playerRoll)"
+        } else {
+            tiedRoll()
+        }
+        updateInstructions()
+    
+    }
+    
+    func rolledHighEnoughTapped() {
+        animate(view: rolledHighEnoughView, constraint: rolledHighEnoughLeadingConstraint, coverGameView: false)
+        animate(view: nextPlayerView, constraint: nextPlayerViewLeadingConstraint, coverGameView: true)
+        game.passDice()
+        updateScoreBoard()
+        updateInstructions()
     }
     
     func drink() {
+        game.instructions = "\(game.player!.tag!) must drink!!"
+        animate(view: addDieOrDrinkView, constraint: addDieOrDrinkLeadingConstraint, coverGameView: true)
+        animate(view: drinkView, constraint: drinkViewLeadingConstraint, coverGameView: false)
+        updateInstructions()
+    }
+    
+    func tiedRoll() {
         game.drink()
-        updateGameStatus()
+        animate(view: drinkView, constraint: drinkViewLeadingConstraint, coverGameView: false)
     }
     
-    func backButtonTapped(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+    func resetGame() {
+        animate(view: drinkView, constraint: drinkViewLeadingConstraint, coverGameView: false)
+        game.resetGame()
+        animate(view: nextPlayerView, constraint: nextPlayerViewLeadingConstraint, coverGameView: true)
+        updateScoreBoard()
+        updateInstructions()
+        
+    }
+
+    func rolledUnder() {
+        animate(view: addDieOrDrinkView, constraint: addDieOrDrinkLeadingConstraint, coverGameView: true)
+        game.instructions = "\(game.player!.tag!) rolled too low"
+    }
+}
+
+//MARK: Gesture Helper Methods
+extension GameViewController {
+    
+}
+
+//Mark: Button Actions
+extension GameViewController {
+    
+    
+    
+    func nextPlayerConfirmed() {
+        animate(view: nextPlayerView, constraint: nextPlayerViewLeadingConstraint, coverGameView: true)
+        game.instructions = "\(game.player!.tag!)'s roll"
+        updateInstructions()
     }
     
-    //print game stats for testing
-    func updateGameStatus() {
-        if let player = game.player {
-            _ = "TURN: \(game.turn)  PLAYER: \(player.tag!)   DRINKS: \(game.drinks)"
-            //instructionsView.instructionsLabel.text = turnPlayerDrinksString
-        }
-        var rollsString = "DICE:"
-        _ = "  SCORE: \(game.score)"
-        for die in game.dice {
-            rollsString.append(" \(die.value)")
-        }
-//        gameStatus.middleLabel.text = rollsString + scoreString
+    
+
+    
+    func updateInstructions() {
         instructionsView.instructionsLabel.text = game.instructions
+        rollLabel.text = String(game.playerRoll)
+    }
+    
+    func updateScoreBoard() {
+        scoreView.scoreLabel.text = String(game.score)
+        scoreView.drinksLabel.text = String(game.drinks)
     }
 }
 
@@ -153,45 +230,34 @@ extension GameViewController {
 
 extension GameViewController {
     
-    func animateAddDieOrDrinkView() {
-        let distance = (screenWidth / 2) + (addDieOrDrinkView.frame.width / 2)
+    func animate(view: UIView, constraint: NSLayoutConstraint, coverGameView: Bool) {
+        let distance = (screenWidth / 2) + (view.frame.width / 2)
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.1, options: .curveEaseInOut, animations: {
-            self.addDieOrDrinkLeadingConstraint.constant += distance * -1
-            if self.addDieOrDrinkLeadingConstraint.constant == distance * -1 {
+            
+            constraint.constant += distance * -1
+            
+            if coverGameView && constraint.constant == distance * -1  {
                 self.gameCoverView.alpha = 0.5
-            } else {
+            } else if coverGameView {
                 self.gameCoverView.alpha = 0.0
             }
+            
+            if !coverGameView && constraint.constant == distance * -1  {
+                self.gameCoverView.isUserInteractionEnabled = false
+            } else if !coverGameView {
+                self.gameCoverView.isUserInteractionEnabled = true
+            }
+        
             self.view.layoutIfNeeded()
         }, completion: { success in
-            if self.addDieOrDrinkLeadingConstraint.constant <= distance * -2 {
-                self.addDieOrDrinkLeadingConstraint.constant = 0
+            if constraint.constant <= distance * -2 {
+                constraint.constant = 0
             }
         })
     }
-    
-    func animateNextPlayerView() {
-        let distance = (screenWidth / 2) + (nextPlayerView.frame.width / 2)
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.1, options: .curveEaseInOut, animations: {
-            self.nextPlayerViewLeadingConstraint.constant += distance * -1
-            if self.nextPlayerViewLeadingConstraint.constant == distance * -1 {
-                self.gameCoverView.alpha = 0.5
-            } else {
-                self.gameCoverView.alpha = 0.0
-            }
-            self.view.layoutIfNeeded()
-        }, completion: { success in
-            if self.nextPlayerViewLeadingConstraint.constant <= distance * -2 {
-                self.nextPlayerViewLeadingConstraint.constant = 0
-            }
-        })
-    
-    }
-    
-  
-    
     
 }
+
 
 
 

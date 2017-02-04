@@ -26,6 +26,7 @@
 		119710971E307ED200D4CCD4 /* UpdateCollectionViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119710961E307ED200D4CCD4 /* UpdateCollectionViewProtocol.swift */; };
 		119842D51E4408CD00D7C920 /* DiceGrid.xib in Resources */ = {isa = PBXBuildFile; fileRef = 119842D41E4408CD00D7C920 /* DiceGrid.xib */; };
 		119842D71E4408E300D7C920 /* DiceGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119842D61E4408E300D7C920 /* DiceGrid.swift */; };
+		119842D91E45116400D7C920 /* GameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119842D81E45116400D7C920 /* GameDelegate.swift */; };
 		11DE14C41E0F462E0027D9E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE14C31E0F462E0027D9E8 /* AppDelegate.swift */; };
 		11DE14C61E0F462E0027D9E8 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE14C51E0F462E0027D9E8 /* GameViewController.swift */; };
 		11DE14C91E0F462E0027D9E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11DE14C71E0F462E0027D9E8 /* Main.storyboard */; };
@@ -69,6 +70,7 @@
 		119710961E307ED200D4CCD4 /* UpdateCollectionViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateCollectionViewProtocol.swift; sourceTree = "<group>"; };
 		119842D41E4408CD00D7C920 /* DiceGrid.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiceGrid.xib; sourceTree = "<group>"; };
 		119842D61E4408E300D7C920 /* DiceGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiceGrid.swift; sourceTree = "<group>"; };
+		119842D81E45116400D7C920 /* GameDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameDelegate.swift; sourceTree = "<group>"; };
 		11DE14C01E0F462E0027D9E8 /* 2for1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2for1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11DE14C31E0F462E0027D9E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11DE14C51E0F462E0027D9E8 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				11DE14EA1E1024940027D9E8 /* Die.swift */,
 				1176F4321E23F73300B69A5A /* UIColorExtension.swift */,
 				119710961E307ED200D4CCD4 /* UpdateCollectionViewProtocol.swift */,
+				119842D81E45116400D7C920 /* GameDelegate.swift */,
 				116E0CC91E33DD2E00F3DE0B /* PlayerCollectionView.swift */,
 			);
 			name = Model;
@@ -313,6 +316,7 @@
 				11DE14ED1E11ACC00027D9E8 /* ActionEnum.swift in Sources */,
 				11DE14CC1E0F462E0027D9E8 /* _for1.xcdatamodeld in Sources */,
 				11DE14E11E0F48C20027D9E8 /* GameInfoView.swift in Sources */,
+				119842D91E45116400D7C920 /* GameDelegate.swift in Sources */,
 				11DE14E91E1023C10027D9E8 /* PlayerExtension.swift in Sources */,
 				11FCD40E1E3CF7620081F1C1 /* DieView.swift in Sources */,
 				119710951E3065A500D4CCD4 /* CreatePlayerView.swift in Sources */,
