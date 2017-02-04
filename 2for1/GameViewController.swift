@@ -30,6 +30,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var rolledHighEnoughLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var drinkView: UIView!
     @IBOutlet weak var drinkViewLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var rollLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -40,7 +41,7 @@ class GameViewController: UIViewController {
         menuView.setShadowColor(with: .themeDarkestGreen)
         game.player = game.players[0]
         game.instructions = "\(game.players[0].tag!) starts the game"
-        updateGameStatus()
+        updateInstructions()
     }
    
     
@@ -123,71 +124,65 @@ extension GameViewController {
         switch game.action {
         case .roll: rolled()
         case .rollAddedDie: rollAddedDie()
-        case .passDice: game.passDice()
-        case .drink: drink()
-        default:
-            break
+        default: break
         }
-        print("score: \(game.score) drinks: \(game.drinks)")
     }
     
     func rolled() {
-        if let results = game.roll() {
-            
-            if results.1 == true {
-                drink()
-            } else if results.0 == true {
-                rolledOver()
-            } else {
-                animate(view: addDieOrDrinkView, constraint: addDieOrDrinkLeadingConstraint, coverGameView: true)
-            }
+        let results = game.roll()
+        
+        if results.1 == true {
+            drink()
+        } else if results.0 == true {
+            animate(view: rolledHighEnoughView, constraint: rolledHighEnoughLeadingConstraint, coverGameView: false)
+            game.instructions = "\(game.player!.tag!) rolled a \(game.playerRoll)"
+        } else {
+            animate(view: addDieOrDrinkView, constraint: addDieOrDrinkLeadingConstraint, coverGameView: true)
         }
-        updateGameStatus()
+        updateInstructions()
     }
     
     func addDie() {
         game.addDie()
         self.animate(view: addDieOrDrinkView, constraint: addDieOrDrinkLeadingConstraint, coverGameView: true)
-        updateGameStatus()
+        updateInstructions()
     }
     
     func rollAddedDie() {
         let result = game.rollAddedDie()
         if result {
-            rolledOver()
+            animate(view: rolledHighEnoughView, constraint: rolledHighEnoughLeadingConstraint, coverGameView: false)
+            game.instructions = "\(game.player!.tag!) rolled a \(game.playerRoll)"
         } else {
             drink()
         }
-        updateGameStatus()
+        updateInstructions()
+    
     }
     
     func rolledHighEnoughTapped() {
         animate(view: rolledHighEnoughView, constraint: rolledHighEnoughLeadingConstraint, coverGameView: false)
         animate(view: nextPlayerView, constraint: nextPlayerViewLeadingConstraint, coverGameView: true)
         game.passDice()
-        updateGameStatus()
+        updateScoreBoard()
+        updateInstructions()
     }
     
     func drink() {
         game.drink()
         animate(view: drinkView, constraint: drinkViewLeadingConstraint, coverGameView: false)
-        updateGameStatus()
+        updateInstructions()
     }
     
     func resetGame() {
         game.resetGame()
         
     }
-    
-    func rolledOver() {
-        animate(view: rolledHighEnoughView, constraint: rolledHighEnoughLeadingConstraint, coverGameView: false)
-        game.instructions = "you rolled a \(game.playerRoll)"
-        updateGameStatus()
-    }
+
     
     func rolledUnder() {
         animate(view: addDieOrDrinkView, constraint: addDieOrDrinkLeadingConstraint, coverGameView: true)
-        game.instructions = "you rolled too low"
+        game.instructions = "\(game.player!.tag!) rolled too low"
     }
 }
 
@@ -200,15 +195,18 @@ extension GameViewController {
     func nextPlayerConfirmed() {
         animate(view: nextPlayerView, constraint: nextPlayerViewLeadingConstraint, coverGameView: true)
         game.instructions = "\(game.player!.tag!)'s roll"
-        updateGameStatus()
+        updateInstructions()
     }
     
     
 
     
-    func updateGameStatus() {
-        print("Most Recent Action: \(game.action)")
+    func updateInstructions() {
         instructionsView.instructionsLabel.text = game.instructions
+        rollLabel.text = String(game.playerRoll)
+    }
+    
+    func updateScoreBoard() {
         scoreView.scoreLabel.text = String(game.score)
         scoreView.drinksLabel.text = String(game.drinks)
     }

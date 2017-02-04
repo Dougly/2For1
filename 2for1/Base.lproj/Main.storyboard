@@ -34,9 +34,19 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EvJ-fJ-woD" customClass="GameView" customModule="_for1" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="137.66666666666663" width="414" height="414"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzE-Et-RDb">
+                                        <rect key="frame" x="202" y="0.0" width="10.333333333333343" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="rzE-Et-RDb" firstAttribute="top" secondItem="EvJ-fJ-woD" secondAttribute="top" id="15w-HY-XyB"/>
                                     <constraint firstAttribute="width" secondItem="EvJ-fJ-woD" secondAttribute="height" multiplier="1:1" id="Vv9-IN-ejL"/>
+                                    <constraint firstItem="rzE-Et-RDb" firstAttribute="centerX" secondItem="EvJ-fJ-woD" secondAttribute="centerX" id="e56-cy-1Gb"/>
                                 </constraints>
                             </view>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hpa-bD-cf4" userLabel="Game View Cover">
@@ -152,6 +162,7 @@
                         <outlet property="menuView" destination="pne-vQ-3Xw" id="wdg-2e-LSu"/>
                         <outlet property="nextPlayerView" destination="Mrb-L4-2rO" id="FJo-Mq-cIv"/>
                         <outlet property="nextPlayerViewLeadingConstraint" destination="b3d-mS-AhK" id="61c-mc-hZH"/>
+                        <outlet property="rollLabel" destination="rzE-Et-RDb" id="0dg-Qw-nj7"/>
                         <outlet property="rolledHighEnoughLeadingConstraint" destination="Tcd-iU-WZQ" id="Fr9-Gr-Z19"/>
                         <outlet property="rolledHighEnoughView" destination="NjJ-E3-UrA" id="5e6-Ni-ej8"/>
                         <outlet property="scoreView" destination="L32-AM-cjm" id="rj8-bW-2MY"/>

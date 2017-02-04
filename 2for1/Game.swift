@@ -24,7 +24,7 @@ class Game {
     var score: Int = 0
     var drinks: Int = 0
     var action: PlayerAction = .roll
-    var turn: Int = 1
+    var turn: Int = 0
     var instructions: String = ""
     
 }
@@ -33,7 +33,7 @@ class Game {
 extension Game {
     
 
-    func roll() -> (Bool, Bool)? {
+    func roll() -> (Bool, Bool) {
         for die in dice {
             die.roll()
         }
@@ -81,20 +81,15 @@ extension Game {
     func passDice() {
         
         if !isFirstTurn {
-            drinks += 1
             score = playerRoll
         } else {
             isFirstTurn = false
         }
         
+        playerRoll = 0
         turn += 1
-        
-        if turn < players.count {
-            player = players[turn]
-        } else {
-            player = players[turn % players.count]
-        }
-        
+        drinks += 1
+        player = players[turn % players.count]
         instructions = "\(player!.tag!)'s turn!"
         action = .roll
     }
