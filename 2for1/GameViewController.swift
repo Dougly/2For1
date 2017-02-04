@@ -130,7 +130,7 @@ extension GameViewController {
     
     func rolled() {
         let results = game.roll()
-        
+        gameView.diceGrid.updateDiceImages(dice: game.dice)
         if results.tiedRoll {
             tiedRoll()
         } else if results.wonRoll {
@@ -144,6 +144,8 @@ extension GameViewController {
     
     func addDie() {
         game.addDie()
+        gameView.diceGrid.displayNumberOfDice(number: game.dice.count)
+        gameView.diceGrid.updateDiceImages(dice: game.dice)
         self.animate(view: addDieOrDrinkView, constraint: addDieOrDrinkLeadingConstraint, coverGameView: true)
         updateInstructions()
         updateScoreBoard()
@@ -151,6 +153,7 @@ extension GameViewController {
     
     func rollAddedDie() {
         let result = game.rollAddedDie()
+        gameView.diceGrid.updateDiceImages(dice: game.dice)
         if result {
             animate(view: rolledHighEnoughView, constraint: rolledHighEnoughLeadingConstraint, coverGameView: false)
             game.instructions = "\(game.player!.tag!) rolled a \(game.playerRoll)"
@@ -165,25 +168,29 @@ extension GameViewController {
         animate(view: rolledHighEnoughView, constraint: rolledHighEnoughLeadingConstraint, coverGameView: false)
         animate(view: nextPlayerView, constraint: nextPlayerViewLeadingConstraint, coverGameView: true)
         game.passDice()
+        gameView.diceGrid.displayNumberOfDice(number: game.dice.count)
+        gameView.diceGrid.updateDiceImages(dice: game.dice)
         updateScoreBoard()
         updateInstructions()
     }
     
     func drink() {
-        game.instructions = "\(game.player!.tag!) must drink!!"
+        game.instructions = "\(game.player!.tag!) must drink \(game.drinks) drinks!!"
         animate(view: addDieOrDrinkView, constraint: addDieOrDrinkLeadingConstraint, coverGameView: true)
         animate(view: drinkView, constraint: drinkViewLeadingConstraint, coverGameView: false)
         updateInstructions()
     }
     
     func tiedRoll() {
-        game.drink()
+        game.instructions = "\(game.player!.tag!) tied the score and must drink \(game.drinks) drinks!!"
         animate(view: drinkView, constraint: drinkViewLeadingConstraint, coverGameView: false)
     }
     
     func resetGame() {
         animate(view: drinkView, constraint: drinkViewLeadingConstraint, coverGameView: false)
         game.resetGame()
+        gameView.diceGrid.displayNumberOfDice(number: 1)
+        gameView.diceGrid.updateDiceImages(dice: game.dice)
         animate(view: nextPlayerView, constraint: nextPlayerViewLeadingConstraint, coverGameView: true)
         updateScoreBoard()
         updateInstructions()

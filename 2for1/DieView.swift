@@ -35,7 +35,7 @@ class DieView: UIView {
         if number == 0 {
             dieImageView.image = dice[0]
         } else if number > 0 && number <= dice.count {
-            dieImageView.image = dice[number - 1]
+            dieImageView.image = dice[number]
         }
     }
 }

@@ -11,6 +11,7 @@ import UIKit
 class DiceGrid: UIView {
 
     var diceArray: [DieView] = []
+    var visibleDice: [DieView] = []
     
     @IBOutlet var contentView: UIView!
     
@@ -44,7 +45,10 @@ class DiceGrid: UIView {
         for (index, die) in diceArray.enumerated() {
             if index != 4 {
                 die.isHidden = true
+            } else {
+                visibleDice.append(die)
             }
+            die.tag = index
         }
     }
     
@@ -59,5 +63,55 @@ class DiceGrid: UIView {
         diceArray.append(bottomCenterDieView)
         diceArray.append(bottomRightDieView)
     }
+    
+    func displayNumberOfDice(number: Int) {
+        switch number {
+        case 1: displayDiceIncluding(indexes: [4])
+        case 2: displayDiceIncluding(indexes: [3, 5])
+        case 3: displayDiceIncluding(indexes: [0, 4, 8])
+        case 4: displayDiceIncluding(indexes: [1, 3, 5, 7])
+        case 5: displayDiceIncluding(indexes: [0, 2, 4, 6, 8])
+        case 6: displayDiceIncluding(indexes: [0, 2, 3, 5, 6, 8])
+        case 7: displayDiceIncluding(indexes: [0, 2, 3, 4, 5, 6, 8])
+        case 8: displayDiceIncluding(indexes: [0, 1, 2, 3, 4, 5, 6, 7])
+        case 9: displayDiceIncluding(indexes: [0, 1, 2, 3, 4, 5, 6, 7, 8])
+        default: break
+        }
+    }
+    
+    private func displayDiceIncluding(indexes: [Int]) {
+        visibleDice = []
+        for die in diceArray {
+            for i in indexes {
+                if die.tag == i {
+                    die.isHidden = false
+                    visibleDice.append(die)
+                    break
+                } else {
+                    die.isHidden = true
+                }
+            }
+        }
+    }
+    
+    func updateDiceImages(dice: [Die]) {
+        for (index, die) in visibleDice.enumerated() {
+            if !die.isHidden {
+                die.display(dice: dice[index].value)
+            }
+        }
+    }
+    
 
 }
+
+
+
+
+
+
+
+
+
+
+

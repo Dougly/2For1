@@ -80,6 +80,10 @@ extension Game {
             isFirstTurn = false
         }
         
+        for die in dice {
+            die.value = 0
+        }
+        
         playerRoll = 0
         turn += 1
         drinks += 1
