@@ -8,43 +8,32 @@
 
 import Foundation
 
+//all functions that manipulate game stats should exist in the game class.
+//when buttons are hit on the gameVC they should call functions on the game class and perform appropriate animations
+
+//possible actions on roll: >, <, ==, roll all dice, roll only added die.
+//possible other game actions: pass dice, drink, add die, confirm score.
+
 class Game {
     
     var players: [Player] = []
     var player: Player?
     var dice: [Die] = [Die()]
-    var isFirstRoll: Bool = true
+    var isFirstTurn: Bool = true
     var playerRoll: Int = 0
     var score: Int = 0
     var drinks: Int = 0
     var action: PlayerAction = .roll
     var turn: Int = 1
     var instructions: String = ""
-    var delegate: GameDelegate?
-    
-    func playerAction() {
-        switch self.action {
-        case .startGame: startGame()
-        case .roll: roll()
-        case .rollAddedDie: rollAddedDie()
-        case .passDice: passDice()
-        case .drink: drink()
-        }
-    }
     
 }
 
 //MARK: Player Actions
 extension Game {
     
-    func startGame() {
-        instructions = "\(players[0].tag!) starts the game!"
-        if let delegate = delegate {
-            delegate.updateGameBoard(with: self)
-        }
-    }
-    
-    func roll() {
+
+    func roll() -> (Bool, Bool)? {
         for die in dice {
             die.roll()
         }
@@ -53,21 +42,16 @@ extension Game {
             return result + nextDie.value
         }
         
-        if isFirstRoll {
-            action = .passDice
-            isFirstRoll = false
-            passDice()
+        if playerRoll < score {
+            return (false, false)
+        } else if playerRoll == score {
+            action = .drink
+            return (false, true)
         } else {
-            if playerRoll < score {
-                instructions = "rolled too low... tap to add a die or drink"
-            } else if playerRoll == score {
-                instructions = "roll matched score... tap to make \(player!.tag!) drink"
-                action = .drink
-            } else {
-                instructions = "roll is higher than score... tap to pass the dice"
-                action = .passDice
-            }
+            score = playerRoll
+            return (true, false)
         }
+        
     }
     
     func prepareToPassDice() {
@@ -76,16 +60,20 @@ extension Game {
     
     
     func passDice() {
-        if turn < players.count {
-            player = players[turn]
+        
+        if !isFirstTurn {
+            drinks += 1
+            turn += 1
+            score = playerRoll
+            if turn < players.count {
+                player = players[turn]
+            } else {
+                player = players[turn % players.count]
+            }
         } else {
-            player = players[turn % players.count]
+            isFirstTurn = false
         }
-        turn += 1
-        drinks += 1
-        score = playerRoll
-        instructions = "Pass Dice to \(player!.tag!)"
-        delegate!.updateGameBoard(with: self)
+//        instructions = "Pass Dice to \(player!.tag!)"
         action = .roll
     }
     
@@ -110,7 +98,6 @@ extension Game {
         score = 0
         drinks = 0
         action = .roll
-        isFirstRoll = true
         instructions = "\(player!.tag!) starts the game"
     }
     
