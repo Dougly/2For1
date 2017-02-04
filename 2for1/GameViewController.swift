@@ -83,7 +83,7 @@ class GameViewController: UIViewController {
         let tapGR7 = UITapGestureRecognizer(target: self, action: #selector(dismissVC))
         menuView.thirdOptionView.addGestureRecognizer(tapGR7)
         
-        let tapGR8 = UITapGestureRecognizer(target: self, action: #selector(drink))
+        let tapGR8 = UITapGestureRecognizer(target: self, action: #selector(resetGame))
         drinkView.addGestureRecognizer(tapGR8)
     }
     
@@ -117,7 +117,7 @@ class GameViewController: UIViewController {
     
 }
 
-
+//gesture actions
 extension GameViewController {
   
     func diceSwiped() {
@@ -131,9 +131,9 @@ extension GameViewController {
     func rolled() {
         let results = game.roll()
         
-        if results.1 == true {
-            drink()
-        } else if results.0 == true {
+        if results.tiedRoll {
+            tiedRoll()
+        } else if results.wonRoll {
             animate(view: rolledHighEnoughView, constraint: rolledHighEnoughLeadingConstraint, coverGameView: false)
             game.instructions = "\(game.player!.tag!) rolled a \(game.playerRoll)"
         } else {
@@ -146,6 +146,7 @@ extension GameViewController {
         game.addDie()
         self.animate(view: addDieOrDrinkView, constraint: addDieOrDrinkLeadingConstraint, coverGameView: true)
         updateInstructions()
+        updateScoreBoard()
     }
     
     func rollAddedDie() {
@@ -154,7 +155,7 @@ extension GameViewController {
             animate(view: rolledHighEnoughView, constraint: rolledHighEnoughLeadingConstraint, coverGameView: false)
             game.instructions = "\(game.player!.tag!) rolled a \(game.playerRoll)"
         } else {
-            drink()
+            tiedRoll()
         }
         updateInstructions()
     
@@ -169,23 +170,36 @@ extension GameViewController {
     }
     
     func drink() {
-        game.drink()
+        game.instructions = "\(game.player!.tag!) must drink!!"
+        animate(view: addDieOrDrinkView, constraint: addDieOrDrinkLeadingConstraint, coverGameView: true)
         animate(view: drinkView, constraint: drinkViewLeadingConstraint, coverGameView: false)
         updateInstructions()
     }
     
+    func tiedRoll() {
+        game.drink()
+        animate(view: drinkView, constraint: drinkViewLeadingConstraint, coverGameView: false)
+    }
+    
     func resetGame() {
+        animate(view: drinkView, constraint: drinkViewLeadingConstraint, coverGameView: false)
         game.resetGame()
+        animate(view: nextPlayerView, constraint: nextPlayerViewLeadingConstraint, coverGameView: true)
+        updateScoreBoard()
+        updateInstructions()
         
     }
 
-    
     func rolledUnder() {
         animate(view: addDieOrDrinkView, constraint: addDieOrDrinkLeadingConstraint, coverGameView: true)
         game.instructions = "\(game.player!.tag!) rolled too low"
     }
 }
 
+//MARK: Gesture Helper Methods
+extension GameViewController {
+    
+}
 
 //Mark: Button Actions
 extension GameViewController {

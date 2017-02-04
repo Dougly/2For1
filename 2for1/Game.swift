@@ -8,12 +8,6 @@
 
 import Foundation
 
-//all functions that manipulate game stats should exist in the game class.
-//when buttons are hit on the gameVC they should call functions on the game class and perform appropriate animations
-
-//possible actions on roll: >, <, ==, roll all dice, roll only added die.
-//possible other game actions: pass dice, drink, add die, confirm score.
-
 class Game {
     
     var players: [Player] = []
@@ -33,7 +27,7 @@ class Game {
 extension Game {
     
 
-    func roll() -> (Bool, Bool) {
+    func roll() -> (wonRoll: Bool, tiedRoll: Bool) {
         for die in dice {
             die.roll()
         }
@@ -96,19 +90,17 @@ extension Game {
     
     
     func drink() {
-        instructions = "\(player!.tag!) rolled a \(playerRoll) and must drink!!"
-        resetGame()
+        instructions = "\(player!.tag!)'s roll was too low and and must drink \(drinks) drinks!!"
     }
     
     func resetGame() {
         dice = [Die()]
         score = 0
         drinks = 0
+        playerRoll = 0
         action = .roll
-        instructions = "\(player!.tag!) restarts the game"
+        instructions = "\(player!.tag!) re-starts the game"
     }
-    
-    
     
     
 }
