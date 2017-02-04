@@ -51,54 +51,6 @@ extension Game {
             score = playerRoll
             return (true, false)
         }
-        
-    }
-    
-    func prepareToPassDice() {
-        
-    }
-    
-    
-    func passDice() {
-        
-        if !isFirstTurn {
-            drinks += 1
-            turn += 1
-            score = playerRoll
-            if turn < players.count {
-                player = players[turn]
-            } else {
-                player = players[turn % players.count]
-            }
-        } else {
-            isFirstTurn = false
-        }
-//        instructions = "Pass Dice to \(player!.tag!)"
-        action = .roll
-    }
-    
-    
-    func rollAddedDie() {
-        dice.last?.roll()
-        playerRoll = dice.reduce(0) { (result, nextDie) -> Int in
-            return result + nextDie.value
-        }
-        if playerRoll <= score {
-            action = .drink
-            instructions = "rolled too low... tap to make \(player!.tag!) drink"
-        } else {
-            instructions = "roll is higher than score... tap to pass the dice"
-            action = .passDice
-        }
-    }
-    
-    
-    func drink() {
-        dice = [Die()]
-        score = 0
-        drinks = 0
-        action = .roll
-        instructions = "\(player!.tag!) starts the game"
     }
     
     
@@ -106,8 +58,63 @@ extension Game {
         dice.append(Die())
         drinks *= 2
         action = .rollAddedDie
-        instructions = "Extra die added... tap to have \(player!.tag!) roll added die!"
+        instructions = "\(player!.tag!) roll the added die!"
     }
+    
+    
+    func rollAddedDie() -> Bool {
+        dice.last?.roll()
+        playerRoll = dice.reduce(0) { (result, nextDie) -> Int in
+            return result + nextDie.value
+        }
+        if playerRoll <= score {
+            action = .drink
+            instructions = "\(player!.tag!) rolled a \(playerRoll) and must drink!!"
+            return false
+        } else {
+            
+            action = .roll
+            return true
+        }
+    }
+    
+    func passDice() {
+        
+        if !isFirstTurn {
+            drinks += 1
+            score = playerRoll
+        } else {
+            isFirstTurn = false
+        }
+        
+        turn += 1
+        
+        if turn < players.count {
+            player = players[turn]
+        } else {
+            player = players[turn % players.count]
+        }
+        
+        instructions = "\(player!.tag!)'s turn!"
+        action = .roll
+    }
+    
+    
+    func drink() {
+        instructions = "\(player!.tag!) rolled a \(playerRoll) and must drink!!"
+        resetGame()
+    }
+    
+    func resetGame() {
+        dice = [Die()]
+        score = 0
+        drinks = 0
+        action = .roll
+        instructions = "\(player!.tag!) restarts the game"
+    }
+    
+    
+    
     
 }
 

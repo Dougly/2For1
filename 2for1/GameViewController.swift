@@ -39,14 +39,15 @@ class GameViewController: UIViewController {
         addGradients()
         menuView.setShadowColor(with: .themeDarkestGreen)
         game.player = game.players[0]
+        game.instructions = "\(game.players[0].tag!) starts the game"
+        updateGameStatus()
     }
    
     
     override func viewDidAppear(_ animated: Bool) {
-        gameView.update(die: game.dice)
-        self.animate(view: nextPlayerView, constraint: nextPlayerViewLeadingConstraint)
-        game.instructions = "\(game.players[0].tag!) starts the game"
-        updateGameStatus()
+        //gameView.update(die: game.dice)
+        animate(view: nextPlayerView, constraint: nextPlayerViewLeadingConstraint, coverGameView: true)
+        
     }
     
     
@@ -103,7 +104,6 @@ class GameViewController: UIViewController {
     func addGradients() {
         UIView.applyGradient(to: self.view, topColor: .themeMediumGreen, bottomColor: .themeGreen)
         UIView.applyGradient(to: menuView.contentView, topColor: .themeMediumGreen, bottomColor: .themeDarkestGreen)
-
     }
     
     func makeViewsCircles() {
@@ -119,15 +119,27 @@ class GameViewController: UIViewController {
 
 extension GameViewController {
   
+    func diceSwiped() {
+        switch game.action {
+        case .roll: rolled()
+        case .rollAddedDie: rollAddedDie()
+        case .passDice: game.passDice()
+        case .drink: drink()
+        default:
+            break
+        }
+        print("score: \(game.score) drinks: \(game.drinks)")
+    }
     
     func rolled() {
         if let results = game.roll() {
+            
             if results.1 == true {
-                //lose
+                drink()
             } else if results.0 == true {
-                self.rolledOver()
+                rolledOver()
             } else {
-                self.animate(view: addDieOrDrinkView, constraint: addDieOrDrinkLeadingConstraint)
+                animate(view: addDieOrDrinkView, constraint: addDieOrDrinkLeadingConstraint, coverGameView: true)
             }
         }
         updateGameStatus()
@@ -135,27 +147,46 @@ extension GameViewController {
     
     func addDie() {
         game.addDie()
-        self.animate(view: addDieOrDrinkView, constraint: addDieOrDrinkLeadingConstraint)
+        self.animate(view: addDieOrDrinkView, constraint: addDieOrDrinkLeadingConstraint, coverGameView: true)
+        updateGameStatus()
+    }
+    
+    func rollAddedDie() {
+        let result = game.rollAddedDie()
+        if result {
+            rolledOver()
+        } else {
+            drink()
+        }
+        updateGameStatus()
+    }
+    
+    func rolledHighEnoughTapped() {
+        animate(view: rolledHighEnoughView, constraint: rolledHighEnoughLeadingConstraint, coverGameView: false)
+        animate(view: nextPlayerView, constraint: nextPlayerViewLeadingConstraint, coverGameView: true)
+        game.passDice()
         updateGameStatus()
     }
     
     func drink() {
         game.drink()
-        animate(view: drinkView, constraint: drinkViewLeadingConstraint)
+        animate(view: drinkView, constraint: drinkViewLeadingConstraint, coverGameView: false)
         updateGameStatus()
     }
-
     
-    
+    func resetGame() {
+        game.resetGame()
+        
+    }
     
     func rolledOver() {
-        animate(view: rolledHighEnoughView, constraint: rolledHighEnoughLeadingConstraint)
+        animate(view: rolledHighEnoughView, constraint: rolledHighEnoughLeadingConstraint, coverGameView: false)
         game.instructions = "you rolled a \(game.playerRoll)"
         updateGameStatus()
     }
     
     func rolledUnder() {
-        animate(view: addDieOrDrinkView, constraint: addDieOrDrinkLeadingConstraint)
+        animate(view: addDieOrDrinkView, constraint: addDieOrDrinkLeadingConstraint, coverGameView: true)
         game.instructions = "you rolled too low"
     }
 }
@@ -164,36 +195,19 @@ extension GameViewController {
 //Mark: Button Actions
 extension GameViewController {
     
-    func rolledHighEnoughTapped() {
-        animate(view: rolledHighEnoughView, constraint: rolledHighEnoughLeadingConstraint)
-        game.instructions = "\(game.player!.tag!)'s turn!"
-        updateGameStatus()
-    }
+    
     
     func nextPlayerConfirmed() {
-        game.passDice()
-        animate(view: nextPlayerView, constraint: nextPlayerViewLeadingConstraint)
+        animate(view: nextPlayerView, constraint: nextPlayerViewLeadingConstraint, coverGameView: true)
         game.instructions = "\(game.player!.tag!)'s roll"
         updateGameStatus()
     }
     
-    func diceSwiped() {
-        switch game.action {
-        case .roll: rolled()
-        case .rollAddedDie: game.rollAddedDie()
-        case .passDice: game.passDice()
-        case .drink: drink()
-        default:
-            break
-        }
-        updateGameStatus()
-    }
     
-    
-    
+
     
     func updateGameStatus() {
-        print("\(game.action)")
+        print("Most Recent Action: \(game.action)")
         instructionsView.instructionsLabel.text = game.instructions
         scoreView.scoreLabel.text = String(game.score)
         scoreView.drinksLabel.text = String(game.drinks)
@@ -204,18 +218,24 @@ extension GameViewController {
 
 extension GameViewController {
     
-
-    func animate(view: UIView, constraint: NSLayoutConstraint) {
+    func animate(view: UIView, constraint: NSLayoutConstraint, coverGameView: Bool) {
         let distance = (screenWidth / 2) + (view.frame.width / 2)
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.1, options: .curveEaseInOut, animations: {
+            
             constraint.constant += distance * -1
-            if constraint.constant == distance * -1 {
-                self.gameCoverView.isUserInteractionEnabled = false
+            
+            if coverGameView && constraint.constant == distance * -1  {
                 self.gameCoverView.alpha = 0.5
-            } else {
-                self.gameCoverView.isUserInteractionEnabled = true
+            } else if coverGameView {
                 self.gameCoverView.alpha = 0.0
             }
+            
+            if !coverGameView && constraint.constant == distance * -1  {
+                self.gameCoverView.isUserInteractionEnabled = false
+            } else if !coverGameView {
+                self.gameCoverView.isUserInteractionEnabled = true
+            }
+        
             self.view.layoutIfNeeded()
         }, completion: { success in
             if constraint.constant <= distance * -2 {
@@ -224,77 +244,7 @@ extension GameViewController {
         })
     }
     
-    
 }
-
-//    func animateAddDieOrDrinkView() {
-//        let distance = (screenWidth / 2) + (addDieOrDrinkView.frame.width / 2)
-//        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.1, options: .curveEaseInOut, animations: {
-//            self.addDieOrDrinkLeadingConstraint.constant += distance * -1
-//            if self.addDieOrDrinkLeadingConstraint.constant == distance * -1 {
-//                self.gameCoverView.alpha = 0.5
-//            } else {
-//                self.gameCoverView.alpha = 0.0
-//            }
-//            self.view.layoutIfNeeded()
-//        }, completion: { success in
-//            if self.addDieOrDrinkLeadingConstraint.constant <= distance * -2 {
-//                self.addDieOrDrinkLeadingConstraint.constant = 0
-//            }
-//        })
-//    }
-//
-//    func animateNextPlayerView() {
-//        let distance = (screenWidth / 2) + (nextPlayerView.frame.width / 2)
-//        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.1, options: .curveEaseInOut, animations: {
-//            self.nextPlayerViewLeadingConstraint.constant += distance * -1
-//            if self.nextPlayerViewLeadingConstraint.constant == distance * -1 {
-//                self.gameCoverView.alpha = 0.5
-//            } else {
-//                self.gameCoverView.alpha = 0.0
-//            }
-//            self.view.layoutIfNeeded()
-//        }, completion: { success in
-//            if self.nextPlayerViewLeadingConstraint.constant <= distance * -2 {
-//                self.nextPlayerViewLeadingConstraint.constant = 0
-//            }
-//        })
-//    }
-//
-//    func animateRolledHighEnoughView() {
-//        let distance = (screenWidth / 2) + (rolledHighEnoughView.frame.width / 2)
-//        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.1, options: .curveEaseInOut, animations: {
-//            self.rolledHighEnoughLeadingConstraint.constant += distance * -1
-//            if self.rolledHighEnoughLeadingConstraint.constant == distance * -1 {
-//                self.gameCoverView.isUserInteractionEnabled = false
-//            } else {
-//                self.gameCoverView.isUserInteractionEnabled = true
-//            }
-//            self.view.layoutIfNeeded()
-//        }, completion: { success in
-//            if self.rolledHighEnoughLeadingConstraint.constant <= distance * -2 {
-//                self.rolledHighEnoughLeadingConstraint.constant = 0
-//            }
-//        })
-//    }
-//
-//    func animateDrinkView() {
-//        let distance = (screenWidth / 2) + (drinkView.frame.width / 2)
-//        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.1, options: .curveEaseInOut, animations: {
-//            self.drinkViewLeadingConstraint.constant += distance * -1
-//            if self.drinkViewLeadingConstraint.constant == distance * -1 {
-//                self.gameCoverView.isUserInteractionEnabled = false
-//
-//            } else {
-//                self.gameCoverView.isUserInteractionEnabled = true
-//            }
-//            self.view.layoutIfNeeded()
-//        }, completion: { success in
-//            if self.drinkViewLeadingConstraint.constant <= distance * -2 {
-//                self.drinkViewLeadingConstraint.constant = 0
-//            }
-//        })
-//    }
 
 
 
