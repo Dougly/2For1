@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 final class DataStore {
     
@@ -26,17 +27,20 @@ final class DataStore {
         }
     }
     
-    func savePlayer(_ firstName: String, lastName: String, tag: String) {
+    func savePlayer(_ firstName: String, lastName: String, tag: String, file: String) {
         let context = persistentContainer.viewContext
         let entity = Player(context: context)
         entity.firstName = firstName
         entity.lastName = lastName
         entity.tag = tag
+        entity.file = file
         saveContext()
         players.append(entity)
         players.sort { (p1, p2) -> Bool in
             return p1.tag! > p2.tag!
         }
+        
+        
     }
     
     // MARK: - Core Data stack

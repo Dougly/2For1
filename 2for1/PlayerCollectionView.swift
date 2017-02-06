@@ -43,10 +43,12 @@ class PlayerCollectionView: NSObject, UICollectionViewDelegateFlowLayout, UIColl
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "playerCell", for: indexPath) as! CustomPlayerCell
         let player = store.players[indexPath.row]
         cell.tagLabel.text = player.tag
+        cell.pictureImageView.image = player.playerImage
+        cell.contentView.layer.borderColor = UIColor.themeBlue.cgColor
         if cell.isSelected {
-            cell.pictureImageView.image = #imageLiteral(resourceName: "childCare")
+            cell.contentView.layer.borderWidth = 3
         } else {
-            cell.pictureImageView.image = #imageLiteral(resourceName: "slime")
+            cell.contentView.layer.borderWidth = 0
         }
         return cell
     }
@@ -72,12 +74,12 @@ class PlayerCollectionView: NSObject, UICollectionViewDelegateFlowLayout, UIColl
         let cell = collectionView.cellForItem(at: indexPath) as! CustomPlayerCell
         guard let viewController = delegate else { return }
         
-        if cell.pictureImageView.image == #imageLiteral(resourceName: "slime") {
-            cell.pictureImageView.image = #imageLiteral(resourceName: "childCare")
+        if cell.contentView.layer.borderWidth == 0 {
+            cell.contentView.layer.borderWidth = 3
             store.players[indexPath.item].isSelected = true
             viewController.selectedIndexPaths.append(indexPath)
         } else {
-            cell.pictureImageView.image = #imageLiteral(resourceName: "slime")
+            cell.contentView.layer.borderWidth = 0
             store.players[indexPath.item].isSelected = false
             for (index, ip) in viewController.selectedIndexPaths.enumerated() {
                 if indexPath == ip {

@@ -30,6 +30,9 @@ class CreatePlayerViewController: UIViewController, UIImagePickerControllerDeleg
         
         let tapGR2 = UITapGestureRecognizer(target: self, action: #selector(xViewTapped))
         createPlayerView.xImageView.addGestureRecognizer(tapGR2)
+        
+        let tapGR3 = UITapGestureRecognizer(target: self, action: #selector(addPictureTapped))
+        createPlayerView.playerPictureImageView.addGestureRecognizer(tapGR3)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -47,17 +50,48 @@ class CreatePlayerViewController: UIViewController, UIImagePickerControllerDeleg
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.sourceType = .camera
-            imagePicker.allowsEditing = false
+            imagePicker.allowsEditing = true
             self.present(imagePicker, animated: true, completion: nil)
         }
     }
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        let editedImageKey = UIImagePickerControllerEditedImage
+        let image = info[editedImageKey] as! UIImage
+        let imageData = UIImageJPEGRepresentation(image, 0.5)
+        if let imageData = imageData {
+            let compressedImage = UIImage(data: imageData)
+            if let compressedImage = compressedImage {
+                UIImageWriteToSavedPhotosAlbum(compressedImage, nil, nil, nil)
+            }
+        }
+    }
+    
+    
+    
+    
     
     
     func plusViewTapped() {
         let firstName = createPlayerView.firstNameTextField.text!
         let lastName = createPlayerView.lastNameTextField.text!
         let tag = createPlayerView.handleTextField.text!
-        store.savePlayer(firstName, lastName: lastName, tag: tag)
+        
+        let image = createPlayerView.playerPictureImageView.image!
+        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let fileURL = documentsURL.appendingPathComponent("\(firstName + lastName + tag).png")
+        
+        do {
+            if let pngImageData = UIImagePNGRepresentation(image) {
+                try pngImageData.write(to: fileURL, options: .atomic)
+            }
+        } catch { }
+
+        
+        
+        store.savePlayer(firstName, lastName: lastName, tag: tag, file: "\(firstName + lastName + tag).png")
         self.blurDelegate?.unBlurView()
         self.dismiss(animated: true, completion: {
             if let delegate = self.delegate {

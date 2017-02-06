@@ -197,7 +197,7 @@ extension SetupViewController: BlurViewDelegate {
 
     func blurView() {
         UIView.animate(withDuration: 0.2, animations: {
-            self.blurEffectView.alpha = 0.75
+            self.blurEffectView.alpha = 1.0
             self.view.layoutIfNeeded()
         })
     }
