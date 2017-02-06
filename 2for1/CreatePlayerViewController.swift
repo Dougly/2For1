@@ -22,7 +22,6 @@ class CreatePlayerViewController: UIViewController, UIImagePickerControllerDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        blurDelegate?.blurView()
         
         let tapGR = UITapGestureRecognizer(target: self, action: #selector(plusViewTapped))
         createPlayerView.addPlayerView.addGestureRecognizer(tapGR)
@@ -33,10 +32,14 @@ class CreatePlayerViewController: UIViewController, UIImagePickerControllerDeleg
         createPlayerView.xImageView.addGestureRecognizer(tapGR2)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        blurDelegate?.blurView()
+    }
+    
     @IBAction func xViewTapped() {
-        self.dismiss(animated: true, completion: {
-            self.blurDelegate?.unBlurView()
-        })
+        self.blurDelegate?.unBlurView()
+        self.dismiss(animated: true, completion: nil)
     }
     
     func addPictureTapped() {
@@ -55,8 +58,8 @@ class CreatePlayerViewController: UIViewController, UIImagePickerControllerDeleg
         let lastName = createPlayerView.lastNameTextField.text!
         let tag = createPlayerView.handleTextField.text!
         store.savePlayer(firstName, lastName: lastName, tag: tag)
+        self.blurDelegate?.unBlurView()
         self.dismiss(animated: true, completion: {
-            self.blurDelegate?.unBlurView()
             if let delegate = self.delegate {
                 delegate.reloadCollectionView(withPlayer: tag)
             }
