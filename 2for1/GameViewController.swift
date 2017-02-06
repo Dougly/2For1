@@ -113,9 +113,9 @@ class GameViewController: UIViewController {
         menuView.setCornerRadius(with: screenHeight * 0.1) //based on constraint multipliers
         addDieOrDrinkView.setCornerRadius(with: screenWidth * 0.3) //based on constraint multipliers
         nextPlayerView.setCornerRadius(with: screenWidth * 0.6) //based on constraint multipliers
-        rolledHighEnoughView.setCornerRadius(with: screenWidth * 0.25)
+        rolledHighEnoughView.setCornerRadius(with: screenWidth * 0.2)
         rolledHighEnoughView.restartLabel.isHidden = true
-        drinkView.setCornerRadius(with: screenWidth * 0.25)
+        drinkView.setCornerRadius(with: screenWidth * 0.2)
         drinkView.checkImageView.isHidden = true
         drinkView.checkBackgroundView.backgroundColor = UIColor.themeBlue
     }
@@ -229,7 +229,7 @@ extension GameViewController {
     
     func updateInstructions() {
         instructionsView.instructionsLabel.text = game.instructions
-        rollLabel.text = String(game.playerRoll)
+        gameView.scoreLabel.text = String(game.playerRoll)
     }
     
     func updateScoreBoard() {

@@ -34,19 +34,9 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EvJ-fJ-woD" customClass="GameView" customModule="_for1" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="137.66666666666663" width="414" height="414"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzE-Et-RDb">
-                                        <rect key="frame" x="202" y="0.0" width="10.333333333333343" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="rzE-Et-RDb" firstAttribute="top" secondItem="EvJ-fJ-woD" secondAttribute="top" id="15w-HY-XyB"/>
                                     <constraint firstAttribute="width" secondItem="EvJ-fJ-woD" secondAttribute="height" multiplier="1:1" id="Vv9-IN-ejL"/>
-                                    <constraint firstItem="rzE-Et-RDb" firstAttribute="centerX" secondItem="EvJ-fJ-woD" secondAttribute="centerX" id="e56-cy-1Gb"/>
                                 </constraints>
                             </view>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hpa-bD-cf4" userLabel="Game View Cover">
@@ -69,11 +59,11 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYE-lx-hXd" userLabel="DrinkView" customClass="CheckMarkView" customModule="_for1" customModuleProvider="target">
-                                <rect key="frame" x="414" y="448.33333333333337" width="207" height="103.33333333333337"/>
+                                <rect key="frame" x="414" y="469" width="165.66666666666663" height="82.666666666666629"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NjJ-E3-UrA" userLabel="Rolled High Enough" customClass="CheckMarkView" customModule="_for1" customModuleProvider="target">
-                                <rect key="frame" x="414" y="448.33333333333337" width="207" height="103.33333333333337"/>
+                                <rect key="frame" x="414" y="469" width="165.66666666666663" height="82.666666666666629"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="NjJ-E3-UrA" secondAttribute="height" multiplier="2:1" id="5zD-X1-KV7"/>
@@ -112,7 +102,7 @@
                             <constraint firstItem="4at-gc-P0q" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="d7U-hf-wq3"/>
                             <constraint firstItem="I4T-G5-HG4" firstAttribute="leading" secondItem="EvJ-fJ-woD" secondAttribute="trailing" id="gKf-CZ-Mdm"/>
                             <constraint firstItem="Mrb-L4-2rO" firstAttribute="height" secondItem="EvJ-fJ-woD" secondAttribute="height" multiplier="0.6" id="hVe-bF-eb5"/>
-                            <constraint firstItem="NjJ-E3-UrA" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="iTn-F4-EJV"/>
+                            <constraint firstItem="NjJ-E3-UrA" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.4" id="iTn-F4-EJV"/>
                             <constraint firstItem="4at-gc-P0q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ifU-3N-IDM"/>
                             <constraint firstItem="pne-vQ-3Xw" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="kRa-vQ-FWV"/>
                             <constraint firstItem="pne-vQ-3Xw" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="mVe-d1-QI1"/>
@@ -136,7 +126,6 @@
                         <outlet property="menuView" destination="pne-vQ-3Xw" id="wdg-2e-LSu"/>
                         <outlet property="nextPlayerView" destination="Mrb-L4-2rO" id="FJo-Mq-cIv"/>
                         <outlet property="nextPlayerViewLeadingConstraint" destination="b3d-mS-AhK" id="61c-mc-hZH"/>
-                        <outlet property="rollLabel" destination="rzE-Et-RDb" id="0dg-Qw-nj7"/>
                         <outlet property="rolledHighEnoughLeadingConstraint" destination="Tcd-iU-WZQ" id="Fr9-Gr-Z19"/>
                         <outlet property="rolledHighEnoughView" destination="NjJ-E3-UrA" id="5e6-Ni-ej8"/>
                         <outlet property="scoreView" destination="L32-AM-cjm" id="rj8-bW-2MY"/>

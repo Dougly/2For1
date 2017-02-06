@@ -17,6 +17,7 @@
                 <outlet property="checkImageView" destination="McL-Eb-8Su" id="Dzw-Td-IWl"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="IRy-T2-flL"/>
                 <outlet property="restartLabel" destination="nqb-NH-Pp7" id="IyK-WC-TfN"/>
+                <outlet property="shadowView" destination="rf8-gH-5eF" id="r3W-04-qn7"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -24,12 +25,16 @@
             <rect key="frame" x="0.0" y="0.0" width="407" height="270"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rf8-gH-5eF" userLabel="shadowView">
+                    <rect key="frame" x="71.5" y="3" width="270" height="270"/>
+                    <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="0.20028805869999999" colorSpace="calibratedRGB"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rKp-Ei-bIV" userLabel="CheckBackgroundView">
                     <rect key="frame" x="68.5" y="0.0" width="270" height="270"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RESTART" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nqb-NH-Pp7">
-                            <rect key="frame" x="13" y="115.5" width="243" height="39"/>
-                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                            <rect key="frame" x="26.5" y="122" width="216" height="26"/>
+                            <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -47,16 +52,20 @@
                         <constraint firstItem="McL-Eb-8Su" firstAttribute="centerY" secondItem="rKp-Ei-bIV" secondAttribute="centerY" id="Pk6-EQ-Oqg"/>
                         <constraint firstItem="McL-Eb-8Su" firstAttribute="height" secondItem="rKp-Ei-bIV" secondAttribute="height" multiplier="0.8" id="Yhu-SB-kX8"/>
                         <constraint firstItem="nqb-NH-Pp7" firstAttribute="centerX" secondItem="rKp-Ei-bIV" secondAttribute="centerX" id="jCj-aJ-Urz"/>
-                        <constraint firstItem="nqb-NH-Pp7" firstAttribute="width" secondItem="rKp-Ei-bIV" secondAttribute="width" multiplier="0.9" id="ljW-da-Uw6"/>
+                        <constraint firstItem="nqb-NH-Pp7" firstAttribute="width" secondItem="rKp-Ei-bIV" secondAttribute="width" multiplier="0.8" id="ljW-da-Uw6"/>
                         <constraint firstItem="McL-Eb-8Su" firstAttribute="width" secondItem="rKp-Ei-bIV" secondAttribute="width" multiplier="0.8" id="wfg-A2-sRo"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="rf8-gH-5eF" firstAttribute="centerX" secondItem="rKp-Ei-bIV" secondAttribute="centerX" constant="3" id="3OP-g7-WNr"/>
                 <constraint firstItem="rKp-Ei-bIV" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="BSf-7q-d0e"/>
+                <constraint firstItem="rf8-gH-5eF" firstAttribute="width" secondItem="rKp-Ei-bIV" secondAttribute="width" id="Jxe-l3-Fcs"/>
+                <constraint firstItem="rf8-gH-5eF" firstAttribute="height" secondItem="rKp-Ei-bIV" secondAttribute="height" id="M7D-6m-R8b"/>
                 <constraint firstItem="rKp-Ei-bIV" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="NGD-DQ-vfH"/>
                 <constraint firstItem="rKp-Ei-bIV" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="Xbl-nO-hok"/>
+                <constraint firstItem="rf8-gH-5eF" firstAttribute="centerY" secondItem="rKp-Ei-bIV" secondAttribute="centerY" constant="3" id="vpL-xk-7Zv"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

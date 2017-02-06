@@ -14,6 +14,7 @@ class CheckMarkView: UIView {
     @IBOutlet weak var checkBackgroundView: UIView!
     @IBOutlet weak var checkImageView: UIImageView!
     @IBOutlet weak var restartLabel: UILabel!
+    @IBOutlet weak var shadowView: UIView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -36,6 +37,7 @@ class CheckMarkView: UIView {
         let cornerRadius = (size * constraintMultiplier) / 2
         checkBackgroundView.layer.cornerRadius = cornerRadius
         checkImageView.layer.cornerRadius = cornerRadius
+        shadowView.layer.cornerRadius = cornerRadius
     }
 
 }
