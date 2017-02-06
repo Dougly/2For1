@@ -14,6 +14,8 @@ class SetupViewController: UIViewController {
     var selectedIndexPaths: [IndexPath] = []
     let playerVC = PlayerCollectionView()
     let screenHeight = UIScreen.main.bounds.height
+    let blurEffectView = UIVisualEffectView()
+
     override var prefersStatusBarHidden: Bool { return true }
     
     @IBOutlet weak var playerCollectionView: UICollectionView!
@@ -29,10 +31,25 @@ class SetupViewController: UIViewController {
         applyTapGestures()
         applyGradients()
         setupMenuView()
+        
+        self.view.backgroundColor = UIColor.clear
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+        blurEffectView.effect = blurEffect
+        blurEffectView.frame = self.view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        self.view.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
+        self.blurEffectView.alpha = 0.0
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         resetViewConroller()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        blurEffectView.alpha = 0.0
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -56,6 +73,7 @@ class SetupViewController: UIViewController {
         if segue.identifier == "addPlayer" {
             let destVC = segue.destination as! CreatePlayerViewController
             destVC.delegate = playerVC
+            destVC.blurDelegate = self
         }
     }
     
@@ -173,5 +191,23 @@ extension SetupViewController {
             self.view.layoutIfNeeded()
         }, completion: nil)
     }
+}
+
+extension SetupViewController: BlurViewDelegate {
+
+    func blurView() {
+        UIView.animate(withDuration: 0.1, animations: {
+            self.blurEffectView.alpha = 0.75
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+    func unBlurView() {
+        UIView.animate(withDuration: 0.1, animations: {
+            self.blurEffectView.alpha = 0.0
+            self.view.layoutIfNeeded()
+        })
+    }
+    
 }
 

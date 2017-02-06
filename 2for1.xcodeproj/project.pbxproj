@@ -177,7 +177,6 @@
 				1176F4321E23F73300B69A5A /* UIColorExtension.swift */,
 				119710961E307ED200D4CCD4 /* UpdateCollectionViewProtocol.swift */,
 				119842D81E45116400D7C920 /* GameDelegate.swift */,
-				116E0CC91E33DD2E00F3DE0B /* PlayerCollectionView.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -197,6 +196,7 @@
 				11FCD4131E3D10540081F1C1 /* InstructionsView.swift */,
 				1126B7921E32902B00F017D1 /* MenuView.swift */,
 				116DDBC71E42524F0061F1E8 /* NextPlayerView.swift */,
+				116E0CC91E33DD2E00F3DE0B /* PlayerCollectionView.swift */,
 				11FCD40B1E3CF60D0081F1C1 /* ScoreView.swift */,
 				11DE14E21E0F4A1F0027D9E8 /* ViewExtension.swift */,
 				119842D31E43D62000D7C920 /* Xibs */,

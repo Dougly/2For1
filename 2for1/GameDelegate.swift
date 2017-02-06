@@ -12,3 +12,9 @@ protocol GameDelegate {
     
     func updateGameBoard(with game: Game)
 }
+
+protocol BlurViewDelegate {
+    
+    func blurView()
+    func unBlurView()
+}

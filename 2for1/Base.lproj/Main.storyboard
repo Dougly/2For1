@@ -59,11 +59,11 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYE-lx-hXd" userLabel="DrinkView" customClass="CheckMarkView" customModule="_for1" customModuleProvider="target">
-                                <rect key="frame" x="414" y="469" width="165.66666666666663" height="82.666666666666629"/>
+                                <rect key="frame" x="414" y="448.33333333333337" width="207" height="103.33333333333337"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NjJ-E3-UrA" userLabel="Rolled High Enough" customClass="CheckMarkView" customModule="_for1" customModuleProvider="target">
-                                <rect key="frame" x="414" y="469" width="165.66666666666663" height="82.666666666666629"/>
+                                <rect key="frame" x="414" y="448.33333333333337" width="207" height="103.33333333333337"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="NjJ-E3-UrA" secondAttribute="height" multiplier="2:1" id="5zD-X1-KV7"/>
@@ -102,7 +102,7 @@
                             <constraint firstItem="4at-gc-P0q" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="d7U-hf-wq3"/>
                             <constraint firstItem="I4T-G5-HG4" firstAttribute="leading" secondItem="EvJ-fJ-woD" secondAttribute="trailing" id="gKf-CZ-Mdm"/>
                             <constraint firstItem="Mrb-L4-2rO" firstAttribute="height" secondItem="EvJ-fJ-woD" secondAttribute="height" multiplier="0.6" id="hVe-bF-eb5"/>
-                            <constraint firstItem="NjJ-E3-UrA" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.4" id="iTn-F4-EJV"/>
+                            <constraint firstItem="NjJ-E3-UrA" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="iTn-F4-EJV"/>
                             <constraint firstItem="4at-gc-P0q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ifU-3N-IDM"/>
                             <constraint firstItem="pne-vQ-3Xw" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="kRa-vQ-FWV"/>
                             <constraint firstItem="pne-vQ-3Xw" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="mVe-d1-QI1"/>
@@ -339,39 +339,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cn0-d5-kOk" userLabel="Background Cover">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <color key="backgroundColor" red="0.5" green="0.5" blue="0.5" alpha="0.75296260533707871" colorSpace="calibratedRGB"/>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iNU-mf-BBb" customClass="CreatePlayerView" customModule="_for1" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="37" width="414" height="368"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Qn-XA-wOu" userLabel="XButton">
-                                <rect key="frame" x="5" y="10" width="41" height="41"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="9Qn-XA-wOu" secondAttribute="height" multiplier="1:1" id="9Um-a9-qrR"/>
-                                </constraints>
-                                <state key="normal" image="delete">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="xButtonTapped:" destination="WTu-Me-een" eventType="touchUpInside" id="3n3-5X-hFz"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="iNU-mf-BBb" firstAttribute="centerX" secondItem="sWa-qa-Ax8" secondAttribute="centerX" id="6xX-Ha-OqU"/>
-                            <constraint firstItem="Cn0-d5-kOk" firstAttribute="centerY" secondItem="sWa-qa-Ax8" secondAttribute="centerY" id="D4T-vJ-VaL"/>
-                            <constraint firstItem="9Qn-XA-wOu" firstAttribute="leading" secondItem="sWa-qa-Ax8" secondAttribute="leading" constant="5" id="KjE-1O-lQ8"/>
-                            <constraint firstItem="9Qn-XA-wOu" firstAttribute="width" secondItem="sWa-qa-Ax8" secondAttribute="width" multiplier="0.1" id="d1q-We-MPs"/>
-                            <constraint firstItem="Cn0-d5-kOk" firstAttribute="height" secondItem="sWa-qa-Ax8" secondAttribute="height" id="dWY-HA-8be"/>
                             <constraint firstItem="iNU-mf-BBb" firstAttribute="height" secondItem="sWa-qa-Ax8" secondAttribute="height" multiplier="0.5" id="hYB-I2-2QF"/>
-                            <constraint firstItem="Cn0-d5-kOk" firstAttribute="width" secondItem="sWa-qa-Ax8" secondAttribute="width" id="iij-oU-0Gl"/>
                             <constraint firstItem="iNU-mf-BBb" firstAttribute="centerY" secondItem="sWa-qa-Ax8" secondAttribute="centerY" multiplier="0.6" id="pz8-N0-Khe"/>
-                            <constraint firstItem="9Qn-XA-wOu" firstAttribute="top" secondItem="sWa-qa-Ax8" secondAttribute="top" constant="10" id="rMp-PD-uwS"/>
-                            <constraint firstItem="Cn0-d5-kOk" firstAttribute="centerX" secondItem="sWa-qa-Ax8" secondAttribute="centerX" id="rNS-Ua-LiU"/>
                             <constraint firstItem="iNU-mf-BBb" firstAttribute="width" secondItem="sWa-qa-Ax8" secondAttribute="width" id="v2b-q9-Xtt"/>
                         </constraints>
                     </view>
@@ -384,7 +361,4 @@
             <point key="canvasLocation" x="-807" y="836"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="delete" width="48" height="48"/>
-    </resources>
 </document>

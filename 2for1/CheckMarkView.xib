@@ -26,20 +26,20 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rf8-gH-5eF" userLabel="shadowView">
-                    <rect key="frame" x="71.5" y="3" width="270" height="270"/>
+                    <rect key="frame" x="72" y="3" width="270" height="270"/>
                     <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="0.20028805869999999" colorSpace="calibratedRGB"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rKp-Ei-bIV" userLabel="CheckBackgroundView">
-                    <rect key="frame" x="68.5" y="0.0" width="270" height="270"/>
+                    <rect key="frame" x="69" y="0.0" width="270" height="270"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RESTART" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nqb-NH-Pp7">
-                            <rect key="frame" x="26.5" y="122" width="216" height="26"/>
+                            <rect key="frame" x="27" y="122" width="216" height="26"/>
                             <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="McL-Eb-8Su" userLabel="CheckImageView">
-                            <rect key="frame" x="26.5" y="27" width="216" height="216"/>
+                            <rect key="frame" x="54" y="54" width="162" height="162"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="McL-Eb-8Su" secondAttribute="height" multiplier="1:1" id="GrJ-H2-u5O"/>
                             </constraints>
@@ -50,10 +50,10 @@
                         <constraint firstItem="nqb-NH-Pp7" firstAttribute="centerY" secondItem="rKp-Ei-bIV" secondAttribute="centerY" id="Ica-d8-rgc"/>
                         <constraint firstItem="McL-Eb-8Su" firstAttribute="centerX" secondItem="rKp-Ei-bIV" secondAttribute="centerX" id="JRr-Nn-lzq"/>
                         <constraint firstItem="McL-Eb-8Su" firstAttribute="centerY" secondItem="rKp-Ei-bIV" secondAttribute="centerY" id="Pk6-EQ-Oqg"/>
-                        <constraint firstItem="McL-Eb-8Su" firstAttribute="height" secondItem="rKp-Ei-bIV" secondAttribute="height" multiplier="0.8" id="Yhu-SB-kX8"/>
+                        <constraint firstItem="McL-Eb-8Su" firstAttribute="height" secondItem="rKp-Ei-bIV" secondAttribute="height" multiplier="0.6" id="Yhu-SB-kX8"/>
                         <constraint firstItem="nqb-NH-Pp7" firstAttribute="centerX" secondItem="rKp-Ei-bIV" secondAttribute="centerX" id="jCj-aJ-Urz"/>
                         <constraint firstItem="nqb-NH-Pp7" firstAttribute="width" secondItem="rKp-Ei-bIV" secondAttribute="width" multiplier="0.8" id="ljW-da-Uw6"/>
-                        <constraint firstItem="McL-Eb-8Su" firstAttribute="width" secondItem="rKp-Ei-bIV" secondAttribute="width" multiplier="0.8" id="wfg-A2-sRo"/>
+                        <constraint firstItem="McL-Eb-8Su" firstAttribute="width" secondItem="rKp-Ei-bIV" secondAttribute="width" multiplier="0.6" id="wfg-A2-sRo"/>
                     </constraints>
                 </view>
             </subviews>
