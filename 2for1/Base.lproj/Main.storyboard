@@ -68,41 +68,15 @@
                                 <rect key="frame" x="413.99999999999994" y="220.33333333333337" width="248.66666666666657" height="248.66666666666663"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYE-lx-hXd" userLabel="DrinkView">
-                                <rect key="frame" x="414" y="448.33333333333337" width="103.66666666666663" height="103.33333333333337"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reset" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucz-1C-bKX">
-                                        <rect key="frame" x="-0.66666666666668561" y="-0.33333333333331439" width="103.66666666666669" height="103.33333333333337"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="ucz-1C-bKX" firstAttribute="centerY" secondItem="wYE-lx-hXd" secondAttribute="centerY" id="AWU-zL-VAj"/>
-                                    <constraint firstItem="ucz-1C-bKX" firstAttribute="height" secondItem="wYE-lx-hXd" secondAttribute="height" id="FYj-Rw-BND"/>
-                                    <constraint firstItem="ucz-1C-bKX" firstAttribute="width" secondItem="wYE-lx-hXd" secondAttribute="width" id="KHX-I5-vEl"/>
-                                    <constraint firstItem="ucz-1C-bKX" firstAttribute="centerX" secondItem="wYE-lx-hXd" secondAttribute="centerX" id="rsz-50-mzd"/>
-                                </constraints>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYE-lx-hXd" userLabel="DrinkView" customClass="CheckMarkView" customModule="_for1" customModuleProvider="target">
+                                <rect key="frame" x="414" y="448.33333333333337" width="207" height="103.33333333333337"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NjJ-E3-UrA" userLabel="Rolled High Enough">
-                                <rect key="frame" x="414" y="448.33333333333337" width="103.66666666666663" height="103.33333333333337"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="thumbsUp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQ5-2a-CD8" userLabel="thumbs up">
-                                        <rect key="frame" x="-0.66666666666668561" y="-0.33333333333331439" width="103.66666666666669" height="103.33333333333337"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NjJ-E3-UrA" userLabel="Rolled High Enough" customClass="CheckMarkView" customModule="_for1" customModuleProvider="target">
+                                <rect key="frame" x="414" y="448.33333333333337" width="207" height="103.33333333333337"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="NjJ-E3-UrA" secondAttribute="height" multiplier="1:1" id="5zD-X1-KV7"/>
-                                    <constraint firstItem="jQ5-2a-CD8" firstAttribute="centerX" secondItem="NjJ-E3-UrA" secondAttribute="centerX" id="Fnb-Vo-uMx"/>
-                                    <constraint firstItem="jQ5-2a-CD8" firstAttribute="width" secondItem="NjJ-E3-UrA" secondAttribute="width" id="f5J-2H-Xo4"/>
-                                    <constraint firstItem="jQ5-2a-CD8" firstAttribute="centerY" secondItem="NjJ-E3-UrA" secondAttribute="centerY" id="hlg-r2-8jZ"/>
-                                    <constraint firstItem="jQ5-2a-CD8" firstAttribute="height" secondItem="NjJ-E3-UrA" secondAttribute="height" id="vKy-qL-dyU"/>
+                                    <constraint firstAttribute="width" secondItem="NjJ-E3-UrA" secondAttribute="height" multiplier="2:1" id="5zD-X1-KV7"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FL7-gM-5Kg" userLabel="Shadow">
@@ -113,13 +87,13 @@
                         <color key="backgroundColor" red="0.10980392160000001" green="0.84705882349999995" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Mrb-L4-2rO" firstAttribute="width" secondItem="EvJ-fJ-woD" secondAttribute="width" multiplier="0.6" id="31I-MI-Qwp"/>
+                            <constraint firstItem="wYE-lx-hXd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="4bz-r0-Bh4"/>
                             <constraint firstItem="I4T-G5-HG4" firstAttribute="width" secondItem="EvJ-fJ-woD" secondAttribute="width" multiplier="0.8" id="6mC-T3-XeB"/>
                             <constraint firstItem="FL7-gM-5Kg" firstAttribute="height" secondItem="pne-vQ-3Xw" secondAttribute="height" multiplier="0.05" id="Dim-vL-1Zk"/>
                             <constraint firstItem="wYE-lx-hXd" firstAttribute="height" secondItem="NjJ-E3-UrA" secondAttribute="height" id="G6g-Rc-IBO"/>
                             <constraint firstItem="L32-AM-cjm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="Gfw-Zw-Qpf"/>
                             <constraint firstItem="FL7-gM-5Kg" firstAttribute="top" secondItem="pne-vQ-3Xw" secondAttribute="top" id="H6o-vl-iun"/>
                             <constraint firstItem="hpa-bD-cf4" firstAttribute="centerY" secondItem="EvJ-fJ-woD" secondAttribute="centerY" constant="3" id="KB3-IH-nno"/>
-                            <constraint firstItem="wYE-lx-hXd" firstAttribute="leading" secondItem="NjJ-E3-UrA" secondAttribute="leading" id="MIv-MH-L4C"/>
                             <constraint firstItem="L32-AM-cjm" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.75" id="OgM-k3-2LA"/>
                             <constraint firstItem="L32-AM-cjm" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="Pj1-4r-i6G"/>
                             <constraint firstItem="I4T-G5-HG4" firstAttribute="height" secondItem="EvJ-fJ-woD" secondAttribute="height" multiplier="0.3" id="QmO-7h-Xhs"/>
@@ -138,7 +112,7 @@
                             <constraint firstItem="4at-gc-P0q" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="d7U-hf-wq3"/>
                             <constraint firstItem="I4T-G5-HG4" firstAttribute="leading" secondItem="EvJ-fJ-woD" secondAttribute="trailing" id="gKf-CZ-Mdm"/>
                             <constraint firstItem="Mrb-L4-2rO" firstAttribute="height" secondItem="EvJ-fJ-woD" secondAttribute="height" multiplier="0.6" id="hVe-bF-eb5"/>
-                            <constraint firstItem="NjJ-E3-UrA" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.25" id="iTn-F4-EJV"/>
+                            <constraint firstItem="NjJ-E3-UrA" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="iTn-F4-EJV"/>
                             <constraint firstItem="4at-gc-P0q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ifU-3N-IDM"/>
                             <constraint firstItem="pne-vQ-3Xw" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="kRa-vQ-FWV"/>
                             <constraint firstItem="pne-vQ-3Xw" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="mVe-d1-QI1"/>
@@ -155,7 +129,7 @@
                         <outlet property="addDieOrDrinkLeadingConstraint" destination="gKf-CZ-Mdm" id="iAT-Tn-i4o"/>
                         <outlet property="addDieOrDrinkView" destination="I4T-G5-HG4" id="c79-4V-Jai"/>
                         <outlet property="drinkView" destination="wYE-lx-hXd" id="XBz-r7-tbx"/>
-                        <outlet property="drinkViewLeadingConstraint" destination="MIv-MH-L4C" id="ok4-Me-Ryi"/>
+                        <outlet property="drinkViewLeadingConstraint" destination="4bz-r0-Bh4" id="pxf-Hj-xhk"/>
                         <outlet property="gameCoverView" destination="hpa-bD-cf4" id="d6F-lX-2lj"/>
                         <outlet property="gameView" destination="EvJ-fJ-woD" id="NA3-Ua-vxK"/>
                         <outlet property="instructionsView" destination="4at-gc-P0q" id="Vub-O2-HgO"/>

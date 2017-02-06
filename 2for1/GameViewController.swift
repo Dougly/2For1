@@ -26,9 +26,9 @@ class GameViewController: UIViewController {
     @IBOutlet weak var nextPlayerViewLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var addDieOrDrinkLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var gameCoverView: UIView!
-    @IBOutlet weak var rolledHighEnoughView: UIView!
+    @IBOutlet weak var rolledHighEnoughView: CheckMarkView!
     @IBOutlet weak var rolledHighEnoughLeadingConstraint: NSLayoutConstraint!
-    @IBOutlet weak var drinkView: UIView!
+    @IBOutlet weak var drinkView: CheckMarkView!
     @IBOutlet weak var drinkViewLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var rollLabel: UILabel!
     
@@ -113,6 +113,11 @@ class GameViewController: UIViewController {
         menuView.setCornerRadius(with: screenHeight * 0.1) //based on constraint multipliers
         addDieOrDrinkView.setCornerRadius(with: screenWidth * 0.3) //based on constraint multipliers
         nextPlayerView.setCornerRadius(with: screenWidth * 0.6) //based on constraint multipliers
+        rolledHighEnoughView.setCornerRadius(with: screenWidth * 0.25)
+        rolledHighEnoughView.restartLabel.isHidden = true
+        drinkView.setCornerRadius(with: screenWidth * 0.25)
+        drinkView.checkImageView.isHidden = true
+        drinkView.checkBackgroundView.backgroundColor = UIColor.themeBlue
     }
     
 }
@@ -250,9 +255,9 @@ extension GameViewController {
             }
             
             if !coverGameView && constraint.constant == distance * -1  {
-                self.gameCoverView.isUserInteractionEnabled = false
+                self.gameView.isUserInteractionEnabled = false
             } else if !coverGameView {
-                self.gameCoverView.isUserInteractionEnabled = true
+                self.gameView.isUserInteractionEnabled = true
             }
         
             self.view.layoutIfNeeded()

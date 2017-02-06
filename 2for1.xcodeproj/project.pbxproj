@@ -11,6 +11,8 @@
 		1126B78F1E319D9D00F017D1 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1126B78E1E319D9D00F017D1 /* GameView.swift */; };
 		1126B7911E32900C00F017D1 /* MenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1126B7901E32900C00F017D1 /* MenuView.xib */; };
 		1126B7931E32902B00F017D1 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1126B7921E32902B00F017D1 /* MenuView.swift */; };
+		1136332E1E48DB0600F3E4CD /* CheckMarkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1136332D1E48DB0600F3E4CD /* CheckMarkView.xib */; };
+		113633301E48DBDB00F3E4CD /* CheckMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136332F1E48DBDB00F3E4CD /* CheckMarkView.swift */; };
 		116DDBC61E4252310061F1E8 /* NextPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 116DDBC51E4252310061F1E8 /* NextPlayerView.xib */; };
 		116DDBC81E42524F0061F1E8 /* NextPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116DDBC71E42524F0061F1E8 /* NextPlayerView.swift */; };
 		116E0CCA1E33DD2E00F3DE0B /* PlayerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116E0CC91E33DD2E00F3DE0B /* PlayerCollectionView.swift */; };
@@ -55,6 +57,8 @@
 		1126B78E1E319D9D00F017D1 /* GameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		1126B7901E32900C00F017D1 /* MenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuView.xib; sourceTree = "<group>"; };
 		1126B7921E32902B00F017D1 /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		1136332D1E48DB0600F3E4CD /* CheckMarkView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckMarkView.xib; sourceTree = "<group>"; };
+		1136332F1E48DBDB00F3E4CD /* CheckMarkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckMarkView.swift; sourceTree = "<group>"; };
 		116DDBC51E4252310061F1E8 /* NextPlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NextPlayerView.xib; sourceTree = "<group>"; };
 		116DDBC71E42524F0061F1E8 /* NextPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextPlayerView.swift; sourceTree = "<group>"; };
 		116E0CC91E33DD2E00F3DE0B /* PlayerCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerCollectionView.swift; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				11DE14F11E1324D40027D9E8 /* AddDieOrDrinkView.xib */,
+				1136332D1E48DB0600F3E4CD /* CheckMarkView.xib */,
 				119710921E30659200D4CCD4 /* CreatePlayerView.xib */,
 				11FCD40F1E3CF76F0081F1C1 /* DieView.xib */,
 				119842D41E4408CD00D7C920 /* DiceGrid.xib */,
@@ -182,6 +187,7 @@
 			children = (
 				11DE14C71E0F462E0027D9E8 /* Main.storyboard */,
 				11DE14F31E1324E10027D9E8 /* AddDieOrDrinkView.swift */,
+				1136332F1E48DBDB00F3E4CD /* CheckMarkView.swift */,
 				119710941E3065A500D4CCD4 /* CreatePlayerView.swift */,
 				117EE5461E201ED600E071E0 /* CustomPlayerCell.swift */,
 				11FCD40D1E3CF7620081F1C1 /* DieView.swift */,
@@ -282,6 +288,7 @@
 			files = (
 				118ED3171E2ED5110091E5D5 /* DotsView.xib in Resources */,
 				119710931E30659200D4CCD4 /* CreatePlayerView.xib in Resources */,
+				1136332E1E48DB0600F3E4CD /* CheckMarkView.xib in Resources */,
 				1126B78D1E319D8800F017D1 /* GameView.xib in Resources */,
 				11DE14D11E0F462E0027D9E8 /* LaunchScreen.storyboard in Resources */,
 				1126B7911E32900C00F017D1 /* MenuView.xib in Resources */,
@@ -322,6 +329,7 @@
 				119710951E3065A500D4CCD4 /* CreatePlayerView.swift in Sources */,
 				117EE3971E1EAA4600E071E0 /* SetupViewController.swift in Sources */,
 				11DE14F41E1324E10027D9E8 /* AddDieOrDrinkView.swift in Sources */,
+				113633301E48DBDB00F3E4CD /* CheckMarkView.swift in Sources */,
 				116DDBC81E42524F0061F1E8 /* NextPlayerView.swift in Sources */,
 				11DE14C41E0F462E0027D9E8 /* AppDelegate.swift in Sources */,
 				1126B78F1E319D9D00F017D1 /* GameView.swift in Sources */,
