@@ -42,6 +42,9 @@ class GameViewController: UIViewController {
         game.player = game.players[0]
         game.instructions = "\(game.players[0].tag!) starts the game"
         updateInstructions()
+        
+        menuView.secondOptionImageView.image = #imageLiteral(resourceName: "refresh")
+        menuView.thirdOptionImageView.image = #imageLiteral(resourceName: "delete")
     }
    
     
@@ -76,7 +79,8 @@ class GameViewController: UIViewController {
         let tapGR4 = UITapGestureRecognizer(target: self, action: #selector(openCloseMenuTapped))
         menuView.openCloseMenuView.addGestureRecognizer(tapGR4)
         
-        //let tapGR5 = UITapGestureRecognizer(target: self, action: #selector(animate))
+        let tapGR5 = UITapGestureRecognizer(target: self, action: #selector(resetGame))
+        menuView.secondOptionView.addGestureRecognizer(tapGR5)
 
         //let tapGR6 = UITapGestureRecognizer(target: self, action: #selector(animate))
 
@@ -197,11 +201,23 @@ extension GameViewController {
     }
     
     func resetGame() {
-        animate(view: drinkView, constraint: drinkViewLeadingConstraint, coverGameView: false)
+        if drinkViewLeadingConstraint.constant < 0 {
+            animate(view: drinkView, constraint: drinkViewLeadingConstraint, coverGameView: false)
+        }
+        if addDieOrDrinkLeadingConstraint.constant < 0 {
+            animate(view: addDieOrDrinkView, constraint: addDieOrDrinkLeadingConstraint, coverGameView: true)
+        }
+        if rolledHighEnoughLeadingConstraint.constant < 0 {
+            animate(view: rolledHighEnoughView, constraint: rolledHighEnoughLeadingConstraint, coverGameView: false)
+        }
+        
         game.resetGame()
         gameView.diceGrid.displayNumberOfDice(number: 1)
         gameView.diceGrid.updateDiceImages(dice: game.dice)
-        animate(view: nextPlayerView, constraint: nextPlayerViewLeadingConstraint, coverGameView: true)
+        
+        if nextPlayerViewLeadingConstraint.constant == 0 {
+            animate(view: nextPlayerView, constraint: nextPlayerViewLeadingConstraint, coverGameView: true)
+        }
         updateScoreBoard()
         updateInstructions()
         
