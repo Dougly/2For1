@@ -113,9 +113,9 @@ class GameViewController: UIViewController {
         menuView.setCornerRadius(with: screenHeight * 0.1) //based on constraint multipliers
         addDieOrDrinkView.setCornerRadius(with: screenWidth * 0.3) //based on constraint multipliers
         nextPlayerView.setCornerRadius(with: screenWidth * 0.6) //based on constraint multipliers
-        rolledHighEnoughView.setCornerRadius(with: screenWidth * 0.25)
+        rolledHighEnoughView.setCornerRadius(with: screenWidth * 0.2)
         rolledHighEnoughView.restartLabel.isHidden = true
-        drinkView.setCornerRadius(with: screenWidth * 0.25)
+        drinkView.setCornerRadius(with: screenWidth * 0.2)
         drinkView.checkImageView.isHidden = true
         drinkView.checkBackgroundView.backgroundColor = UIColor.themeBlue
     }
@@ -140,9 +140,10 @@ extension GameViewController {
             tiedRoll()
         } else if results.wonRoll {
             animate(view: rolledHighEnoughView, constraint: rolledHighEnoughLeadingConstraint, coverGameView: false)
-            game.instructions = "\(game.player!.tag!) rolled a \(game.playerRoll)"
+            game.instructions = "\(game.player!.tag!) rolled high enough!"
         } else {
             animate(view: addDieOrDrinkView, constraint: addDieOrDrinkLeadingConstraint, coverGameView: true)
+            game.instructions = "\(game.player!.tag!) rolled too low"
         }
         updateInstructions()
     }
@@ -161,7 +162,7 @@ extension GameViewController {
         gameView.diceGrid.updateDiceImages(dice: game.dice)
         if result {
             animate(view: rolledHighEnoughView, constraint: rolledHighEnoughLeadingConstraint, coverGameView: false)
-            game.instructions = "\(game.player!.tag!) rolled a \(game.playerRoll)"
+            game.instructions = "\(game.player!.tag!) rolled high enough!"
         } else {
             tiedRoll()
         }
@@ -187,7 +188,11 @@ extension GameViewController {
     }
     
     func tiedRoll() {
-        game.instructions = "\(game.player!.tag!) tied the score and must drink \(game.drinks) drinks!!"
+        if game.playerRoll == game.score {
+        game.instructions = "\(game.player!.tag!) tied the score and must drink \(game.drinks) drinks!"
+        } else {
+            game.instructions = "\(game.player!.tag!) rolled too lowed and must drink \(game.drinks) drinks!"
+        }
         animate(view: drinkView, constraint: drinkViewLeadingConstraint, coverGameView: false)
     }
     

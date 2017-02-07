@@ -52,7 +52,7 @@ extension Game {
         dice.append(Die())
         drinks *= 2
         action = .rollAddedDie
-        instructions = "\(player!.tag!) roll the added die!"
+        instructions = "\(player!.tag!), roll the added die"
     }
     
     
@@ -63,7 +63,7 @@ extension Game {
         }
         if playerRoll <= score {
             action = .drink
-            instructions = "\(player!.tag!) rolled a \(playerRoll) and must drink!!"
+            //instructions = "\(player!.tag!) rolled \(playerRoll) and must drink!!"
             return false
         } else {
             

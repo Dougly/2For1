@@ -14,6 +14,7 @@ final class DataStore {
     
     static let sharedInstance = DataStore()
     var players: [Player] = []
+    var playerPictures: [String : UIImage] = [:]
 
     private init () {}
     
@@ -27,7 +28,7 @@ final class DataStore {
         }
     }
     
-    func savePlayer(_ firstName: String, lastName: String, tag: String, file: String) {
+    func savePlayer(_ firstName: String, lastName: String, tag: String, file: String, image: UIImage) {
         let context = persistentContainer.viewContext
         let entity = Player(context: context)
         entity.firstName = firstName
@@ -39,6 +40,11 @@ final class DataStore {
         players.sort { (p1, p2) -> Bool in
             return p1.tag! > p2.tag!
         }
+        
+        
+        let key = firstName + lastName + tag
+        playerPictures[key] = image
+        
         
         
     }

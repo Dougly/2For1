@@ -46,15 +46,33 @@
                     <color key="shadowColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="0.20028805869999999" colorSpace="calibratedRGB"/>
                     <size key="shadowOffset" width="4" height="4"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="P9u-7H-g7w">
+                    <rect key="frame" x="26" y="135" width="78" height="26"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                    <color key="textColor" red="1" green="0.79607843140000001" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="drinks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nz6-QG-FcR">
+                    <rect key="frame" x="268.5" y="135" width="78.5" height="26"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                    <color key="textColor" red="1" green="0.79607843140000001" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="nz6-QG-FcR" firstAttribute="centerX" secondItem="eaV-80-qYR" secondAttribute="centerX" id="126-xz-hwI"/>
+                <constraint firstItem="P9u-7H-g7w" firstAttribute="width" secondItem="Deo-lE-JKF" secondAttribute="width" multiplier="0.6" id="8y3-63-W97"/>
                 <constraint firstItem="Deo-lE-JKF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="JGB-1D-d4s"/>
+                <constraint firstItem="nz6-QG-FcR" firstAttribute="width" secondItem="eaV-80-qYR" secondAttribute="width" multiplier="0.6" id="KLe-4t-Pe7"/>
                 <constraint firstItem="Deo-lE-JKF" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="KuB-se-e45"/>
                 <constraint firstItem="eaV-80-qYR" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.35" id="cYc-mX-8aQ"/>
+                <constraint firstItem="P9u-7H-g7w" firstAttribute="centerX" secondItem="Deo-lE-JKF" secondAttribute="centerX" id="ey9-Yy-9al"/>
                 <constraint firstItem="piw-vM-nEI" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.3" id="fN0-ky-Lso"/>
+                <constraint firstItem="nz6-QG-FcR" firstAttribute="centerY" secondItem="eaV-80-qYR" secondAttribute="centerY" multiplier="1.7" id="hrs-mz-fyf"/>
                 <constraint firstItem="Deo-lE-JKF" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.35" id="ouN-Em-6tu"/>
                 <constraint firstItem="eaV-80-qYR" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="q0b-wO-xVk"/>
+                <constraint firstItem="P9u-7H-g7w" firstAttribute="centerY" secondItem="Deo-lE-JKF" secondAttribute="centerY" multiplier="1.7" id="rZD-dx-84O"/>
                 <constraint firstItem="piw-vM-nEI" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="u8f-bC-hT9"/>
                 <constraint firstItem="eaV-80-qYR" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="umb-MG-c5K"/>
                 <constraint firstItem="piw-vM-nEI" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="vqM-gh-Pil"/>

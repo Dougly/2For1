@@ -37,14 +37,16 @@ class CreatePlayerView: UIView {
     }
     
     func setCornerRadius(with size: CGFloat) {
-        let constraintMultiplier: CGFloat = 0.1
-        let cornerRadius = (size * constraintMultiplier) / 2
+        let plusConstraintMultiplier: CGFloat = 0.17
+        let plusCornerRadius = (size * plusConstraintMultiplier) / 2
         let imageConstraintMultiplier: CGFloat = 0.4
         let imageCornerRadius = (size * imageConstraintMultiplier) / 2
-        addPlayerView.layer.cornerRadius = cornerRadius
+        let xConstraintMultiplier: CGFloat = 0.1
+        let xCornerRadius = (size * xConstraintMultiplier) / 2
+        addPlayerView.layer.cornerRadius = plusCornerRadius
         playerPictureImageView.layer.cornerRadius = imageCornerRadius
         placeholderView.layer.cornerRadius = imageCornerRadius
-        xBackground.layer.cornerRadius = cornerRadius
+        xBackground.layer.cornerRadius = xCornerRadius
         
     }
 

@@ -60,13 +60,14 @@ class CreatePlayerViewController: UIViewController, UIImagePickerControllerDeleg
         
         let editedImageKey = UIImagePickerControllerEditedImage
         let image = info[editedImageKey] as! UIImage
-        let imageData = UIImageJPEGRepresentation(image, 0.5)
-        if let imageData = imageData {
-            let compressedImage = UIImage(data: imageData)
-            if let compressedImage = compressedImage {
-                UIImageWriteToSavedPhotosAlbum(compressedImage, nil, nil, nil)
-            }
-        }
+        createPlayerView.playerPictureImageView.image = image
+//        let imageData = UIImagePNGRepresentation(image)
+//        if let imageData = imageData {
+//            let pngImage = UIImage(data: imageData)
+//            if let pngImage = pngImage {
+//                UIImageWriteToSavedPhotosAlbum(pngImage, nil, nil, nil)
+//            }
+//        }
     }
     
     
@@ -91,12 +92,13 @@ class CreatePlayerViewController: UIViewController, UIImagePickerControllerDeleg
 
         
         
-        store.savePlayer(firstName, lastName: lastName, tag: tag, file: "\(firstName + lastName + tag).png")
+        store.savePlayer(firstName, lastName: lastName, tag: tag, file: "\(firstName + lastName + tag).png", image: image)
         self.blurDelegate?.unBlurView()
         self.dismiss(animated: true, completion: {
             if let delegate = self.delegate {
                 delegate.reloadCollectionView(withPlayer: tag)
             }
         })
+        
     }
 }

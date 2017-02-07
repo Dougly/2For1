@@ -55,7 +55,7 @@
                     <rect key="frame" x="300" y="18" width="146" height="146"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Die" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="x62-qF-oKp">
-                            <rect key="frame" x="29" y="41.5" width="88" height="65"/>
+                            <rect key="frame" x="29" y="40.5" width="88" height="65"/>
                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -69,9 +69,18 @@
                         <constraint firstItem="x62-qF-oKp" firstAttribute="centerY" secondItem="u2i-22-9Uw" secondAttribute="centerY" id="plk-xe-lVg"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(drinks x2)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5Y5-hE-Tcd">
+                    <rect key="frame" x="305" y="173" width="146" height="28"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                    <color key="textColor" red="1" green="0.79607843140000001" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <color key="shadowColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="0.20028805869999999" colorSpace="calibratedRGB"/>
+                    <size key="shadowOffset" width="2" height="2"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="5Y5-hE-Tcd" firstAttribute="centerX" secondItem="njC-aI-i1Z" secondAttribute="centerX" id="3P7-8M-HDL"/>
                 <constraint firstItem="njC-aI-i1Z" firstAttribute="width" secondItem="u2i-22-9Uw" secondAttribute="width" id="4OV-aM-q7q"/>
                 <constraint firstItem="njC-aI-i1Z" firstAttribute="bottom" secondItem="u2i-22-9Uw" secondAttribute="bottom" constant="5" id="7RP-ch-ZOG"/>
                 <constraint firstItem="dTU-Pg-5pF" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.8" id="H6G-iC-SdX"/>
@@ -81,11 +90,13 @@
                 <constraint firstItem="njC-aI-i1Z" firstAttribute="height" secondItem="u2i-22-9Uw" secondAttribute="height" id="MYQ-Vd-RN0"/>
                 <constraint firstItem="f4A-49-HV4" firstAttribute="height" secondItem="dTU-Pg-5pF" secondAttribute="height" id="UrB-WT-KB0"/>
                 <constraint firstItem="u2i-22-9Uw" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.8" id="UsW-GH-WHT"/>
+                <constraint firstItem="5Y5-hE-Tcd" firstAttribute="centerY" secondItem="njC-aI-i1Z" secondAttribute="centerY" multiplier="1.95" id="XIH-lq-78W"/>
                 <constraint firstItem="dTU-Pg-5pF" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Xv3-L2-sv9"/>
                 <constraint firstItem="f4A-49-HV4" firstAttribute="bottom" secondItem="dTU-Pg-5pF" secondAttribute="bottom" constant="5" id="d7d-EB-06m"/>
                 <constraint firstItem="f4A-49-HV4" firstAttribute="leading" secondItem="dTU-Pg-5pF" secondAttribute="leading" constant="5" id="hjc-XT-4Pn"/>
                 <constraint firstItem="dTU-Pg-5pF" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" multiplier="0.5" id="pYx-ba-a2E"/>
                 <constraint firstItem="f4A-49-HV4" firstAttribute="width" secondItem="dTU-Pg-5pF" secondAttribute="width" id="phr-fU-Nz7"/>
+                <constraint firstItem="5Y5-hE-Tcd" firstAttribute="width" secondItem="njC-aI-i1Z" secondAttribute="width" id="yNG-P6-z1S"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
