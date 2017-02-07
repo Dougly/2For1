@@ -150,14 +150,6 @@ extension DiceGrid {
                         
                         self.adjustConstraints(with: die, usingTopConstraint: useTopConstraint, distance: (distance * constantMultiplier), multiplier: -0.125)
                         self.layoutIfNeeded()
-//                        if useTopConstraint {
-//                            die.topConstraint.constant = (distance * constantMultiplier) * -0.125
-//                        } else {
-//                            die.leadingConstraint.constant = (distance * constantMultiplier) * -0.125
-//                        }
-//                        let num = Int(arc4random_uniform(6) + 1)
-//                        die.dieImageView.image = die.dice[num]
-//                        self.layoutIfNeeded()
                     })
                     
                     UIView.addKeyframe(withRelativeStartTime: 0.55, relativeDuration: 0.1, animations: {

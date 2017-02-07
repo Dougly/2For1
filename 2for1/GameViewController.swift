@@ -38,95 +38,17 @@ class GameViewController: UIViewController {
         makeViewsCircles()
         applyTapGestures()
         addGradients()
-        menuView.setShadowColor(with: .themeDarkestGreen)
-        game.player = game.players[0]
-        game.instructions = "\(game.players[0].tag!) starts the game"
-        updateInstructions()
-        
-        menuView.secondOptionImageView.image = #imageLiteral(resourceName: "refresh")
-        menuView.thirdOptionImageView.image = #imageLiteral(resourceName: "delete")
+        setInitialGameSettings()
+        setUpMenu()
     }
-   
-    
+
     override func viewDidAppear(_ animated: Bool) {
-        //gameView.update(die: game.dice)
         animate(view: nextPlayerView, constraint: nextPlayerViewLeadingConstraint, coverGameView: true)
-        
-    }
-    
-    
-    func applyTapGestures() {
-        
-        let swipeUpGR = UISwipeGestureRecognizer(target: self, action: #selector(diceSwiped))
-        let swipeDownGR = UISwipeGestureRecognizer(target: self, action: #selector(diceSwiped))
-        swipeUpGR.direction = .up
-        swipeDownGR.direction = .down
-        gameView.circleView.addGestureRecognizer(swipeUpGR)
-        gameView.circleView.addGestureRecognizer(swipeDownGR)
-        
-        let tapGR = UITapGestureRecognizer(target: self, action: #selector(nextPlayerConfirmed))
-        nextPlayerView.okView.addGestureRecognizer(tapGR)
-        
-        let tapGR1 = UITapGestureRecognizer(target: self, action: #selector(drink))
-        addDieOrDrinkView.drinkView.addGestureRecognizer(tapGR1)
-        
-        let tapGR2 = UITapGestureRecognizer(target: self, action: #selector(addDie))
-        addDieOrDrinkView.addDieView.addGestureRecognizer(tapGR2)
-        
-        let tapGR3 = UITapGestureRecognizer(target: self, action: #selector(rolledHighEnoughTapped))
-        rolledHighEnoughView.addGestureRecognizer(tapGR3)
-        
-        let tapGR4 = UITapGestureRecognizer(target: self, action: #selector(openCloseMenuTapped))
-        menuView.openCloseMenuView.addGestureRecognizer(tapGR4)
-        
-        let tapGR5 = UITapGestureRecognizer(target: self, action: #selector(resetGame))
-        menuView.secondOptionView.addGestureRecognizer(tapGR5)
-
-        //let tapGR6 = UITapGestureRecognizer(target: self, action: #selector(animate))
-
-        let tapGR7 = UITapGestureRecognizer(target: self, action: #selector(dismissVC))
-        menuView.thirdOptionView.addGestureRecognizer(tapGR7)
-        
-        let tapGR8 = UITapGestureRecognizer(target: self, action: #selector(resetGame))
-        drinkView.addGestureRecognizer(tapGR8)
-    }
-    
-    
-    
-    func openCloseMenuTapped(_ sender: UIGestureRecognizer) {
-        if menuView.isCollapsed == true {
-            menuView.expandMenu()
-        } else {
-            menuView.collapseMenu(withDelay: 0)
-        }
-    }
-    
-    func dismissVC() {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    
-    func addGradients() {
-        UIView.applyGradient(to: self.view, topColor: .themeMediumGreen, bottomColor: .themeGreen)
-        UIView.applyGradient(to: menuView.contentView, topColor: .themeMediumGreen, bottomColor: .themeDarkestGreen)
-    }
-    
-    func makeViewsCircles() {
-        gameCoverView.layer.cornerRadius = (screenWidth * 0.9) / 2 //based on constraint multipliers
-        gameView.setCornerRadius(with: screenWidth)
-        menuView.setCornerRadius(with: screenHeight * 0.1) //based on constraint multipliers
-        addDieOrDrinkView.setCornerRadius(with: screenWidth * 0.3) //based on constraint multipliers
-        nextPlayerView.setCornerRadius(with: screenWidth * 0.6) //based on constraint multipliers
-        rolledHighEnoughView.setCornerRadius(with: screenWidth * 0.2)
-        rolledHighEnoughView.restartLabel.isHidden = true
-        drinkView.setCornerRadius(with: screenWidth * 0.2)
-        drinkView.checkImageView.isHidden = true
-        drinkView.checkBackgroundView.backgroundColor = UIColor.themeBlue
     }
     
 }
 
-//gesture actions
+//MARK: Game Actions
 extension GameViewController {
   
     func diceSwiped(_ sender: UISwipeGestureRecognizer) {
@@ -140,19 +62,18 @@ extension GameViewController {
     func rolled(_ sender: UISwipeGestureRecognizer) {
         let results = game.roll()
         gameView.diceGrid.animateDice(in: sender.direction) { (success) in
-            print("finished animation")
             self.gameView.diceGrid.updateDiceImages(dice: self.game.dice)
+            if results.tiedRoll {
+                self.tiedRoll()
+            } else if results.wonRoll && self.rolledHighEnoughLeadingConstraint.constant == 0 {
+                self.animate(view: self.rolledHighEnoughView, constraint: self.rolledHighEnoughLeadingConstraint, coverGameView: false)
+                self.game.instructions = "\(self.game.player!.tag!) rolled high enough!"
+            } else if !results.wonRoll && self.addDieOrDrinkLeadingConstraint.constant == 0 {
+                self.animate(view: self.addDieOrDrinkView, constraint: self.addDieOrDrinkLeadingConstraint, coverGameView: true)
+                self.game.instructions = "\(self.game.player!.tag!) rolled too low"
+            }
+            self.updateInstructions()
         }
-        if results.tiedRoll {
-            tiedRoll()
-        } else if results.wonRoll {
-            animate(view: rolledHighEnoughView, constraint: rolledHighEnoughLeadingConstraint, coverGameView: false)
-            game.instructions = "\(game.player!.tag!) rolled high enough!"
-        } else {
-            animate(view: addDieOrDrinkView, constraint: addDieOrDrinkLeadingConstraint, coverGameView: true)
-            game.instructions = "\(game.player!.tag!) rolled too low"
-        }
-        updateInstructions()
     }
     
     func addDie() {
@@ -168,15 +89,14 @@ extension GameViewController {
         let result = game.rollAddedDie()
         gameView.diceGrid.animateDice(in: sender.direction) { (success) in
             self.gameView.diceGrid.updateDiceImages(dice: self.game.dice)
+            if result {
+                self.animate(view: self.rolledHighEnoughView, constraint: self.rolledHighEnoughLeadingConstraint, coverGameView: false)
+                self.game.instructions = "\(self.game.player!.tag!) rolled high enough!"
+            } else {
+                self.tiedRoll()
+            }
+            self.updateInstructions()
         }
-        if result {
-            animate(view: rolledHighEnoughView, constraint: rolledHighEnoughLeadingConstraint, coverGameView: false)
-            game.instructions = "\(game.player!.tag!) rolled high enough!"
-        } else {
-            tiedRoll()
-        }
-        updateInstructions()
-    
     }
     
     func rolledHighEnoughTapped() {
@@ -227,23 +147,29 @@ extension GameViewController {
         }
         updateScoreBoard()
         updateInstructions()
-        
     }
+}
+
+//MARK: Helper Methods
+extension GameViewController {
+    
+    func openCloseMenuTapped(_ sender: UIGestureRecognizer) {
+        if menuView.isCollapsed == true {
+            menuView.expandMenu()
+        } else {
+            menuView.collapseMenu(withDelay: 0)
+        }
+    }
+    
+    func dismissVC() {
+        self.dismiss(animated: true, completion: nil)
+    }
+
+    
     func rolledUnder() {
         animate(view: addDieOrDrinkView, constraint: addDieOrDrinkLeadingConstraint, coverGameView: true)
         game.instructions = "\(game.player!.tag!) rolled too low"
     }
-}
-
-//MARK: Gesture Helper Methods
-extension GameViewController {
-    
-}
-
-//Mark: Button Actions
-extension GameViewController {
-    
-    
     
     func nextPlayerConfirmed() {
         animate(view: nextPlayerView, constraint: nextPlayerViewLeadingConstraint, coverGameView: true)
@@ -251,8 +177,6 @@ extension GameViewController {
         updateInstructions()
     }
     
-    
-
     
     func updateInstructions() {
         instructionsView.instructionsLabel.text = game.instructions
@@ -271,7 +195,6 @@ extension GameViewController {
 }
 
 //MARK: Animations
-
 extension GameViewController {
     
     func animate(view: UIView, constraint: NSLayoutConstraint, coverGameView: Bool) {
@@ -291,7 +214,7 @@ extension GameViewController {
             } else if !coverGameView {
                 self.gameView.isUserInteractionEnabled = true
             }
-        
+            
             self.view.layoutIfNeeded()
         }, completion: { success in
             if constraint.constant <= distance * -2 {
@@ -299,8 +222,82 @@ extension GameViewController {
             }
         })
     }
-    
 }
+
+
+//Mark: Setup VC
+extension GameViewController {
+    
+    func setInitialGameSettings() {
+        game.player = game.players[0]
+        game.instructions = "\(game.players[0].tag!) starts the game"
+        updateInstructions()
+    }
+    
+    func setUpMenu() {
+        menuView.setShadowColor(with: .themeDarkestGreen)
+        menuView.secondOptionImageView.image = #imageLiteral(resourceName: "refresh")
+        menuView.thirdOptionImageView.image = #imageLiteral(resourceName: "delete")
+    }
+    
+    func addGradients() {
+        UIView.applyGradient(to: self.view, topColor: .themeMediumGreen, bottomColor: .themeGreen)
+        UIView.applyGradient(to: menuView.contentView, topColor: .themeMediumGreen, bottomColor: .themeDarkestGreen)
+    }
+    
+    func makeViewsCircles() {
+        gameCoverView.layer.cornerRadius = (screenWidth * 0.9) / 2 //based on constraint multipliers
+        gameView.setCornerRadius(with: screenWidth)
+        menuView.setCornerRadius(with: screenHeight * 0.1) //based on constraint multipliers
+        addDieOrDrinkView.setCornerRadius(with: screenWidth * 0.3) //based on constraint multipliers
+        nextPlayerView.setCornerRadius(with: screenWidth * 0.6) //based on constraint multipliers
+        rolledHighEnoughView.setCornerRadius(with: screenWidth * 0.2)
+        rolledHighEnoughView.restartLabel.isHidden = true
+        drinkView.setCornerRadius(with: screenWidth * 0.2)
+        drinkView.checkImageView.isHidden = true
+        drinkView.checkBackgroundView.backgroundColor = UIColor.themeBlue
+    }
+    
+    func applyTapGestures() {
+        let swipeUpGR = UISwipeGestureRecognizer(target: self, action: #selector(diceSwiped))
+        let swipeDownGR = UISwipeGestureRecognizer(target: self, action: #selector(diceSwiped))
+        let swipeLeftGR = UISwipeGestureRecognizer(target: self, action: #selector(diceSwiped))
+        let swipeRightGR = UISwipeGestureRecognizer(target: self, action: #selector(diceSwiped))
+        swipeUpGR.direction = .up
+        swipeDownGR.direction = .down
+        swipeLeftGR.direction = .left
+        swipeRightGR.direction = .right
+        gameView.circleView.addGestureRecognizer(swipeUpGR)
+        gameView.circleView.addGestureRecognizer(swipeDownGR)
+        gameView.circleView.addGestureRecognizer(swipeLeftGR)
+        gameView.circleView.addGestureRecognizer(swipeRightGR)
+        
+        let tapGR = UITapGestureRecognizer(target: self, action: #selector(nextPlayerConfirmed))
+        nextPlayerView.okView.addGestureRecognizer(tapGR)
+        
+        let tapGR1 = UITapGestureRecognizer(target: self, action: #selector(drink))
+        addDieOrDrinkView.drinkView.addGestureRecognizer(tapGR1)
+        
+        let tapGR2 = UITapGestureRecognizer(target: self, action: #selector(addDie))
+        addDieOrDrinkView.addDieView.addGestureRecognizer(tapGR2)
+        
+        let tapGR3 = UITapGestureRecognizer(target: self, action: #selector(rolledHighEnoughTapped))
+        rolledHighEnoughView.addGestureRecognizer(tapGR3)
+        
+        let tapGR4 = UITapGestureRecognizer(target: self, action: #selector(openCloseMenuTapped))
+        menuView.openCloseMenuView.addGestureRecognizer(tapGR4)
+        
+        let tapGR5 = UITapGestureRecognizer(target: self, action: #selector(resetGame))
+        menuView.secondOptionView.addGestureRecognizer(tapGR5)
+        
+        let tapGR7 = UITapGestureRecognizer(target: self, action: #selector(dismissVC))
+        menuView.thirdOptionView.addGestureRecognizer(tapGR7)
+        
+        let tapGR8 = UITapGestureRecognizer(target: self, action: #selector(resetGame))
+        drinkView.addGestureRecognizer(tapGR8)
+    }
+}
+
 
 
 
