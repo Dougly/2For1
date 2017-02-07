@@ -129,17 +129,20 @@ class GameViewController: UIViewController {
 //gesture actions
 extension GameViewController {
   
-    func diceSwiped() {
+    func diceSwiped(_ sender: UISwipeGestureRecognizer) {
         switch game.action {
-        case .roll: rolled()
-        case .rollAddedDie: rollAddedDie()
+        case .roll: rolled(sender)
+        case .rollAddedDie: rollAddedDie(sender)
         default: break
         }
     }
     
-    func rolled() {
+    func rolled(_ sender: UISwipeGestureRecognizer) {
         let results = game.roll()
-        gameView.diceGrid.updateDiceImages(dice: game.dice)
+        gameView.diceGrid.animateDice(in: sender.direction) { (success) in
+            print("finished animation")
+            self.gameView.diceGrid.updateDiceImages(dice: self.game.dice)
+        }
         if results.tiedRoll {
             tiedRoll()
         } else if results.wonRoll {
@@ -161,9 +164,11 @@ extension GameViewController {
         updateScoreBoard()
     }
     
-    func rollAddedDie() {
+    func rollAddedDie(_ sender: UISwipeGestureRecognizer) {
         let result = game.rollAddedDie()
-        gameView.diceGrid.updateDiceImages(dice: game.dice)
+        gameView.diceGrid.animateDice(in: sender.direction) { (success) in
+            self.gameView.diceGrid.updateDiceImages(dice: self.game.dice)
+        }
         if result {
             animate(view: rolledHighEnoughView, constraint: rolledHighEnoughLeadingConstraint, coverGameView: false)
             game.instructions = "\(game.player!.tag!) rolled high enough!"

@@ -12,6 +12,10 @@ class DieView: UIView {
     
     @IBOutlet var contentView: UIView!
     @IBOutlet var dieImageView: UIImageView!
+    @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
+    
+    
     var dice: [UIImage] = [#imageLiteral(resourceName: "die_0"), #imageLiteral(resourceName: "die_1"), #imageLiteral(resourceName: "die_2"), #imageLiteral(resourceName: "die_3"), #imageLiteral(resourceName: "die_4"), #imageLiteral(resourceName: "die_5"), #imageLiteral(resourceName: "die_6")]
     
     override init(frame: CGRect) {

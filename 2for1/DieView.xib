@@ -14,6 +14,8 @@
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="icz-ZY-X0d"/>
                 <outlet property="dieImageView" destination="21E-dD-Juv" id="4bF-s7-ff0"/>
+                <outlet property="leadingConstraint" destination="TLv-qa-HC1" id="Qdu-TT-Znj"/>
+                <outlet property="topConstraint" destination="Fip-ba-1bd" id="3VJ-v7-QqK"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
