@@ -90,7 +90,7 @@ class MenuView: UIView {
     
     func expandMenu() {
         let width = openCloseMenuView.frame.width + (openCloseMenuView.frame.width / 3)
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [.curveEaseInOut], animations: {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [.curveEaseInOut, .allowUserInteraction], animations: {
             self.openCloseMenuCenterXConstraint.constant = width * -1.5
             self.firstOptionLeadingConstraint.constant = width
             self.secondOptionLeadingConstraint.constant = width * 2
@@ -103,7 +103,7 @@ class MenuView: UIView {
     }
     
     func collapseMenu(withDelay seconds: TimeInterval) {
-        UIView.animate(withDuration: 0.2, delay: seconds, options: [.curveEaseIn], animations: {
+        UIView.animate(withDuration: 0.2, delay: seconds, options: [.curveEaseIn, .allowUserInteraction], animations: {
             self.openCloseMenuCenterXConstraint.constant = 0
             self.firstOptionLeadingConstraint.constant = 0
             self.secondOptionLeadingConstraint.constant = 0
