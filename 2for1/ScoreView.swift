@@ -13,6 +13,7 @@ class ScoreView: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var drinksLabel: UILabel!
+    @IBOutlet weak var drinksTextLabel: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)

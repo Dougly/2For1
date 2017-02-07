@@ -117,7 +117,7 @@
                     </subviews>
                 </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dbo-Sf-SUj">
-                    <rect key="frame" x="161" y="259" width="54" height="54"/>
+                    <rect key="frame" x="161" y="275" width="54" height="54"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whitePlus" translatesAutoresizingMaskIntoConstraints="NO" id="r1C-zi-Zke">
                             <rect key="frame" x="6.5" y="6.5" width="41" height="41"/>
@@ -150,7 +150,7 @@
                 <constraint firstItem="dWk-CS-lfX" firstAttribute="centerX" secondItem="fCP-bt-bh7" secondAttribute="centerX" id="PJL-Ar-zDs"/>
                 <constraint firstItem="005-VT-6xD" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="PL4-H4-anI"/>
                 <constraint firstItem="dWk-CS-lfX" firstAttribute="width" secondItem="fCP-bt-bh7" secondAttribute="width" id="SH2-M6-uiJ"/>
-                <constraint firstItem="Dbo-Sf-SUj" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="1.8" id="SQi-7Q-upa"/>
+                <constraint firstItem="Dbo-Sf-SUj" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="1.9" id="SQi-7Q-upa"/>
                 <constraint firstItem="dWk-CS-lfX" firstAttribute="centerY" secondItem="fCP-bt-bh7" secondAttribute="centerY" id="XEd-1m-Lg4"/>
                 <constraint firstItem="B3k-te-D5B" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.6" id="fry-dX-hGm"/>
                 <constraint firstItem="005-VT-6xD" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="g7C-mo-gUx"/>

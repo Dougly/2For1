@@ -222,7 +222,6 @@ extension GameViewController {
         updateInstructions()
         
     }
-
     func rolledUnder() {
         animate(view: addDieOrDrinkView, constraint: addDieOrDrinkLeadingConstraint, coverGameView: true)
         game.instructions = "\(game.player!.tag!) rolled too low"
@@ -254,6 +253,11 @@ extension GameViewController {
     }
     
     func updateScoreBoard() {
+        if game.drinks == 1 {
+            scoreView.drinksTextLabel.text = "drink"
+        } else {
+            scoreView.drinksTextLabel.text = "drinks"
+        }
         scoreView.scoreLabel.text = String(game.score)
         scoreView.drinksLabel.text = String(game.drinks)
     }

@@ -33,6 +33,10 @@ class CreatePlayerViewController: UIViewController, UIImagePickerControllerDeleg
         
         let tapGR3 = UITapGestureRecognizer(target: self, action: #selector(addPictureTapped))
         createPlayerView.playerPictureImageView.addGestureRecognizer(tapGR3)
+        
+        let swipeGR = UISwipeGestureRecognizer(target: self, action: #selector(xViewTapped))
+        swipeGR.direction = .down
+        createPlayerView.addGestureRecognizer(swipeGR)
     }
     
     override func viewDidAppear(_ animated: Bool) {

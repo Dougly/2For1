@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="JtC-QX-mO1"/>
                 <outlet property="drinksLabel" destination="eaV-80-qYR" id="yA2-ck-Z7r"/>
+                <outlet property="drinksTextLabel" destination="nz6-QG-FcR" id="Ndk-Ai-Mn0"/>
                 <outlet property="scoreLabel" destination="Deo-lE-JKF" id="Dwq-5e-ycv"/>
             </connections>
         </placeholder>
