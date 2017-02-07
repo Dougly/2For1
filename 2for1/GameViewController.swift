@@ -185,7 +185,8 @@ extension GameViewController {
     }
     
     func drink() {
-        game.instructions = "\(game.player!.tag!) must drink \(game.drinks) drinks!!"
+        game.instructions = "\(game.player!.tag!) must drink \(game.drinks) "
+        game.drinks == 1 ? game.instructions.append("drink!") : game.instructions.append("drinks!")
         animate(view: addDieOrDrinkView, constraint: addDieOrDrinkLeadingConstraint, coverGameView: true)
         animate(view: drinkView, constraint: drinkViewLeadingConstraint, coverGameView: false)
         updateInstructions()
@@ -193,7 +194,8 @@ extension GameViewController {
     
     func tiedRoll() {
         if game.playerRoll == game.score {
-        game.instructions = "\(game.player!.tag!) tied the score and must drink \(game.drinks) drinks!"
+            game.instructions = "\(game.player!.tag!) tied the score and must drink \(game.drinks) "
+            game.drinks == 1 ? game.instructions.append("drink!") : game.instructions.append("drinks!")
         } else {
             game.instructions = "\(game.player!.tag!) rolled too lowed and must drink \(game.drinks) drinks!"
         }

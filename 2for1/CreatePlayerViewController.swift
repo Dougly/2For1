@@ -13,30 +13,13 @@ class CreatePlayerViewController: UIViewController, UIImagePickerControllerDeleg
     let store = DataStore.sharedInstance
     var delegate: UpdateCollectionViewProtocol?
     var blurDelegate: BlurViewDelegate?
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
+    override var prefersStatusBarHidden: Bool { return true }
     
     @IBOutlet weak var createPlayerView: CreatePlayerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        let tapGR = UITapGestureRecognizer(target: self, action: #selector(plusViewTapped))
-        createPlayerView.addPlayerView.addGestureRecognizer(tapGR)
-        createPlayerView.firstNameTextField.becomeFirstResponder()
-        createPlayerView.setCornerRadius(with: UIScreen.main.bounds.height * 0.5)
-        
-        let tapGR2 = UITapGestureRecognizer(target: self, action: #selector(xViewTapped))
-        createPlayerView.xImageView.addGestureRecognizer(tapGR2)
-        
-        let tapGR3 = UITapGestureRecognizer(target: self, action: #selector(addPictureTapped))
-        createPlayerView.playerPictureImageView.addGestureRecognizer(tapGR3)
-        
-        let swipeGR = UISwipeGestureRecognizer(target: self, action: #selector(xViewTapped))
-        swipeGR.direction = .down
-        createPlayerView.addGestureRecognizer(swipeGR)
+        addGestures()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -74,11 +57,6 @@ class CreatePlayerViewController: UIViewController, UIImagePickerControllerDeleg
 //        }
     }
     
-    
-    
-    
-    
-    
     func plusViewTapped() {
         let firstName = createPlayerView.firstNameTextField.text!
         let lastName = createPlayerView.lastNameTextField.text!
@@ -104,5 +82,24 @@ class CreatePlayerViewController: UIViewController, UIImagePickerControllerDeleg
             }
         })
         
+    }
+    
+    func addGestures() {
+    
+        let tapGR = UITapGestureRecognizer(target: self, action: #selector(plusViewTapped))
+        createPlayerView.addPlayerView.addGestureRecognizer(tapGR)
+        createPlayerView.firstNameTextField.becomeFirstResponder()
+        createPlayerView.setCornerRadius(with: UIScreen.main.bounds.height * 0.5)
+        
+        let tapGR2 = UITapGestureRecognizer(target: self, action: #selector(xViewTapped))
+        createPlayerView.xImageView.addGestureRecognizer(tapGR2)
+        
+        let tapGR3 = UITapGestureRecognizer(target: self, action: #selector(addPictureTapped))
+        createPlayerView.playerPictureImageView.addGestureRecognizer(tapGR3)
+        
+        let swipeGR = UISwipeGestureRecognizer(target: self, action: #selector(xViewTapped))
+        swipeGR.direction = .down
+        createPlayerView.addGestureRecognizer(swipeGR)
+    
     }
 }
