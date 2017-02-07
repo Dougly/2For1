@@ -129,60 +129,39 @@ extension DiceGrid {
             if die.dieImageView.image == #imageLiteral(resourceName: "die_0") {
                 
                 
-                UIView.animateKeyframes(withDuration: 0.6, delay: 0, options: [.calculationModeCubic], animations: {
+                UIView.animateKeyframes(withDuration: 0.65, delay: 0, options: [], animations: {
                     
                     UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.1, animations: {
-                        if useTopConstraint {
-                            die.topConstraint.constant = (distance * constantMultiplier) * 0.5
-                        } else {
-                            die.leadingConstraint.constant = (distance * constantMultiplier) * 0.5
-                        }
-                        let num = Int(arc4random_uniform(6) + 1)
-                        die.dieImageView.image = die.dice[num]
+                        self.adjustConstraints(with: die, usingTopConstraint: useTopConstraint, distance: (distance * constantMultiplier), multiplier: 0.5)
                         self.layoutIfNeeded()
                     })
                     
                     UIView.addKeyframe(withRelativeStartTime: 0.1, relativeDuration: 0.2, animations: {
-                        if useTopConstraint {
-                            die.topConstraint.constant = (distance * constantMultiplier) * -0.5
-                        } else {
-                            die.leadingConstraint.constant = (distance * constantMultiplier) * -0.5
-                        }
-                        let num = Int(arc4random_uniform(6) + 1)
-                        die.dieImageView.image = die.dice[num]
+                        self.adjustConstraints(with: die, usingTopConstraint: useTopConstraint, distance: (distance * constantMultiplier), multiplier: -0.5)
                         self.layoutIfNeeded()
                     })
                     
                     UIView.addKeyframe(withRelativeStartTime: 0.3, relativeDuration: 0.15, animations: {
-                        if useTopConstraint {
-                            die.topConstraint.constant = (distance * constantMultiplier) * 0.25
-                        } else {
-                            die.leadingConstraint.constant = (distance * constantMultiplier) * 0.25
-                        }
-                        let num = Int(arc4random_uniform(6) + 1)
-                        die.dieImageView.image = die.dice[num]
+                        self.adjustConstraints(with: die, usingTopConstraint: useTopConstraint, distance: (distance * constantMultiplier), multiplier: 0.25)
                         self.layoutIfNeeded()
                     })
                     
                     UIView.addKeyframe(withRelativeStartTime: 0.45, relativeDuration: 0.1, animations: { 
-                        if useTopConstraint {
-                            die.topConstraint.constant = (distance * constantMultiplier) * -0.125
-                        } else {
-                            die.leadingConstraint.constant = (distance * constantMultiplier) * -0.125
-                        }
-                        let num = Int(arc4random_uniform(6) + 1)
-                        die.dieImageView.image = die.dice[num]
+                        
+                        self.adjustConstraints(with: die, usingTopConstraint: useTopConstraint, distance: (distance * constantMultiplier), multiplier: -0.125)
                         self.layoutIfNeeded()
+//                        if useTopConstraint {
+//                            die.topConstraint.constant = (distance * constantMultiplier) * -0.125
+//                        } else {
+//                            die.leadingConstraint.constant = (distance * constantMultiplier) * -0.125
+//                        }
+//                        let num = Int(arc4random_uniform(6) + 1)
+//                        die.dieImageView.image = die.dice[num]
+//                        self.layoutIfNeeded()
                     })
                     
-                    UIView.addKeyframe(withRelativeStartTime: 0.55, relativeDuration: 0.05, animations: {
-                        if useTopConstraint {
-                            die.topConstraint.constant = 0
-                        } else {
-                            die.leadingConstraint.constant = 0
-                        }
-                        let num = Int(arc4random_uniform(6) + 1)
-                        die.dieImageView.image = die.dice[num]
+                    UIView.addKeyframe(withRelativeStartTime: 0.55, relativeDuration: 0.1, animations: {
+                        self.adjustConstraints(with: die, usingTopConstraint: useTopConstraint, distance: (distance * constantMultiplier), multiplier: 0)
                         self.layoutIfNeeded()
                     })
                     
@@ -191,6 +170,14 @@ extension DiceGrid {
                     completion(true)
                 })
             }
+        }
+    }
+    
+    func adjustConstraints(with die: DieView, usingTopConstraint: Bool, distance: CGFloat, multiplier: CGFloat) {
+        if usingTopConstraint {
+            die.topConstraint.constant = distance * multiplier
+        } else {
+            die.leadingConstraint.constant = distance * multiplier
         }
     }
 }
