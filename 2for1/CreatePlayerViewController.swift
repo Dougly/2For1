@@ -78,22 +78,27 @@ class CreatePlayerViewController: UIViewController, UIImagePickerControllerDeleg
         let lastName = createPlayerView.lastNameTextField.text!
         let tag = createPlayerView.handleTextField.text!
         
-        let image = createPlayerView.playerPictureImageView.image!
-        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let fileURL = documentsURL.appendingPathComponent("\(firstName + lastName + tag).png")
-        
-        do {
-            if let pngImageData = UIImagePNGRepresentation(image) {
-                print("try write image data")
-                try pngImageData.write(to: fileURL, options: .atomic)
+        let slimeImage = #imageLiteral(resourceName: "slime")
+        if let image = createPlayerView.playerPictureImageView.image {
+            let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            let fileURL = documentsURL.appendingPathComponent("\(firstName + lastName + tag).png")
+            
+            do {
+                if let pngImageData = UIImagePNGRepresentation(image) {
+                    print("try write image data")
+                    try pngImageData.write(to: fileURL, options: .atomic)
+                }
+            } catch {
+                print("couldnt write to file")
             }
-        } catch {
-            print("couldnt write to file")
+            store.savePlayer(firstName, lastName: lastName, tag: tag, file: "\(firstName + lastName + tag).png", image: image)
+        } else {
+            store.savePlayer(firstName, lastName: lastName, tag: tag, file: "\(firstName + lastName + tag).png", image: slimeImage)
         }
 
         
         
-        store.savePlayer(firstName, lastName: lastName, tag: tag, file: "\(firstName + lastName + tag).png", image: image)
+        
         self.blurDelegate?.unBlurView()
         self.dismiss(animated: true, completion: {
             if let delegate = self.delegate {

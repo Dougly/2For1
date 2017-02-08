@@ -125,7 +125,9 @@ extension GameViewController {
         } else {
             game.instructions = "\(game.player!.tag!) rolled too lowed and must drink \(game.drinks) drinks!"
         }
-        animate(view: drinkView, constraint: drinkViewLeadingConstraint, coverGameView: false)
+        if drinkViewLeadingConstraint.constant == 0 {
+            animate(view: drinkView, constraint: drinkViewLeadingConstraint, coverGameView: false)
+        }
     }
     
     func resetGame() {
