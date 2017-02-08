@@ -29,6 +29,8 @@
 		119842D51E4408CD00D7C920 /* DiceGrid.xib in Resources */ = {isa = PBXBuildFile; fileRef = 119842D41E4408CD00D7C920 /* DiceGrid.xib */; };
 		119842D71E4408E300D7C920 /* DiceGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119842D61E4408E300D7C920 /* DiceGrid.swift */; };
 		119842D91E45116400D7C920 /* GameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119842D81E45116400D7C920 /* GameDelegate.swift */; };
+		11B1846C1E4B88D9001021A0 /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11B1846B1E4B88D9001021A0 /* InfoView.xib */; };
+		11B1846E1E4B88F1001021A0 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B1846D1E4B88F1001021A0 /* InfoView.swift */; };
 		11DE14C41E0F462E0027D9E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE14C31E0F462E0027D9E8 /* AppDelegate.swift */; };
 		11DE14C61E0F462E0027D9E8 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE14C51E0F462E0027D9E8 /* GameViewController.swift */; };
 		11DE14C91E0F462E0027D9E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11DE14C71E0F462E0027D9E8 /* Main.storyboard */; };
@@ -75,6 +77,8 @@
 		119842D41E4408CD00D7C920 /* DiceGrid.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiceGrid.xib; sourceTree = "<group>"; };
 		119842D61E4408E300D7C920 /* DiceGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiceGrid.swift; sourceTree = "<group>"; };
 		119842D81E45116400D7C920 /* GameDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameDelegate.swift; sourceTree = "<group>"; };
+		11B1846B1E4B88D9001021A0 /* InfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoView.xib; sourceTree = "<group>"; };
+		11B1846D1E4B88F1001021A0 /* InfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		11DE14C01E0F462E0027D9E8 /* 2for1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2for1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11DE14C31E0F462E0027D9E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11DE14C51E0F462E0027D9E8 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 				11FCD40F1E3CF76F0081F1C1 /* DieView.xib */,
 				119842D41E4408CD00D7C920 /* DiceGrid.xib */,
 				118ED3161E2ED5110091E5D5 /* DotsView.xib */,
+				11B1846B1E4B88D9001021A0 /* InfoView.xib */,
 				1126B78C1E319D8800F017D1 /* GameView.xib */,
 				11FCD4111E3D10450081F1C1 /* InstructionsView.xib */,
 				1126B7901E32900C00F017D1 /* MenuView.xib */,
@@ -192,6 +197,7 @@
 				11FCD40D1E3CF7620081F1C1 /* DieView.swift */,
 				119842D61E4408E300D7C920 /* DiceGrid.swift */,
 				118ED3181E2ED5270091E5D5 /* DotsView.swift */,
+				11B1846D1E4B88F1001021A0 /* InfoView.swift */,
 				1126B78E1E319D9D00F017D1 /* GameView.swift */,
 				11FCD4131E3D10540081F1C1 /* InstructionsView.swift */,
 				1126B7921E32902B00F017D1 /* MenuView.swift */,
@@ -290,6 +296,7 @@
 				119710931E30659200D4CCD4 /* CreatePlayerView.xib in Resources */,
 				1136332E1E48DB0600F3E4CD /* CheckMarkView.xib in Resources */,
 				1126B78D1E319D8800F017D1 /* GameView.xib in Resources */,
+				11B1846C1E4B88D9001021A0 /* InfoView.xib in Resources */,
 				11DE14D11E0F462E0027D9E8 /* LaunchScreen.storyboard in Resources */,
 				1126B7911E32900C00F017D1 /* MenuView.xib in Resources */,
 				11DE14CE1E0F462E0027D9E8 /* Assets.xcassets in Resources */,
@@ -320,6 +327,7 @@
 				11DE14E51E1022860027D9E8 /* Game.swift in Sources */,
 				1126B7931E32902B00F017D1 /* MenuView.swift in Sources */,
 				11FCD40C1E3CF60D0081F1C1 /* ScoreView.swift in Sources */,
+				11B1846E1E4B88F1001021A0 /* InfoView.swift in Sources */,
 				11DE14ED1E11ACC00027D9E8 /* ActionEnum.swift in Sources */,
 				11DE14CC1E0F462E0027D9E8 /* _for1.xcdatamodeld in Sources */,
 				11DE14E11E0F48C20027D9E8 /* GameInfoView.swift in Sources */,

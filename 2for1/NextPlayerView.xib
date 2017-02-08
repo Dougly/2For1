@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -36,14 +36,14 @@
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ij4-ad-VQm">
-                    <rect key="frame" x="115" y="222" width="145" height="144.5"/>
+                    <rect key="frame" x="115" y="294.5" width="145" height="144.5"/>
                     <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="0.20028805869999999" colorSpace="calibratedRGB"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oq2-PV-mtc" userLabel="okView">
-                    <rect key="frame" x="110.5" y="217.5" width="145" height="144.5"/>
+                    <rect key="frame" x="110.5" y="290" width="145" height="144.5"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="2WU-4f-IfC">
-                            <rect key="frame" x="28.5" y="28.5" width="87.5" height="86.5"/>
+                            <rect key="frame" x="28.5" y="29" width="87.5" height="86.5"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" red="0.14901960780000001" green="0.86666666670000003" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -65,7 +65,7 @@
                 <constraint firstItem="O4G-xO-hoT" firstAttribute="centerY" secondItem="PvE-5B-PcM" secondAttribute="centerY" constant="5" id="NY2-iv-QKn"/>
                 <constraint firstItem="oq2-PV-mtc" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="V13-SN-Ldd"/>
                 <constraint firstItem="PvE-5B-PcM" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="alu-82-qLH"/>
-                <constraint firstItem="oq2-PV-mtc" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="1.6" id="hPd-3h-D91"/>
+                <constraint firstItem="oq2-PV-mtc" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="2" id="hPd-3h-D91"/>
                 <constraint firstItem="Ij4-ad-VQm" firstAttribute="width" secondItem="oq2-PV-mtc" secondAttribute="width" id="hmf-B5-7ON"/>
                 <constraint firstItem="O4G-xO-hoT" firstAttribute="centerX" secondItem="PvE-5B-PcM" secondAttribute="centerX" constant="5" id="j31-Lw-YWZ"/>
                 <constraint firstItem="PvE-5B-PcM" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.85" id="jET-CP-6qx"/>
