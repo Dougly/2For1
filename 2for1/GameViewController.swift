@@ -57,6 +57,7 @@ extension GameViewController {
         case .rollAddedDie: rollAddedDie(sender)
         default: break
         }
+        nextPlayerView.picImageView.image = game.player?.playerImage
     }
     
     func rolled(_ sender: UISwipeGestureRecognizer) {
@@ -100,7 +101,7 @@ extension GameViewController {
     }
     
     func rolledHighEnoughTapped() {
-        nextPlayerView.picImageView.image = game.player?.playerImage
+        //nextPlayerView.picImageView.image = game.player?.playerImage
         animate(view: rolledHighEnoughView, constraint: rolledHighEnoughLeadingConstraint, coverGameView: false)
         animate(view: nextPlayerView, constraint: nextPlayerViewLeadingConstraint, coverGameView: true)
         game.passDice()
@@ -261,8 +262,7 @@ extension GameViewController: BlurViewDelegate {
         blurEffectView.effect = blurEffect
         blurEffectView.frame = self.view.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
-        self.view.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
+        self.view.addSubview(blurEffectView)
         self.blurEffectView.alpha = 0.0
     }
     
@@ -293,11 +293,12 @@ extension GameViewController {
     }
     
     func makeViewsCircles() {
-        gameCoverView.layer.cornerRadius = (screenWidth * 0.9) / 2 //based on constraint multipliers
+        //based on constraint multipliers
+        gameCoverView.layer.cornerRadius = (screenWidth * 0.9) / 2
         gameView.setCornerRadius(with: screenWidth)
-        menuView.setCornerRadius(with: screenHeight * 0.1) //based on constraint multipliers
-        addDieOrDrinkView.setCornerRadius(with: screenWidth * 0.3) //based on constraint multipliers
-        nextPlayerView.setCornerRadius(with: screenWidth * 0.6) //based on constraint multipliers
+        menuView.setCornerRadius(with: screenHeight * 0.1)
+        addDieOrDrinkView.setCornerRadius(with: screenWidth * 0.3)
+        nextPlayerView.setCornerRadius(with: screenWidth * 0.6)
         rolledHighEnoughView.setCornerRadius(with: screenWidth * 0.2)
         rolledHighEnoughView.restartLabel.isHidden = true
         drinkView.setCornerRadius(with: screenWidth * 0.2)

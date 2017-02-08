@@ -77,6 +77,8 @@ class PlayerCollectionView: NSObject, UICollectionViewDelegateFlowLayout, UIColl
         let cell = collectionView.cellForItem(at: indexPath) as! CustomPlayerCell
         guard let viewController = delegate else { return }
         
+        
+        //TODO: de-select after adding a player with players already selected crashes
         if cell.contentView.layer.borderWidth == 0 {
             cell.contentView.layer.borderWidth = 3
             store.players[indexPath.item].isSelected = true
