@@ -20,12 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         store.fetchData()
-        for player in store.players {
-            if let first = player.firstName, let last = player.lastName, let tag = player.tag {
-                let key = first + last + tag
-                store.playerPictures[key] = player.playerImage
-            }
-        }
         return true
     }
 

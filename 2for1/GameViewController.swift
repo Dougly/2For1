@@ -100,6 +100,7 @@ extension GameViewController {
     }
     
     func rolledHighEnoughTapped() {
+        nextPlayerView.picImageView.image = game.player?.playerImage
         animate(view: rolledHighEnoughView, constraint: rolledHighEnoughLeadingConstraint, coverGameView: false)
         animate(view: nextPlayerView, constraint: nextPlayerViewLeadingConstraint, coverGameView: true)
         game.passDice()
@@ -231,6 +232,7 @@ extension GameViewController {
     func setInitialGameSettings() {
         game.player = game.players[0]
         game.instructions = "\(game.players[0].tag!) starts the game"
+        nextPlayerView.picImageView.image = game.player?.playerImage
         updateInstructions()
     }
     

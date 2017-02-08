@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class CreatePlayerViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -42,20 +43,35 @@ class CreatePlayerViewController: UIViewController, UIImagePickerControllerDeleg
         }
     }
     
-    
+//    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!) {
+//        createPlayerView.playerPictureImageView.image = image
+//        createPlayerView.placeholderView.isHidden = true
+//    }
+//
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
-        let editedImageKey = UIImagePickerControllerEditedImage
-        let image = info[editedImageKey] as! UIImage
+        picker.dismiss(animated: true, completion: nil)
+        let image = info[UIImagePickerControllerEditedImage] as! UIImage
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         createPlayerView.playerPictureImageView.image = image
-//        let imageData = UIImagePNGRepresentation(image)
-//        if let imageData = imageData {
-//            let pngImage = UIImage(data: imageData)
-//            if let pngImage = pngImage {
-//                UIImageWriteToSavedPhotosAlbum(pngImage, nil, nil, nil)
-//            }
-//        }
+        createPlayerView.placeholderView.isHidden = true
+    
     }
+//        let imageKey = UIImagePickerControllerOriginalImage
+//        var image = UIImage()
+//        if let value = info[imageKey] {
+//            print("got original Image")
+//            image = value as! UIImage
+//        }
+//        
+//        createPlayerView.playerPictureImageView.image = image
+////        let imageData = UIImagePNGRepresentation(image)
+////        if let imageData = imageData {
+////            let pngImage = UIImage(data: imageData)
+////            if let pngImage = pngImage {
+////                UIImageWriteToSavedPhotosAlbum(pngImage, nil, nil, nil)
+////            }
+////        }
+//    }
     
     func plusViewTapped() {
         let firstName = createPlayerView.firstNameTextField.text!
@@ -63,14 +79,17 @@ class CreatePlayerViewController: UIViewController, UIImagePickerControllerDeleg
         let tag = createPlayerView.handleTextField.text!
         
         let image = createPlayerView.playerPictureImageView.image!
-        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let fileURL = documentsURL.appendingPathComponent("\(firstName + lastName + tag).png")
         
         do {
             if let pngImageData = UIImagePNGRepresentation(image) {
+                print("try write image data")
                 try pngImageData.write(to: fileURL, options: .atomic)
             }
-        } catch { }
+        } catch {
+            print("couldnt write to file")
+        }
 
         
         

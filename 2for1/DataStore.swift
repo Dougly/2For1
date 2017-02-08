@@ -26,6 +26,14 @@ final class DataStore {
         } catch {
             print("catch players fetch request")
         }
+        
+        for player in players {
+            if let first = player.firstName, let last = player.lastName, let tag = player.tag {
+                let key = first + last + tag
+                playerPictures[key] = player.playerImage
+            }
+        }
+
     }
     
     func savePlayer(_ firstName: String, lastName: String, tag: String, file: String, image: UIImage) {

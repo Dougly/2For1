@@ -14,8 +14,11 @@ extension Player {
         let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         if let file = file {
             let filePath = documentsURL.appendingPathComponent(file).path
+            print("😩image file path for \(self.tag!): \(filePath)")
             if FileManager.default.fileExists(atPath: filePath) {
-                return UIImage(contentsOfFile: filePath)!
+                print("file path had and image")
+                let image = UIImage(contentsOfFile: filePath)!
+                return image
             }
         }
         return #imageLiteral(resourceName: "slime")
