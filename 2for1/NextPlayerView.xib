@@ -26,24 +26,24 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O4G-xO-hoT">
-                    <rect key="frame" x="34" y="5" width="308" height="308"/>
+                    <rect key="frame" x="34" y="-58.5" width="308" height="308"/>
                     <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="0.20028805869999999" colorSpace="calibratedRGB"/>
                 </view>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slime" translatesAutoresizingMaskIntoConstraints="NO" id="PvE-5B-PcM">
-                    <rect key="frame" x="29" y="0.0" width="308" height="308"/>
+                    <rect key="frame" x="29" y="-63.5" width="308" height="308"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="PvE-5B-PcM" secondAttribute="height" multiplier="1:1" id="hlQ-Tp-kvv"/>
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ij4-ad-VQm">
-                    <rect key="frame" x="115" y="294.5" width="145" height="144.5"/>
+                    <rect key="frame" x="116" y="221.5" width="145" height="145"/>
                     <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="0.20028805869999999" colorSpace="calibratedRGB"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oq2-PV-mtc" userLabel="okView">
-                    <rect key="frame" x="110.5" y="290" width="145" height="144.5"/>
+                    <rect key="frame" x="111" y="217" width="145" height="145"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="2WU-4f-IfC">
-                            <rect key="frame" x="28.5" y="29" width="87.5" height="86.5"/>
+                            <rect key="frame" x="29.5" y="29" width="87" height="87"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" red="0.14901960780000001" green="0.86666666670000003" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -61,11 +61,11 @@
                 <constraint firstItem="Ij4-ad-VQm" firstAttribute="centerY" secondItem="oq2-PV-mtc" secondAttribute="centerY" constant="5" id="4Tn-Nf-GBe"/>
                 <constraint firstItem="O4G-xO-hoT" firstAttribute="height" secondItem="PvE-5B-PcM" secondAttribute="height" id="4ah-3g-Zxm"/>
                 <constraint firstItem="oq2-PV-mtc" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.4" id="9bN-47-fAJ"/>
-                <constraint firstItem="PvE-5B-PcM" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.85" id="Fih-US-Cbu" userLabel="Pic Image View.centerY = 0.85 × centerY"/>
+                <constraint firstItem="PvE-5B-PcM" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.5" id="Fih-US-Cbu" userLabel="Pic Image View.centerY = 0.85 × centerY"/>
                 <constraint firstItem="O4G-xO-hoT" firstAttribute="centerY" secondItem="PvE-5B-PcM" secondAttribute="centerY" constant="5" id="NY2-iv-QKn"/>
                 <constraint firstItem="oq2-PV-mtc" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="V13-SN-Ldd"/>
                 <constraint firstItem="PvE-5B-PcM" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="alu-82-qLH"/>
-                <constraint firstItem="oq2-PV-mtc" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="2" id="hPd-3h-D91"/>
+                <constraint firstItem="oq2-PV-mtc" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="1.6" id="hPd-3h-D91"/>
                 <constraint firstItem="Ij4-ad-VQm" firstAttribute="width" secondItem="oq2-PV-mtc" secondAttribute="width" id="hmf-B5-7ON"/>
                 <constraint firstItem="O4G-xO-hoT" firstAttribute="centerX" secondItem="PvE-5B-PcM" secondAttribute="centerX" constant="5" id="j31-Lw-YWZ"/>
                 <constraint firstItem="PvE-5B-PcM" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.85" id="jET-CP-6qx"/>

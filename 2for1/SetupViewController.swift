@@ -25,6 +25,12 @@ class SetupViewController: UIViewController {
     @IBOutlet weak var headerGradientView: UIView!
     @IBOutlet weak var collectionViewGradientView: UIView!
     
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
@@ -40,6 +46,7 @@ class SetupViewController: UIViewController {
         
         self.view.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
         self.blurEffectView.alpha = 0.0
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -74,6 +81,11 @@ class SetupViewController: UIViewController {
             let destVC = segue.destination as! CreatePlayerViewController
             destVC.delegate = playerVC
             destVC.blurDelegate = self
+        }
+        
+        if segue.identifier == "showInstructions" {
+            let destVC = segue.destination as! GameInstructionsViewController
+            destVC.delegate = self
         }
     }
     
@@ -152,8 +164,10 @@ extension SetupViewController: UpdateCollectionViewProtocol {
     }
     
     func tappedShowGameInfoView() {
-        
+        performSegue(withIdentifier: "showInstructions", sender: self)
+        blurView()
     }
+
     
     func setupCollectionView() {
         playerVC.delegate = self
@@ -209,5 +223,6 @@ extension SetupViewController: BlurViewDelegate {
         })
     }
     
+  
 }
 

@@ -115,9 +115,6 @@ class CreatePlayerViewController: UIViewController, UIImagePickerControllerDeleg
         createPlayerView.firstNameTextField.becomeFirstResponder()
         createPlayerView.setCornerRadius(with: UIScreen.main.bounds.height * 0.5)
         
-        let tapGR2 = UITapGestureRecognizer(target: self, action: #selector(xViewTapped))
-        createPlayerView.xImageView.addGestureRecognizer(tapGR2)
-        
         let tapGR3 = UITapGestureRecognizer(target: self, action: #selector(addPictureTapped))
         createPlayerView.playerPictureImageView.addGestureRecognizer(tapGR3)
         

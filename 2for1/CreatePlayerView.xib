@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -20,8 +20,6 @@
                 <outlet property="lastNameTextField" destination="i8X-0h-rqi" id="pVM-hK-ZVQ"/>
                 <outlet property="placeholderView" destination="dWk-CS-lfX" id="lax-AA-VSG"/>
                 <outlet property="playerPictureImageView" destination="fCP-bt-bh7" id="7jK-nt-TOa"/>
-                <outlet property="xBackground" destination="0tX-s2-Ks1" id="uhg-zO-4vo"/>
-                <outlet property="xImageView" destination="H9r-jS-dKP" id="7kp-CB-PNx"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -31,30 +29,9 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="005-VT-6xD" userLabel="BackgroundView">
                     <rect key="frame" x="29" y="0.0" width="318" height="318"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0tX-s2-Ks1" userLabel="xBackground">
-                            <rect key="frame" x="16" y="16" width="31.5" height="31.5"/>
-                            <color key="backgroundColor" red="1" green="0.79607843140000001" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="0tX-s2-Ks1" secondAttribute="height" multiplier="1:1" id="MPb-Bh-dEc"/>
-                            </constraints>
-                        </view>
-                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whiteX" translatesAutoresizingMaskIntoConstraints="NO" id="H9r-jS-dKP">
-                            <rect key="frame" x="21" y="21" width="22" height="22"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="H9r-jS-dKP" secondAttribute="height" multiplier="1:1" id="wTp-wM-l0S"/>
-                            </constraints>
-                        </imageView>
-                    </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="H9r-jS-dKP" firstAttribute="centerY" secondItem="005-VT-6xD" secondAttribute="centerY" multiplier="0.2" id="5xH-7D-ttE"/>
                         <constraint firstAttribute="width" secondItem="005-VT-6xD" secondAttribute="height" multiplier="1:1" id="6r0-Gi-aEC"/>
-                        <constraint firstItem="H9r-jS-dKP" firstAttribute="centerX" secondItem="005-VT-6xD" secondAttribute="centerX" multiplier="0.2" id="HcB-EG-Xz0"/>
-                        <constraint firstItem="0tX-s2-Ks1" firstAttribute="height" secondItem="005-VT-6xD" secondAttribute="height" multiplier="0.1" id="PxA-Sx-tUD"/>
-                        <constraint firstItem="H9r-jS-dKP" firstAttribute="height" secondItem="005-VT-6xD" secondAttribute="height" multiplier="0.07" id="SGF-6j-v8R"/>
-                        <constraint firstItem="0tX-s2-Ks1" firstAttribute="centerY" secondItem="005-VT-6xD" secondAttribute="centerY" multiplier="0.2" id="cba-oT-Jqo"/>
-                        <constraint firstItem="0tX-s2-Ks1" firstAttribute="centerX" secondItem="005-VT-6xD" secondAttribute="centerX" multiplier="0.2" id="cbk-Td-GJ1"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -168,6 +145,5 @@
     <resources>
         <image name="addPhoto" width="48" height="48"/>
         <image name="whitePlus" width="48" height="48"/>
-        <image name="whiteX" width="48" height="48"/>
     </resources>
 </document>

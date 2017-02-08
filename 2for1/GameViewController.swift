@@ -13,9 +13,8 @@ class GameViewController: UIViewController {
     let game = Game()
     let screenHeight = UIScreen.main.bounds.height
     let screenWidth = UIScreen.main.bounds.width
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
+    let blurEffectView = UIVisualEffectView()
+    override var prefersStatusBarHidden: Bool { return true }
     
     @IBOutlet weak var menuView: MenuView!
     @IBOutlet weak var gameView: GameView!
@@ -40,6 +39,7 @@ class GameViewController: UIViewController {
         addGradients()
         setInitialGameSettings()
         setUpMenu()
+        setupBlur()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -225,7 +225,50 @@ extension GameViewController {
             }
         })
     }
+    
+    func showInfo() {
+        performSegue(withIdentifier: "showInfoFromGame", sender: self)
+        blurView()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showInfoFromGame" {
+            let dest = segue.destination as! GameInstructionsViewController
+            dest.delegate = self
+        }
+    }
 }
+
+extension GameViewController: BlurViewDelegate {
+    
+    func blurView() {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.blurEffectView.alpha = 1.0
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+    func unBlurView() {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.blurEffectView.alpha = 0.0
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+    func setupBlur() {
+        self.view.backgroundColor = UIColor.clear
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+        blurEffectView.effect = blurEffect
+        blurEffectView.frame = self.view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        self.view.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
+        self.blurEffectView.alpha = 0.0
+    }
+    
+    
+}
+
 
 
 //Mark: Setup VC
@@ -293,6 +336,9 @@ extension GameViewController {
         
         let tapGR5 = UITapGestureRecognizer(target: self, action: #selector(resetGame))
         menuView.secondOptionView.addGestureRecognizer(tapGR5)
+        
+        let tapGR6 = UITapGestureRecognizer(target: self, action: #selector(showInfo))
+        menuView.firstOptionView.addGestureRecognizer(tapGR6)
         
         let tapGR7 = UITapGestureRecognizer(target: self, action: #selector(dismissVC))
         menuView.thirdOptionView.addGestureRecognizer(tapGR7)

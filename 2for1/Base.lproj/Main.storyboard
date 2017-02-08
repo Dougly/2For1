@@ -55,7 +55,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mrb-L4-2rO" customClass="NextPlayerView" customModule="_for1" customModuleProvider="target">
-                                <rect key="frame" x="413.99999999999994" y="220.33333333333337" width="248.66666666666657" height="248.66666666666663"/>
+                                <rect key="frame" x="413.99999999999994" y="254.66666666666669" width="248.66666666666657" height="248.66666666666669"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYE-lx-hXd" userLabel="DrinkView" customClass="CheckMarkView" customModule="_for1" customModuleProvider="target">
@@ -111,7 +111,7 @@
                             <constraint firstItem="wYE-lx-hXd" firstAttribute="width" secondItem="NjJ-E3-UrA" secondAttribute="width" id="uhT-0b-UHD"/>
                             <constraint firstItem="wYE-lx-hXd" firstAttribute="centerY" secondItem="NjJ-E3-UrA" secondAttribute="centerY" id="vQL-td-YI5"/>
                             <constraint firstItem="hpa-bD-cf4" firstAttribute="height" secondItem="EvJ-fJ-woD" secondAttribute="height" multiplier="0.9" id="vwg-cJ-ztP"/>
-                            <constraint firstItem="Mrb-L4-2rO" firstAttribute="centerY" secondItem="EvJ-fJ-woD" secondAttribute="centerY" id="yfa-Lg-ORh"/>
+                            <constraint firstItem="Mrb-L4-2rO" firstAttribute="centerY" secondItem="EvJ-fJ-woD" secondAttribute="centerY" multiplier="1.1" id="yfa-Lg-ORh"/>
                             <constraint firstItem="pne-vQ-3Xw" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.1" id="yju-Em-wwH"/>
                         </constraints>
                     </view>
@@ -129,11 +129,42 @@
                         <outlet property="rolledHighEnoughLeadingConstraint" destination="Tcd-iU-WZQ" id="Fr9-Gr-Z19"/>
                         <outlet property="rolledHighEnoughView" destination="NjJ-E3-UrA" id="5e6-Ni-ej8"/>
                         <outlet property="scoreView" destination="L32-AM-cjm" id="rj8-bW-2MY"/>
+                        <segue destination="159-ec-JVp" kind="presentation" identifier="showInfoFromGame" id="E17-4z-LHl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-18" y="108"/>
+        </scene>
+        <!--Game Instructions View Controller-->
+        <scene sceneID="hTm-XF-8ht">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="159-ec-JVp" customClass="GameInstructionsViewController" customModule="_for1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mx6-hM-I44"/>
+                        <viewControllerLayoutGuide type="bottom" id="Kyq-yH-DsD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="COA-el-xpv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TG5-Jh-80f" userLabel="GameInstructions" customClass="InfoView" customModule="_for1" customModuleProvider="target">
+                                <rect key="frame" x="20" y="36.666666666666686" width="372.33333333333331" height="662.33333333333326"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TG5-Jh-80f" firstAttribute="height" secondItem="COA-el-xpv" secondAttribute="height" multiplier="0.9" id="A9U-BF-a7p"/>
+                            <constraint firstItem="TG5-Jh-80f" firstAttribute="centerX" secondItem="COA-el-xpv" secondAttribute="centerX" id="JJq-tJ-qpB"/>
+                            <constraint firstItem="TG5-Jh-80f" firstAttribute="width" secondItem="COA-el-xpv" secondAttribute="width" multiplier="0.9" id="Nr4-id-8Re"/>
+                            <constraint firstItem="TG5-Jh-80f" firstAttribute="centerY" secondItem="COA-el-xpv" secondAttribute="centerY" id="n0J-Ds-AqU"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K3m-xB-8N2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-51" y="836"/>
         </scene>
         <!--Setup View Controller-->
         <scene sceneID="Ox7-2z-QoS">
@@ -147,6 +178,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ecU-AU-0Qw" userLabel="BlurView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ixm-PP-zEN" userLabel="HeaderGradient">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="211"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -273,10 +308,6 @@
                                 <rect key="frame" x="0.0" y="736" width="414" height="5.3333333333333712"/>
                                 <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="0.20028805869999999" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TG5-Jh-80f" userLabel="GameInstructions" customClass="InfoView" customModule="_for1" customModuleProvider="target">
-                                <rect key="frame" x="52" y="147.33333333333337" width="310.33333333333331" height="441.33333333333326"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.14901960780000001" green="0.86666666670000003" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -290,24 +321,24 @@
                             <constraint firstItem="Ce0-Ed-D58" firstAttribute="height" secondItem="uCU-0j-WqR" secondAttribute="height" multiplier="0.01" id="Kfl-Jz-L2p"/>
                             <constraint firstItem="uCU-0j-WqR" firstAttribute="centerX" secondItem="1tF-jx-fzD" secondAttribute="centerX" id="KyA-MT-8X9"/>
                             <constraint firstItem="Ce0-Ed-D58" firstAttribute="width" secondItem="uCU-0j-WqR" secondAttribute="width" id="LGs-c7-5yA"/>
+                            <constraint firstItem="ecU-AU-0Qw" firstAttribute="centerX" secondItem="1tF-jx-fzD" secondAttribute="centerX" id="MdM-O3-py8"/>
                             <constraint firstItem="n7w-mq-rkz" firstAttribute="width" secondItem="1tF-jx-fzD" secondAttribute="width" id="MiR-xh-Arw"/>
                             <constraint firstItem="d0j-g7-ARP" firstAttribute="centerX" secondItem="n7w-mq-rkz" secondAttribute="centerX" id="NfR-H9-eUn"/>
                             <constraint firstItem="uCU-0j-WqR" firstAttribute="width" secondItem="1tF-jx-fzD" secondAttribute="width" id="Odq-YC-OPr"/>
                             <constraint firstItem="aCH-DV-upd" firstAttribute="width" secondItem="1tF-jx-fzD" secondAttribute="width" id="Q08-2x-rCh"/>
                             <constraint firstItem="LWc-Ro-h1D" firstAttribute="width" secondItem="aCH-DV-upd" secondAttribute="width" id="QXt-m4-G2k"/>
-                            <constraint firstItem="TG5-Jh-80f" firstAttribute="centerX" secondItem="1tF-jx-fzD" secondAttribute="centerX" id="Qui-NG-nfA"/>
                             <constraint firstItem="n7w-mq-rkz" firstAttribute="centerX" secondItem="1tF-jx-fzD" secondAttribute="centerX" id="RAf-ZS-kdx"/>
-                            <constraint firstItem="TG5-Jh-80f" firstAttribute="centerY" secondItem="1tF-jx-fzD" secondAttribute="centerY" id="RYH-PK-gCx"/>
                             <constraint firstItem="Ce0-Ed-D58" firstAttribute="centerX" secondItem="uCU-0j-WqR" secondAttribute="centerX" id="UB3-vY-5dc"/>
+                            <constraint firstItem="ecU-AU-0Qw" firstAttribute="height" secondItem="1tF-jx-fzD" secondAttribute="height" id="UJY-VV-o94"/>
                             <constraint firstItem="pOC-da-BvB" firstAttribute="width" secondItem="uCU-0j-WqR" secondAttribute="width" id="XPC-BA-s0s"/>
                             <constraint firstItem="LWc-Ro-h1D" firstAttribute="centerX" secondItem="aCH-DV-upd" secondAttribute="centerX" id="ZLG-nl-VDb"/>
                             <constraint firstItem="aCH-DV-upd" firstAttribute="centerX" secondItem="1tF-jx-fzD" secondAttribute="centerX" id="a0w-KR-2HN"/>
                             <constraint firstItem="pOC-da-BvB" firstAttribute="centerX" secondItem="uCU-0j-WqR" secondAttribute="centerX" id="ajb-JO-sAi"/>
-                            <constraint firstItem="TG5-Jh-80f" firstAttribute="height" secondItem="1tF-jx-fzD" secondAttribute="height" multiplier="0.6" id="jKd-Bn-fc6"/>
+                            <constraint firstItem="ecU-AU-0Qw" firstAttribute="width" secondItem="1tF-jx-fzD" secondAttribute="width" id="h4j-Nk-HOC"/>
+                            <constraint firstItem="ecU-AU-0Qw" firstAttribute="centerY" secondItem="1tF-jx-fzD" secondAttribute="centerY" id="hRr-OZ-WnP"/>
                             <constraint firstItem="aCH-DV-upd" firstAttribute="top" secondItem="Koz-j3-B8z" secondAttribute="bottom" id="juQ-Ro-nTL"/>
                             <constraint firstItem="Ixm-PP-zEN" firstAttribute="centerX" secondItem="1tF-jx-fzD" secondAttribute="centerX" id="kMq-EQ-yc1"/>
                             <constraint firstItem="uCU-0j-WqR" firstAttribute="bottom" secondItem="dgu-TI-549" secondAttribute="top" id="lnT-iY-hWF"/>
-                            <constraint firstItem="TG5-Jh-80f" firstAttribute="width" secondItem="1tF-jx-fzD" secondAttribute="width" multiplier="0.75" id="nOx-Ha-ULn"/>
                             <constraint firstItem="LWc-Ro-h1D" firstAttribute="height" secondItem="aCH-DV-upd" secondAttribute="height" multiplier="0.05" id="nk7-58-Hbk"/>
                             <constraint firstItem="LWc-Ro-h1D" firstAttribute="top" secondItem="aCH-DV-upd" secondAttribute="bottom" id="o3M-qf-QWX"/>
                             <constraint firstItem="pOC-da-BvB" firstAttribute="height" secondItem="uCU-0j-WqR" secondAttribute="height" id="owm-BJ-LPY"/>
@@ -324,11 +355,13 @@
                     <connections>
                         <outlet property="collectionViewGradientView" destination="pOC-da-BvB" id="IQD-aT-fLy"/>
                         <outlet property="headerGradientView" destination="Ixm-PP-zEN" id="W1C-96-kkC"/>
+                        <outlet property="infoView" destination="TG5-Jh-80f" id="u6Y-1A-4Kf"/>
                         <outlet property="menuView" destination="WaI-je-SpP" id="9n8-Ae-YlI"/>
                         <outlet property="playerCollectionView" destination="uCU-0j-WqR" id="3QR-gM-y57"/>
                         <outlet property="playerCollectionViewBottomConstraint" destination="lnT-iY-hWF" id="l5W-qc-thx"/>
                         <outlet property="startGameButton" destination="n7w-mq-rkz" id="p2z-zd-Pb2"/>
                         <segue destination="WTu-Me-een" kind="presentation" identifier="addPlayer" id="RHf-cZ-FbC"/>
+                        <segue destination="159-ec-JVp" kind="presentation" identifier="showInstructions" id="y4d-Lm-c7q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zbs-en-kg0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -369,4 +402,7 @@
             <point key="canvasLocation" x="-807" y="836"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="E17-4z-LHl"/>
+    </inferredMetricsTieBreakers>
 </document>

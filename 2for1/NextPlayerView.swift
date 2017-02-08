@@ -43,6 +43,8 @@ class NextPlayerView: UIView {
         let picImageViewCornerRadius = (size * picImageViewConstraintMultiplier) / 2
         picImageView.layer.cornerRadius = picImageViewCornerRadius
         picImageViewShadow.layer.cornerRadius = picImageViewCornerRadius
+        picImageView.layer.borderWidth = 3
+        
     }
     
 }

@@ -17,8 +17,7 @@ class CreatePlayerView: UIView {
     @IBOutlet weak var playerPictureImageView: UIImageView!
     @IBOutlet weak var placeholderView: UIView!
     @IBOutlet weak var addPlayerView: UIView!
-    @IBOutlet weak var xImageView: UIImageView!
-    @IBOutlet weak var xBackground: UIView!
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,12 +40,9 @@ class CreatePlayerView: UIView {
         let plusCornerRadius = (size * plusConstraintMultiplier) / 2
         let imageConstraintMultiplier: CGFloat = 0.4
         let imageCornerRadius = (size * imageConstraintMultiplier) / 2
-        let xConstraintMultiplier: CGFloat = 0.1
-        let xCornerRadius = (size * xConstraintMultiplier) / 2
         addPlayerView.layer.cornerRadius = plusCornerRadius
         playerPictureImageView.layer.cornerRadius = imageCornerRadius
         placeholderView.layer.cornerRadius = imageCornerRadius
-        xBackground.layer.cornerRadius = xCornerRadius
         
     }
 
