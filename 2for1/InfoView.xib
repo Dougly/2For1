@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InfoView" customModule="_for1" customModuleProvider="target">
             <connections>
-                <outlet property="contentView" destination="iN0-l3-epB" id="Vhm-gr-pez"/>
+                <outlet property="contentView" destination="4ai-oT-vJI" id="mE0-5J-Bdk"/>
                 <outlet property="firstInstructionLabel" destination="TLe-kt-SVv" id="pBP-nJ-kwm"/>
                 <outlet property="fourthInstructionLabel" destination="93D-X4-QoQ" id="GaX-Nw-f0O"/>
                 <outlet property="rollsHigherDescriptionLabel" destination="CQf-c0-GBH" id="eG3-tY-gfG"/>
@@ -23,146 +23,134 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="479" height="580"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+        <view contentMode="scaleToFill" id="4ai-oT-vJI">
+            <rect key="frame" x="0.0" y="0.0" width="304" height="418"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1BI-vT-YEX">
-                    <rect key="frame" x="0.0" y="0.0" width="479" height="870"/>
-                    <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ukq-7e-uUh">
-                            <rect key="frame" x="0.0" y="0.0" width="479" height="870"/>
-                            <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ai-oT-vJI">
-                                    <rect key="frame" x="0.0" y="0.0" width="479" height="870"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to Play" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QgG-fI-lIk">
-                                            <rect key="frame" x="24" y="67.5" width="431" height="39"/>
-                                            <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
-                                            <color key="textColor" red="1" green="0.79607843140000001" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TLe-kt-SVv" userLabel="1st instruction">
-                                            <rect key="frame" x="24" y="161" width="431" height="26"/>
-                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="UIP-RN-RAl" userLabel="2nd instruction">
-                                            <rect key="frame" x="24" y="202" width="431" height="26"/>
-                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Mg0-Tp-FXE" userLabel="3rd Instruction">
-                                            <rect key="frame" x="24" y="243" width="431" height="26"/>
-                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Player Rolls Higher Than Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DrZ-zq-J6t" userLabel="playerRollsHigher">
-                                            <rect key="frame" x="48" y="284" width="388" height="26"/>
-                                            <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CQf-c0-GBH" userLabel="rollsHigherDescription">
-                                            <rect key="frame" x="47.5" y="320" width="388" height="26"/>
-                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. Player Rolls Lower Than Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3hA-C4-1Xj" userLabel="PlayerRollsLower">
-                                            <rect key="frame" x="47.5" y="361" width="388" height="26"/>
-                                            <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Qfj-qo-ZEY" userLabel="rollsLowerDescription">
-                                            <rect key="frame" x="47.5" y="397" width="388" height="26"/>
-                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3. Player Ties Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="WsA-5d-6Iy" userLabel="Player Ties Score">
-                                            <rect key="frame" x="47.5" y="438" width="388" height="26"/>
-                                            <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YVE-ML-2PT" userLabel="tiesDexcription">
-                                            <rect key="frame" x="47.5" y="474" width="388" height="26"/>
-                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="93D-X4-QoQ" userLabel="4th Instruction">
-                                            <rect key="frame" x="24" y="515" width="431" height="26"/>
-                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" red="0.0" green="0.58039215690000001" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <constraints>
-                                        <constraint firstItem="3hA-C4-1Xj" firstAttribute="top" secondItem="CQf-c0-GBH" secondAttribute="bottom" constant="15" id="2kn-lo-xbT"/>
-                                        <constraint firstItem="Qfj-qo-ZEY" firstAttribute="centerX" secondItem="3hA-C4-1Xj" secondAttribute="centerX" id="7ir-oj-MyS"/>
-                                        <constraint firstItem="QgG-fI-lIk" firstAttribute="width" secondItem="4ai-oT-vJI" secondAttribute="width" multiplier="0.9" id="83t-ND-33v"/>
-                                        <constraint firstItem="CQf-c0-GBH" firstAttribute="top" secondItem="DrZ-zq-J6t" secondAttribute="bottom" constant="10" id="9di-eF-xtj"/>
-                                        <constraint firstItem="Qfj-qo-ZEY" firstAttribute="width" secondItem="3hA-C4-1Xj" secondAttribute="width" id="AyM-rW-YQd"/>
-                                        <constraint firstItem="DrZ-zq-J6t" firstAttribute="leading" secondItem="Mg0-Tp-FXE" secondAttribute="centerX" multiplier="0.2" id="BiT-98-KV2"/>
-                                        <constraint firstItem="Mg0-Tp-FXE" firstAttribute="top" secondItem="UIP-RN-RAl" secondAttribute="bottom" constant="15" id="C7H-Ce-Fnt"/>
-                                        <constraint firstItem="UIP-RN-RAl" firstAttribute="width" secondItem="TLe-kt-SVv" secondAttribute="width" id="C8Y-ii-ZVB"/>
-                                        <constraint firstItem="TLe-kt-SVv" firstAttribute="width" secondItem="4ai-oT-vJI" secondAttribute="width" multiplier="0.9" id="Fbf-5C-JCO"/>
-                                        <constraint firstItem="QgG-fI-lIk" firstAttribute="centerY" secondItem="4ai-oT-vJI" secondAttribute="centerY" multiplier="0.2" id="JLP-dq-Hu8"/>
-                                        <constraint firstItem="Qfj-qo-ZEY" firstAttribute="top" secondItem="3hA-C4-1Xj" secondAttribute="bottom" constant="10" id="JSv-bc-82j"/>
-                                        <constraint firstItem="DrZ-zq-J6t" firstAttribute="top" secondItem="Mg0-Tp-FXE" secondAttribute="bottom" constant="15" id="Nxp-NJ-YNN"/>
-                                        <constraint firstItem="Mg0-Tp-FXE" firstAttribute="width" secondItem="UIP-RN-RAl" secondAttribute="width" id="TMr-bg-yMJ"/>
-                                        <constraint firstItem="CQf-c0-GBH" firstAttribute="centerX" secondItem="DrZ-zq-J6t" secondAttribute="centerX" id="Uuf-3m-iOL"/>
-                                        <constraint firstItem="TLe-kt-SVv" firstAttribute="centerX" secondItem="4ai-oT-vJI" secondAttribute="centerX" id="WK0-En-2ZY"/>
-                                        <constraint firstItem="CQf-c0-GBH" firstAttribute="width" secondItem="DrZ-zq-J6t" secondAttribute="width" id="akT-yv-kKp"/>
-                                        <constraint firstItem="Mg0-Tp-FXE" firstAttribute="centerX" secondItem="UIP-RN-RAl" secondAttribute="centerX" id="bE9-03-s2i"/>
-                                        <constraint firstItem="UIP-RN-RAl" firstAttribute="centerX" secondItem="TLe-kt-SVv" secondAttribute="centerX" id="d44-cj-CBL"/>
-                                        <constraint firstItem="3hA-C4-1Xj" firstAttribute="width" secondItem="CQf-c0-GBH" secondAttribute="width" id="d7O-Ue-xIA"/>
-                                        <constraint firstItem="DrZ-zq-J6t" firstAttribute="width" secondItem="Mg0-Tp-FXE" secondAttribute="width" multiplier="0.9" id="gEA-rA-j7J"/>
-                                        <constraint firstItem="QgG-fI-lIk" firstAttribute="centerX" secondItem="4ai-oT-vJI" secondAttribute="centerX" id="ieR-4W-N9t"/>
-                                        <constraint firstItem="TLe-kt-SVv" firstAttribute="centerY" secondItem="4ai-oT-vJI" secondAttribute="centerY" multiplier="0.4" id="j9I-S3-Swy"/>
-                                        <constraint firstItem="YVE-ML-2PT" firstAttribute="centerX" secondItem="WsA-5d-6Iy" secondAttribute="centerX" id="jJP-g2-wWe"/>
-                                        <constraint firstItem="YVE-ML-2PT" firstAttribute="top" secondItem="WsA-5d-6Iy" secondAttribute="bottom" constant="10" id="kSR-nV-56N"/>
-                                        <constraint firstItem="WsA-5d-6Iy" firstAttribute="top" secondItem="Qfj-qo-ZEY" secondAttribute="bottom" constant="15" id="kyZ-WM-rTc"/>
-                                        <constraint firstItem="WsA-5d-6Iy" firstAttribute="width" secondItem="Qfj-qo-ZEY" secondAttribute="width" id="m66-aA-Vgm"/>
-                                        <constraint firstItem="93D-X4-QoQ" firstAttribute="width" secondItem="TLe-kt-SVv" secondAttribute="width" id="m9e-Od-NFo"/>
-                                        <constraint firstItem="93D-X4-QoQ" firstAttribute="centerX" secondItem="TLe-kt-SVv" secondAttribute="centerX" id="nB5-p0-m0E"/>
-                                        <constraint firstItem="3hA-C4-1Xj" firstAttribute="centerX" secondItem="CQf-c0-GBH" secondAttribute="centerX" id="oXb-9O-AgC"/>
-                                        <constraint firstItem="YVE-ML-2PT" firstAttribute="width" secondItem="WsA-5d-6Iy" secondAttribute="width" id="p8b-Sl-ES5"/>
-                                        <constraint firstItem="93D-X4-QoQ" firstAttribute="top" secondItem="YVE-ML-2PT" secondAttribute="bottom" constant="15" id="q0X-xs-HQH"/>
-                                        <constraint firstItem="UIP-RN-RAl" firstAttribute="top" secondItem="TLe-kt-SVv" secondAttribute="bottom" constant="15" id="wHH-kz-vo4"/>
-                                        <constraint firstItem="WsA-5d-6Iy" firstAttribute="centerX" secondItem="Qfj-qo-ZEY" secondAttribute="centerX" id="xof-5l-Lva"/>
-                                    </constraints>
-                                </view>
-                            </subviews>
-                        </stackView>
-                    </subviews>
-                    <constraints>
-                        <constraint firstItem="Ukq-7e-uUh" firstAttribute="trailing" secondItem="1BI-vT-YEX" secondAttribute="trailing" id="0Em-mG-CYV"/>
-                        <constraint firstItem="Ukq-7e-uUh" firstAttribute="top" secondItem="1BI-vT-YEX" secondAttribute="top" id="BwL-er-HEs"/>
-                        <constraint firstItem="Ukq-7e-uUh" firstAttribute="leading" secondItem="1BI-vT-YEX" secondAttribute="leading" id="uq1-vy-CfF"/>
-                        <constraint firstItem="Ukq-7e-uUh" firstAttribute="bottom" secondItem="1BI-vT-YEX" secondAttribute="bottom" id="xaz-Zf-gRY"/>
-                    </constraints>
-                </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9db-lU-Fxz" userLabel="BackGroundView">
+                    <rect key="frame" x="0.0" y="0.0" width="304" height="352"/>
+                    <color key="backgroundColor" red="0.0" green="0.58039215690000001" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to Play" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QgG-fI-lIk">
+                    <rect key="frame" x="15" y="33" width="274" height="19.5"/>
+                    <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="15"/>
+                    <color key="textColor" red="1" green="0.79607843140000001" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TLe-kt-SVv" userLabel="1st instruction">
+                    <rect key="frame" x="15" y="77" width="274" height="13"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="UIP-RN-RAl" userLabel="2nd instruction">
+                    <rect key="frame" x="15" y="105" width="274" height="13"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Mg0-Tp-FXE" userLabel="3rd Instruction">
+                    <rect key="frame" x="15" y="133" width="274" height="13"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Player Rolls Higher Than Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DrZ-zq-J6t" userLabel="playerRollsHigher">
+                    <rect key="frame" x="30.5" y="161" width="246" height="13"/>
+                    <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="10"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CQf-c0-GBH" userLabel="rollsHigherDescription">
+                    <rect key="frame" x="30.5" y="184" width="246" height="13"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. Player Rolls Lower Than Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3hA-C4-1Xj" userLabel="PlayerRollsLower">
+                    <rect key="frame" x="30.5" y="212" width="246" height="13"/>
+                    <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="10"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Qfj-qo-ZEY" userLabel="rollsLowerDescription">
+                    <rect key="frame" x="30.5" y="235" width="246" height="13"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3. Player Ties Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="WsA-5d-6Iy" userLabel="Player Ties Score">
+                    <rect key="frame" x="30.5" y="263" width="246" height="13"/>
+                    <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="10"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YVE-ML-2PT" userLabel="tiesDexcription">
+                    <rect key="frame" x="30.5" y="286" width="246" height="13"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="93D-X4-QoQ" userLabel="4th Instruction">
+                    <rect key="frame" x="15" y="314" width="274" height="13"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vrR-2M-0sF">
+                    <rect key="frame" x="15" y="20" width="46" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button"/>
+                </button>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.0" green="0.58039215690000001" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="Ukq-7e-uUh" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="1.5" id="2Nd-Qw-6M3"/>
-                <constraint firstItem="1BI-vT-YEX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="5gA-rZ-64t"/>
-                <constraint firstItem="1BI-vT-YEX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="fs1-xx-GlG"/>
-                <constraint firstItem="1BI-vT-YEX" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="1.5" id="qeO-Pl-8g5"/>
-                <constraint firstItem="Ukq-7e-uUh" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="s9M-CC-RhV"/>
-                <constraint firstItem="1BI-vT-YEX" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="vn8-Nh-WN3"/>
+                <constraint firstItem="3hA-C4-1Xj" firstAttribute="top" secondItem="CQf-c0-GBH" secondAttribute="bottom" constant="15" id="2kn-lo-xbT"/>
+                <constraint firstItem="Qfj-qo-ZEY" firstAttribute="centerX" secondItem="3hA-C4-1Xj" secondAttribute="centerX" id="7ir-oj-MyS"/>
+                <constraint firstItem="QgG-fI-lIk" firstAttribute="width" secondItem="4ai-oT-vJI" secondAttribute="width" multiplier="0.9" id="83t-ND-33v"/>
+                <constraint firstItem="CQf-c0-GBH" firstAttribute="top" secondItem="DrZ-zq-J6t" secondAttribute="bottom" constant="10" id="9di-eF-xtj"/>
+                <constraint firstItem="Qfj-qo-ZEY" firstAttribute="width" secondItem="3hA-C4-1Xj" secondAttribute="width" id="AyM-rW-YQd"/>
+                <constraint firstItem="DrZ-zq-J6t" firstAttribute="leading" secondItem="Mg0-Tp-FXE" secondAttribute="centerX" multiplier="0.2" id="BiT-98-KV2"/>
+                <constraint firstItem="Mg0-Tp-FXE" firstAttribute="top" secondItem="UIP-RN-RAl" secondAttribute="bottom" constant="15" id="C7H-Ce-Fnt"/>
+                <constraint firstItem="UIP-RN-RAl" firstAttribute="width" secondItem="TLe-kt-SVv" secondAttribute="width" id="C8Y-ii-ZVB"/>
+                <constraint firstItem="TLe-kt-SVv" firstAttribute="width" secondItem="4ai-oT-vJI" secondAttribute="width" multiplier="0.9" id="Fbf-5C-JCO"/>
+                <constraint firstItem="QgG-fI-lIk" firstAttribute="centerY" secondItem="4ai-oT-vJI" secondAttribute="centerY" multiplier="0.2" id="JLP-dq-Hu8"/>
+                <constraint firstItem="Qfj-qo-ZEY" firstAttribute="top" secondItem="3hA-C4-1Xj" secondAttribute="bottom" constant="10" id="JSv-bc-82j"/>
+                <constraint firstItem="9db-lU-Fxz" firstAttribute="width" secondItem="4ai-oT-vJI" secondAttribute="width" id="LHu-9r-vXZ"/>
+                <constraint firstItem="DrZ-zq-J6t" firstAttribute="top" secondItem="Mg0-Tp-FXE" secondAttribute="bottom" constant="15" id="Nxp-NJ-YNN"/>
+                <constraint firstItem="Mg0-Tp-FXE" firstAttribute="width" secondItem="UIP-RN-RAl" secondAttribute="width" id="TMr-bg-yMJ"/>
+                <constraint firstItem="CQf-c0-GBH" firstAttribute="centerX" secondItem="DrZ-zq-J6t" secondAttribute="centerX" id="Uuf-3m-iOL"/>
+                <constraint firstItem="TLe-kt-SVv" firstAttribute="centerX" secondItem="4ai-oT-vJI" secondAttribute="centerX" id="WK0-En-2ZY"/>
+                <constraint firstItem="CQf-c0-GBH" firstAttribute="width" secondItem="DrZ-zq-J6t" secondAttribute="width" id="akT-yv-kKp"/>
+                <constraint firstItem="Mg0-Tp-FXE" firstAttribute="centerX" secondItem="UIP-RN-RAl" secondAttribute="centerX" id="bE9-03-s2i"/>
+                <constraint firstItem="UIP-RN-RAl" firstAttribute="centerX" secondItem="TLe-kt-SVv" secondAttribute="centerX" id="d44-cj-CBL"/>
+                <constraint firstItem="3hA-C4-1Xj" firstAttribute="width" secondItem="CQf-c0-GBH" secondAttribute="width" id="d7O-Ue-xIA"/>
+                <constraint firstItem="DrZ-zq-J6t" firstAttribute="width" secondItem="Mg0-Tp-FXE" secondAttribute="width" multiplier="0.9" id="gEA-rA-j7J"/>
+                <constraint firstItem="QgG-fI-lIk" firstAttribute="centerX" secondItem="4ai-oT-vJI" secondAttribute="centerX" id="ieR-4W-N9t"/>
+                <constraint firstItem="TLe-kt-SVv" firstAttribute="centerY" secondItem="4ai-oT-vJI" secondAttribute="centerY" multiplier="0.4" id="j9I-S3-Swy"/>
+                <constraint firstItem="YVE-ML-2PT" firstAttribute="centerX" secondItem="WsA-5d-6Iy" secondAttribute="centerX" id="jJP-g2-wWe"/>
+                <constraint firstItem="YVE-ML-2PT" firstAttribute="top" secondItem="WsA-5d-6Iy" secondAttribute="bottom" constant="10" id="kSR-nV-56N"/>
+                <constraint firstItem="WsA-5d-6Iy" firstAttribute="top" secondItem="Qfj-qo-ZEY" secondAttribute="bottom" constant="15" id="kyZ-WM-rTc"/>
+                <constraint firstItem="9db-lU-Fxz" firstAttribute="centerX" secondItem="4ai-oT-vJI" secondAttribute="centerX" id="lax-ei-Pcc"/>
+                <constraint firstItem="WsA-5d-6Iy" firstAttribute="width" secondItem="Qfj-qo-ZEY" secondAttribute="width" id="m66-aA-Vgm"/>
+                <constraint firstItem="93D-X4-QoQ" firstAttribute="width" secondItem="TLe-kt-SVv" secondAttribute="width" id="m9e-Od-NFo"/>
+                <constraint firstItem="93D-X4-QoQ" firstAttribute="centerX" secondItem="TLe-kt-SVv" secondAttribute="centerX" id="nB5-p0-m0E"/>
+                <constraint firstItem="3hA-C4-1Xj" firstAttribute="centerX" secondItem="CQf-c0-GBH" secondAttribute="centerX" id="oXb-9O-AgC"/>
+                <constraint firstItem="YVE-ML-2PT" firstAttribute="width" secondItem="WsA-5d-6Iy" secondAttribute="width" id="p8b-Sl-ES5"/>
+                <constraint firstItem="93D-X4-QoQ" firstAttribute="top" secondItem="YVE-ML-2PT" secondAttribute="bottom" constant="15" id="q0X-xs-HQH"/>
+                <constraint firstItem="UIP-RN-RAl" firstAttribute="top" secondItem="TLe-kt-SVv" secondAttribute="bottom" constant="15" id="wHH-kz-vo4"/>
+                <constraint firstItem="WsA-5d-6Iy" firstAttribute="centerX" secondItem="Qfj-qo-ZEY" secondAttribute="centerX" id="xof-5l-Lva"/>
+                <constraint firstItem="9db-lU-Fxz" firstAttribute="top" secondItem="4ai-oT-vJI" secondAttribute="top" id="y4R-oW-WOW"/>
+                <constraint firstItem="9db-lU-Fxz" firstAttribute="bottom" secondItem="93D-X4-QoQ" secondAttribute="bottom" constant="25" id="yaJ-y7-9h6"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="85.5" y="17"/>
+            <point key="canvasLocation" x="117" y="-725"/>
+        </view>
+        <view contentMode="scaleToFill" id="Uwu-Mn-ne2">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
         </view>
     </objects>
 </document>

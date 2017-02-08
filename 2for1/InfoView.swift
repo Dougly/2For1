@@ -30,6 +30,7 @@ class InfoView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        commonInit()
     }
     
     func commonInit() {
@@ -40,7 +41,7 @@ class InfoView: UIView {
     }
     
     func setText() {
-        let firstInstruction = "A player starts the game by rolling a single die. This sets the initial score to beat."
+        let firstInstruction = "A player starts the game by rolling a single die. This sets the initial score."
         let secondInstruction = "After rolling, the die is passed to the next player. When the die is passed to a new player the drink wager goes up by 1."
         let thirdInstruction = "The next player then roles the dice. There are three outcomes:"
         
