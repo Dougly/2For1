@@ -11,6 +11,8 @@ import UIKit
 class GameInstructionsViewController: UIViewController {
     
     var delegate: BlurViewDelegate?
+    override var prefersStatusBarHidden: Bool { return true }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,5 +27,4 @@ class GameInstructionsViewController: UIViewController {
         delegate?.unBlurView()
     }
     
-
 }

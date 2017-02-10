@@ -45,7 +45,7 @@ class InfoView: UIView {
         let secondInstruction = "After rolling, the die is passed to the next player. When the die is passed to a new player the drink wager goes up by 1."
         let thirdInstruction = "The next player then roles the dice. There are three outcomes:"
         
-        let one = "In the case that the player roles higher their roll becomes the new score to beat and they can pass the die on to the next player again incrtementing the drink wager by 1."
+        let one = "In the case of the player rolling higher than the score their roll becomes the new score to beat and they can pass the die on to the next player. Passing the die incrtements the drink wager by 1."
         let two = "In the case of the player rolling lower than the score the player has the option to drink the current number of drinks, or add an additional die and double the drinking wager. The player can only add one die during their turn and adds the single die roll onto their previous roll. If the player fails to roll higher than the current score with the additional die they must drink the now doubled number of drinks."
         let three = "If the player ties the current score it is an automatic loss and they must drink the current number of drinks."
         

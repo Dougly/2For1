@@ -93,6 +93,8 @@ class PlayerCollectionView: NSObject, UICollectionViewDelegateFlowLayout, UIColl
             }
         }
         
+        print(viewController.selectedIndexPaths)
+        
         viewController.selectedIndexPaths.sort { $0.row > $1.row }
         
         if viewController.selectedIndexPaths.count >= 2 && viewController.playerCollectionViewBottomConstraint.constant == 0 {

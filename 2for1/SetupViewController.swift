@@ -24,12 +24,7 @@ class SetupViewController: UIViewController {
     @IBOutlet weak var playerCollectionViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var headerGradientView: UIView!
     @IBOutlet weak var collectionViewGradientView: UIView!
-    
-    
-    
-    
-    
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,6 +114,13 @@ extension SetupViewController: UpdateCollectionViewProtocol {
                         self.playerCollectionView.insertItems(at: [indexPath])
                     }, completion: nil)
                 }
+            }
+        }
+        selectedIndexPaths = []
+        for (index, player) in store.players.enumerated() {
+            if player.isSelected {
+                let indexPath = IndexPath(item: index, section: 0)
+                selectedIndexPaths.append(indexPath)
             }
         }
     }

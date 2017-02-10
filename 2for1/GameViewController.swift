@@ -57,7 +57,6 @@ extension GameViewController {
         case .rollAddedDie: rollAddedDie(sender)
         default: break
         }
-        nextPlayerView.picImageView.image = game.player?.playerImage
     }
     
     func rolled(_ sender: UISwipeGestureRecognizer) {
@@ -101,10 +100,10 @@ extension GameViewController {
     }
     
     func rolledHighEnoughTapped() {
-        //nextPlayerView.picImageView.image = game.player?.playerImage
+        game.passDice()
+        nextPlayerView.picImageView.image = game.player?.playerImage
         animate(view: rolledHighEnoughView, constraint: rolledHighEnoughLeadingConstraint, coverGameView: false)
         animate(view: nextPlayerView, constraint: nextPlayerViewLeadingConstraint, coverGameView: true)
-        game.passDice()
         gameView.diceGrid.displayNumberOfDice(number: game.dice.count)
         gameView.diceGrid.updateDiceImages(dice: game.dice)
         updateScoreBoard()
@@ -124,7 +123,7 @@ extension GameViewController {
             game.instructions = "\(game.player!.tag!) tied the score and must drink \(game.drinks) "
             game.drinks == 1 ? game.instructions.append("drink!") : game.instructions.append("drinks!")
         } else {
-            game.instructions = "\(game.player!.tag!) rolled too lowed and must drink \(game.drinks) drinks!"
+            game.instructions = "\(game.player!.tag!) rolled too low and must drink \(game.drinks) drinks!"
         }
         if drinkViewLeadingConstraint.constant == 0 {
             animate(view: drinkView, constraint: drinkViewLeadingConstraint, coverGameView: false)
