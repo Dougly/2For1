@@ -14,7 +14,7 @@ final class DataStore {
     
     static let sharedInstance = DataStore()
     var players: [Player] = []
-    var playerPictures: [String : UIImage] = [:]
+    //var playerPictures: [String : UIImage] = [:]
 
     private init () {}
     
@@ -27,16 +27,16 @@ final class DataStore {
             print("catch players fetch request")
         }
         
-        for player in players {
-            if let first = player.firstName, let last = player.lastName, let tag = player.tag {
-                let key = first + last + tag
-                playerPictures[key] = player.playerImage
-            }
-        }
+//        for player in players {
+//            if let first = player.firstName, let last = player.lastName, let tag = player.tag {
+//                let key = first + last + tag
+//                playerPictures[key] = player.playerImage
+//            }
+//        }
 
     }
     
-    func savePlayer(_ firstName: String, lastName: String, tag: String, file: String, image: UIImage) {
+    func savePlayer(_ firstName: String, lastName: String, tag: String, file: String) {
         let context = persistentContainer.viewContext
         let entity = Player(context: context)
         entity.firstName = firstName
@@ -50,8 +50,8 @@ final class DataStore {
         }
         
         
-        let key = firstName + lastName + tag
-        playerPictures[key] = image
+        //let key = firstName + lastName + tag
+        //playerPictures[key] = image
         
         
         

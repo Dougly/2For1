@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol UpdateCollectionViewProtocol {
+protocol UpdateCollectionViewDelegate {
      func reloadCollectionView(withPlayer handle: String)
 }

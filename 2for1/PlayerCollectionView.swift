@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlayerCollectionView: NSObject, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UpdateCollectionViewProtocol {
+class PlayerCollectionView: NSObject, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UpdateCollectionViewDelegate {
     
     let store = DataStore.sharedInstance
     var delegate: SetupViewController?
@@ -43,10 +43,7 @@ class PlayerCollectionView: NSObject, UICollectionViewDelegateFlowLayout, UIColl
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "playerCell", for: indexPath) as! CustomPlayerCell
         let player = store.players[indexPath.row]
         cell.tagLabel.text = player.tag
-        if let first = player.firstName, let last = player.lastName, let tag = player.tag {
-            let key = first + last + tag
-            cell.pictureImageView.image = store.playerPictures[key]
-        }
+        cell.pictureImageView.image = player.playerImage
         cell.contentView.layer.borderColor = UIColor.themeBlue.cgColor
         if cell.isSelected {
             cell.contentView.layer.borderWidth = 3
@@ -92,8 +89,6 @@ class PlayerCollectionView: NSObject, UICollectionViewDelegateFlowLayout, UIColl
                 }
             }
         }
-        
-        print(viewController.selectedIndexPaths)
         
         viewController.selectedIndexPaths.sort { $0.row > $1.row }
         

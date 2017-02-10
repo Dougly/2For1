@@ -42,11 +42,15 @@ class GameViewController: UIViewController {
         setupBlur()
     }
 
+    
     override func viewDidAppear(_ animated: Bool) {
         animate(view: nextPlayerView, constraint: nextPlayerViewLeadingConstraint, coverGameView: true)
     }
     
+    
 }
+
+
 
 //MARK: Game Actions
 extension GameViewController {
@@ -58,6 +62,7 @@ extension GameViewController {
         default: break
         }
     }
+    
     
     func rolled(_ sender: UISwipeGestureRecognizer) {
         let results = game.roll()
@@ -76,6 +81,7 @@ extension GameViewController {
         }
     }
     
+    
     func addDie() {
         game.addDie()
         gameView.diceGrid.displayNumberOfDice(number: game.dice.count)
@@ -84,6 +90,7 @@ extension GameViewController {
         updateInstructions()
         updateScoreBoard()
     }
+    
     
     func rollAddedDie(_ sender: UISwipeGestureRecognizer) {
         let result = game.rollAddedDie()
@@ -99,6 +106,7 @@ extension GameViewController {
         }
     }
     
+    
     func rolledHighEnoughTapped() {
         game.passDice()
         nextPlayerView.picImageView.image = game.player?.playerImage
@@ -110,6 +118,7 @@ extension GameViewController {
         updateInstructions()
     }
     
+    
     func drink() {
         game.instructions = "\(game.player!.tag!) must drink \(game.drinks) "
         game.drinks == 1 ? game.instructions.append("drink!") : game.instructions.append("drinks!")
@@ -117,6 +126,7 @@ extension GameViewController {
         animate(view: drinkView, constraint: drinkViewLeadingConstraint, coverGameView: false)
         updateInstructions()
     }
+    
     
     func tiedRoll() {
         if game.playerRoll == game.score {
@@ -129,6 +139,7 @@ extension GameViewController {
             animate(view: drinkView, constraint: drinkViewLeadingConstraint, coverGameView: false)
         }
     }
+    
     
     func resetGame() {
         if drinkViewLeadingConstraint.constant < 0 {
@@ -153,6 +164,8 @@ extension GameViewController {
     }
 }
 
+
+
 //MARK: Helper Methods
 extension GameViewController {
     
@@ -174,6 +187,7 @@ extension GameViewController {
         game.instructions = "\(game.player!.tag!) rolled too low"
     }
     
+    
     func nextPlayerConfirmed() {
         animate(view: nextPlayerView, constraint: nextPlayerViewLeadingConstraint, coverGameView: true)
         game.instructions = "\(game.player!.tag!)'s roll"
@@ -186,6 +200,7 @@ extension GameViewController {
         gameView.scoreLabel.text = String(game.playerRoll)
     }
     
+    
     func updateScoreBoard() {
         if game.drinks == 1 {
             scoreView.drinksTextLabel.text = "drink"
@@ -195,7 +210,11 @@ extension GameViewController {
         scoreView.scoreLabel.text = String(game.score)
         scoreView.drinksLabel.text = String(game.drinks)
     }
+    
+    
 }
+
+
 
 //MARK: Animations
 extension GameViewController {
@@ -346,6 +365,8 @@ extension GameViewController {
         let tapGR8 = UITapGestureRecognizer(target: self, action: #selector(resetGame))
         drinkView.addGestureRecognizer(tapGR8)
     }
+    
+    
 }
 
 
