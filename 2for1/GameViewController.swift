@@ -48,6 +48,14 @@ class GameViewController: UIViewController {
     }
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showInfoFromGame" {
+            let dest = segue.destination as! GameInstructionsViewController
+            dest.delegate = self
+        }
+    }
+    
+    
 }
 
 
@@ -162,6 +170,8 @@ extension GameViewController {
         updateScoreBoard()
         updateInstructions()
     }
+    
+    
 }
 
 
@@ -170,12 +180,9 @@ extension GameViewController {
 extension GameViewController {
     
     func openCloseMenuTapped(_ sender: UIGestureRecognizer) {
-        if menuView.isCollapsed == true {
-            menuView.expandMenu()
-        } else {
-            menuView.collapseMenu(withDelay: 0)
-        }
+        menuView.isCollapsed ? menuView.expandMenu() : menuView.collapseMenu(withDelay: 0)
     }
+    
     
     func dismissVC() {
         self.dismiss(animated: true, completion: nil)
@@ -197,7 +204,6 @@ extension GameViewController {
     
     func updateInstructions() {
         instructionsView.instructionsLabel.text = game.instructions
-        gameView.scoreLabel.text = String(game.playerRoll)
     }
     
     
@@ -245,17 +251,15 @@ extension GameViewController {
         })
     }
     
+    
     func showInfo() {
         performSegue(withIdentifier: "showInfoFromGame", sender: self)
         blurView()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showInfoFromGame" {
-            let dest = segue.destination as! GameInstructionsViewController
-            dest.delegate = self
-        }
-    }
+    
+    
+    
 }
 
 extension GameViewController: BlurViewDelegate {
@@ -267,12 +271,14 @@ extension GameViewController: BlurViewDelegate {
         })
     }
     
+    
     func unBlurView() {
         UIView.animate(withDuration: 0.5, animations: {
             self.blurEffectView.alpha = 0.0
             self.view.layoutIfNeeded()
         })
     }
+    
     
     func setupBlur() {
         self.view.backgroundColor = UIColor.clear
@@ -299,16 +305,19 @@ extension GameViewController {
         updateInstructions()
     }
     
+    
     func setUpMenu() {
         menuView.setShadowColor(with: .themeDarkestGreen)
         menuView.secondOptionImageView.image = #imageLiteral(resourceName: "refresh")
         menuView.thirdOptionImageView.image = #imageLiteral(resourceName: "delete")
     }
     
+    
     func addGradients() {
         UIView.applyGradient(to: self.view, topColor: .themeMediumGreen, bottomColor: .themeGreen)
         UIView.applyGradient(to: menuView.contentView, topColor: .themeMediumGreen, bottomColor: .themeDarkestGreen)
     }
+    
     
     func makeViewsCircles() {
         //based on constraint multipliers
@@ -323,6 +332,7 @@ extension GameViewController {
         drinkView.checkImageView.isHidden = true
         drinkView.checkBackgroundView.backgroundColor = UIColor.themeBlue
     }
+    
     
     func applyTapGestures() {
         let swipeUpGR = UISwipeGestureRecognizer(target: self, action: #selector(diceSwiped))

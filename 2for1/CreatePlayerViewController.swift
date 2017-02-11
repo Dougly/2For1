@@ -62,7 +62,6 @@ extension CreatePlayerViewController: UIImagePickerControllerDelegate, UINavigat
         let tag = createPlayerView.handleTextField.text!
         if !createPlayerValidation(firstName: firstName, lastName: lastName, tag: tag) { return }
         
-        //let slimeImage = #imageLiteral(resourceName: "slime")
         if let image = createPlayerView.playerPictureImageView.image {
             let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
             let fileURL = documentsURL.appendingPathComponent("\(firstName + lastName + tag).png")
@@ -92,10 +91,15 @@ extension CreatePlayerViewController: UIImagePickerControllerDelegate, UINavigat
     
     func createPlayerValidation(firstName: String, lastName: String, tag: String) -> Bool {
         
-        //TODO: Animate fields to notify user they are missing input
-        
         //makes sure all fields are filled
-        if firstName == "" || lastName == "" || tag == "" {
+        if firstName == "" {
+            animateInvalidTextIn(textField: createPlayerView.firstNameTextField)
+            return false
+        } else if lastName == "" {
+            animateInvalidTextIn(textField: createPlayerView.lastNameTextField)
+            return false
+        } else if tag == "" {
+            animateInvalidTextIn(textField: createPlayerView.handleTextField)
             return false
         }
         
@@ -108,7 +112,7 @@ extension CreatePlayerViewController: UIImagePickerControllerDelegate, UINavigat
             let files = try fileManager.contentsOfDirectory(atPath: "\(documentPath)")
             for file in files {
                 if "\(documentPath)/\(file)" == filePath {
-                    print("found pre-existing png file")
+                    print("did not save - found pre-existing png file")
                     return false
                 }
             }
@@ -119,13 +123,62 @@ extension CreatePlayerViewController: UIImagePickerControllerDelegate, UINavigat
     }
     
     
+    func animateInvalidTextIn(textField: UITextField) {
+        UIView.animateKeyframes(withDuration: 0.8, delay: 0, options: [], animations: {
+            
+            if textField.backgroundColor == .white {
+                UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.2, animations: {
+                    textField.backgroundColor = .themeOrange
+                    self.view.layoutIfNeeded()
+                })
+                
+                UIView.addKeyframe(withRelativeStartTime: 0.2, relativeDuration: 0.2, animations: {
+                    textField.backgroundColor = .white
+                    self.view.layoutIfNeeded()
+                })
+                
+                UIView.addKeyframe(withRelativeStartTime: 0.4, relativeDuration: 0.2, animations: {
+                    textField.backgroundColor = .themeOrange
+                    self.view.layoutIfNeeded()
+                })
+            } else {
+                UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.2, animations: {
+                    textField.backgroundColor = .white
+                    self.view.layoutIfNeeded()
+                })
+                
+                UIView.addKeyframe(withRelativeStartTime: 0.2, relativeDuration: 0.2, animations: {
+                    textField.backgroundColor = .themeOrange
+                    self.view.layoutIfNeeded()
+                })
+                
+                UIView.addKeyframe(withRelativeStartTime: 0.4, relativeDuration: 0.2, animations: {
+                    textField.backgroundColor = .white
+                    self.view.layoutIfNeeded()
+                })
+                
+                UIView.addKeyframe(withRelativeStartTime: 0.6, relativeDuration: 0.2, animations: {
+                    textField.backgroundColor = .themeOrange
+                    self.view.layoutIfNeeded()
+                })
+            }
+        }, completion: nil)
+    }
+
+    
+}
+
+
+//MARK: Gestures
+extension CreatePlayerViewController {
+ 
     @IBAction func swipeDismiss() {
         self.blurDelegate?.unBlurView()
         self.dismiss(animated: true, completion: nil)
     }
     
-    func addGestures() {
     
+    func addGestures() {
         let tapGR = UITapGestureRecognizer(target: self, action: #selector(plusViewTapped))
         createPlayerView.addPlayerView.addGestureRecognizer(tapGR)
         createPlayerView.firstNameTextField.becomeFirstResponder()
@@ -137,6 +190,10 @@ extension CreatePlayerViewController: UIImagePickerControllerDelegate, UINavigat
         let swipeGR = UISwipeGestureRecognizer(target: self, action: #selector(swipeDismiss))
         swipeGR.direction = .down
         createPlayerView.addGestureRecognizer(swipeGR)
-    
     }
+    
 }
+
+
+
+
