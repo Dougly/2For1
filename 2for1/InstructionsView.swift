@@ -13,15 +13,18 @@ class InstructionsView: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var instructionsLabel: UILabel!
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }
     
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
+    
     
     func commonInit() {
         Bundle.main.loadNibNamed("InstructionsView", owner: self, options: nil)
@@ -29,8 +32,10 @@ class InstructionsView: UIView {
         self.constrain(contentView)
     }
     
+    
     func updateInstructions(with string: String) {
         instructionsLabel.text = string
     }
 
+    
 }

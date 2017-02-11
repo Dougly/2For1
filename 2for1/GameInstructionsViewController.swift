@@ -16,11 +16,11 @@ class GameInstructionsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let swipeGR = UISwipeGestureRecognizer(target: self, action: #selector(closeVC))
         swipeGR.direction = .down
         self.view.addGestureRecognizer(swipeGR)
     }
+    
     
     func closeVC() {
         self.dismiss(animated: true, completion: nil)

@@ -9,5 +9,8 @@
 import Foundation
 
 enum PlayerAction {
+    
     case roll, passDice, addDie, rollAddedDie, drink
+    
+    
 }

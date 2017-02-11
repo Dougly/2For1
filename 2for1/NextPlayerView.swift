@@ -16,15 +16,18 @@ class NextPlayerView: UIView {
     @IBOutlet weak var okViewShadow: UIView!
     @IBOutlet weak var picImageViewShadow: UIView!
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }
     
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
+    
     
     func commonInit() {
         Bundle.main.loadNibNamed("NextPlayerView", owner: self, options: nil)
@@ -32,8 +35,8 @@ class NextPlayerView: UIView {
         self.constrain(contentView)
     }
     
+    
     func setCornerRadius(with size: CGFloat) {
-        
         let okViewConstraintMultiplier: CGFloat = 0.4
         let okViewCornerRadius = (size * okViewConstraintMultiplier) / 2
         okView.layer.cornerRadius = okViewCornerRadius
@@ -44,7 +47,7 @@ class NextPlayerView: UIView {
         picImageView.layer.cornerRadius = picImageViewCornerRadius
         picImageViewShadow.layer.cornerRadius = picImageViewCornerRadius
         picImageView.layer.borderWidth = 3
-        
     }
+    
     
 }

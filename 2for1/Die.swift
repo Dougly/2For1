@@ -9,10 +9,14 @@
 import Foundation
 
 class Die {
+    
     var value: Int = 0
+    
     
     func roll() {
         let randomNum = arc4random_uniform(6) + 1
         value = Int(randomNum)
     }
+    
+    
 }

@@ -24,16 +24,19 @@ class CreatePlayerView: UIView {
         commonInit()
     }
     
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
+    
     
     func commonInit() {
         Bundle.main.loadNibNamed("CreatePlayerView", owner: self, options: nil)
         self.addSubview(contentView)
         self.constrain(contentView)
     }
+    
     
     func setCornerRadius(with size: CGFloat) {
         let plusConstraintMultiplier: CGFloat = 0.17
@@ -43,7 +46,6 @@ class CreatePlayerView: UIView {
         addPlayerView.layer.cornerRadius = plusCornerRadius
         playerPictureImageView.layer.cornerRadius = imageCornerRadius
         placeholderView.layer.cornerRadius = imageCornerRadius
-        
     }
 
     

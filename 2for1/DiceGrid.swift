@@ -14,7 +14,6 @@ class DiceGrid: UIView {
     var visibleDice: [DieView] = []
     
     @IBOutlet var contentView: UIView!
-    
     @IBOutlet weak var topLeftDieView: DieView!
     @IBOutlet weak var topCenterDieView: DieView!
     @IBOutlet weak var topRightDieView: DieView!
@@ -27,15 +26,18 @@ class DiceGrid: UIView {
     @IBOutlet weak var bottomCenterDieView: DieView!
     @IBOutlet weak var bottomRightDieView: DieView!
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }
     
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
+    
     
     func commonInit() {
         Bundle.main.loadNibNamed("DiceGrid", owner: self, options: nil)
@@ -52,6 +54,7 @@ class DiceGrid: UIView {
         }
     }
     
+    
     func addDieViewsToDiceArray() {
         diceArray.append(topLeftDieView)
         diceArray.append(topCenterDieView)
@@ -63,6 +66,7 @@ class DiceGrid: UIView {
         diceArray.append(bottomCenterDieView)
         diceArray.append(bottomRightDieView)
     }
+    
     
     func displayNumberOfDice(number: Int) {
         switch number {
@@ -79,6 +83,7 @@ class DiceGrid: UIView {
         }
     }
     
+    
     private func displayDiceIncluding(indexes: [Int]) {
         visibleDice = []
         for die in diceArray {
@@ -94,6 +99,7 @@ class DiceGrid: UIView {
         }
     }
     
+    
     func updateDiceImages(dice: [Die]) {
         for (index, die) in visibleDice.enumerated() {
             if !die.isHidden {
@@ -105,10 +111,11 @@ class DiceGrid: UIView {
 
 }
 
+
+
 extension DiceGrid {
     
     func animateDice(in directon: UISwipeGestureRecognizerDirection, completion: @escaping (Bool) -> ()) {
-        
         var constantMultiplier: CGFloat = 1
         var useTopConstraint = true
         let distance = contentView.frame.height / 2
@@ -127,8 +134,6 @@ extension DiceGrid {
         
         for die in visibleDice {
             if die.dieImageView.image == #imageLiteral(resourceName: "die_0") {
-                
-                
                 UIView.animateKeyframes(withDuration: 0.65, delay: 0, options: [], animations: {
                     
                     UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.1, animations: {
@@ -146,8 +151,7 @@ extension DiceGrid {
                         self.layoutIfNeeded()
                     })
                     
-                    UIView.addKeyframe(withRelativeStartTime: 0.45, relativeDuration: 0.1, animations: { 
-                        
+                    UIView.addKeyframe(withRelativeStartTime: 0.45, relativeDuration: 0.1, animations: {
                         self.adjustConstraints(with: die, usingTopConstraint: useTopConstraint, distance: (distance * constantMultiplier), multiplier: -0.125)
                         self.layoutIfNeeded()
                     })
@@ -156,14 +160,13 @@ extension DiceGrid {
                         self.adjustConstraints(with: die, usingTopConstraint: useTopConstraint, distance: (distance * constantMultiplier), multiplier: 0)
                         self.layoutIfNeeded()
                     })
-                    
-                    
                 }, completion: { (success) in
                     completion(true)
                 })
             }
         }
     }
+    
     
     func adjustConstraints(with die: DieView, usingTopConstraint: Bool, distance: CGFloat, multiplier: CGFloat) {
         if usingTopConstraint {
@@ -172,6 +175,8 @@ extension DiceGrid {
             die.leadingConstraint.constant = distance * multiplier
         }
     }
+    
+    
 }
 
 

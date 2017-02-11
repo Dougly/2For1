@@ -18,6 +18,7 @@ class PlayerCollectionView: NSObject, UICollectionViewDelegateFlowLayout, UIColl
     var size: CGSize!
     var numberOfCellsPerRow: CGFloat = 3
     
+    
     func configureLayout () {
         let desiredSpacing: CGFloat = 5
         let itemWidth = (screenWidth / numberOfCellsPerRow) - (desiredSpacing + 2)
@@ -27,17 +28,21 @@ class PlayerCollectionView: NSObject, UICollectionViewDelegateFlowLayout, UIColl
         size = CGSize(width: itemWidth, height: itemHeight)
     }
     
+    
     func reloadCollectionView(withPlayer handle: String) {
         delegate?.reloadCollectionView(withPlayer: handle)
     }
     
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
+   
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return store.players.count
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "playerCell", for: indexPath) as! CustomPlayerCell
@@ -53,29 +58,30 @@ class PlayerCollectionView: NSObject, UICollectionViewDelegateFlowLayout, UIColl
         return cell
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return size
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return spacing
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return spacing
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return sectionInsets
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         let cell = collectionView.cellForItem(at: indexPath) as! CustomPlayerCell
         guard let viewController = delegate else { return }
-        
-        
-        //TODO: de-select after adding a player with players already selected crashes
         if cell.contentView.layer.borderWidth == 0 {
             cell.contentView.layer.borderWidth = 3
             store.players[indexPath.item].isSelected = true
@@ -91,12 +97,12 @@ class PlayerCollectionView: NSObject, UICollectionViewDelegateFlowLayout, UIColl
         }
         
         viewController.selectedIndexPaths.sort { $0.row > $1.row }
-        
         if viewController.selectedIndexPaths.count >= 2 && viewController.playerCollectionViewBottomConstraint.constant == 0 {
             viewController.showStartGameButton()
         } else if viewController.selectedIndexPaths.count < 2 {
             viewController.hideStartGameButton()
         }
     }
+    
 
 }

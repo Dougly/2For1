@@ -16,21 +16,25 @@ class CheckMarkView: UIView {
     @IBOutlet weak var restartLabel: UILabel!
     @IBOutlet weak var shadowView: UIView!
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }
+    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
     
+    
     func commonInit() {
         Bundle.main.loadNibNamed("CheckMarkView", owner: self, options: nil)
         self.addSubview(contentView)
         self.constrain(contentView)
     }
+    
     
     func setCornerRadius(with size: CGFloat) {
         let constraintMultiplier: CGFloat = 1
@@ -40,4 +44,5 @@ class CheckMarkView: UIView {
         shadowView.layer.cornerRadius = cornerRadius
     }
 
+    
 }

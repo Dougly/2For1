@@ -9,5 +9,8 @@
 import Foundation
 
 protocol UpdateCollectionViewDelegate {
+    
      func reloadCollectionView(withPlayer handle: String)
+    
+    
 }

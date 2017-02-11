@@ -11,8 +11,6 @@ import UIKit
 class InfoView: UIView {
     
     @IBOutlet var contentView: UIView!
-    
-    
     @IBOutlet weak var firstInstructionLabel: UILabel!
     @IBOutlet weak var secondInstructionLabel: UILabel!
     @IBOutlet weak var thirdInstructionLabel: UILabel!
@@ -22,16 +20,17 @@ class InfoView: UIView {
     @IBOutlet weak var fourthInstructionLabel: UILabel!
     
     
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }
     
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
+    
     
     func commonInit() {
         Bundle.main.loadNibNamed("InfoView", owner: self, options: nil)
@@ -39,6 +38,7 @@ class InfoView: UIView {
         self.constrain(contentView)
         setText()
     }
+    
     
     func setText() {
         let firstInstruction = "A player starts the game by rolling a single die. This sets the initial score."
@@ -50,7 +50,6 @@ class InfoView: UIView {
         let three = "If the player ties the current score it is an automatic loss and they must drink the current number of drinks."
         
         let fourthInstruction = "The game continues until a player drinks and restarts the game."
-        
         firstInstructionLabel.text = firstInstruction
         secondInstructionLabel.text = secondInstruction
         thirdInstructionLabel.text = thirdInstruction
@@ -59,5 +58,6 @@ class InfoView: UIView {
         tiesDescriptionLabel.text = three
         fourthInstructionLabel.text = fourthInstruction
     }
+    
     
 }

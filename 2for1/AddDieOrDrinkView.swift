@@ -22,16 +22,19 @@ class AddDieOrDrinkView: UIView {
         commonInit()
     }
     
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
+    
     
     func commonInit() {
         Bundle.main.loadNibNamed("AddDieOrDrinkView", owner: self, options: nil)
         self.addSubview(contentView)
         self.constrain(contentView)
     }
+    
     
     func setCornerRadius(with size: CGFloat) {
         let constraintMultiplier: CGFloat = 0.8
@@ -41,4 +44,6 @@ class AddDieOrDrinkView: UIView {
         addDieView.layer.cornerRadius = cornerRadius
         addDieViewShadow.layer.cornerRadius = cornerRadius
     }
+    
+    
 }

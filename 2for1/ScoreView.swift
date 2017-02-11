@@ -15,15 +15,18 @@ class ScoreView: UIView {
     @IBOutlet weak var drinksLabel: UILabel!
     @IBOutlet weak var drinksTextLabel: UILabel!
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }
     
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
+    
     
     func commonInit() {
         Bundle.main.loadNibNamed("ScoreView", owner: self, options: nil)
@@ -31,8 +34,16 @@ class ScoreView: UIView {
         self.constrain(contentView)
     }
     
+    
     func updateLabels(score: Int, drinks: Int) {
+        if drinks == 1 {
+            drinksTextLabel.text = "drink"
+        } else {
+            drinksTextLabel.text = "drinks"
+        }
         scoreLabel.text = "\(score)"
         drinksLabel.text = "\(drinks)"
     }
+    
+    
 }

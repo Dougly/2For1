@@ -80,10 +80,8 @@ extension GameViewController {
                 self.tiedRoll()
             } else if results.wonRoll && self.rolledHighEnoughLeadingConstraint.constant == 0 {
                 self.animate(view: self.rolledHighEnoughView, constraint: self.rolledHighEnoughLeadingConstraint, coverGameView: false)
-                self.game.instructions = "\(self.game.player!.tag!) rolled high enough!"
             } else if !results.wonRoll && self.addDieOrDrinkLeadingConstraint.constant == 0 {
                 self.animate(view: self.addDieOrDrinkView, constraint: self.addDieOrDrinkLeadingConstraint, coverGameView: true)
-                self.game.instructions = "\(self.game.player!.tag!) rolled too low"
             }
             self.updateInstructions()
         }
@@ -96,7 +94,7 @@ extension GameViewController {
         gameView.diceGrid.updateDiceImages(dice: game.dice)
         self.animate(view: addDieOrDrinkView, constraint: addDieOrDrinkLeadingConstraint, coverGameView: true)
         updateInstructions()
-        updateScoreBoard()
+        scoreView.updateLabels(score: game.score, drinks: game.drinks)
     }
     
     
@@ -122,7 +120,7 @@ extension GameViewController {
         animate(view: nextPlayerView, constraint: nextPlayerViewLeadingConstraint, coverGameView: true)
         gameView.diceGrid.displayNumberOfDice(number: game.dice.count)
         gameView.diceGrid.updateDiceImages(dice: game.dice)
-        updateScoreBoard()
+        scoreView.updateLabels(score: game.score, drinks: game.drinks)
         updateInstructions()
     }
     
@@ -167,7 +165,7 @@ extension GameViewController {
         if nextPlayerViewLeadingConstraint.constant == 0 {
             animate(view: nextPlayerView, constraint: nextPlayerViewLeadingConstraint, coverGameView: true)
         }
-        updateScoreBoard()
+        scoreView.updateLabels(score: game.score, drinks: game.drinks)
         updateInstructions()
     }
     
@@ -204,17 +202,6 @@ extension GameViewController {
     
     func updateInstructions() {
         instructionsView.instructionsLabel.text = game.instructions
-    }
-    
-    
-    func updateScoreBoard() {
-        if game.drinks == 1 {
-            scoreView.drinksTextLabel.text = "drink"
-        } else {
-            scoreView.drinksTextLabel.text = "drinks"
-        }
-        scoreView.scoreLabel.text = String(game.score)
-        scoreView.drinksLabel.text = String(game.drinks)
     }
     
     

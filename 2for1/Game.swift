@@ -23,10 +23,11 @@ class Game {
     
 }
 
+
+
 //MARK: Player Actions
 extension Game {
     
-
     func roll() -> (wonRoll: Bool, tiedRoll: Bool) {
         for die in dice {
             die.roll()
@@ -37,12 +38,14 @@ extension Game {
         }
         
         if playerRoll < score {
+            instructions = "\(player!.tag!) rolled too low"
             return (false, false)
         } else if playerRoll == score {
             action = .drink
             return (false, true)
         } else {
             score = playerRoll
+            instructions = "\(player!.tag!) rolled high enough!"
             return (true, false)
         }
     }
@@ -63,17 +66,15 @@ extension Game {
         }
         if playerRoll <= score {
             action = .drink
-            //instructions = "\(player!.tag!) rolled \(playerRoll) and must drink!!"
             return false
         } else {
-            
             action = .roll
             return true
         }
     }
     
+    
     func passDice() {
-        
         if !isFirstTurn {
             score = playerRoll
         } else {
@@ -83,7 +84,6 @@ extension Game {
         for die in dice {
             die.value = 0
         }
-        
         playerRoll = 0
         turn += 1
         drinks += 1
@@ -91,11 +91,7 @@ extension Game {
         instructions = "\(player!.tag!)'s turn!"
         action = .roll
     }
-    
-    
-    func drink() {
-        instructions = "\(player!.tag!)'s roll was too low and and must drink \(drinks) drinks!!"
-    }
+
     
     func resetGame() {
         dice = [Die()]

@@ -17,15 +17,18 @@ class DotsView: UIView {
     @IBOutlet weak var leftDotLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var rightDotTrailingConstraint: NSLayoutConstraint!
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }
     
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
+    
     
     func commonInit() {
         Bundle.main.loadNibNamed("DotsView", owner: self, options: nil)
@@ -39,14 +42,15 @@ class DotsView: UIView {
         middleDotView.layer.cornerRadius = cornerRadius
         leftDotView.layer.cornerRadius = cornerRadius
         rightDotView.layer.cornerRadius = cornerRadius
-
     }
+    
     
     func setInitialConstraints(widthOfView: CGFloat, widthOfDot: CGFloat) {
         let distance = (widthOfView / 2) - (widthOfDot / 2)
         self.leftDotLeadingConstraint.constant = distance * -1
         self.rightDotTrailingConstraint.constant = distance
     }
+    
     
     func expandDots() {
         let distance = (contentView.frame.width / 2) - (middleDotView.frame.width / 2)
@@ -57,11 +61,14 @@ class DotsView: UIView {
         }, completion: nil)
     }
     
+    
     func collapseDots() {
         UIView.animate(withDuration: 0.2) {
             self.leftDotLeadingConstraint.constant = 0
             self.rightDotTrailingConstraint.constant = 0
             self.layoutIfNeeded()
         }
-    }    
+    }
+    
+    
 }

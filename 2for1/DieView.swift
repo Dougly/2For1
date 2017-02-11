@@ -10,23 +10,25 @@ import UIKit
 
 class DieView: UIView {
     
+    var dice: [UIImage] = [#imageLiteral(resourceName: "die_0"), #imageLiteral(resourceName: "die_1"), #imageLiteral(resourceName: "die_2"), #imageLiteral(resourceName: "die_3"), #imageLiteral(resourceName: "die_4"), #imageLiteral(resourceName: "die_5"), #imageLiteral(resourceName: "die_6")]
+    
     @IBOutlet var contentView: UIView!
     @IBOutlet var dieImageView: UIImageView!
     @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
     
     
-    var dice: [UIImage] = [#imageLiteral(resourceName: "die_0"), #imageLiteral(resourceName: "die_1"), #imageLiteral(resourceName: "die_2"), #imageLiteral(resourceName: "die_3"), #imageLiteral(resourceName: "die_4"), #imageLiteral(resourceName: "die_5"), #imageLiteral(resourceName: "die_6")]
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }
     
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
+    
     
     func commonInit() {
         Bundle.main.loadNibNamed("DieView", owner: self, options: nil)
@@ -35,6 +37,7 @@ class DieView: UIView {
         dieImageView.image = #imageLiteral(resourceName: "die_0")
     }
     
+    
     func display(dice number: Int) {
         if number == 0 {
             dieImageView.image = dice[0]
@@ -42,5 +45,7 @@ class DieView: UIView {
             dieImageView.image = dice[number]
         }
     }
+    
+    
 }
 

@@ -14,9 +14,10 @@ final class DataStore {
     
     static let sharedInstance = DataStore()
     var players: [Player] = []
-    //var playerPictures: [String : UIImage] = [:]
 
+    
     private init () {}
+    
     
     func fetchData() {
         let context = persistentContainer.viewContext
@@ -26,14 +27,6 @@ final class DataStore {
         } catch {
             print("catch players fetch request")
         }
-        
-//        for player in players {
-//            if let first = player.firstName, let last = player.lastName, let tag = player.tag {
-//                let key = first + last + tag
-//                playerPictures[key] = player.playerImage
-//            }
-//        }
-
     }
     
     func savePlayer(_ firstName: String, lastName: String, tag: String, file: String) {
@@ -48,14 +41,8 @@ final class DataStore {
         players.sort { (p1, p2) -> Bool in
             return p1.tag! > p2.tag!
         }
-        
-        
-        //let key = firstName + lastName + tag
-        //playerPictures[key] = image
-        
-        
-        
     }
+    
     
     // MARK: - Core Data stack
     lazy var persistentContainer: NSPersistentContainer = {
@@ -85,6 +72,7 @@ final class DataStore {
         return container
     }()
     
+    
     // MARK: - Core Data Saving support
     func saveContext () {
         let context = persistentContainer.viewContext
@@ -99,4 +87,6 @@ final class DataStore {
             }
         }
     }
+    
+    
 }

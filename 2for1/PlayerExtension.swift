@@ -24,4 +24,6 @@ extension Player {
         }
         return #imageLiteral(resourceName: "slime")
     }
+    
+    
 }
