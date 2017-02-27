@@ -29,7 +29,6 @@ class GameViewController: UIViewController {
     @IBOutlet weak var rolledHighEnoughLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var drinkView: CheckMarkView!
     @IBOutlet weak var drinkViewLeadingConstraint: NSLayoutConstraint!
-    @IBOutlet weak var rollLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -84,7 +83,9 @@ extension GameViewController {
                 self.animate(view: self.addDieOrDrinkView, constraint: self.addDieOrDrinkLeadingConstraint, coverGameView: true)
             }
             self.updateInstructions()
+            self.gameView.scoreLabel.text = String(self.game.playerRoll)
         }
+
     }
     
     
@@ -166,6 +167,7 @@ extension GameViewController {
             animate(view: nextPlayerView, constraint: nextPlayerViewLeadingConstraint, coverGameView: true)
         }
         scoreView.updateLabels(score: game.score, drinks: game.drinks)
+        gameView.scoreLabel.text = "0"
         updateInstructions()
     }
     
