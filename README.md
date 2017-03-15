@@ -1,4 +1,4 @@
-# 2For1 (in development)
+# 2 For 1
 
 2for1 is a simple drinking game involving beating your oponents dice rolls... or drinking the current drink wager.
 
